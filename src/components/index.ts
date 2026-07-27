@@ -19,7 +19,6 @@ export { default as Person } from './Person'
 export { default as PersonList } from './PersonList'
 export { default as RecentActivities } from './RecentActivities'
 export { default as SelectedProfile } from './SelectedProfile'
-export { default as Sidebar } from './Sidebar'
 export { default as SidebarMenu } from './SidebarMenu'
 export { default as VideoPlayer } from './VideoPlayer'
 
