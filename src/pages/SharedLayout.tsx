@@ -1,6 +1,5 @@
 
 import { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
 import { Outlet, redirect } from "react-router-dom";
 import type { Store } from "redux";
 import { Nav } from "../components/index";
@@ -44,7 +43,7 @@ const SharedLayout = ()=>{
 
 
      //dispatcher
-     const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
   let width =0;
  useEffect(()=>{

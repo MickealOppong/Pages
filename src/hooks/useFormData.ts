@@ -12,5 +12,5 @@ export const useFormData = (initialValue:string)=>{
             setValue(()=>e.target.value)
         }
     }
-    return {value,handleValueChange} as const;
+    return {value,handleValueChange,error} as const;
 }

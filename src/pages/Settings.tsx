@@ -74,7 +74,7 @@ const Settings= () => {
   //logout function
    //set and get current page from local storage
     localStorage.setItem('location',location.pathname);
-   const currentPage = localStorage.getItem('location');
+   //const currentPage = localStorage.getItem('location');
 
    //refresh token for logout
  const refreshToken = localStorage.getItem('rtk') as string

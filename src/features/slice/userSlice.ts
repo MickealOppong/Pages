@@ -15,6 +15,7 @@ let initialState:TUserData = {
      preference:'',
      lookingFor:'',
      aboutMe:'',
+     height:'',
      aboutThem:'',
      date_of_birth:'',
      country:'',

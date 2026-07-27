@@ -4,7 +4,7 @@ import './../css/TermsAndConditions.scss';
 
 
 export const TermsAndConditions = () => {
-  const [hasScrolledToBottom, setHasScrolledToBottom] = useState<boolean>(false);
+  const [, setHasScrolledToBottom] = useState<boolean>(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
  // if (true) return null;

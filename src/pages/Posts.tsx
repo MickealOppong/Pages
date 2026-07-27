@@ -1,14 +1,11 @@
-import type { Store } from "@reduxjs/toolkit";
 import { BiRepost } from "react-icons/bi";
 import { FiEye } from "react-icons/fi";
 import { useGetAllPostQuery } from "../features/api/transApi";
-import { useAppSelector, type RootState } from './../store';
+import { useAppSelector } from './../store';
 
 
 
-export const loader = (store: Store<RootState>) => () => {
- const userId= store.getState().userSlice.id;
- const username= store.getState().userSlice.username;
+export const loader = () => () => {
 //console.log(userId," "+username);
 
 
@@ -19,9 +16,8 @@ const userId = useAppSelector((state)=>state.userSlice.id);
 
 
 
-   const {data:getDta} = useGetAllPostQuery(userId)
+   const {data:getDta} = useGetAllPostQuery({userId,gender:'',})
 
-   console.log(getDta);
    
     //user data
     //const name = useAppSelector((state)=>state.userSlice.firstName)
@@ -46,7 +42,7 @@ const userId = useAppSelector((state)=>state.userSlice.id);
                                 <div>
                                      <div className="view-container">
                                         <FiEye/>
-                                    <span>{item.reachCount}</span>
+                                    <span>{item.viewsCount}</span>
                                     </div>
                                       <button>
                                         <BiRepost/>
