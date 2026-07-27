@@ -1,0 +1,190 @@
+@import './variables.scss';
+
+// Layout Variables
+$purple-primary: #7F56D9;
+$purple-light: #F9F5FF;
+$text-dark: #1D2939;
+$text-muted: #667085;
+$border-color: #F2F4F7;
+$bg-white: #FFFFFF;
+$radius-md: 16px;
+$transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+.likes{
+  display: flex;
+  width: 100%;
+
+}
+.likes-content{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+
+
+.single-like-card {
+  background: $bg-white;
+  border-radius: $radius-md;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  margin-bottom: 16px;
+  border: 1px solid $border-color;
+  transition: $transition-smooth;
+  perspective: 1200px; // Enables 3D space environment for folding
+  transform-origin: top center;
+  overflow: hidden;
+
+  // Hover effect over the whole card wrapper
+  &:hover:not(.fold-out) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(127, 86, 217, 0.08);
+  }
+
+  .card-profile-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+    gap: 24px;
+  }
+
+  // Left Content Layout Matrix
+  .card-main-body {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    gap: 16px;
+    position: relative;
+  }
+
+  .img-wrapper {
+    width: 72px;
+    height: 72px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: $text-dark;
+      margin: 0;
+    }
+  }
+
+  // The Contextual Tag String
+  .activity-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: $text-muted;
+    font-size: 0.9rem;
+
+    .icon {
+      color: $purple-primary;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+  }
+
+  .timestamp {
+    font-size: 0.85rem;
+    color: $text-muted;
+    margin-left: auto; // Pushes timestamp gracefully to the right edge
+    padding-right: 12px;
+    font-weight: 500;
+  }
+
+  // Button Group Container Layout
+  .action-button-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+
+    button {
+      padding: 10px 24px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      outline: none;
+    }
+
+    .btn-reject {
+      background: transparent;
+      color: $text-muted;
+      border: 1px solid #D0D5DD;
+
+      &:hover {
+        background: #F9FAFB;
+        color: $text-dark;
+        border-color: #98A2B3;
+      }
+    }
+
+    .btn-accept {
+      background: $purple-primary;
+      color: $bg-white;
+      box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+
+      &:hover {
+        background: darken($purple-primary, 8%);
+        box-shadow: 0 4px 12px rgba(127, 86, 217, 0.2);
+      }
+    }
+  }
+
+  // ----------------------------------------------------
+  // Hardware-Accelerated 3D Paper Folding Effect
+  // ----------------------------------------------------
+  &.fold-out {
+    animation: paperFoldCollapse 0.6s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+    pointer-events: none; // Block interactions during animation sequence
+  }
+}
+
+@keyframes paperFoldCollapse {
+  0% {
+    transform: rotateX(0deg);
+    opacity: 1;
+    max-height: 200px;
+    margin-bottom: 16px;
+    padding: 0;
+  }
+  40% {
+    transform: rotateX(-70deg);
+    opacity: 0.7;
+    background: #f4f5f7; // Gives it an internal paper shadow tint mid-fold
+  }
+  75% {
+    transform: rotateX(-90deg);
+    opacity: 0.1;
+    max-height: 50px;
+    margin-bottom: 8px;
+  }
+  100% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+    max-height: 0px;
+    margin-bottom: 0px;
+    border-color: transparent;
+  }
+}

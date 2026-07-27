@@ -1,0 +1,107 @@
+@import './variables.scss';
+
+/* Centered boundary element wrapper */
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 850px; /* Exact match discover page grid limits standard */
+  margin: 32px auto 16px auto;
+  box-sizing: border-box;
+}
+
+/* Directional Control Chevron Buttons Blueprint */
+.nav-arrow-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid #ececec;
+  background-color: #ffffff;
+  color: #1e2235;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+
+  svg {
+    transition: transform 0.2s ease;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: #f8f4ff;
+    border-color: #7c3aed;
+    color: #7c3aed;
+    
+    // Smooth spatial micro-interactions hints directions on hover
+    &:first-of-type svg { transform: translateX(-1px); }
+    &:last-of-type svg { transform: translateX(1px); }
+  }
+
+  &:disabled {
+    background-color: #e5e7eb;
+    color: #9ca3af;
+    border-color: #e5e7eb;
+    cursor: not-allowed;
+  }
+}
+
+/* Page Index Array Grid Item Container */
+.page-numbers-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Individual page numbering nodes overrides */
+.number-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid #ececec;
+  background-color: #ffffff;
+  color: #4b5563;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+
+  &:hover:not(.active) {
+    background-color: #f8f4ff;
+    border-color: #d9c8ff;
+    color: #7c3aed;
+  }
+
+  /* Active targeted view state parameters */
+  &.active {
+    background-color: #7c3aed; /* Your core purple focus color */
+    color: #ffffff;
+    border-color: #7c3aed;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+    cursor: default;
+  }
+}
+
+/* Mobile viewport space reduction rules overrides */
+@media (max-width: 580px) {
+  .pagination-container {
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .nav-arrow-btn,
+  .number-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 0.82rem;
+  }
+}

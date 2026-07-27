@@ -1,0 +1,102 @@
+.notification-toast {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(12px);
+  padding: 1.25rem;
+  animation: toastFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.notification-toast .notification-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  animation: cardPopUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.notification-toast .notification-card .notification-icon {
+  font-size: 3.25rem;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: goldenrod;
+}
+
+.notification-toast .notification-card h2 {
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: #1e293b;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.notification-toast .notification-card h2 strong {
+  font-weight: 800;
+  color: #0f172a;
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.notification-toast .notification-card p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0 0 2rem 0;
+}
+
+.notification-toast .notification-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.95rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #7c3aed;
+  border-radius: 0.85rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.15);
+}
+
+.notification-toast .notification-card a:hover {
+  background: linear-gradient(135deg, #7C3AED 0%, #ec4899 100%);
+}
+
+.notification-toast .notification-card a:active {
+  transform: scale(0.97);
+}
+
+@keyframes toastFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes cardPopUp {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

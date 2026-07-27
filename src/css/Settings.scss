@@ -1,0 +1,414 @@
+@import './variables.scss';
+
+.account-settings-page {
+    display: flex;
+    min-height: 100vh;
+    height: 100%;
+    padding: 16px; 
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+    background:$background-1;
+    margin-bottom: 4rem;
+}
+
+.account-settings-center {
+    max-width: 650px; 
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+
+ 
+}
+
+/* Scoped Modular Panels */
+.account-card-panel {
+
+    padding: 24px; 
+    border-radius: 24px;
+    box-shadow: $card-shadow;
+    border: 1px solid $border;
+    width: 100%;
+    box-sizing: border-box;
+    background:$background;
+}
+
+.account-settings-form-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    background:$background-1;
+  
+}
+
+.account-page-header {
+    width: 100%;
+    border-bottom: 1px solid $border;
+    padding-bottom: 16px;
+    margin-bottom: 4px;
+}
+
+.account-page-header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: -0.02em;
+}
+
+/* Headings with alignment rules */
+.account-section-header h2 {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    font-weight: 700;
+    border-bottom: 1px solid $border;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #111827;
+}
+
+.account-section-header h2 svg {
+    color: $primary;
+}
+
+/* Standardized Content Stacks */
+.account-credentials-stack,
+.account-toggles-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.account-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+
+}
+
+.account-field-group label {
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: $text-muted;
+}
+
+/* Text Inputs Layout Styling */
+.account-settings-form-shell input[type="email"],
+.account-settings-form-shell input[type="password"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid $border-tint;
+    border-radius: 12px;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.account-settings-form-shell input:focus {
+    border-color: $primary;
+}
+
+/* Password placeholder formatting */
+.account-password-static-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $background;
+    border: 1px solid $border-tint;
+    padding: 6px 14px;
+    border-radius: 12px;
+}
+
+.account-password-static-row p {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: $gray;
+}
+
+/* Inline action toggles blueprints */
+.account-btn-inline {
+    background: none;
+    border: none;
+    color: $primary;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background-color 0.15s ease;
+}
+
+.account-btn-inline:hover {
+    background-color: $primary-light;
+}
+
+.account-btn-inline-cancel {
+    background: none;
+    border: 1px solid $border-tint;
+    color: $gray;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+/* Custom iOS Switch System Modules */
+.account-switch-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background-color: #ffffff;
+    border: 1px solid $border-tint;
+    border-radius: 16px;
+    gap: 20px;
+}
+
+.account-switch-text label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.account-sub-text-hint {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: $gray;
+}
+
+.account-apple-switch {
+    position: relative;
+    width: 50px;
+    height: 28px;
+    appearance: none;
+    background-color: #e5e7eb;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.account-apple-switch:checked {
+    background-color: $primary;
+}
+
+.account-apple-switch::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.account-apple-switch:checked::before {
+    transform: translateX(22px);
+}
+
+/* Legal Links Grid Formatting */
+.account-support-links-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.account-support-nav-link {
+    text-decoration: none;
+    color: #374151 !important;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border: 1px solid $border-tint;
+    border-radius: 12px;
+    transition: background-color 0.15s ease;
+}
+
+.account-support-nav-link:hover {
+    background-color: #f9fafb;
+    color: $primary !important;
+}
+
+/* Update Footer Block Layout Configuration */
+.account-form-actions-bar {
+    display: flex;
+    width: 100%;
+}
+
+.account-submit-update-btn {
+    width: 100%;
+    padding: 14px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    background: linear-gradient(135deg, $primary 0%, #ff6036 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(253, 38, 125, 0.2);
+    transition: transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.account-submit-update-btn:hover {
+    filter: brightness(1.03);
+}
+
+.account-submit-update-btn:active {
+    transform: scale(0.99);
+}
+
+/* Destructive Isolation Panel Container */
+.account-danger-zone-wrapper {
+    background-color: #fffbfa;
+    padding: 24px; 
+    border-radius: 24px;
+    box-shadow: $card-shadow;
+    border: 1px solid #fee2e2;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.account-danger-zone-header h3 {
+    margin: 0 0 4px 0;
+    color: #991b1b;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.account-danger-zone-header p {
+    margin: 0;
+    color: #b91c1c;
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.account-delete-profile-btn {
+    width: 100%;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: #ffffff;
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.15s ease;
+}
+
+.account-delete-profile-btn:hover {
+    background-color: #dc2626;
+    color: #ffffff;
+    border-color: #dc2626;
+}
+
+.account-margin-top-sm {
+    margin-top: 8px;
+}
+
+.dialog {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: sans-serif;
+  z-index: 1000;
+
+  // 1. Run animation for 4 seconds total
+  // 2. forwards keeps the final 100% style (opacity: 0, visibility: hidden)
+  animation: fadeOutSequence 4s forwards;
+}
+  .logout-btn {
+      width: 100%;
+      border: none;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      cursor: pointer;
+      color: #dc2626;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      box-sizing: border-box;
+
+      svg {
+        flex-shrink: 0;
+      }
+
+      &:hover {
+        background: #fef2f2;
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+
+@keyframes fadeOutSequence {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  // Rapidly fades in during the first 10% of time (0.4s)
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  // Stays fully visible from 10% to 85% of time (up to 3.4s)
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  // Smoothly fades out during the final 15% of time
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden; // Removes pointer interactions after hiding
+  }
+}
+
+

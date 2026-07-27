@@ -1,0 +1,179 @@
+.terms-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(12px);
+  padding: 1rem;
+  animation: fadeInOverlay 0.2s ease-out forwards;
+}
+
+.terms-overlay .terms-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 540px;
+  height: 80vh;
+  max-height: 650px;
+  border-radius: 1.25rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUpCard 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.terms-overlay .terms-card .terms-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terms-overlay .terms-card .terms-header h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.terms-overlay .terms-card .terms-header .close-x {
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  color: #64748b;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem;
+  transition: color 0.15s ease;
+}
+
+.terms-overlay .terms-card .terms-header .close-x:hover {
+  color: #0f172a;
+}
+
+.terms-overlay .terms-card .terms-body {
+  padding: 2rem;
+  overflow-y: auto;
+  flex: 1;
+  background-color: #f8fafc;
+}
+
+.terms-overlay .terms-card .terms-body h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.terms-overlay .terms-card .terms-body h3:first-of-type {
+  margin-top: 0;
+}
+
+.terms-overlay .terms-card .terms-body p {
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0 0 1.25rem 0;
+}
+
+.terms-overlay .terms-card .terms-body p strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.terms-overlay .terms-card .terms-footer {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background-color: #ffffff;
+}
+
+.terms-overlay .terms-card .terms-footer .scroll-hint {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #ef4444;
+  text-align: center;
+  animation: pulseText 1.5s infinite ease-in-out;
+}
+
+.terms-overlay .terms-card .terms-footer .actions-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.terms-overlay .terms-card .terms-footer .actions-wrapper button {
+  flex: 1;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.terms-overlay .terms-card .terms-footer .actions-wrapper .btn-decline {
+  background-color: transparent;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+.terms-overlay .terms-card .terms-footer .actions-wrapper .btn-decline:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.terms-overlay .terms-card .terms-footer .actions-wrapper .btn-accept {
+  background-color: #0f172a;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.terms-overlay .terms-card .terms-footer .actions-wrapper .btn-accept:hover:not(:disabled) {
+  background-color: #1e293b;
+}
+
+.terms-overlay .terms-card .terms-footer .actions-wrapper .btn-accept:disabled {
+  background-color: #cbd5e1;
+  color: #ffffff;
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpCard {
+  from {
+    transform: scale(0.95) translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseText {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}

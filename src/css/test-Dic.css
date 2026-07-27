@@ -1,0 +1,487 @@
+/* ==========================================================================
+   DESIGN TOKENS
+   ========================================================================== */
+/* Colors */
+/* Typography */
+/* Spacing */
+/* Radius */
+/* Shadows */
+/* Animation */
+/* Breakpoints */
+/* ==========================================================================
+   MIXINS
+   ========================================================================== */
+/* ==========================================================================
+   GLOBAL
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4f6fb;
+  color: #1f2937;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   UTILITIES
+   ========================================================================== */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.text-muted {
+  color: #6b7280;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.shadow {
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.rounded {
+  border-radius: 24px;
+}
+
+/* ==========================================================================
+   DISCOVER PAGE
+   ========================================================================== */
+.discover {
+  min-height: 100vh;
+  background: #f4f6fb;
+  padding: 24px;
+}
+
+.discover__container {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.discover__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  row-gap: 16px;
+  margin-bottom: 32px;
+}
+
+.discover__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.discover__title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.discover__subtitle {
+  margin: 0;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   SEARCH
+   ========================================================================== */
+.discover__search {
+  position: relative;
+}
+
+.discover__search-input {
+  width: 100%;
+  padding: 16px 16px 16px 52px;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  background: #ffffff;
+  font-size: 1rem;
+  transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.discover__search-input:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+}
+
+.discover__search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   FILTER BAR
+   ========================================================================== */
+.discover__filters {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  margin-bottom: 32px;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.discover__filters::-webkit-scrollbar {
+  display: none;
+}
+
+.discover__filter {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.discover__filter:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+.discover__filter:hover {
+  border-color: #7c3aed;
+  color: #7c3aed;
+}
+
+.discover__filter--active {
+  background: #7c3aed;
+  color: white;
+  border-color: #7c3aed;
+}
+
+/* ==========================================================================
+   MAIN GRID
+   ========================================================================== */
+.discover__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+/* ==========================================================================
+   CONTENT
+   ========================================================================== */
+.discover__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ==========================================================================
+   SIDEBAR
+   ========================================================================== */
+.discover__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (min-width: 768px) {
+  .discover {
+    padding: 32px;
+  }
+}
+
+@media (min-width: 992px) {
+  .discover__grid {
+    grid-template-columns: minmax(0, 2fr) 380px;
+    align-items: start;
+  }
+  .discover__sidebar {
+    position: sticky;
+    top: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .discover {
+    padding: 40px;
+  }
+}
+
+/* ==========================================================================
+   FEATURED PROFILE CARD
+   ========================================================================== */
+.discover__card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  background: #ffffff;
+}
+
+.discover__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+}
+
+@media (min-width: 768px) {
+  .discover__card {
+    grid-template-columns: 48% 52%;
+  }
+}
+
+/* ==========================================================================
+   PROFILE IMAGE
+   ========================================================================== */
+.discover__card-media {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.discover__card-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.discover__card:hover .discover__card-image {
+  transform: scale(1.04);
+}
+
+/* ==========================================================================
+   IMAGE OVERLAY
+   ========================================================================== */
+.discover__card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+  pointer-events: none;
+}
+
+.discover__status {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #10b981;
+  backdrop-filter: blur(10px);
+}
+
+/* ==========================================================================
+   PROFILE CONTENT
+   ========================================================================== */
+.discover__card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+}
+
+.discover__card-header {
+  margin-bottom: 24px;
+}
+
+.discover__card-title {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+}
+
+.discover__card-subtitle {
+  margin-top: 8px;
+  color: #6b7280;
+}
+
+/* ==========================================================================
+   PROFILE META
+   ========================================================================== */
+.discover__meta {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.discover__meta-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  color: #6b7280;
+}
+
+.discover__meta-item svg {
+  color: #7c3aed;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   BIO
+   ========================================================================== */
+.discover__bio {
+  line-height: 1.7;
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+
+/* ==========================================================================
+   ACTIVITY CHIPS
+   ========================================================================== */
+.discover__activities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.discover__chip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.08);
+  color: #7c3aed;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.discover__chip:hover {
+  background: rgba(124, 58, 237, 0.14);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   ACTIONS
+   ========================================================================== */
+.discover__actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   ACTION BUTTON
+   ========================================================================== */
+.discover__action {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 0;
+  border: 1px solid #e5e7eb;
+  background: white;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+}
+
+.discover__action:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+.discover__action:hover {
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.discover__action--pass {
+  color: #ef4444;
+}
+
+.discover__action--like {
+  background: #7c3aed;
+  color: white;
+  border: none;
+}
+
+.discover__action--super {
+  color: #f59e0b;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+  .discover__card-body {
+    padding: 24px;
+  }
+  .discover__card-media {
+    min-height: 340px;
+  }
+  .discover__actions {
+    justify-content: space-between;
+  }
+  .discover__action {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 576px) {
+  .discover__card-media {
+    min-height: 280px;
+  }
+  .discover__card-title {
+    font-size: 1.8rem;
+  }
+  .discover__actions {
+    gap: 12px;
+  }
+  .discover__action {
+    width: 52px;
+    height: 52px;
+  }
+}

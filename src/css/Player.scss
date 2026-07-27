@@ -1,0 +1,255 @@
+@import './variables.scss';
+$player-bg: #000000;
+$player-control-bg: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0) 100%);
+$player-accent: #2563eb;
+$player-track-bg: rgba(255, 255, 255, 0.3);
+$player-text: #ffffff;
+$player-text-muted: rgba(255, 255, 255, 0.7);
+$player-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+// ==========================================================================
+// Core Container Workspace
+// ==========================================================================
+.custom-video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: $player-bg;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  
+
+  // Aspect Ratio Aspect Locks depending on view modes
+  &.mode-landscape {
+    aspect-ratio: 16 / 9;
+  }
+  
+  &.mode-portrait {
+    aspect-ratio:  9/ 16;
+   
+  }
+
+  // Fullscreen Override State
+  &.fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    aspect-ratio: auto !important;
+  }
+
+  // Primary HTML5 Native Video Node
+  .native-video-node {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+
+     &.mode-landscape {
+        width: 100%;
+        height: auto;
+    }
+
+       &.mode-portrait {
+        width: 100%;
+        min-height:800px;
+        object-fit:contain;
+    }
+    
+  }
+
+  // Floating Center Play HUD Accent Button
+  .center-play-hud {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: $player-text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: $player-transition;
+    z-index: 5;
+
+
+     
+
+    &:hover {
+      background-color: rgba($player-accent, 0.8);
+      transform: translate(-50%, -50%) scale(1.1);
+      border-color: transparent;
+    }
+
+    &.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    &.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  // Custom Controls Interactive Subpanel
+  .video-controls-panel {
+    position: absolute;
+    bottom: 40%;
+    left: 0;
+    right: 0;
+    padding: 3rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    z-index: 3;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &.mode-landscape {
+       top: 0;
+       
+       }
+
+         &.mode-portrait {
+         top: 0;
+       
+       }
+ 
+
+    &.faded {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+    }
+
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+  }
+
+  // Upper Lane: Custom Audio/Video Progress Timeline Slider
+  .timeline-scrubber-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .video-progress-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background: $player-track-bg;
+      cursor: pointer;
+      outline: none;
+      transition: height 0.1s ease;
+
+      &:hover {
+        height: 6px;
+
+        &::-webkit-slider-thumb {
+          transform: scale(1.2);
+        }
+        &::-moz-range-thumb {
+          transform: scale(1.2);
+        }
+      }
+
+      // Fill color style implementation using the CSS custom property token
+      background: linear-gradient(
+        to right,
+        $player-accent 0%,
+        $player-accent var(--seek-before-width),
+        $player-track-bg var(--seek-before-width),
+        $player-track-bg 100%
+      );
+
+      // Webkit Web Engine Thumb
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: $player-text;
+        transition: transform 0.1s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      }
+
+      // Gecko Mozilla Engine Thumb
+      &::-moz-range-thumb {
+        width: 12px;
+        height: 12px;
+        border: none;
+        border-radius: 50%;
+        background-color: $player-text;
+        transition: transform 0.1s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+
+  // Lower Lane: Management Triggers & Command Bar
+  .controls-command-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .left-commands,
+    .right-commands {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    // Interactive UI Command Icon Actions Triggers
+    .ctrl-btn {
+      background: none;
+      border: none;
+      padding: 4px;
+      color: $player-text-muted;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: $player-transition;
+      border-radius: 4px;
+
+      &:hover {
+        color: $player-text;
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+
+      svg {
+        display: block;
+      }
+    }
+
+    // Numeric Timestamps Element
+    .timestamp-tracker {
+      font-family: monospace, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: $player-text;
+      letter-spacing: 0.5px;
+
+      .divider {
+        color: $player-text-muted;
+        margin: 0 2px;
+      }
+    }
+  }
+}
+

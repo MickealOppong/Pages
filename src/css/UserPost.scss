@@ -1,0 +1,276 @@
+@import './variables.scss';
+
+// ==========================================
+// 1. MAIN PAGE CONTENT WRAPPER
+// ==========================================
+.user-posts {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  min-height: 100vh;
+  background: $background-1;
+  padding: 2rem 1rem;
+  position: relative;
+  margin-bottom: 4rem;
+
+
+  // Handles absolute hidden modal layer for creation fields
+  .show-form {
+    position: relative;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// ==========================================
+// 2. DASHBOARD VIEWPORT HEADER 
+// ==========================================
+.page-header {
+  max-width: 1200px;
+  margin: 0 auto 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #18181b;
+    margin: 0 0 0.4rem 0;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    color: #6b7280;
+    font-size: 1rem;
+    margin: 0;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+
+  .create-btn {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #7c3aed;
+    color: white;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+    transition: transform 0.2s, background-color 0.2s;
+
+    &:hover {
+      background: #6d28d9;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// ==========================================
+// 3. STORIES LIST CONTAINER GRID
+// ==========================================
+.posts-portrait,.posts-landscape {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  gap: 1rem;
+  width: 100%;
+
+
+
+}
+
+
+// ==========================================
+// 4. THE INDIVIDUAL STORY CARD BLOCK
+// ==========================================
+.post-portrait,.post-landscape {
+  position: relative;
+  background: $background;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+
+
+
+
+  // Top floating profile privacy visibility label
+  .visibility {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    color: white;
+    padding: 0.35rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 0.02em;
+  }
+
+img{
+  max-height: 230px;
+  object-fit:cover;
+}
+
+
+
+  // Lower Content Body Pane
+  .post-content {
+
+    bottom: 100%;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-grow: 1;
+    height: auto;
+
+
+    .post-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+
+      .category {
+        background: #f3f0ff;
+        color: #6d28d9;
+        font-weight: 700;
+        font-size: 0.75rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .location {
+        display: none;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #6b7280;
+      }
+    }
+
+  
+
+    .caption{
+      display: flex;
+   
+
+        p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #374151;
+      margin: 0;
+      font-weight: 500;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; // Locks overflow bio rows safely out of bounds
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+       }
+    }
+
+    // Lower Footer Container Placement (Pins action loops below paragraphs)
+    .post-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 0.75rem;
+      border-top: 1px solid #f3f4f6;
+      padding-top: 0.85rem;
+
+
+
+      .btn {
+        flex: 1;
+        height: 44px;
+        border-radius: 12px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+
+      // Reach Statistics Counter Block
+      .likes-btn {
+        background: #f3f4f6;
+        color: #374151;
+        cursor: default; // Non-clickable stats tracking block placeholder
+      }
+
+      // Absolute Delete Trigger Control Module
+      .delete-btn {
+        background: #fff0f3;
+        color: #ff4d6d;
+
+        &:hover {
+          background: #ffe3e7;
+          transform: translateY(-1px);
+        }
+        
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+
+.post-portrait{
+    height: 420px;
+}
+@media (min-width:768px){
+
+  .posts-portrait,.posts-landscape {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.page-header {
+
+
+  .create-btn {
+    display: flex;
+    
+  }
+}
+}
+
+
+@media (min-width:992px){
+  .posts-portrait,.posts-landscape {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1rem;
+  width: 100%;
+}
+}

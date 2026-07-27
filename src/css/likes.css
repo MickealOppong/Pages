@@ -1,0 +1,114 @@
+.likes {
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f6f6fb;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Header Outer Wrapper - Sticky to keep actions in view */
+.likes-header {
+  position: sticky;
+  top: 0;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  padding: 16px 24px 0 24px;
+  z-index: 10;
+}
+
+/* Centers the content block to a comfortable viewing layout */
+.header-center {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Heading title with heart icon alignment */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header h2 {
+  color: #7c3aed;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* Heart Icon Styling (FiHeart maps to an svg) */
+.header svg {
+  color: #fd267d;
+  font-size: 1.4rem;
+  stroke-width: 2.5;
+}
+
+/* Navigation Tabs Container */
+.tabs {
+  display: flex;
+  width: 100%;
+}
+
+/* Individual Tab Wrapper */
+.tab {
+  flex: 1;
+  /* Distributes tabs equally across the layout width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Tab Button Overrides */
+.tab button {
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 12px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+  /* Neutral unselected text color */
+  transition: color 0.2s ease;
+  outline: none;
+}
+
+.tab button:hover {
+  color: #111827;
+}
+
+/* Active tab button text override via adjacent element detection */
+.tab button:has( + .underline.active) {
+  color: #7c3aed;
+}
+
+/* Tab Bottom Underline Base */
+.tab .underline {
+  width: 100%;
+  height: 3px;
+  background-color: transparent;
+  border-radius: 3px 3px 0 0;
+  transform: scaleX(0);
+  /* Hidden by default */
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease;
+}
+
+/* Active Underline State */
+.tab .underline.active {
+  background-color: #7c3aed;
+  transform: scaleX(1);
+  /* Expands cleanly when active class triggers */
+}
+
+/* Results Content Section Grid */
+.main > section {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}

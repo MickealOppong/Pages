@@ -1,0 +1,314 @@
+@import './variables.scss';
+
+.view-profile-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 16px; /* Tight padding to protect mobile viewport layout */
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: $background-1;
+}
+
+.view-profile_container {
+    max-width: 850px; /* Exact match framework container width boundary */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+@import './variables.scss';
+
+/* ==========================================================================
+   Component Header Container Layout
+   ========================================================================== */
+.component-header {
+    max-width: 850px; /* Aligns perfectly with your view-profile_container bounds */
+    margin: 0 auto 20px auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border;
+    padding-bottom: 16px;
+    box-sizing: border-box;
+}
+
+/* Header Text Presentation & String Safeguards */
+.component-header h2 {
+    margin: 0;
+    font-size: clamp(18px, 4vw, 24px); /* Scales typography fluidly down on phone viewports */
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: -0.02em;
+    
+    /* Text-overflow rules handling long combined string properties */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+
+
+/* ==========================================================================
+   Structural Card Panels 
+   ========================================================================== */
+.view-profile_header,
+.personal_info,
+.about_container,
+.interests_container,
+.expect_container {
+    background-color: $background;
+    padding: 20px;
+    border-radius: 24px;
+    box-shadow: $card-shadow;
+    border: 1px solid $border;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Profile Main Header Block
+   ========================================================================== */
+.view-profile_header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.view-profile_header img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid $primary-light;
+    flex-shrink: 0;
+}
+
+.view-profile_header .view-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    flex: 1;
+}
+
+.profile_data {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.profile_data p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile_data span {
+    color: $primary;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.location_status p {
+    margin: 0;
+    color: $gray;
+    font-size: 13px;
+}
+
+/* ==========================================================================
+   Core Layout Flow Engine (Grid and Flex stacks)
+   ========================================================================== */
+.view-profile_container .main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(130px, 1fr));
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: start;
+}
+
+.main_left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    grid-column: span 2; /* Spans full bleed on mobile by default */
+}
+
+.personal_info .data,
+.basic_info {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(130px, 1fr)) !important; /* Forces 2-column mobile matrix flow */
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Metadata Attribute Row Blueprint Elements */
+.attribute_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background-color: $background;
+    border: 1px solid $border-tint;
+    border-radius: 16px;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.attribute_container .svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary;
+    background-color: #ffffff;
+    border: 1px solid $border-tint;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 6px;
+    box-shrink: 0;
+    flex-shrink: 0;
+}
+
+.attribute {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+}
+
+.attribute h2 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.attribute p {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $gray;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   About Me Content Blocks Configuration
+   ========================================== */
+.about_container {
+    grid-column: span 2;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.about_me, .basic_container {
+    width: 100%;
+}
+
+.about_container h4 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid $border;
+    padding-bottom: 8px;
+}
+
+.about_me p {
+    margin: 0;
+    padding: 12px;
+    background-color: $background;
+    border: 1px solid $border-tint;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   Interests Section
+   ========================================== */
+.main_right {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.interests h2,
+.expect h2 {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 700;
+    border-bottom: 1px solid $border;
+    padding-bottom: 12px;
+    text-transform: capitalize; /* Adapts raw lower case strings dynamically */
+}
+
+/* ==========================================================================
+   Expect Section Styling (What I'm Looking For Container)
+   ========================================================================== */
+.expect {
+    width: 100%;
+    position: relative;
+}
+
+.expect p {
+    margin: 0;
+    padding: 12px;
+    background-color: $background;
+    border: 1px solid $border-tint;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+/* Micro Heart Accent positioning alignment inside preference components */
+.expect .heart {
+    position: absolute;
+    bottom: -8px;
+    right: 0;
+    color: $primary;
+    font-size: 18px;
+    opacity: 0.15; /* Soft background decorative element overlay styling */
+}
+
+/* ==========================================
+   Desktop Responsive Viewport Adjustments
+   ========================================== */
+@media (min-width: 768px) {
+  .view-profile-page{
+    display: flex;
+    width: 100%;
+  }
+
+  .view-profile_header{
+     display: flex;
+    width: 100%;
+  }
+
+  .main{
+     display: flex;
+    width: 100%;
+  }
+}

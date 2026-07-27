@@ -1,0 +1,73 @@
+$bgColor: purple;
+$primary: #7c3aed;
+$primary-dark: #6d28d9;
+$primary-light: #f3e8ff;
+$primary-light-1: #F8F6FC;
+$primary-light-2: #F3E8FF;
+$primary-gradient: linear-gradient(135deg, #7C3AED 0%, #ec4899 100%);
+
+$background: #FFFFFF;
+$background-1: linear-gradient(235deg, #e5e4e7 10%, hsl(270, 12%, 93%) 100%);
+$background-2: #f6f6fb;
+$background-3: rgba(252, 252, 253, 0.9); // Fixed line break here!
+
+$text: #111827;
+$text-light: #6b7280;
+$text-dark: #1e293b;
+$text-muted: #94a3b8;
+$gray: #94a3b8;
+$text-main: #11142d;
+$text-secondary: #808191;
+$text-primary: #FFFFFF;
+
+$border: #e5e7eb;
+$border-1: #818386;
+$border-color: #f1f5f9;
+$border-tint: #d1d3d6;
+$border-light: #e4e4e4;
+
+$sidebar-width: 260px;
+$navbar-height: 72px;
+$rightbar-width: 300px;
+$cancel: #DC2626;
+$error: #DC2626;
+$bg-light: #f8fafc;
+$white: #ffffff;
+
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+$shadow-main: 0 10px 30px rgba(0, 0, 0, 0.06);
+$shadow-card: 0px 14px 32px rgba(17, 20, 45, 0.06);
+$shadow-button: 0px 8px 16px rgba(255, 42, 109, 0.2);
+
+// UI Toolkit Colors
+$color-bg-primary: #ffffff;
+$color-bg-secondary: #f8f9fa;
+$color-bg-active: #edf2f7;
+$color-text-main: #1a202c;
+$color-text-muted: #718096;
+$color-border: #e2e8f0;
+$color-online: #48bb78;
+$color-offline: #cbd5e0;
+
+$font-family: 'Inter', system-ui, sans-serif;
+$breakpoint-md: 768px;
+$card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+$color-bg: #f5f6f8;
+$color-white: #ffffff;
+
+$color-primary: #111111;
+$color-accent: #00c853;
+$color-heart: #ff4757;
+$color-sent-bg: #e5e5ea;
+$color-sent-text: #8e8e93;
+
+$radius-lg: 32px;
+$radius-md: 16px;
+$radius-pill: 100px;
+$radius-interactive: 16px;
+
+$bg-app: #f4f5f9;
+$bg-surface: #ffffff;
+$transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$bg-cover: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);

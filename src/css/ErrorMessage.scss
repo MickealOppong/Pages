@@ -1,0 +1,116 @@
+// Premium System Tokens
+$color-overlay: rgba(15, 23, 42, 0.4); // Slate dark overlay shadow
+$color-card-bg: #ffffff;
+$color-text-dark: #1e293b;   // Deep slate heading color
+$color-text-muted: #475569;  // Slate for descriptive elements
+$color-error-text: #ef4444;  // Sharp validation crimson red
+$shadow-elegant: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+
+.error-toast-overlay {
+  position: fixed;
+  inset: 0; // Spans full viewport (top, right, bottom, left = 0)
+  z-index: 10000; // Mounts safely over navbars, modulations, or page layouts
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-overlay;
+  backdrop-filter: blur(12px); // Elegant premium frosted glass blur effect
+  padding: 1.25rem;
+  box-sizing: border-box;
+  animation: toastFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  .error-toast-card {
+    background-color: $color-card-bg;
+    width: 100%;
+    max-width: 400px;
+    padding: 2.5rem 2rem;
+    border-radius: 1.5rem;
+    box-shadow: $shadow-elegant;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-sizing: border-box;
+    animation: cardPopUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+
+    .error-toast-icon {
+      font-size: 3.25rem;
+      margin-bottom: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      font-weight: 800; // Bold prioritization profile
+      color: $color-text-dark;
+      margin: 0 0 0.5rem 0;
+      letter-spacing: -0.02em;
+    }
+
+    .error-toast-subtitle {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: $color-text-muted;
+      margin: 0 0 1.5rem 0;
+    }
+
+    // Outer item grouping track wrapper
+    .error-toast-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+      text-align: left; // Left-align messages for better list readability
+      max-height: 200px; // Prevent overflow breaking if too many fields fail
+      overflow-y: auto;  // Adds scrollbar gracefully if profile is loaded with errors
+      padding-right: 0.25rem;
+      
+      // Clean custom scrollbar formatting matching the UI theme
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #cbd5e1;
+        border-radius: 4px;
+      }
+
+      .error-toast-item {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: $color-error-text;
+        line-height: 1.4;
+        display: flex;
+        align-items: flex-start;
+
+        &::before {
+          content: "•";
+          margin-right: 0.5rem;
+          font-size: 1.1rem;
+          line-height: 1;
+          color: $color-error-text;
+        }
+      }
+    }
+  }
+}
+
+// Ultra-smooth modal hardware-accelerated transitions
+@keyframes toastFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cardPopUp {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

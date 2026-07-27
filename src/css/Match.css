@@ -1,0 +1,158 @@
+.matches {
+  display: flex;
+  width: 100%;
+}
+
+.match-center {
+  display: flex;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.matches-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Individual Match Component Row Wrapper */
+.single-match-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  border: 1px solid #f3f4f6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Hover Interactive Elevation Elements */
+.single-match-card:hover {
+  background-color: #fafafa;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Push-down physical press tracking on user click */
+.single-match-card:active {
+  transform: translateY(0);
+}
+
+/* Structuring the React Router Link boundaries to prevent browser style overrides */
+.match-card-chat-link {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  gap: 16px;
+  text-decoration: none;
+  /* Destroys standard browser anchor underlines */
+  color: inherit;
+  /* Prevents text color from turning default link blue */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Profile Photo Circular Setup Graphic Layout */
+.single-match-card .img-content {
+  flex-shrink: 0;
+  /* Prevents avatar flattening on small mobile layout screens */
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  /* Classic circular match design crop look */
+  overflow: hidden;
+  background-color: #f3f4f6;
+}
+
+.single-match-card .img-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Keeps profile photo dimensions intact without stretching */
+  display: block;
+}
+
+/* Core Demographic Informational Area Layout */
+.single-match-card .info-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  /* Critical unlock enabling browser string truncation */
+}
+
+/* Identity Name Title Layout Configuration */
+.single-match-card .info-content h2 {
+  color: #111827;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Safely clamps excessively long names with "..." */
+}
+
+/* Chat Prompt Subtext Style */
+.single-match-card .info-content p {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s ease;
+}
+
+/* Changes prompt text color to match your premium brand palette on row hover */
+.single-match-card:hover .info-content p {
+  color: #fd267d;
+  /* Matches the vibrant pink accent from your likes card */
+}
+
+@media (min-width: 768px) {
+  .matches {
+    width: 100%;
+  }
+  .match-center {
+    width: 100%;
+  }
+  .matches-content {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .matches {
+    display: flex;
+    width: 100%;
+  }
+  .matches-center {
+    display: flex;
+  }
+  .matches-content {
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .matches {
+    display: flex;
+    width: 100%;
+  }
+  .matches-center {
+    display: flex;
+  }
+  .matches-content {
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}

@@ -1,0 +1,207 @@
+@import './variables.scss';
+
+/* Master Section Layout Wrapper */
+.recent_activities {
+    width: 100%;
+    background: $background;
+    box-sizing: border-box;
+}
+
+/* Central bounding wrapper aligning with master layout grids */
+.section_center {
+    max-width: 850px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+/* Header context and count summary bar */
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid $border;
+    padding-bottom: 12px;
+    box-sizing: border-box;
+
+    h2 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    span {
+        font-size: 12px;
+        font-weight: 600;
+        color: $primary;
+        background-color: $primary-light;
+        padding: 4px 10px;
+        border-radius: 50px;
+    }
+}
+
+/* Grid Matrix organizing the mapped cards */
+.activities {
+    display: grid !important;
+    grid-template-columns: repeat(1, minmax(200px, 1fr)) !important;
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    justify-items: start; 
+}
+
+
+@media (min-width:992px){
+    .activities {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(200px, 1fr)) !important;
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    justify-items: start; 
+}
+
+}
+/* ==========================================================================
+   Activity Item Card Base Layout
+   ========================================================================== */
+.activityCard {
+    background-color: $background;
+    border-radius: 24px;
+    box-shadow: $card-shadow;
+    border: 1px solid $border;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:not(.blur):hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
+    }
+}
+
+.activityContent {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    transition: filter 0.2s ease, opacity 0.2s ease;
+
+    p {
+        margin: 0;
+        font-size: 13px;
+        font-weight: 500;
+        color: #4b5563;
+        line-height: 1.5;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+.activityHeader .tag {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: $gray;
+    background-color: $background;
+    border: 1px solid $border-tint;
+    padding: 4px 8px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   Conditional Blurring System (Triggers when activity is not public)
+   ========================================================================== */
+.activityCard.blur {
+    position: relative;
+    cursor: not-allowed;
+    user-select: none;
+    pointer-events: none; /* Blocks child links or clicks */
+
+    /* 1. Hardware accelerated asset blur (Applies to both images and videos) */
+    img, 
+    video {
+        filter: blur(50px) brightness(1);
+        transform: scale(1.05); /* Stretches pixels beyond bounding box line to fix white edge halos */
+    }
+
+    /* 2. Content blur and transparency step down */
+    .activityContent {
+        filter: blur(5px);
+        opacity: 0.35;
+    }
+
+    /* 3. Pure CSS Secure Lock Overlay Indicator */
+    &::before {
+        content: "🔒 Matches Only"; /* Text string overlay placeholder */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        
+        /* Graphic formatting */
+        background-color: #ffffff;
+        color: #374151;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 8px 16px;
+        border-radius: 50px;
+        border: 1px solid $border-tint;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        white-space: nowrap;
+    }
+}
+
+/* ==========================================================================
+   IMAGE & VIDEO MEDIA CONTAINERS
+   ========================================================================== */
+.media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #f3f4f6;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+
+    /* Fixed size uniformity applied dynamically across media nodes */
+    .activity-img,
+    .activity-video {
+        width: 100% !important;
+        height: 20rem !important; /* Forces images and videos into identical frame sizing */
+        object-fit: cover !important; /* Crops cleanly to prevent distortion layout shifts */
+        display: block !important;
+        transition: filter 0.2s ease, transform 0.2s ease;
+    }
+
+    .video-duration {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        background: rgba(0, 0, 0, 0.65);
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        backdrop-filter: blur(4px);
+        pointer-events: none;
+    }
+}

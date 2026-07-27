@@ -1,0 +1,174 @@
+.filter-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #d1d3d6;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .filter-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .filter-form {
+    grid-template-columns: repeat(4, 1fr) auto;
+    gap: 0;
+    padding: 0.5rem;
+    align-items: center;
+    border-radius: 100px;
+  }
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 48px;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
+
+@media (min-width: 1024px) {
+  .input-group {
+    height: 52px;
+    padding: 0 1rem;
+    border-radius: 100px;
+  }
+  .input-group:not(:first-of-type)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 25%;
+    height: 50%;
+    width: 1px;
+    background-color: #d1d3d6;
+    transition: opacity 0.2s ease;
+  }
+  .input-group:hover, .input-group:focus-within {
+    background-color: rgba(252, 252, 253, 0.9);
+  }
+  .input-group:hover::before, .input-group:focus-within::before {
+    opacity: 0;
+  }
+  .input-group:hover + .input-group::before, .input-group:focus-within + .input-group::before {
+    opacity: 0;
+  }
+}
+
+.input-group .input-icon {
+  position: absolute;
+  left: 0.85rem;
+  color: #7C3AED;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (min-width: 1024px) {
+  .input-group .input-icon {
+    left: 1.25rem;
+  }
+}
+
+.input-group .chevron-icon {
+  position: absolute;
+  right: 0.85rem;
+  color: #94a3b8;
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.2s ease;
+}
+
+@media (min-width: 1024px) {
+  .input-group .chevron-icon {
+    right: 1.25rem;
+  }
+}
+
+.input-group select {
+  width: 100%;
+  height: 100%;
+  padding: 0 2.25rem 0 2.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #11142d;
+  background-color: rgba(252, 252, 253, 0.9);
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+@media (min-width: 1024px) {
+  .input-group select {
+    padding: 0 1.75rem 0 1.75rem;
+    /* Offsets padding inside the parent pill wrap */
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+  }
+}
+
+.input-group:focus-within .chevron-icon {
+  transform: rotate(180deg);
+  color: #7C3AED;
+}
+
+.submit-filters-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  padding: 0 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #7C3AED;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.15);
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .submit-filters-btn {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .submit-filters-btn {
+    height: 44px;
+    /* Slightly shorter nested pill inside the horizontal container track */
+    border-radius: 100px;
+    margin-left: 0.5rem;
+    margin-right: 0.25rem;
+    width: auto;
+  }
+}
+
+.submit-filters-btn:hover {
+  background-color: #1350d4;
+  /* Leverages global fallback if variable requires shifting */
+  box-shadow: 0 6px 14px rgba(29, 78, 216, 0.25);
+}
+
+.submit-filters-btn:active {
+  transform: scale(0.98);
+}
+
+.submit-filters-btn:focus-visible {
+  outline: 2px solid #7C3AED;
+  outline-offset: 2px;
+}

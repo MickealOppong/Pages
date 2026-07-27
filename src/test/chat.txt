@@ -1,0 +1,254 @@
+import React, { ChangeEvent, useState } from 'react';
+import { FiHome, FiCalendar, FiHeart, FiMessageCircle } from 'react-icons/fi';
+import { CiLocationOn, CiUser } from 'react-icons/ci';
+
+// --- TYPE DEFINITIONS ---
+export type ActivityType = string;
+
+export interface PostItem {
+  postId: number;
+  userId: number;
+  image: string;
+  profileImage?: string;
+  firstName: string;
+  type: ActivityType;
+  content: string;
+  location: string;
+  date_of_birth: string;
+  createdAt: string | Date;
+  requestSent?: boolean;
+  requestReceived?: boolean;
+}
+
+interface DiscoverProps {
+  posts: {
+    data: PostItem[];
+  };
+  senderId: number;
+  ACTIVITIES_LIST: string[];
+  POLISH_CITIES: string[];
+  handleViewProfileButtonClick: (userId: number) => void;
+  handleInterestedButtonClick: (senderId: number, userId: number, postId: number, requestReceived?: boolean) => void;
+  onFilterSubmit: (filters: { activity: string; city: string; ageRange: string }) => void;
+  Pagination: React.ComponentType<{ currentPage: number; totalPages: number }>;
+}
+
+// --- UTILITY/HELPER FUNCTIONS (MVP Implementations) ---
+const getAgeFromDateOfBirth = (dob: string): number => {
+  const birthDate = new Date(dob);
+  const difference = Date.now() - birthDate.getTime();
+  const ageDate = new Date(difference);
+  return Math.abs(ageDate.getUTCFullYear() - 1970);
+};
+
+const formatLastSentDate = (date: Date | string): string => {
+  const created = new Date(date);
+  const now = new Date();
+  const diffTime = Math.abs(now.getTime() - created.getTime());
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  
+  if (diffDays === 0) return 'Today';
+  if (diffDays === 1) return 'Yesterday';
+  return `${diffDays} days ago`;
+};
+
+const getDynamicColours = (type: string) => {
+  // Catch-all fallbacks ensuring the app never crashes on dynamic database strings
+  const hash = type.split('').reduce((acc, char) => char.charCodeAt(0) + acc, 0);
+  const hues =; // Purple, Pink, Blue, Orange, Green palette rotation
+  const chosenHue = hues[hash % hues.length];
+  return {
+    background: `hsl(${chosenHue}, 85%, 96%)`,
+    color: `hsl(${chosenHue}, 75%, 45%)`
+  };
+};
+
+// --- MAIN COMPONENT ---
+const Discover: React.FC<DiscoverProps> = ({
+  posts,
+  senderId,
+  ACTIVITIES_LIST,
+  POLISH_CITIES,
+  handleViewProfileButtonClick,
+  handleInterestedButtonClick,
+  onFilterSubmit,
+  Pagination
+}) => {
+  // Local Filter States initialized for the MVP
+  const [activityFilter, setActivityFilter] = useState<string>('');
+  const [cityFilter, setCityFilter] = useState<string>('');
+  const [ageFilter, setAgeFilter] = useState<string>('');
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onFilterSubmit({
+      activity: activityFilter,
+      city: cityFilter,
+      ageRange: ageFilter
+    });
+  };
+
+  return (
+    <div className="discover-page">
+      <div className="discover">
+        
+        {/* ==========================================================================
+           1. COMPONENT SEARCH FILTER HEADER
+           ========================================================================== */}
+        <header className="discover-header">
+          <div className="header_message">
+            <h2>Discover people</h2>
+            <p>Find people. Real connections. Real love</p>
+          </div>
+
+          <div className="actions">
+            <form onSubmit={handleFormSubmit}>
+              
+              <div className="input-group">
+                <FiHome size={22} />
+                <select 
+                  name="activity" 
+                  onChange={(e: ChangeEvent<HTMLSelectElement>) => setActivityFilter(e.target.value)}
+                  value={activityFilter}
+                >
+                  <option value="">All Activities</option>
+                  {ACTIVITIES_LIST.map((activity) => (
+                    <option value={activity} key={activity}>{activity}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="input-group">
+                <CiLocationOn size={22} />
+                <select 
+                  name="city" 
+                  onChange={(e: ChangeEvent<HTMLSelectElement>) => setCityFilter(e.target.value)}
+                  value={cityFilter}
+                >
+                  <option value="">All Cities</option>
+                  {POLISH_CITIES.map((city) => (
+                    <option value={city} key={city}>{city}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="input-group">
+                <label><FiCalendar />Age</label>
+                <select  
+                  name="age"  
+                  onChange={(e: ChangeEvent<HTMLSelectElement>) => setAgeFilter(e.target.value)}
+                  value={ageFilter}     
+                >
+                  <option value="">All Ages</option>
+                  <option value="18-24">18-24</option>
+                  <option value="25-34">25-34</option>
+                  <option value="35-44">35-44</option>
+                  <option value="45-54">45-54</option>
+                  <option value="54-100">54+</option>
+                </select>
+              </div>
+
+              <button type="submit">apply</button>
+            </form>
+          </div>
+        </header>
+
+        {/* ==========================================================================
+           2. TIMELINE CONTENT DATA LISTING
+           ========================================================================== */}
+        <div className="users-listing">
+          {posts.data.map((post) => {
+            const colors = getDynamicColours(post.type);
+            
+            return (
+              <article className="user-card" key={post.postId}>
+                
+                {/* ROW 1: Profile Image, Name, Age, Location, Activity Type, and Time Info */}
+                <div className="feed-card-header-row">
+                  <img 
+                    src={post.profileImage ? post.profileImage : post.image} 
+                    alt={`${post.firstName}'s avatar`} 
+                    className="user-avatar"
+                  />
+                  
+                  <div className="user-metadata-block">
+                    
+                      <span className="user-name">{post.firstName}</span>
+                      <span className="user-age-geo">
+                        {getAgeFromDateOfBirth(post.date_of_birth)} • {post.location}
+                      </span>
+                    </div>
+                    
+                    <div className="activity-timestamp-line">
+                      <span 
+                        className="activity-badge"  
+                        style={{ background: colors.background, color: colors.color }}
+                      >
+                        {post.type}
+                      </span>
+                      <span className="post-time">
+                        {formatLastSentDate(post.createdAt)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ROW 2: Story content text message element */}
+                <div className="feed-card-content-row">
+                  <p className="story-message">{post.content}</p>
+                </div>
+
+                {/* ROW 3: Another row where image appears (Below description content) */}
+                <div className="feed-card-media-row">
+                  <img src={post.image} alt="Story upload graphic" className="story-main-photo" />
+                </div>
+
+                {/* ROW 4: Command buttons bar in last row base */}
+                <div className="feed-card-actions-row">
+                  <div className="action-buttons-grid">
+                    
+                    {/* Native hidden node element matching original code architecture hooks */}
+                    <button style={{ display: 'none' }} type="button">
+                      <FiHeart size={16}/> Like
+                    </button>
+
+                    <button onClick={() => handleViewProfileButtonClick(post.userId)} type="button"> 
+                      <CiUser size={16}/> View Profile
+                    </button>
+
+                    <button 
+                      className={`
+                        action-trigger-btn
+                        ${post.requestSent ? 'request_sent' : ''} 
+                        ${post.requestReceived ? 'accept-request' : ''} 
+                        ${!post.requestSent && !post.requestReceived ? 'match' : ''}
+                      `} 
+                      onClick={() => handleInterestedButtonClick(senderId, post.userId, post.postId, post.requestReceived)}
+                      disabled={!!post.requestSent}
+                      type="button"
+                    >
+                      <FiMessageCircle size={16}/>
+                      {post.requestSent ? 'Request sent' : post.requestReceived ? 'Accept request' : "I'm interested"}
+                    </button>
+
+                  </div>
+                </div>
+
+              </article>
+            );
+          })}
+        </div>
+        
+      </div>
+
+      {/* ==========================================================================
+         3. DYNAMIC PAGINATION ACTION BAR
+         ========================================================================== */}
+      <div className="pagination-container">
+        <Pagination currentPage={1} totalPages={30} />
+      </div>
+    </div>
+  );
+};
+
+export default Discover;

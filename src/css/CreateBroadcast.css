@@ -1,0 +1,284 @@
+.create-post {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+  z-index: 100;
+  box-sizing: border-box;
+  /* Enforces padding within boundaries */
+  overflow: scroll;
+}
+
+.create-post__header {
+  margin-bottom: 22px;
+}
+
+.create-post__header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #111827;
+}
+
+.create-post__header p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Uniform section vertical spacing */
+  overflow: scroll;
+}
+
+.image-upload {
+  border: 2px dashed #d8c9ff;
+  border-radius: 24px;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fcfbff;
+  position: relative;
+  /* Context anchor for absolute children scaling hooks */
+  overflow: hidden;
+}
+
+.image-upload img {
+  height: 150px;
+  width: 150px;
+  /* Spans full box context width */
+  object-fit: contain;
+  pointer-events: none;
+  /* Allows file change clicks to pass directly to hidden label */
+}
+
+.image-upload video {
+  height: 200px;
+  width: 300px;
+  object-fit: contain;
+  pointer-events: none;
+  /* Allows file change clicks to pass directly to hidden label */
+}
+
+.image-upload label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  cursor: pointer;
+  color: #7c3aed;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.image-upload h3 {
+  margin: 16px 0 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.image-upload p {
+  color: #6b7280;
+  margin: 0;
+  font-size: 13px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #111827;
+  font-size: 14px;
+}
+
+.input-wrapper {
+  height: 48px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.input-wrapper svg {
+  color: #7c3aed;
+  flex-shrink: 0;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #111827;
+  font-family: inherit;
+  width: 100%;
+}
+
+.input-wrapper select {
+  cursor: pointer;
+}
+
+.textarea-wrapper {
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 18px;
+  display: flex;
+  gap: 12px;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.textarea-wrapper svg {
+  color: #7c3aed;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.textarea-wrapper textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 15px;
+  font-family: inherit;
+  color: #111827;
+  min-height: 50px;
+}
+
+.counter {
+  display: block;
+  text-align: right;
+  margin-top: 8px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.btn-secondary {
+  height: 52px;
+  padding: 0 28px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  color: #DC2626;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #FEE2E2;
+}
+
+.btn-primary {
+  height: 52px;
+  padding: 0 32px;
+  border: none;
+  border-radius: 14px;
+  background: #7c3aed;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  text-transform: capitalize;
+  /* Correctly capitalizes "share" */
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #6d28d9;
+}
+
+/* ==========================================================================
+   Responsive Viewports Optimization (Fixed Desktop Stack Inversion Bug)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .create-post {
+    left: 12px;
+    right: 12px;
+    padding: 20px;
+    margin: 20px auto;
+  }
+  .form-actions {
+    flex-direction: column-reverse;
+    /* Stacks Cancel safely below Primary share action */
+    gap: 10px;
+  }
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    /* Spans full touch accuracy footprint on mobile only */
+  }
+}
+
+/* Container styling to replace the select dropdown alignment */
+.visibility-radio-wrapper {
+  display: flex;
+  align-items: flex-start;
+  /* Aligns the icon to the top of multi-line choices */
+  gap: 12px;
+}
+
+.radio-options-container {
+  display: flex;
+  gap: 24px;
+  /* Spaces out Public and Match Only options horizontally */
+  align-items: center;
+  width: 100%;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Tiny helper descriptions under the labels */
+.radio-label span small {
+  display: block;
+  font-size: 11px;
+  color: #71717a;
+  /* Muted gray text color */
+  font-weight: 400;
+}
+
+/* Optional Purple UI Accent Color to match your branding buttons */
+.radio-label input[type="radio"] {
+  accent-color: #7c3aed;
+  width: 16px;
+  height: 16px;
+}

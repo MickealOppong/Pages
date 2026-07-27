@@ -1,0 +1,171 @@
+@import './variables.scss';
+
+.navbar {
+  height: 72px;
+
+  background: $background;
+
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 24px;
+
+  border-bottom: 1px solid $border;
+
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+
+  .navbar__left {
+    position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  .heart{
+    position: absolute;
+    top: 5px;
+    right: -10px;
+    color: $primary;
+  }
+
+  .navbar__logo {
+    position: relative;
+           margin: 0;
+          font-size: 2.5rem;
+          font-weight: 800;
+          color: $primary; /* Core brand violet */
+          font-style: italic; /* Continuous brand style alignment standard */
+          text-decoration: none;
+
+}
+
+     .heart {
+          position: absolute;
+          top: 2px;
+          right: -12px;
+            animation: auth-reset-heartbeat 1.5s infinite ease-in-out;
+        }
+
+.navbar__menu {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #F8F6FC;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  color: $text;
+
+  transition: 0.2s;
+
+  
+
+  &:hover {
+    background: #F3E8FF;
+  }
+}
+
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .notification-btn {
+  position: relative;
+}
+.icon-button {
+  width: 44px;
+  height: 44px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: $primary-light-1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  color: $text;
+
+  transition: 0.2s;
+
+  &:hover {
+    background: $primary-light-2;
+    color: $primary;
+  }
+}
+
+.badge {
+  position: absolute;
+
+  top: -4px;
+  right: -4px;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background: $primary;
+  color: white;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+}
+}
+
+
+
+
+
+@media (min-width: 768px) {
+  .navbar {
+     display: none;
+    padding: 0 16px;
+
+      .navbar__logo {
+    font-size: 1.8rem;
+  }
+
+    .navbar__left{
+            .navbar__menu{
+                display: flex;
+            }
+
+              .heart{
+    right: -12px;
+  }
+    }
+  }
+
+
+
+}
+  
+
+/* Heart icon breathing loop animation */
+@keyframes auth-reset-heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+   25% { transform: scale(1.12); }
+}

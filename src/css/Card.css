@@ -1,0 +1,169 @@
+.likes {
+  display: flex;
+  width: 100%;
+}
+
+.likes-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.single-like-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  margin-bottom: 16px;
+  border: 1px solid #F2F4F7;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  perspective: 1200px;
+  transform-origin: top center;
+  overflow: hidden;
+}
+
+.single-like-card:hover:not(.fold-out) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(127, 86, 217, 0.08);
+}
+
+.single-like-card .card-profile-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  gap: 24px;
+}
+
+.single-like-card .card-main-body {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 16px;
+  position: relative;
+}
+
+.single-like-card .img-wrapper {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.single-like-card .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.single-like-card .info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.single-like-card .info-wrapper h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1D2939;
+  margin: 0;
+}
+
+.single-like-card .activity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #667085;
+  font-size: 0.9rem;
+}
+
+.single-like-card .activity-badge .icon {
+  color: #7F56D9;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.single-like-card .timestamp {
+  font-size: 0.85rem;
+  color: #667085;
+  margin-left: auto;
+  padding-right: 12px;
+  font-weight: 500;
+}
+
+.single-like-card .action-button-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.single-like-card .action-button-group button {
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+}
+
+.single-like-card .action-button-group .btn-reject {
+  background: transparent;
+  color: #667085;
+  border: 1px solid #D0D5DD;
+}
+
+.single-like-card .action-button-group .btn-reject:hover {
+  background: #F9FAFB;
+  color: #1D2939;
+  border-color: #98A2B3;
+}
+
+.single-like-card .action-button-group .btn-accept {
+  background: #7F56D9;
+  color: #FFFFFF;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.single-like-card .action-button-group .btn-accept:hover {
+  background: #6635d2;
+  box-shadow: 0 4px 12px rgba(127, 86, 217, 0.2);
+}
+
+.single-like-card.fold-out {
+  animation: paperFoldCollapse 0.6s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+  pointer-events: none;
+}
+
+@keyframes paperFoldCollapse {
+  0% {
+    transform: rotateX(0deg);
+    opacity: 1;
+    max-height: 200px;
+    margin-bottom: 16px;
+    padding: 0;
+  }
+  40% {
+    transform: rotateX(-70deg);
+    opacity: 0.7;
+    background: #f4f5f7;
+  }
+  75% {
+    transform: rotateX(-90deg);
+    opacity: 0.1;
+    max-height: 50px;
+    margin-bottom: 8px;
+  }
+  100% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+    max-height: 0px;
+    margin-bottom: 0px;
+    border-color: transparent;
+  }
+}

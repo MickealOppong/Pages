@@ -1,0 +1,41 @@
+{
+  "Discover": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "loading": "Loading...",
+    "error": "Something went wrong"
+  },
+  "Messages": {
+    "home": "Home",
+    "features": "Features",
+    "pricing": "Pricing",
+    "profile": "Profile"
+  },
+  "Matches": {
+    "title": "Sign In",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "submitBtn": "Log In"
+  },
+  "My Stories": {
+    "welcomeMessage": "Welcome back, {{username}}!",
+    "lastLogin": "Your last login was on {{date}}",
+    "notifications_zero": "You have no new notifications.",
+    "notifications_one": "You have {{count}} new notification.",
+    "notifications_other": "You have {{count}} new notifications."
+  },
+    "Profile": {
+    "welcomeMessage": "Welcome back, {{username}}!",
+    "lastLogin": "Your last login was on {{date}}",
+    "notifications_zero": "You have no new notifications.",
+    "notifications_one": "You have {{count}} new notification.",
+    "notifications_other": "You have {{count}} new notifications."
+  },
+   "Settings": {
+    "welcomeMessage": "Welcome back, {{username}}!",
+    "lastLogin": "Your last login was on {{date}}",
+    "notifications_zero": "You have no new notifications.",
+    "notifications_one": "You have {{count}} new notification.",
+    "notifications_other": "You have {{count}} new notifications."
+  }
+}
