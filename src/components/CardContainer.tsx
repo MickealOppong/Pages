@@ -1,5 +1,5 @@
 import type { TLikes } from "../types/TLikes";
-import './../css/card.css';
+import './../css/Card.css';
 import Card from "./Card";
 
 

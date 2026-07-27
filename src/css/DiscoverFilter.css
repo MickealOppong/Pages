@@ -195,7 +195,6 @@
   border: 1px solid #d1d3d6;
   border-radius: 14px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  -moz-appearance: textfield;
 }
 
 .dual-range-inputs-row input[type="number"]::-webkit-outer-spin-button, .dual-range-inputs-row input[type="number"]::-webkit-inner-spin-button {
