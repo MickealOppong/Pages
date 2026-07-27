@@ -20,6 +20,7 @@ const RegisterPage = ()=> {
       const [register]= useAddUserMutation()
         const navigate = useNavigate();
 
+   console.log(import.meta.env);
       
     
         const handleFormSubmit = async (e:ChangeEvent<HTMLFormElement>)=>{
