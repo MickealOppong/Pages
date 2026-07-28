@@ -97,7 +97,7 @@ const ChatRoom = () => {
 
     const savedToken = localStorage.getItem("tk");
     const stompClient = new Client({
-      brokerURL: `ws://${CLEAN_URL}/ws?token=${savedToken}`,
+      brokerURL: `wss://${CLEAN_URL}/ws?token=${savedToken}`,
       onConnect: () => {
         stompClient.subscribe(`/topic/chat/${matchId}`, (messageOutput) => {              
           const incomingMessage = JSON.parse(messageOutput.body);
