@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useMarkNotifAsReadMutation } from "../features/api/userApi";
 import { useAppSelector } from "../store";
 import { formatLastSentDate } from "../util/util";
@@ -19,15 +19,14 @@ const Match = ({matchId,image, firstName,lastName,lastMessageDate,lastMessage,on
    
 
  return (
-    <NavLink 
+    <Link 
       to={`/landing/chat/${matchId}`}  
-      className={({ isActive }) => `link ${isActive ? 'active-link' : ''}`}
+      className={ `link `}
      onClick={()=>handleLinkClick()}>
-      {({ isActive }) => (
-        <>
+        
           {/* MOBILE PROFILE TEMPLATE */}
           <div className="small-screen">
-            <div className={`img-container ${isActive ? 'active' : ''}`}>
+            <div className={`img-container`}>
               <img src={image || defImage} alt={`${firstName} profile`} />
               <div className={online ? 'online' : 'not_online'}></div>
             </div>
@@ -38,7 +37,7 @@ const Match = ({matchId,image, firstName,lastName,lastMessageDate,lastMessage,on
 
           {/* DESKTOP SIDEBAR ROW LAYOUT */}
           <div className="large-screen">
-            <div className={`large_screen_center ${isActive ? 'large_screen_center_active' : ''}`}>
+            <div className={`large_screen_center`}>
               <div className="img-container">
                 <img src={image || defImage} />
                 <div className={online ? 'large_online' : 'large_not_online'}></div>
@@ -57,9 +56,7 @@ const Match = ({matchId,image, firstName,lastName,lastMessageDate,lastMessage,on
               </div>
             </div>
           </div>
-        </>
-      )}
-    </NavLink>
+    </Link>
   );
 }
 
