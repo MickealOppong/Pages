@@ -40,8 +40,7 @@ const RegisterPage = ()=> {
                     const location = formValues.location as string
                     const email = formValues.email as string
                 
-                    console.log(firstName,lastName,dob,email,password,gender,location,isTermsChecked);
-               
+                        
                     
                     
                         if(isTermsChecked){
