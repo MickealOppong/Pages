@@ -1,96 +1,158 @@
-.mobile-nav {
+/* ==========================================================================
+   FLOATING ACTION ACTION MENU BUTTON (.mobile-menu-button)
+   ========================================================================== */
+.mobile-menu-button {
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 12px;
-  height: 72px;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #7c3aed;
+  color: #FFFFFF;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 28px rgba(124, 58, 237, 0.35);
+  z-index: 1200;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+
+.mobile-menu-button:active {
+  transform: translateY(-50%) scale(0.92);
+}
+
+/* ==========================================================================
+   BACKDROP OVERLAY SCALER (.mobile-nav-overlay)
+   ========================================================================== */
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1100;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  animation: overlayFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   MOBILE DRIFT ANTEROOM DRAWER (.mobile-drawer)
+   ========================================================================== */
+.mobile-drawer {
+  position: fixed;
+  left: 6px;
+  top: 50%;
+  transform: translate(-120%, -50%);
+  width: 200px;
   background: #FFFFFF;
-  backdrop-filter: blur(18px);
-  border-radius: 22px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  z-index: 100;
-  padding: 0 4px;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  z-index: 1200;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  /* ---------------------------------------------------------
+     ACTIVE SELECTION OVERRIDE: SLIDES INTO VIEWPORT CODES
+     --------------------------------------------------------- */
+  /* ---------------------------------------------------------
+     INTERNAL ELEMENT NAVIGATION ROWS (.drawer-item)
+     --------------------------------------------------------- */
+  /* INNER LEFT SEGMENT DATA ROW ROW (.drawer-left) */
 }
 
-.nav-item {
-  flex: 1;
+.mobile-drawer.open {
+  transform: translate(0, -50%);
+}
+
+.mobile-drawer .drawer-item {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 4px;
+  padding: 7px;
+  border-radius: 14px;
+  color: #11142d;
   text-decoration: none;
-  color: #808080;
-  font-size: .68rem;
-  font-weight: 600;
-  transition: .25s;
+  margin-bottom: 6px;
+  gap: 12px;
+  transition: all 0.2s ease;
+  /* ACTIVE TAB STATE HIGHLIGHT MODIFIER CLASS */
 }
 
-.nav-item.active {
+.mobile-drawer .drawer-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.mobile-drawer .drawer-item:active {
+  transform: scale(0.98);
+}
+
+.mobile-drawer .drawer-item.active {
+  background: rgba(124, 58, 237, 0.08);
   color: #7c3aed;
 }
 
-.icon-wrapper {
-  position: relative;
-}
-
-.badge {
-  position: absolute;
-  top: -8px;
-  right: -10px;
-  min-width: 18px;
-  height: 18px;
-  padding: 0 5px;
-  border-radius: 999px;
-  background: #ff3b30;
-  color: white;
-  font-size: 10px;
-  font-weight: 700;
+.mobile-drawer .drawer-left {
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 14px;
+  min-width: 0;
+  font-size: 14px;
 }
 
-.create-moment {
-  width: 78px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  transform: translateY(-18px);
-}
-
-.plus-circle {
-  width: 62px;
-  height: 62px;
+.mobile-drawer .drawer-left .moment-btn {
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #7c3aed;
-  color: white;
-  box-shadow: 0 10px 24px rgba(124, 58, 237, 0.35);
-  transition: .25s;
-}
-
-.plus-circle:active {
-  transform: scale(0.94);
-}
-
-.create-moment span {
-  margin-top: 6px;
-  font-size: .7rem;
-  color: #666;
+  padding: 2px 8px;
   font-weight: 600;
+  background: #7c3aed;
+  color: #FFFFFF;
+  flex-shrink: 0;
 }
 
-@media (min-width: 769px) {
-  .mobile-nav {
-    display: none;
+.mobile-drawer .drawer-left .moment-btn:hover {
+  transform: scale(1.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mobile-drawer .drawer-left svg {
+  flex-shrink: 0;
+  font-size: 1.15rem;
+}
+
+.mobile-drawer .notif-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #7c3aed;
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   DESKTOP MEDIA BREAKPOINT REMOVAL (Over 768px Monitors)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .mobile-menu-button,
+  .mobile-nav-overlay,
+  .mobile-drawer {
+    display: none !important;
   }
 }

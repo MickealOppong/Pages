@@ -1,5 +1,6 @@
 .login-page {
   min-height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,10 +8,10 @@
 }
 
 .login-card {
-  width: 100%;
-  max-width: 420px;
-  background: white;
-  border-radius: 28px;
+  width: 100vw;
+  max-width: 100%;
+  background: #FFFFFF;
+  border-radius: 12px;
   padding: 40px 32px;
   box-shadow: 0 20px 60px rgba(124, 58, 237, 0.12);
   display: flex;
@@ -21,14 +22,14 @@
   position: relative;
   display: flex;
   align-items: center;
-  color: #7C3AED;
+  color: #7c3aed;
 }
 
 .brand h1 {
   margin: 0;
   font-size: 3rem;
   font-weight: 800;
-  color: #7C3AED;
+  color: #7c3aed;
   letter-spacing: -0.04em;
   line-height: 1;
   font-style: italic;
@@ -37,8 +38,8 @@
 
 .brand .heart {
   position: absolute;
-  top: -2px;
-  left: 47%;
+  top: 0px;
+  left: 170px;
   animation: auth-reset-heartbeat 1.5s infinite ease-in-out;
 }
 
@@ -46,7 +47,7 @@ h2 {
   margin-top: 28px;
   margin-bottom: 8px;
   font-size: 32px;
-  color: #222;
+  color: #111827;
 }
 
 p {
@@ -63,7 +64,7 @@ form {
 
 .input-group {
   height: 58px;
-  border: 1px solid #ECE8F5;
+  border: 1px solid #e5e7eb;
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -83,8 +84,8 @@ form {
   height: 58px;
   border: none;
   border-radius: 16px;
-  background: #7C3AED;
-  color: white;
+  background: #7c3aed;
+  color: #FFFFFF;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -105,7 +106,7 @@ form {
   content: "";
   flex: 1;
   height: 1px;
-  background: #ECE8F5;
+  background: #e5e7eb;
 }
 
 .divider span {
@@ -117,9 +118,9 @@ form {
   width: 100%;
   height: 56px;
   margin-bottom: 12px;
-  border: 1px solid #ECE8F5;
+  border: 1px solid #e5e7eb;
   border-radius: 16px;
-  background: white;
+  background: #FFFFFF;
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
@@ -127,7 +128,7 @@ form {
 
 .social-btn:hover {
   background-color: #f3e8ff;
-  color: #7C3AED;
+  color: #7c3aed;
 }
 
 .signup-link {
@@ -137,7 +138,7 @@ form {
 }
 
 .signup-link a {
-  color: #7C3AED;
+  color: #7c3aed;
   text-decoration: none;
   font-weight: 600;
 }
@@ -164,7 +165,7 @@ form {
 }
 
 .reset-password-link:hover {
-  color: #7C3AED;
+  color: #7c3aed;
   transform: translateY(-1px);
   /* Delicate upward spatial hover float lift */
   text-decoration: underline;
@@ -186,5 +187,25 @@ form {
   }
   25% {
     transform: scale(1.12);
+  }
+}
+
+@media (min-width: 768px) {
+  .login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+  }
+  .login-card {
+    width: 100%;
+    max-width: 420px;
+    background: #FFFFFF;
+    border-radius: 28px;
+    padding: 40px 32px;
+    box-shadow: 0 20px 60px rgba(124, 58, 237, 0.12);
+    display: flex;
+    flex-direction: column;
   }
 }

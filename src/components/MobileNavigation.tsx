@@ -1,12 +1,15 @@
 import {
   FiCompass,
   FiHeart,
+  FiMenu,
   FiPlus,
   FiUser,
+  FiX,
 } from "react-icons/fi";
 import { LuMessageCircle, LuSettings } from "react-icons/lu";
 import { Link, useLocation } from "react-router-dom";
 
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useUnreadNotifCountQuery } from "../features/api/userApi";
 import { showForm } from "../features/slice/utilSlice";
@@ -16,6 +19,9 @@ import "./../css/MobileNavigation.css";
 
 const  MobileNavigation=() =>{
   const userId = useAppSelector((state)=>state.userSlice.id)
+    const [open, setOpen] = useState<Boolean>(false);
+
+    //hook
     const {data:notificationCounter} = useUnreadNotifCountQuery(userId,{refetchOnFocus:true})
   const location = useLocation();
     const dispatch = useDispatch()
@@ -23,10 +29,15 @@ const  MobileNavigation=() =>{
   const active = (path: string) =>
     location.pathname.startsWith(path);
 
-      const handleShowForm = () => {
-          dispatch(showForm());
-      }
 
+        const closeDrawer = () => setOpen(false);
+
+  const handleMoment = () => {
+    dispatch(showForm());
+    closeDrawer();
+  };
+
+/*
   return (
     <nav className="mobile-nav">
 
@@ -113,5 +124,140 @@ const  MobileNavigation=() =>{
 
     </nav>
   );
+  */
+
+    return (
+    <>
+      {open && (
+        <div
+          className="mobile-nav-overlay"
+          onClick={closeDrawer}
+        />
+      )}
+
+      <button
+        className="mobile-menu-button"
+        onClick={() => setOpen(!open)}
+      >
+        {open ? <FiX size={22} /> : <FiMenu size={22} />}
+      </button>
+
+      <aside
+        className={`mobile-drawer ${
+          open ? "open" : ""
+        }`}
+      >
+        <Link
+          to="/landing"
+          onClick={closeDrawer}
+          className={`drawer-item ${
+            active("/landing") &&
+            !active("/landing/messages") &&
+            !active("/landing/profile") &&
+            !active("/landing/settings") &&
+            !active("/landing/matches")&&
+              !active("/landing/create-moment")
+              ? "active"
+              : ""
+          }`}
+        >
+          <div className="drawer-left">
+            <FiCompass />
+          <span>Discover</span>
+          </div>
+        </Link>
+
+        <Link
+          to="/landing/matches"
+          onClick={closeDrawer}
+          className={`drawer-item ${
+            active("/landing/matches")
+              ? "active"
+              : ""
+          }`}
+        >
+          <div className="drawer-left">
+            <FiHeart />
+            <span>Matches</span>
+          </div>
+
+          {(notificationCounter && notificationCounter?.notif["LIKE"]>0) && (
+            <span className="notif-counter" >
+              {notificationCounter.notif["LIKE"]}
+            </span>
+          )}
+        </Link>
+
+        <Link
+          to="/landing/create-moment"
+          onClick={handleMoment}
+          className={`drawer-item ${
+            active("/landing/create-moment")
+              ? "active"
+              : ""
+          }`}
+        >
+          <div className="drawer-left">
+            <FiPlus className="moment-btn"/>
+            <span className="moment">Moment</span>
+          </div>
+        </Link>
+
+        <Link
+          to="/landing/messages"
+          onClick={closeDrawer}
+          className={`drawer-item ${
+            active("/landing/messages")
+              ? "active"
+              : ""
+          }`}
+        >
+          <div className="drawer-left">
+            <LuMessageCircle />
+            <span>Messages</span>
+          </div>
+
+          { (notificationCounter && notificationCounter?.notif["MESSAGE"]>0)
+           && (
+            <span className="notif-counter" >
+              {notificationCounter.notif["MESSAGE"]}
+            </span>
+          )}
+        </Link>
+
+        <Link
+          to="/landing/settings"
+          onClick={closeDrawer}
+          className={`drawer-item ${
+            active("/landing/settings")
+              ? "active"
+              : ""
+          }`}
+        >
+          <div className="drawer-left">
+              <LuSettings />
+           <span>Settings</span>
+          </div>
+         
+        </Link>
+
+        <Link
+          to="/landing/profile"
+          onClick={closeDrawer}
+          className={`drawer-item ${
+            active("/landing/profile")
+              ? "active"
+              : ""
+          }`}
+        >
+          <div className="drawer-left">
+            <FiUser />
+          <span>Profile</span>
+          </div>
+        </Link>
+      </aside>
+    </>
+  );
+
 }
 export default MobileNavigation

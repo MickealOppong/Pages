@@ -20,7 +20,7 @@ const RegisterPage = ()=> {
       const [register]= useAddUserMutation()
         const navigate = useNavigate();
 
-   console.log(import.meta.env);
+
       
     
         const handleFormSubmit = async (e:ChangeEvent<HTMLFormElement>)=>{
@@ -126,7 +126,7 @@ console.log(errorMessages);
          <div>
            <div className="input-group">
             <FiCalendar size={18} />
-            <input type="date" name="dob"/>
+            <input type="date" name="dob" defaultValue={new Date().getDate()}/>
           </div>
              {
               errorMessages?.dob && <span>{errorMessages.dob}</span>

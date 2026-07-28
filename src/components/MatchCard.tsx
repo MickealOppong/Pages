@@ -9,7 +9,7 @@ const MatchCard = ({data}:{data:TLikes})=>{
      return (
     <div className="single-match-card">
       {/* The entire card acts as a single target leading straight to the chat view */}
-      <Link to={`/landing/messages/chat/${data.matchId}`} className="match-card-chat-link">
+      <Link to={`/landing/chat/${data.matchId}`} className="match-card-chat-link">
         
         {/* Profile Avatar Graphic Container */}
         <div className="img-content">

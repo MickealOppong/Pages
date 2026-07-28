@@ -6,20 +6,22 @@
 
 .login-page {
   min-height: 100vh;
+  width: 100%;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   padding: 24px;
+
 }
 
 .login-card {
-  width: 100%;
-  max-width: 420px;
+  width: 100vw;
+  max-width: 100%;
 
-  background: white;
-  border-radius: 28px;
+  background: $background;
+  border-radius: 12px;
 
   padding: 40px 32px;
 
@@ -48,8 +50,8 @@
   }
   .heart{
     position: absolute;
-    top: -2px;
-    left: 47%;
+    top: 0px;
+    left: 170px;
    animation: auth-reset-heartbeat 1.5s infinite ease-in-out;
    
   }
@@ -104,7 +106,7 @@ form {
   border-radius: 16px;
 
   background: $primary;
-  color: white;
+  color:$background;
 
   font-size: 16px;
   font-weight: 600;
@@ -147,7 +149,7 @@ form {
   border: 1px solid $border;
   border-radius: 16px;
 
-  background: white;
+  background: $background;
 
   font-size: 15px;
   font-weight: 500;
@@ -217,4 +219,32 @@ form {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.5); }
    25% { transform: scale(1.12); }
+}
+
+
+@media (min-width:768px){
+
+.login-page {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 24px;
+}
+
+.login-card {
+  width: 100%;
+  max-width:420px;
+
+  background: $background;
+  border-radius: 28px;
+
+  padding: 40px 32px;
+
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.12);
+  display: flex;
+  flex-direction: column;
+}
 }

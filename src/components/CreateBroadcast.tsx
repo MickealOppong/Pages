@@ -52,16 +52,12 @@ const  CreateBroadcast = () =>{
       
     }
 
-    console.log(Object.fromEntries(dataToSend));
+    //console.log(Object.fromEntries(dataToSend));
     
 
     try {
       const response = await createPost(dataToSend);
-      console.log(response);
-     
-     
-      
-
+    
       if (response?.data) {
         activityInput.value = "";
         contentInput.value = "";

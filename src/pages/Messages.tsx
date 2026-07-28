@@ -1,6 +1,6 @@
 import { useState, type ChangeEvent } from "react";
 import { FiSearch } from "react-icons/fi";
-import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import type { Store } from "redux";
 import MatchList from "../components/MatchList";
 import { transApi } from "../features/api/transApi";
@@ -85,11 +85,6 @@ const Messages = () => {
             )}
           </div>
 
-        </div>
-
-        <div className="chat-section">
-          {/* React Router active sub-chat windows stream right into this node */}
-          <Outlet />
         </div>
       </div>
     </section>

@@ -3,7 +3,6 @@
    ========================================================================== */
 .discover-page {
   width: 100%;
-  min-height: 100vh;
   height: 100%;
   background: linear-gradient(235deg, #e5e4e7 10%, #edebef 100%);
   display: flex;
@@ -36,7 +35,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  padding: 2rem;
+  margin: 1px;
 }
 
 /* ==========================================================================
@@ -45,7 +44,8 @@
 .discover-feed {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 28px;
+  justify-content: center;
+  align-items: center;
   align-items: start;
   grid-auto-flow: row dense;
   /* ---------------------------------------------------------
@@ -82,7 +82,7 @@
   text-align: center;
   max-width: 450px;
   padding: 3rem 2rem;
-  background: #ffffff;
+  background: #FFFFFF;
   border-radius: 24px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.04);
 }
@@ -117,19 +117,25 @@
 /* ==========================================================================
    RESPONSIVE BREAKPOINTS (Fixed Grid Alignment Overrides)
    ========================================================================== */
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .discover-feed {
     display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px;
     /* ---------------------------------------------------------
      GRID BLOCK ROUTING VIA REACT ORIENTATION DATA
      --------------------------------------------------------- */
   }
   .discover-feed .discover-card.portrait {
     grid-column: span 1;
+    max-width: 330px;
   }
   .discover-feed .discover-card.landscape {
     grid-column: span 1;
+    min-width: 380px;
+  }
+  .discover-content {
+    width: 100%;
   }
 }
 
@@ -158,7 +164,7 @@
      --------------------------------------------------------- */
   }
   .discover-feed .discover-card.portrait {
-    grid-column: span 3;
+    grid-column: span 4;
   }
   .discover-feed .discover-card.landscape {
     grid-column: span 6;

@@ -34,13 +34,13 @@
 
 .custom-video-container .native-video-node.mode-landscape {
   width: 100%;
-  height: auto;
+  object-fit: cover;
 }
 
 .custom-video-container .native-video-node.mode-portrait {
   width: 100%;
   min-height: 800px;
-  object-fit: contain;
+  object-fit: fill;
 }
 
 .custom-video-container .center-play-hud {

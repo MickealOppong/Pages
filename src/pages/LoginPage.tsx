@@ -41,6 +41,8 @@ const  LoginPage =()=> {
       
            try {
              const res = await login({username,password})
+
+             
              dispatch(loginUser(res.data?.data));
                 navigate('/landing')
           

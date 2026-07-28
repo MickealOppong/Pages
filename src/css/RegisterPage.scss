@@ -11,12 +11,12 @@
   padding: 24px;
 
   .register-card {
-    width: 100%;
-    max-width: 520px;
+    width: 100vw;
+    max-width: 100%;
 
-    background: white;
-    border-radius: 32px;
-    padding: 40px;
+    background:$background;
+    border-radius: 12px;
+    padding: 32px;
     box-shadow: 0 20px 60px rgba(124, 58, 237, 0.12);
 
     .brand {
@@ -27,8 +27,8 @@
 
       .heart {
         position: absolute;
-        top: -5px;
-        left: 29%;  
+        top: -2px;
+        left: 125px;  
       }
 
       h1 {
@@ -56,9 +56,9 @@
       gap: 16px;
 
       .row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
+       display: flex;
+       flex-direction: column;
+       gap: 16px;
       }
 
       // 🎯 WRAPPER ARCHITECTURE: Wraps individual fields to control error text positioning
@@ -208,9 +208,10 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (min-width: 768px) {
   .register-page {
     .register-card {
+      max-width: 520px;
       padding: 28px;
       
       h2 {
@@ -221,8 +222,9 @@
     // Media query nested lookup overrides
     form {
       .row {
-        grid-template-columns: 1fr;
-        gap: 16px; // Keeps uniform spacing on single column fold screens
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 16px;
       }
     }
   }

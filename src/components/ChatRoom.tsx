@@ -58,7 +58,7 @@ const ChatRoom = () => {
   // 1. Guard check for missing route parameters
   useEffect(() => {
     if (!matchId) {
-      navigate('/landing/messages');
+      navigate('/landing/chat');
     }
   }, [matchId, navigate]);
 
@@ -99,7 +99,7 @@ const ChatRoom = () => {
     const stompClient = new Client({
       brokerURL: `ws://${CLEAN_URL}/ws?token=${savedToken}`,
       onConnect: () => {
-        stompClient.subscribe(`/topic/messages/${matchId}`, (messageOutput) => {              
+        stompClient.subscribe(`/topic/chat/${matchId}`, (messageOutput) => {              
           const incomingMessage = JSON.parse(messageOutput.body);
           setMessages((prev) => [...prev, incomingMessage]);
         });
@@ -195,7 +195,7 @@ const ChatRoom = () => {
                 {matchUser.activity && (
                   <div className="system-context-icebreaker">
                     {/* FIXED: Changed to lowercase prop definition */}
-                    <span>Connected via <ReactIcon icon={MOMENT_OPTIONS.find((moment) => moment.label === matchUser.activity)?.icon as IconType}/> {matchUser.activity} moment</span>
+                    <span>Connected via <ReactIcon icon={MOMENT_OPTIONS.find((moment) => moment.label === matchUser.activity)?.icon as IconType}/> {matchUser.activity}</span>
                   </div>
                 )}
               </div>

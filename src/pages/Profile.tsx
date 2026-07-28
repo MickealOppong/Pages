@@ -26,7 +26,7 @@ export const loader =(store:Store<RootState>)=>async ()=>{
 
     const dispatch = store.dispatch as AppDispatch;
 
-    const promise = await dispatch(userApi.endpoints.getUserProfile.initiate(userId));
+    const promise = await dispatch(userApi.endpoints.getUserProfile.initiate(userId,{forceRefetch:true}));
 
     
    const response = promise.data as TUserDataDto;
@@ -58,8 +58,6 @@ const[languageU,setLanguageU]=useState<string>(language)
 const[heightU,setHeightU]=useState<string>(height)
 
 
-console.log(data);
-
 
 const dispatch=useDispatch()
 
@@ -72,7 +70,6 @@ const dispatch=useDispatch()
     const [charLength_one,setCharLength_one] = useState<number>(0)
     const [charLength_two,setCharLength_two] = useState<number>(0)
     const [image,setImgae] = useState<string>(profileImage);
-    //const[isImageSeletected,setIsImageSelected] = useState<boolean>(false)
     const [isEditProfile,setIsEditProfile]=useState<boolean>(false)
 
 
@@ -197,20 +194,17 @@ const dispatch=useDispatch()
                  const text = e.target.files[0];
                  const file = URL.createObjectURL(text);
                 setImgae(()=>file)
-              //  setIsImageSelected(()=>true)
                   dispatch(updateProfileImage(file))
                
                } else{
-                //setIsImageSelected(()=>false)
                 setImgae(()=>profileImage)
                }    
         }
 
             const handleEditProfileButton =()=>{
                 setIsEditProfile(()=>!isEditProfile)
-                  setImgae(()=>profileImage)
-                   dispatch(updateProfileImage(profileImage))
             }
+            
 
             if(data){
 

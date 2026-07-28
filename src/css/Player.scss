@@ -25,6 +25,7 @@ $player-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   // Aspect Ratio Aspect Locks depending on view modes
   &.mode-landscape {
     aspect-ratio: 16 / 9;
+   
   }
   
   &.mode-portrait {
@@ -49,13 +50,13 @@ $player-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
      &.mode-landscape {
         width: 100%;
-        height: auto;
+        object-fit: cover;
     }
 
        &.mode-portrait {
         width: 100%;
         min-height:800px;
-        object-fit:contain;
+        object-fit:fill;
     }
     
   }

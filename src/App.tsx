@@ -71,14 +71,7 @@ function App() {
                 // 3. Otherwise, keep the cache! Do not refetch.
                 return false;
               },
-              children:[
-                {
-                  index:true,
-                  path:'chat/:matchId',
-                  element:<ChatRoom/>,
-                  errorElement:<ErrorPage/>,
-                }
-              ]
+
             },
             {
               path:'/landing/profile',
@@ -96,6 +89,11 @@ function App() {
               element:<ViewProfile/>,
               errorElement:<ErrorPage/>
             },
+               {
+                  path:'chat/:matchId',
+                  element:<ChatRoom/>,
+                  errorElement:<ErrorPage/>,
+                }
              
           ]
         },

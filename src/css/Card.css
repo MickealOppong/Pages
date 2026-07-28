@@ -7,10 +7,11 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 2rem;
 }
 
 .single-like-card {
+  display: flex;
+  flex-direction: column;
   background: #FFFFFF;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
@@ -30,6 +31,7 @@
 .single-like-card .card-profile-link {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
   padding: 20px;
   text-decoration: none;
@@ -165,5 +167,22 @@
     max-height: 0px;
     margin-bottom: 0px;
     border-color: transparent;
+  }
+}
+
+@media (min-width: 768px) {
+  .likes {
+    display: flex;
+    width: 100%;
+    background-color: rosybrown;
+  }
+  .likes-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  .single-like-card {
+    display: flex;
+    width: 100%;
   }
 }
