@@ -90,7 +90,7 @@ function App() {
               errorElement:<ErrorPage/>
             },
                {
-                  path:'chat/:matchId',
+                  path:'/chat/:matchId',
                   element:<ChatRoom/>,
                   errorElement:<ErrorPage/>,
                 }
