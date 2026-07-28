@@ -92,6 +92,7 @@ const ChatRoom = () => {
   }, [matchId, currentUserId, getMatch]);
 
   // 5. FIXED: WebSocket Lifecycle Manager (No ghost connections/leaks)
+  /*
   useEffect(() => {
     if (!matchId) return;
 
@@ -120,6 +121,63 @@ const ChatRoom = () => {
       }
     };
   }, [matchId]);
+  */
+
+  useEffect(() => {
+  if (!matchId) return;
+
+  const savedToken = localStorage.getItem("tk");
+  
+  // 1. Keep the connection string short and clean
+  const socketUrl = `wss://${CLEAN_URL}/ws`;
+
+  const stompClient = new Client({
+    brokerURL: socketUrl,
+    
+    // 2. Safely deliver your long JWT token through connection headers instead of URL parameters
+    connectHeaders: {
+      Authorization: `Bearer ${savedToken}`
+    },
+
+    // 3. Keep-alive pings every 10 seconds prevent Railway from killing the connection
+    heartbeatIncoming: 10000,
+    heartbeatOutgoing: 10000,
+    reconnectDelay: 5000, // Automatically reconstructs the tunnel if it drops
+
+    onConnect: () => {
+      console.log(`Successfully connected to match topic: ${matchId}`);
+      
+      stompClient.subscribe(`/topic/chat/${matchId}`, (messageOutput) => {              
+        const incomingMessage = JSON.parse(messageOutput.body);
+        
+        // 4. Using functional updates prevents stale state closures
+        setMessages((prev) => {
+          // Safety check: Don't append duplicate messages if the socket sends them twice
+          if (prev.some(msg => msg.id === incomingMessage.id)) return prev;
+          return [...prev, incomingMessage];
+        });
+      });
+    },
+    onStompError: (frame) => {
+      console.error('STOMP layer error profile:', frame);
+    },
+    onWebSocketClose: () => {
+      console.warn("WebSocket closed. Attempting auto-reconnect...");
+    }
+  });
+
+  stompClient.activate();
+  stompClientRef.current = stompClient;
+
+  return () => {
+    if (stompClientRef.current) {
+      console.log("Cleaning up WebSocket client connection...");
+      stompClientRef.current.deactivate();
+      stompClientRef.current = null;
+    }
+  };
+}, [matchId]); // Safely handles shifting chat rooms dynamically
+
 
   // 6. Handle Outbound Messages
   const handleMessageSend = (e: ChangeEvent<HTMLFormElement>) => {
