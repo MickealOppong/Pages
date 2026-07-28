@@ -47,7 +47,7 @@ const RegisterPage = ()=> {
                         if(isTermsChecked){
                            const response=await register({firstName,lastName,dob,email,password,gender,location,isTermsChecked})  
                       
-                           console.log(response);
+                          // console.log(response);
                            if(response.error && isFetchBaseQueryError(response.error)){
                             const errorResponse = response.error  as FetchBaseQueryError;
                             const {error} = errorResponse.data as TErrorResponse
@@ -75,8 +75,6 @@ const RegisterPage = ()=> {
                     
         
         }
-
-console.log(errorMessages);
 
 
     
