@@ -20,7 +20,7 @@ const Match = ({matchId,image, firstName,lastName,lastMessageDate,lastMessage,on
 
  return (
     <NavLink 
-      to={`/chat/${matchId}`}  
+      to={`/landing/chat/${matchId}`}  
       className={({ isActive }) => `link ${isActive ? 'active-link' : ''}`}
      onClick={()=>handleLinkClick()}>
       {({ isActive }) => (
