@@ -1,4 +1,4 @@
-import type { TvalidationErrors } from "../pages/TValidationErrors";
+import type { TvalidationErrors } from "../types/TValidationErrors";
 import './../css/ErrorMessage.css';
 
 const def ={

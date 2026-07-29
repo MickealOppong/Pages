@@ -1,7 +1,7 @@
 import { FiEye, FiPlus, FiTrash } from "react-icons/fi";
 import { GoPeople } from "react-icons/go";
 import { useDispatch } from "react-redux";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useRevalidator } from "react-router-dom";
 import type { Store } from "redux";
 import { CreateBroadcast, Overlay, VideoPlayer } from "../components/index";
 import { transApi, useDeletePosByIdtMutation } from "../features/api/transApi";
@@ -25,7 +25,7 @@ export const loader = (store: Store<RootState>) => async () => {
 
 const UserBroadcast = () => {
     const userPosts = useLoaderData() as TResponseDto;
-    const navigate = useNavigate();
+    const revalidate = useRevalidator()
 
     
     // Delete post hook
@@ -41,7 +41,7 @@ const UserBroadcast = () => {
         try {
             const response = await deleteBroadcast(id);
             if (response) {
-                navigate(0);
+              revalidate.revalidate();
             }
         } catch (error) {
             console.error(error);

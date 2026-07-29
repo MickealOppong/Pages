@@ -27,7 +27,6 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
          setData(()=>response.data?.data as TUserData)
     }
 
-    console.log(data);
     
 
     

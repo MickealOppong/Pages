@@ -5,7 +5,7 @@ export { default as Footer } from "./Footer"
 export { default as Landing } from "./Landing"
 export { default as Likes } from "./Likes"
 export { default as LoginPage } from "./LoginPage"
-export { default as Matches } from "./Matches"
+
 export { default as Messages } from "./Messages"
 export { default as PasswordReset } from "./PasswordReset"
 export { default as Posts } from "./Posts"

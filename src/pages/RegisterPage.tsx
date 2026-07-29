@@ -4,9 +4,9 @@ import { FiCalendar, FiHeart, FiLock, FiMail, FiMapPin, FiUser } from "react-ico
 import { Link, useNavigate } from "react-router-dom";
 import { useAddUserMutation } from "../features/api/authApi";
 import type { TErrorResponse } from "../types/TErrorResponse";
+import type { TvalidationErrors } from "../types/TValidationErrors";
 import { isFetchBaseQueryError, POLISH_CITIES } from "../util/util";
 import "./../css/RegisterPage.css";
-import type { TvalidationErrors } from "./TValidationErrors";
 
 
 

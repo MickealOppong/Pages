@@ -1,490 +1,134 @@
-@import './variables.scss';
+@import "./variables";
 
+/* ==========================================================================
+   MESSAGES BASE PAGE CONTEXT (.messages)
+   ========================================================================== */
 .messages {
+  width: 100%;
+  // Automatically consumes exactly the remaining vertical height beneath your navbar
+  height: calc(100vh - 4rem); 
+  background-color: #ffffff;
+  overflow: hidden; // Prevents double browser scrollbars from breaking layouts
+
+  @media (max-width: 768px) {
+    height: calc(100dvh - 3.5rem); // Safeguards mobile Safari toolbars dynamically
+  }
+}
+
+/* ==========================================================================
+   MESSAGES CENTER TRACK WRAPPER (.messages-center)
+   ========================================================================== */
+.messages-center {
   display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
   width: 100%;
   height: 100%;
+  flex-direction: row; // Preps layout for split-screen chat routing later
+}
 
+/* ==========================================================================
+   LEFT SIDEBAR CHANNEL MODULE (.top)
+   ========================================================================== */
+.top {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 380px; // Premium high-fashion lookbook sidebar width footprint
+  height: 100%;
+  border-right: 1px solid #eef0f6;
+  background-color: #ffffff;
+  flex-shrink: 0; // Essential safeguard blocks text lines from squashing columns
 
+  @media (max-width: 992px) {
+    max-width: none; // Stretches out full-screen across mobile frames
+    border-right: none;
+  }
 
-
-
-  .messages-center {
+  /* ---------------------------------------------------------
+     HEADER & INPUT SYSTEM CONTAINER
+     --------------------------------------------------------- */
+  .header-container {
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
     display: flex;
     flex-direction: column;
-    margin: 1rem;
-    width: 100%;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, .05);
+    gap: 16px;
 
-
-     
-    /* ============================================================
-     * MOBILE WORKSPACE STRUCTURAL NODES (0px - 767px)
-     * ============================================================ */
-    .top {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 280px;
-      flex-shrink: 0; // Prevents chat components from compressing list panels
-      border-right: 1px solid $border-tint;
-      overflow: hidden;
-   
-  
-    
-    
-      .header-container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        background: $background;
-        padding: 10px;
-        flex-shrink: 0;
-
-        .header {
-          display: flex;
-          width: 100%;
-          height: 100%;
-          background: $background;
-
-          h2 {
-            margin: 0;
-            font-size: 2rem;
-            font-weight: 700;
-            color: $primary;
-            margin-bottom: 1.25rem;
-          }
-        }
-
-        .search-container {
-          height: 40px;
-          display: flex;
-          align-items: center;
-          gap: .75rem;
-          padding: 0 1rem;
-          border-radius: 12px;
-          border: 1px solid $border-tint;
-
-          svg {
-            color: $primary;
-            font-size: 1.1rem;
-          }
-
-          input {
-            flex: 1;
-            border: none;
-            outline: none;
-            background: transparent;
-            font-size: .75rem;
-
-            &::placeholder {
-              color: $gray;
-            }
-          }
-        }
-      }
-
-      .match-section {
-        position: sticky;
-        display: flex;
-        align-items: center; 
-        justify-content: flex-start;
-        background: $background;
-
-
-        width: 100%;
-        height: 100%;
-   
-        flex-shrink: 0; // Freezes spatial heights from jumping on state actions
-
-        overflow-y: hidden;
-        overflow-x: scroll;
-
-        &::-webkit-scrollbar {
-          display: none;
-        }
-
-        .list-center {
-          display: flex;
-          align-items: center;
-          width: 100%;
-          height: 100%;
-          padding: 0 16px;
-
-          .matches {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            column-gap: 18px;
-
-            .link {
-              display: flex;
-              align-items: center;
-              width: fit-content;
-              height: 100%;
-              text-decoration: none;
-
-              .small-screen {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                row-gap: 8px;
-                width: 70px; 
-                height: 100%; 
-
-                .img-container {
-                  position: relative;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  width: 80x;
-                  height: 80px;
-                  border-radius: 50%;
-                  flex-shrink: 0;
-                  border: 3px solid transparent; // Flat frame layout ring prevents spatial jumping shifts
-                  transition: border-color 0.2s ease;
-
-                  &.active {
-                    border-color: $primary;
-                  }
-
-                  img {
-                    width: 74px; 
-                    height: 74px;
-                    object-fit: cover;
-                    border-radius: 50%;
-                  }
-
-                  .online, .not_online {
-                    display: flex;
-                    position: absolute;
-                    bottom: 2px;
-                    right: 2px;
-                    width: 12px;
-                    height: 12px;
-                    border-radius: 50%;
-                    border: 2px solid $border-tint;
-                  }
-                  .not_online { background: $gray; }
-                  .online { background: green; }
-                }
-
-                .name-container {
-                  display: flex;
-                  justify-content: center;
-                  width: 100%;
-                  height: 1.25rem;
-                  overflow: hidden;
-                  
-                  p {
-                    margin: 0;
-                    color: $primary;
-                    text-transform: capitalize;
-                    font-size: .85rem;
-                    line-height: 1.25rem;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                  }
-                }
-              }
-
-              .large-screen {
-                display: none;
-              }
-            }
-          }
-        }
+    .header {
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #1a1a1a;
+        margin: 0;
+        letter-spacing: -0.02em;
       }
     }
 
-    .chat-section {
+    .search-container {
+      position: relative;
       display: flex;
-      width: 100%;
-      height:max-content;
-      overflow: scroll;
-    }
-  }
-}
-
-
-//START EMPTY MATCH
-
-
-/* Container scales to fit full dashboard or chat sidebar grids */
-.empty-matches-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  padding: 24px;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background:$background-1;
-}
-
-/* Card layout wrapper */
-.empty-matches-card {
-  background-color: $background;
-  padding: 40px 24px;
-  border-radius: 24px;
-  text-align: center;
-  max-width: 340px;
-  width: 100%;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-  border: 1px solid $background;
-  box-sizing: border-box;
-}
-
-/* Emoji animation styling */
-.empty-icon {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-  line-height: 1;
-  display: inline-block;
-  user-select: none;
-  animation: heartbeat 2s ease-in-out infinite;
-}
-
-/* Header text */
-.empty-matches-card h3 {
-  color: $gray;
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin: 0 0 10px 0;
-  letter-spacing: -0.02em;
-}
-
-/* Paragraph helper text */
-.empty-matches-card p {
-   color: $gray;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin: 0 0 28px 0;
-}
-
-/* Styling React-Router <Link> element cleanly */
-.discover-btn {
-  display: inline-block;
-  text-decoration: none; /* Removes link underline */
-  background: linear-gradient(135deg, $primary 0%, $primary 100%); /* Premium gradient appearance */
-  color: $background !important;
-  font-size: 0.95rem;
-  font-weight: 600;
-  padding: 14px 32px;
-  border-radius: 50px;
-  width: 100%;
-  box-sizing: border-box;
-  box-shadow: 0 4px 15px $primary-light;
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
-}
-
-/* Button Hover State */
-.discover-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(253, 38, 125, 0.4);
-}
-
-/* Button Click State */
-.discover-btn:active {
-  transform: translateY(0);
-}
-
-/* Smooth structural icon micro-interaction */
-@keyframes heartbeat {
-  0% { transform: scale(1); }
-  14% { transform: scale(1.1); }
-  28% { transform: scale(1); }
-  42% { transform: scale(1.1); }
-  70% { transform: scale(1); }
-}
-// END EMPTY MATCHES
-
-/* ============================================================
- * WIDESCREEN TABLET & DESKTOP ADJUSTMENTS (768px+)
- * ============================================================ */
-@media (min-width: 768px) {
-  .messages {
-    width: 100%;
-    min-height: 100%;
-
-    .messages-center {
-      display: flex;
-      flex-direction: row; // Converts master structural setup into a responsive side-by-side dashboard view
+      align-items: center;
       width: 100%;
 
-      .top {
-  
-        width: 30rem; // Solid fixed width constraints for sidebar layout lines
-        min-width: 300px;
-        height: 100%;
-        border-right: 1px solid rgba($primary, 0.1);
-        row-gap: 2rem;
-
-        .header-container {
-
-          display: flex;
-          flex-direction: column;
-          row-gap: 2rem;
-          padding: 1.5rem 1rem;
-
-
-          .header{
-             display: flex;
-  
-          }
-
-          .search-container{
-             display: flex;
-          
-          }
-        }
-
-        /* Transforms mobile line list into a scrolling vertical block panel track box */
-        .match-section {
-        display: flex;
-        flex-direction: column;
-         // height: 100vh;
-   
-          overflow-y: auto;
-          overflow-x: hidden;
-          padding: 0 10px;
-
-
-          .list-center {
-            padding: 0;
-            height: auto;
-            align-items: flex-start;
-
-            .matches {
-              flex-direction: column;
-              row-gap: 8px;
-              column-gap: 0;
-              height: auto;
-              align-items: flex-start;
-
-              .link {
-                width: 100%;
-                height: auto; // Lets the horizontal layout rows settle safely on text profiles
-
-                .small-screen {
-                  display: none;
-                }
-
-                .large-screen {
-                  display: flex;
-                  border-bottom: 1px solid $border;
-                
-                  width: 100%;
-
-                  .large_screen_center {
-                    display: flex;
-                    align-items: center;
-                    width: 100%;
-                    padding: 12px;
-                    column-gap: 14px;
-                    border-radius: 12px;
-                    transition: background-color 0.2s ease;
-
-                    &:hover {
-                      background-color: rgba($primary, 0.05);
-                    }
-
-                    &.large_screen_center_active {
-                      background-color: $primary-light;
-                    }
-
-                    .img-container {
-                      position: relative;
-                      width: 64px;
-                      height: 64px;
-                      flex-shrink: 0;
-
-                      img {
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 50%;
-                        object-fit: cover;
-                      }
-
-                      .large_online, .large_not_online {
-                        position: absolute;
-                        bottom: 0px;
-                        right: 0px;
-                        width: 11px;
-                        height: 11px;
-                        border-radius: 50%;
-                        border: 2px solid $background;
-                      }
-                      .large_online { background-color: green; }
-                      .large_not_online { background-color: $gray; }
-                    }
-
-                    .name-container {
-                      display: flex;
-                      flex-direction: column;
-                      row-gap: 4px;
-                      flex-grow: 1;
-                      min-width: 0;
-
-                      h2 {
-                        margin: 0;
-                        font-size: .85rem;
-                        font-weight: 600;
-                        color: black;
-                        text-transform: capitalize;
-                      }
-
-                      p {
-                        margin: 0;
-                        font-size: 0.75rem;
-                        color: $gray;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                      }
-
-                      .read{
-                          color: $gray;
-                     
-                      }
-                      .not_read{
-                         color: $primary;
-                      }
-                    }
-
-                    .date-container {
-                      flex-shrink: 0;
-                      align-self: flex-start;
-                      margin-top: 2px;
-
-                      span {
-                        font-size: 0.75rem;
-                        color: #94a3b8;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+      svg {
+        position: absolute;
+        left: 14px;
+        color: #94a3b8;
+        font-size: 1.1rem;
+        pointer-events: none; // Clicks pass cleanly right through to the input track
       }
 
-      .chat-section {
-        display: flex;
-       
-            
+      input {
+        width: 100%;
+        height: 44px;
+        padding: 0 1rem 0 2.5rem; // Padding protects text from overlapping the search vector icon
+        background-color: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-radius: 14px;
+        font-size: 0.925rem;
+        color: #1e293b;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &::placeholder {
+          color: #94a3b8;
+        }
+
+        &:focus {
+          outline: none;
+          background-color: #ffffff;
+          border-color: #ff4757; // Core vibrant application premium accent pink
+          box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.1); // Precision brand ring highlight
+        }
       }
     }
   }
+
+  /* ---------------------------------------------------------
+     HORIZONTAL MATCHES FEED SLIDER (.match-section)
+     --------------------------------------------------------- */
+  .match-section {
+    padding: 0 0 1.5rem 0;
+    width: 100%;
+    overflow-x: auto; // Emplaces smooth horizontal touch swipe track layers
+    -webkit-overflow-scrolling: touch;
+    flex: 1;
+
+    // Conceals ugly desktop browser scroll tracks to preserve lookbook cleanliness
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* INLINE SEARCH FALLBACK TYPOGRAPHY SYSTEM */
+    .no-results {
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #64748b;
+      margin: 0;
+      background-color: #f8fafc;
+      border-radius: 16px;
+      margin: 0 1.5rem;
+      border: 1px dashed #e2e8f0;
+    }
+  }
 }
-
-

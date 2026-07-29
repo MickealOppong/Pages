@@ -1,4 +1,4 @@
-import type { TvalidationErrors } from "../pages/TValidationErrors";
+import type { TvalidationErrors } from "./TValidationErrors";
 
 export type TErrorResponse={
      status: number;

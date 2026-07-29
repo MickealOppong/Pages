@@ -55,6 +55,7 @@ const Messages = () => {
     );
   }
 
+  
   return (
     <section className="messages">
       <div className="messages-center">
@@ -89,6 +90,7 @@ const Messages = () => {
       </div>
     </section>
   );
+
 }
 
 export default Messages;

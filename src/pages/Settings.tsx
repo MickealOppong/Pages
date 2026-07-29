@@ -216,7 +216,7 @@ return (
           </div>
           <div className="account-support-links-grid">
             <Link to="/help" className="account-support-nav-link">Help Center & FAQ</Link>
-            <Link to="/privacy" className="account-support-nav-link">Privacy Policy</Link>
+            <Link to="/terms" className="account-support-nav-link">Privacy Policy</Link>
             <Link to="/terms" className="account-support-nav-link">Terms of Service</Link>
           </div>
         </div>

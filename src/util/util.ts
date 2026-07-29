@@ -30,6 +30,8 @@ import {
   FiUsers,
 } from "react-icons/fi";
 
+import type { FetchBaseQueryError } from "@reduxjs/toolkit/query";
+
 export const storeToLocalStorage=(name:string,data:string)=>{
     localStorage.setItem(name,data)
 }
@@ -450,26 +452,7 @@ export const professions = [
 
 
 export const countries = [
-  "Afghanistan", "Albania", "Algeria", "Argentina", "Armenia", 
-  "Australia", "Austria", "Azerbaijan", "Bahamas", "Bangladesh", 
-  "Belgium", "Bolivia", "Brazil", "Bulgaria", "Cambodia", 
-  "Cameroon", "Canada", "Chile", "China", "Colombia", 
-  "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", 
-  "Denmark", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", 
-  "Estonia", "Ethiopia", "Finland", "France", "Georgia", 
-  "Germany", "Ghana", "Greece", "Guatemala", "Honduras", 
-  "Hungary", "Iceland", "India", "Indonesia", "Iran", 
-  "Iraq", "Ireland", "Israel", "Italy", "Jamaica", 
-  "Japan", "Jordan", "Kazakhstan", "Kenya", "Kuwait", 
-  "Lebanon", "Malaysia", "Maldives", "Mexico", "Morocco", 
-  "Myanmar", "Nepal", "Netherlands", "New Zealand", "Nigeria", 
-  "Norway", "Oman", "Pakistan", "Panama", "Paraguay", 
-  "Peru", "Philippines", "Poland", "Portugal", "Qatar", 
-  "Romania", "Russia", "Saudi Arabia", "Senegal", "Singapore", 
-  "Slovakia", "South Africa", "South Korea", "Spain", "Sri Lanka", 
-  "Sweden", "Switzerland", "Taiwan", "Thailand", "Tunisia", 
-  "Turkey", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", 
-  "Uruguay", "Uzbekistan", "Venezuela", "Vietnam", "Zimbabwe"
+  "Poland"
 ];
 
 
@@ -478,7 +461,7 @@ export function formatLastSentDate(dateInput:Date) {
 
   // 1. Convert input (Date object, timestamp, or ISO string) into a standard Date object
   const msgDate = new Date(dateInput);
-  const now = new Date();
+  const now = new Date()
 
   // 2. Set up midnight comparisons to isolate true day differences accurately
   const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -531,7 +514,6 @@ export const ACTIVITIES_LIST: string[] = [
 ]
 
 
-import type { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 
 
 // Type guard function to check if the error is a standard RTK Query network error

@@ -9,7 +9,7 @@ import { useCreateMessageNotifMutation, useLazyGetMessagesQuery, useMarkNotifAsR
 import { useAppSelector } from '../store';
 import type { TLikes } from '../types/TLikes';
 import type { TMessages } from '../types/TMessages';
-import { getDaysFromNow, MOMENT_OPTIONS } from '../util/util';
+import { formatLastSentDate, MOMENT_OPTIONS } from '../util/util';
 import defImage from './../assets/default.jpeg';
 import './../css/ChatRoom.css';
 import ReactIcon from './ReactIcon';
@@ -58,7 +58,10 @@ const ChatRoom = () => {
   // 1. Guard check for missing route parameters
   useEffect(() => {
     if (!matchId) {
-      navigate('/landing/chat');
+      navigate('/landing/messages');
+    }
+     if (!matchUser) {
+      navigate('/landing/messages');
     }
   }, [matchId, navigate]);
 
@@ -79,7 +82,6 @@ const ChatRoom = () => {
     getMyMessages(parseInt(matchId));
   }, [matchId, getMessage]);
 
-  console.log(messages);
   
 
   // 4. Fetch profile header metadata updates
@@ -282,7 +284,7 @@ const ChatRoom = () => {
                 <div key={message.id} className={`message ${isMine ? 'mine' : ''}`}>
                   <div className="bubble">
                     {message.message}
-                    <span>{getDaysFromNow ? getDaysFromNow(message.createdAt as Date) : 'Just now'}</span>
+                    <span>{formatLastSentDate(message.createdAt as Date)}</span>
                   </div>
                 </div>
               );

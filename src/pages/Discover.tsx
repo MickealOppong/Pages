@@ -1,5 +1,5 @@
 
-import { useLoaderData, useNavigate, useRevalidator } from "react-router-dom";
+import { redirect, useLoaderData, useNavigate, useRevalidator } from "react-router-dom";
 import type { Store } from "redux";
 import { transApi, useAcceptLikeMutation, useAddToLikeMutation } from "../features/api/transApi";
 import { useAppSelector, type AppDispatch, type RootState } from "../store";
@@ -16,26 +16,36 @@ import { activityColors, getAgeFromDateOfBirth, isFetchBaseQueryError, type Acti
 
 
 export const loader =(store:Store<RootState>)=>async ({request}:{request:Request})=>{
+     const username= store.getState().userSlice.username;
 
-    const userId = store.getState().userSlice.id;
-    const url =  new URLSearchParams(request.url.split('?')[1]);
-
-   const page = Number(url.get('page'))
-   const city = url.get('city')as string;
-   const gender = url.get('gender')as string;
-   const activity = url.get('activity')as string;
-   const fromAge = Number(url.get('min-age'))
-   const toAge = Number(url.get('max-age'))
-
-    const dispatch = store.dispatch as AppDispatch;
-
-    const promise= await dispatch(transApi.endpoints.getAllPost.initiate({userId,page,fromAge,toAge,city,activity,gender},{forceRefetch:true}));
          
+         if(username){
      
-    const data:TResponseDto  = promise.data as TResponseDto;
+        const userId = store.getState().userSlice.id;
+        const url =  new URLSearchParams(request.url.split('?')[1]);
+
+        const page = Number(url.get('page'))
+        const city = url.get('city')as string;
+        const gender = url.get('gender')as string;
+        const activity = url.get('activity')as string;
+        const fromAge = Number(url.get('min-age'))
+        const toAge = Number(url.get('max-age'))
+
+            const dispatch = store.dispatch as AppDispatch;
+
+            const promise= await dispatch(transApi.endpoints.getAllPost.initiate({userId,page,fromAge,toAge,city,activity,gender},{forceRefetch:true}));
+                
+            
+            const data:TResponseDto  = promise.data as TResponseDto;
         
     
-    return data||[];
+              return data||[];
+               
+         }else{
+              return redirect('')
+         }
+
+   
 }
 
 
