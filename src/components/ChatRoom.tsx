@@ -79,6 +79,9 @@ const ChatRoom = () => {
     getMyMessages(parseInt(matchId));
   }, [matchId, getMessage]);
 
+  console.log(messages);
+  
+
   // 4. Fetch profile header metadata updates
   useEffect(() => {
     if (!matchId) return;
@@ -147,7 +150,7 @@ const ChatRoom = () => {
     onConnect: () => {
       console.log(`Successfully connected to match topic: ${matchId}`);
       
-      stompClient.subscribe(`/topic/chat/${matchId}`, (messageOutput) => {              
+      stompClient.subscribe(`/topic/messages/${matchId}`, (messageOutput) => {              
         const incomingMessage = JSON.parse(messageOutput.body);
         
         // 4. Using functional updates prevents stale state closures
