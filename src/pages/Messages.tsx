@@ -58,9 +58,7 @@ const Messages = () => {
   
   return (
     <section className="messages">
-      <div className="messages-center">
-        <div className="top">
-          
+      <div className="messages-center">     
           <div className="header-container">
             <div className="header">
               <h2>Messages</h2>
@@ -76,7 +74,6 @@ const Messages = () => {
               />
             </div>
           </div>
-
           <div className="match-section">
             {/* Inline search fallback: user gets feedback if search yields 0 items */}
             {filteredMatchData.length === 0 ? (
@@ -85,8 +82,6 @@ const Messages = () => {
               <MatchList data={filteredMatchData} />
             )}
           </div>
-
-        </div>
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ import { formatLastSentDate } from "../util/util";
 import defImage from './../assets/default.jpeg';
    
 
-const Match = ({matchId,image, firstName,lastName,lastMessageDate,lastMessage,online}:{matchId:number,image:string,lastMessageDate:Date,firstName:string,lastName:string,lastMessage:string,online:boolean})=>{
+const Match = ({matchId,image, firstName,lastMessageDate,lastMessage,online}:{matchId:number,image:string,lastMessageDate:Date,firstName:string,lastMessage:string,online:boolean})=>{
 
   const id = useAppSelector((state)=>state.userSlice.id)
 
@@ -21,30 +21,17 @@ const Match = ({matchId,image, firstName,lastName,lastMessageDate,lastMessage,on
  return (
     <Link 
       to={`/landing/chat/${matchId}`}  
-      className={ `link `}
+      className={ `link`}
      onClick={()=>handleLinkClick()}>
-        
-          {/* MOBILE PROFILE TEMPLATE */}
-          <div className="small-screen">
-            <div className={`img-container`}>
-              <img src={image || defImage} alt={`${firstName} profile`} />
-              <div className={online ? 'online' : 'not_online'}></div>
-            </div>
-            <div className="name-container">
-              <p>{firstName}</p>
-            </div>
-          </div>
-
-          {/* DESKTOP SIDEBAR ROW LAYOUT */}
-          <div className="large-screen">
-            <div className={`large_screen_center`}>
+          <div className="match-item">
+            <div className={`match-item_center`}>
               <div className="img-container">
                 <img src={image || defImage} />
-                <div className={online ? 'large_online' : 'large_not_online'}></div>
+                <div className={online ? 'online' : 'not_online'}></div>
               </div>
               
               <div className="name-container">
-                <h2>{`${firstName} ${lastName}`.trim() || 'Anonymous'}</h2>
+                <h2>{`${firstName}`.trim() || 'Anonymous'}</h2>
                 <p className={`${online?'read':'not_read'}`}>{lastMessage}</p>
               </div>
 

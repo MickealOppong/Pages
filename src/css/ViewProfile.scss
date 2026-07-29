@@ -18,11 +18,7 @@
     width: 100%;
     box-sizing: border-box;
 }
-@import './variables.scss';
 
-/* ==========================================================================
-   Component Header Container Layout
-   ========================================================================== */
 .component-header {
     max-width: 850px; /* Aligns perfectly with your view-profile_container bounds */
     margin: 0 auto 20px auto;
@@ -51,9 +47,6 @@
 
 
 
-/* ==========================================================================
-   Structural Card Panels 
-   ========================================================================== */
 .view-profile_header,
 .personal_info,
 .about_container,

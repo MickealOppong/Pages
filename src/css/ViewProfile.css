@@ -19,9 +19,6 @@
   box-sizing: border-box;
 }
 
-/* ==========================================================================
-   Component Header Container Layout
-   ========================================================================== */
 .component-header {
   max-width: 850px;
   /* Aligns perfectly with your view-profile_container bounds */
@@ -29,7 +26,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #ECE8F5;
+  border-bottom: 1px solid #e5e7eb;
   padding-bottom: 16px;
   box-sizing: border-box;
 }
@@ -49,9 +46,6 @@
   width: 100%;
 }
 
-/* ==========================================================================
-   Structural Card Panels 
-   ========================================================================== */
 .view-profile_header,
 .personal_info,
 .about_container,
@@ -61,7 +55,7 @@
   padding: 20px;
   border-radius: 24px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  border: 1px solid #ECE8F5;
+  border: 1px solid #e5e7eb;
   width: 100%;
   box-sizing: border-box;
 }
@@ -108,14 +102,14 @@
 }
 
 .profile_data span {
-  color: #7C3AED;
+  color: #7c3aed;
   font-size: 16px;
   font-weight: 700;
 }
 
 .location_status p {
   margin: 0;
-  color: #777;
+  color: #94a3b8;
   font-size: 13px;
 }
 
@@ -167,7 +161,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #7C3AED;
+  color: #7c3aed;
   background-color: #ffffff;
   border: 1px solid #d1d3d6;
   width: 32px;
@@ -200,7 +194,7 @@
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
-  color: #777;
+  color: #94a3b8;
   letter-spacing: 0.5px;
 }
 
@@ -226,7 +220,7 @@
   margin: 0 0 12px 0;
   font-size: 14px;
   font-weight: 700;
-  border-bottom: 1px solid #ECE8F5;
+  border-bottom: 1px solid #e5e7eb;
   padding-bottom: 8px;
 }
 
@@ -258,7 +252,7 @@
   margin: 0 0 16px 0;
   font-size: 16px;
   font-weight: 700;
-  border-bottom: 1px solid #ECE8F5;
+  border-bottom: 1px solid #e5e7eb;
   padding-bottom: 12px;
   text-transform: capitalize;
   /* Adapts raw lower case strings dynamically */
@@ -289,7 +283,7 @@
   position: absolute;
   bottom: -8px;
   right: 0;
-  color: #7C3AED;
+  color: #7c3aed;
   font-size: 18px;
   opacity: 0.15;
   /* Soft background decorative element overlay styling */

@@ -16,16 +16,40 @@
 
 .chatroom .chatWindow header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 1rem 2rem;
   border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+  gap: 16px;
+}
+
+.chatroom .chatWindow header .return-link {
+  display: flex;
+  min-width: 0;
+}
+
+.chatroom .chatWindow header .return-link a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #F8F6FC;
+  transition: all 0.1s ease-in-out;
+}
+
+.chatroom .chatWindow header .return-link a:hover {
+  background: #F3E8FF;
+  color: #11142d;
+  transform: scale(1.01);
+  transition: all 0.1s ease-in-out;
 }
 
 .chatroom .chatWindow header .user {
   display: flex;
   align-items: center;
   column-gap: 12px;
+  width: 100%;
 }
 
 .chatroom .chatWindow header .user .avatar {
@@ -34,27 +58,20 @@
   align-items: center;
   cursor: pointer;
   transition: transform .2s ease, box-shadow .2s ease;
+  border: 1px solid transparent;
+  border-radius: 50%;
 }
 
 .chatroom .chatWindow header .user .avatar:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
-  border-radius: 50%;
+  border: 1px solid #f3e8ff;
 }
 
 .chatroom .chatWindow header .user .avatar img {
-  width: 60px;
-  height: 60px;
+  width: 74px;
+  height: 74px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #f3e8ff;
-}
-
-@media (max-height: 850px) {
-  .chatroom .chatWindow header .user .avatar img {
-    width: 36px;
-    height: 36px;
-  }
 }
 
 .chatroom .chatWindow header .user .avatar a {
@@ -110,9 +127,9 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #F2F4F7;
-  color: #667085;
-  font-size: 0.85rem;
+  background: #F8F6FC;
+  color: #11142d;
+  font-size: 0.75rem;
   font-weight: 500;
   padding: 6px 16px;
   border-radius: 12px;

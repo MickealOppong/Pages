@@ -18,16 +18,41 @@
 
     header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 2rem;
+      padding:1rem 2rem;
       border-bottom: 1px solid rgba($primary, 0.1);
-      
+      gap: 16px;
+
+      .return-link{
+        display: flex;
+        min-width: 0;
+
+        
+        a{
+          display: flex;
+             align-items: center;
+        justify-content: center;
+         width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $primary-light-1;
+          transition: all 0.1s ease-in-out;
+
+        &:hover{
+          background: $primary-light-2;
+          color: $text-main;
+          transform: scale(1.01);
+          transition: all 0.1s ease-in-out;
+        }
+        }
+
+      }
 
       .user {
         display: flex;
         align-items: center;
-        column-gap: 12px;
+        column-gap: 12px; 
+        width: 100%;
 
         .avatar {
           display: flex;
@@ -35,25 +60,21 @@
           align-items: center;
             cursor: pointer;
             transition: transform .2s ease, box-shadow .2s ease;
+                    border: 1px solid transparent;
+            border-radius: 50%;
 
                 &:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
-          border-radius: 50%;
+           border: 1px solid $primary-light
          }
 
 
           img {
-            width: 60px;
-            height: 60px;
+            width: 74px;
+            height: 74px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid $primary-light;
-
-            @media (max-height: 850px) {
-              width: 36px;
-              height: 36px;
-            }
+    
           }
 
           a {
@@ -110,9 +131,9 @@
                  display: flex;
                 align-items: center;
                 gap: 6px;
-                background: #F2F4F7; // Light gray box
-                color: #667085;       // Muted text
-                font-size: 0.85rem;
+                background: $primary-light-1; // Light gray box
+                color: $text-main;      // Muted text
+                font-size: 0.75rem;
                 font-weight: 500;
                 padding: 6px 16px;
                 border-radius: 12px;

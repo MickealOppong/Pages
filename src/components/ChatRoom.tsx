@@ -1,7 +1,7 @@
 import { Client } from '@stomp/stompjs';
 import { useEffect, useRef, useState, type ChangeEvent } from 'react';
 import type { IconType } from 'react-icons';
-import { FiMoreVertical, FiSend } from 'react-icons/fi';
+import { FiArrowLeft, FiMoreVertical, FiSend } from 'react-icons/fi';
 import { Link, useNavigate, useParams, useRevalidator } from 'react-router-dom';
 import { CLEAN_URL } from '../features/api/baseUrl';
 import { useLazyGetMatchQuery, useRemoveLikeMutation } from '../features/api/transApi';
@@ -240,8 +240,13 @@ const ChatRoom = () => {
   return (
     <section className="chatroom">
       <section className="chatWindow">
-        
+      
         <header>
+           <div className='return-link'>
+             <Link to={'/landing/messages'} >
+          <FiArrowLeft/>
+        </Link>
+           </div>
           <div className="user">
             <div className="avatar">
               <Link to={`/landing/view/${partnerId}`}>
@@ -249,7 +254,7 @@ const ChatRoom = () => {
               </Link>       
             </div>
             <div className='name-container'>
-              <h3>{`${matchUser.firstName} ${matchUser.lastName}`}</h3>
+              <h3>{`${matchUser.firstName}`}</h3>
               <div className='status-container'>
                 <div className='status'>
                   <div className={`${matchUser.online ? 'active' : 'not-active'}`}></div>
