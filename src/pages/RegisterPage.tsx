@@ -16,6 +16,7 @@ const RegisterPage = ()=> {
 
   const[message,setMessage] = useState<string>('')
   const[errorMessages,setErrorMessages] = useState<TvalidationErrors>()
+  const[error,setError] = useState<string>('')
 
       const [register]= useAddUserMutation()
         const navigate = useNavigate();
@@ -45,23 +46,34 @@ const RegisterPage = ()=> {
                     
                         if(isTermsChecked){
                            const response=await register({firstName,lastName,dob,email,password,gender,location,isTermsChecked})  
-                      
-                          // console.log(response);
+                    
+                     
                            if(response.error && isFetchBaseQueryError(response.error)){
+
+                            if(response.error.status==409){
+                              const errorResponse=response.error.data as {error:string, status:number,message:string}
+                              const {error} = errorResponse
+
+                              setError(()=>error)
+
+            
+                                
+                            }
                             const errorResponse = response.error  as FetchBaseQueryError;
                             const {error} = errorResponse.data as TErrorResponse
                            const data = error as TvalidationErrors
                       
                           
-                           setErrorMessages(()=>data)
+                           setErrorMessages(()=>data)                          
                             
                            }
+                        
                            
                               if(response.data){
                                 navigate('/');
                               }
                         }else{
-                          setMessage(()=>"Please accet terms and condition to proceed")
+                          setMessage(()=>"Please accept terms and condition to proceed")
                         }
                   
         
@@ -74,6 +86,7 @@ const RegisterPage = ()=> {
                     
         
         }
+
 
 
     
@@ -89,7 +102,7 @@ const RegisterPage = ()=> {
 
         <h2>Create Account</h2>
         <p>Find someone that matches your fever</p>
-
+    
         <form onSubmit={handleFormSubmit}>
           <div className="row">
            <div>
@@ -140,6 +153,11 @@ const RegisterPage = ()=> {
           </div>
             {
               errorMessages?.email && <span>{errorMessages.email}</span>
+     
+            }
+                 {
+              error && <span>{error}</span>
+     
             }
          </div>
 

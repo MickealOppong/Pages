@@ -54,7 +54,6 @@
 
 .discover-feed .discover-card {
   align-self: start;
-  height: auto;
   min-height: 0;
 }
 
@@ -121,6 +120,7 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 36px;
+    padding: 2rem;
     /* ---------------------------------------------------------
      GRID BLOCK ROUTING VIA REACT ORIENTATION DATA
      --------------------------------------------------------- */
@@ -131,7 +131,7 @@
   }
   .discover-feed .discover-card.landscape {
     grid-column: span 1;
-    min-width: 380px;
+    max-width: 720px;
   }
   .discover-content {
     width: 100%;
@@ -166,6 +166,6 @@
     grid-column: span 4;
   }
   .discover-feed .discover-card.landscape {
-    grid-column: span 6;
+    grid-column: span 8;
   }
 }

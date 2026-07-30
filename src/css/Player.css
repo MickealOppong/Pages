@@ -19,9 +19,9 @@
 }
 
 .custom-video-container.fullscreen {
-  width: 100vw !important;
-  height: 100vh !important;
-  max-height: 100vh !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
   aspect-ratio: auto !important;
 }
 
@@ -39,8 +39,7 @@
 
 .custom-video-container .native-video-node.mode-portrait {
   width: 100%;
-  min-height: 800px;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .custom-video-container .center-play-hud {

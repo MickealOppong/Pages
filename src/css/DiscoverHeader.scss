@@ -1,7 +1,6 @@
 @import './variables.scss';
 
 .discover_header {
-
 display: flex;
 flex-direction: column;
   background: $background;
@@ -9,7 +8,7 @@ flex-direction: column;
 
   width: 100%;
 
-padding:0 2rem 1rem;
+padding:0 1rem 1rem;
 
   .header_container {
     display: flex;

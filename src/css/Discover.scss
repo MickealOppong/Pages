@@ -17,7 +17,7 @@
   margin:0 auto;
   width: 100%;
   flex: 1;
-
+ 
 }
 
 .discover {
@@ -65,7 +65,6 @@ z-index: 22;
     // Ensures that even if parent parameters fail, the card itself
     // explicitly refuses to let a grid row stretch its shape.
     align-self: start;
-    height: auto;
     min-height: 0;
 
     &.portrait {
@@ -134,7 +133,7 @@ z-index: 22;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 36px;
-
+  padding: 2rem;
 
   /* ---------------------------------------------------------
      GRID BLOCK ROUTING VIA REACT ORIENTATION DATA
@@ -149,7 +148,7 @@ z-index: 22;
 
     &.landscape {
       grid-column: span 1;
-        min-width:380px;
+        max-width:720px;
     }
   }
 }
@@ -206,7 +205,7 @@ z-index: 22;
     }
 
     &.landscape {
-      grid-column: span 6;
+      grid-column: span 8;
     }
   }
 }

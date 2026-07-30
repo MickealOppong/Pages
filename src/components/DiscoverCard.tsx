@@ -73,9 +73,9 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
 
     </div>
      
-        <div className="discover-card__overlay" >
+        <div className="discover-card__mainOverlay" >
 
-            <header className="profile">
+            <header className="profile-header">
 
                 <img src={post.profileImage || defImage} className="avatar" alt=""/>
 

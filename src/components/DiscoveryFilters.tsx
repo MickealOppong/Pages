@@ -17,20 +17,21 @@ const DiscoveryFilters = () => {
     //filter query state
     const [cityFilter,setCityFilter] = useState<string>(url.get('city') as string)
     const [activityFilter,setActivityFilter] = useState<string>(url.get('activity') as string)
-    const [ageFilter,setAgeFilter] = useState<{ min: number; max: number }>({ min: 18, max: 35 });
+    const [ageFilter,setAgeFilter] = useState<{ min: string; max: string }>({ min: url.get('min-age') as string, max: url.get('max-age')as string });
     const [genderFilter,setGenderFilter] = useState<string>(url.get('gender') as string)
     const [lookingForFilter,setLookingForFilter] = useState<string>(url.get('lookingFor') as string)
 
 
   const handleReset = () => {
     setCityFilter('');
-    setAgeFilter({ min: 18, max: 99 });
+    setAgeFilter({ min: '18', max: '99' });
     setActivityFilter('');
    setGenderFilter('')
    setLookingForFilter('');
   };
 
   return (
+   <>
     <section className="mvp-filters-panel">
       <div className="filters-center">
         
@@ -97,22 +98,22 @@ const DiscoveryFilters = () => {
                 <label><FiCalendar /> Age Limits</label>
                 <div className="dual-range-inputs-row">
                   <input 
-                    type="number" 
+                    type="text" 
                     min="18" 
                     max="99" 
                     name='min-age'
                     value={ageFilter.min} 
-                    onChange={(e) => setAgeFilter(prev => ({ ...prev, min: Math.min(Number(e.target.value), ageFilter.max) }))}
+                    onChange={(e) => setAgeFilter({min:e.target.value,max:ageFilter.max})}
                     placeholder="Min"
                   />
                   <span>to</span>
                   <input 
-                    type="number" 
+                    type="text" 
                     min="18" 
                     max="99" 
                     name='max-age'
                     value={ageFilter.max} 
-                    onChange={(e) => setAgeFilter(prev => ({ ...prev, max: Math.max(Number(e.target.value), ageFilter.min) }))}
+                    onChange={(e) => setAgeFilter({max:e.target.value,min:ageFilter.min})}
                     placeholder="Max"
                   />
                 </div>
@@ -131,6 +132,7 @@ const DiscoveryFilters = () => {
         </form>
       </div>
     </section>
+   </>
   );
 };
 

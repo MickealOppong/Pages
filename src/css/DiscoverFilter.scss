@@ -3,7 +3,7 @@
 .mvp-filters-panel {
   width: 100%;
   padding: 2rem 1rem;
-  background-color:$background-3;
+  background:$background-3;
 
   .filters-center {
     width: 100%;
@@ -180,7 +180,7 @@
     font-weight: 500;
   }
 
-  input[type="number"] {
+  input[type="text"] {
     flex: 1;
     min-width: 60px; /* Prevents input shrinkage layout breaks on narrow desktop screens */
     height: 42px;

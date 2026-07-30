@@ -35,9 +35,9 @@ $player-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
   // Fullscreen Override State
   &.fullscreen {
-    width: 100vw !important;
-    height: 100vh !important;
-    max-height: 100vh !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
     aspect-ratio: auto !important;
   }
 
@@ -55,8 +55,7 @@ $player-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
        &.mode-portrait {
         width: 100%;
-        min-height:800px;
-        object-fit:fill;
+        object-fit: cover;
     }
     
   }

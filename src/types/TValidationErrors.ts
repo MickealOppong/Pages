@@ -8,5 +8,6 @@ gender:string
 ,location:string
 ,isTermsChecked?:string,
 message:string,
-status?:number
+status?:number,
+error:string
 }

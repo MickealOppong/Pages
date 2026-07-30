@@ -12,7 +12,8 @@
   overflow: hidden;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
   width:100%;
-  height: auto;
+  height:auto;
+
   min-height: 0;
 
   // CRUCIAL FOR DYNAMIC HEIGHTS: 
@@ -46,6 +47,7 @@
       opacity: 1;
       visibility: visible;
       padding-top: 12px; // Adds breathing room below the profile header
+    
     }
   }
 
@@ -53,11 +55,13 @@
      HERO BACKGROUND MEDIA CANVAS
      --------------------------------------------------------- */
   &__media {
+    display: flex;
     width: 100%;
+    height:0px;
     position: relative;
     overflow: hidden;
-    background-color:$background-3;
     flex-shrink: 0; // Completely prevents deep bio copy from squeezing image layouts
+    min-height: 0;
 
     img, video, .media-cover-img {
       width: 100%;
@@ -75,11 +79,10 @@
   /* ---------------------------------------------------------
      THIN GLASS CONTAINER BLOCK (Sits cleanly below picture)
      --------------------------------------------------------- */
-  &__overlay {
+  &__mainOverlay {
     display:flex;
     flex-direction: column;
-    padding: 1rem;
-   
+    padding: 10px;
     
     // Thin luxury glass matrix formatting
     background: rgba(255, 255, 255, 0.45);
@@ -89,25 +92,27 @@
     border-top: 1px solid rgba(255, 255, 255, 0.6);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
     width: 100%;
-    height: auto;
+    height: 100%;
+
 
  
 
 
     /* STATIC AREA: Profile Header (Always Visible) */
-    .profile {
+    .profile-header {
       display: flex;
-      align-items: center;
-      gap: 12px;
+      align-items:center;
+      gap: 6px;
       flex-shrink: 0;
       width: 100%;
 
 
       .meta-container{
         display: flex;
-        align-items: center;
+        align-items:start;
         justify-content: space-between;
            width: 100%;
+           row-gap: 6px;
           
       }
 
@@ -128,12 +133,20 @@
       .profile-container{
         display: flex;
         flex-direction: row !important;
-        align-items: center;
+        align-items:start;
         justify-content: space-between;
         width: 100%;
+     
+
+        .profile-info{
+          display: flex;
+          flex-direction: column;
+          row-gap:6px;
+        }
 
         h3{
           margin: 0;
+          font-size: medium;
         }
     
        
@@ -141,12 +154,7 @@
 
     .tags-outer {
       display: flex;
-      column-gap: 8px;
-      row-gap: 6px;
       align-items: center;
-      margin-bottom: 1rem;
-
-
     }
 
     .activity-tag, .goal-badge {
@@ -170,7 +178,7 @@
       }
 
       h3 {
-        font-size: 1.15rem;
+        font-size: 0.85rem;
         font-weight: 700;
         color: #1a1a1a;
         margin: 0 0 2px 0;
@@ -201,9 +209,9 @@
   .discover-card-drawer-target {
     display: grid;
     width: 100%;
+    height: auto;
     grid-template-rows: 0fr; // Standard baseline state collapses grid track to 0 height
     overflow: hidden; // Prevents nested text elements from spilling out when shut
-  
     
     // Smooth layout transitions handle the track math dynamically
     transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -217,7 +225,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    
+    padding: 0 10px;
     transition: opacity 0.25s ease-out, padding-top 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     row-gap: 12px;
 
@@ -261,6 +269,7 @@
       display: flex;
       gap: 10px;
       margin-top: auto;
+      padding: 6px;
 
       button {
         display: inline-flex;
@@ -324,8 +333,9 @@
   overflow: hidden;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
   width:100%;
-  height: auto;
+
   min-height: 0;
+
 
   // CRUCIAL FOR DYNAMIC HEIGHTS: 
   // Decouples this card from default grid row alignment groups.
@@ -368,7 +378,7 @@
     width: 100%;
     position: relative;
     overflow: hidden;
-    background-color:$background-3;
+
     flex-shrink: 0; // Completely prevents deep bio copy from squeezing image layouts
 
     img, video, .media-cover-img {
@@ -387,10 +397,10 @@
   /* ---------------------------------------------------------
      THIN GLASS CONTAINER BLOCK (Sits cleanly below picture)
      --------------------------------------------------------- */
-  &__overlay {
+  &__mainOverlay {
     display:flex;
     flex-direction: column;
-    padding: 1rem;
+
    
     
     // Thin luxury glass matrix formatting
