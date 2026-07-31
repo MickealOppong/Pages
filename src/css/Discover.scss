@@ -41,6 +41,7 @@ z-index: 22;
   height: 100%;
   display: flex;
   margin: 1px;
+
 }
 
 /* ==========================================================================
@@ -67,6 +68,7 @@ z-index: 22;
     align-self: start;
     min-height: 0;
 
+   
     &.portrait {
       grid-column: span 1;
       
@@ -190,7 +192,7 @@ z-index: 22;
 @media (min-width: 1200px) {
 .discover-feed {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: repeat(15, minmax(0, 1fr));
 
 
   /* ---------------------------------------------------------
@@ -200,12 +202,12 @@ z-index: 22;
 
 
     &.portrait {
-      grid-column: span 4;
+      grid-column: span 3;
 
     }
 
     &.landscape {
-      grid-column: span 8;
+      grid-column: span ;
     }
   }
 }

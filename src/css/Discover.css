@@ -157,15 +157,15 @@
 @media (min-width: 1200px) {
   .discover-feed {
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(15, minmax(0, 1fr));
     /* ---------------------------------------------------------
      GRID BLOCK ROUTING VIA REACT ORIENTATION DATA
      --------------------------------------------------------- */
   }
   .discover-feed .discover-card.portrait {
-    grid-column: span 4;
+    grid-column: span 3;
   }
   .discover-feed .discover-card.landscape {
-    grid-column: span 8;
+    grid-column: span;
   }
 }
