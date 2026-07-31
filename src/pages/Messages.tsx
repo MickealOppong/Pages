@@ -44,8 +44,8 @@ const Messages = () => {
   // 4. Global Guard: Fixed structural execution order to avoid runtime crashes
   if (!data || data.length === 0) {
     return (
-      <div className="empty-matches-container">
-        <div className="empty-matches-card">
+      <div className="empty-state">
+        <div className="empty-card">
           <div className="empty-icon">💔</div>
           <h3>No messages yet</h3>
           <p>Don't worry! Keep exploring and discovering new people nearby.</p>

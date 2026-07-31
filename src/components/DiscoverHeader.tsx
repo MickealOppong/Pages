@@ -33,7 +33,7 @@ const DiscoverHeader =() =>{
     <header className="discover_header" ref={containerRef}>
       <div className="header_container">
         <div className="header_message">
-          <h2>Discover</h2>
+          <h2>Spotkac</h2>
           <p>Find your perfect match</p>
         </div>
            <button 

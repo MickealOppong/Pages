@@ -74,7 +74,108 @@
       width: 100% !important;
       height: 100% !important;
     }
+
+
   }
+ &_actions {
+  position: absolute;
+  top: 50%;
+  right: 16px; // Sets exact gutter breathing space away from the right edge wall line
+  transform: translateY(-50%); // Precision vertical mid-screen centerline anchor lock
+  z-index: 10;
+  display: flex;
+  flex-direction: column; // Arrays interactive triggers side-by-side vertically
+  gap: 12px;
+  
+  // LIGHT LUXURY GLASS MATRIX: Translucent background blocks photo distortion
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 14px 10px;
+  border-radius: 20px; // Premium streamlined lookbook capsule rounding
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  width: 76px; // Compact width footprint minimizes subject obstruction blocks
+  
+  // Hardware-accelerated entry ease tracking curve
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.3s ease, 
+              box-shadow 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  /* ---------------------------------------------------------
+     COMMON BUTTON COMPONENT BASES
+     --------------------------------------------------------- */
+  button {
+    display: flex;
+    flex-direction: column; // Stacks micro icon directly above short tracking labels
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #1a1a1a; // High-contrast clean dark grey typography
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    gap: 4px;
+    padding: 8px 0;
+    border-radius: 12px;
+    transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+
+    svg {
+      flex-shrink: 0;
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    &:active {
+      transform: scale(0.92); // Clean structural tap compression response
+    }
+  }
+
+  /* ---------------------------------------------------------
+     ACTION SUB-CLASS INDEPENDENT INDICATION HOOKS
+     --------------------------------------------------------- */
+  .secondary-action {
+
+     font-size: 0.45rem;
+     svg{
+      font-size:16px;
+     }
+    &:hover {
+      color: #000000;
+      background-color: rgba(255, 255, 255, 0.3);
+
+      svg {
+        transform: translateY(-1px);
+      }
+    }
+  }
+
+  .primary-action {
+      font-size: 0.55rem;
+      color: $background;
+      svg{
+        font-size: 2rem;
+      }
+   
+    &:hover {
+      color: #ff4757; // Vibrant pink core pop indicator on focus tracking lines
+      background-color: rgba(255, 255, 255, 0.3);
+
+      svg {
+        transform: scale(1.12); // Lookbook heart elastic pop pulse response
+      }
+    }
+  }
+}
 
   /* ---------------------------------------------------------
      THIN GLASS CONTAINER BLOCK (Sits cleanly below picture)
@@ -628,9 +729,7 @@
     .discover-card__media { aspect-ratio: 16 / 2; min-height: 330px; }
   }
 
-  /* ==========================================================================
-     MOBILE TOUCH ENGINES (Keeps layout expanded on smaller viewports)
-     =================================a========================================= */
+
 
 }
 }

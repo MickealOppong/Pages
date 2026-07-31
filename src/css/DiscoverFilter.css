@@ -1,13 +1,12 @@
 .mvp-filters-panel {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  padding: 2rem 1rem;
   background: rgba(252, 252, 253, 0.9);
 }
 
 .mvp-filters-panel .filters-center {
   width: 100%;
-  max-width: 1200px;
-  /* Increased max-width to give the horizontal row room to breath */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -18,6 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .filters-page-header h2 {
@@ -74,10 +74,12 @@
 }
 
 .filters-card {
+  display: flex;
+  flex-direction: column;
   background-color: #FFFFFF;
   border: 1px solid #d1d3d6;
   border-radius: 14px;
-  padding: 1.5rem;
+  padding: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   /* Clean up card padding on desktop since it functions as part of a single row */
 }
@@ -89,15 +91,16 @@
 }
 
 .filters-grid-engine {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
   /* Desktop Viewport: Flattens all filters into columns on one single horizontal row */
 }
 
-@media (max-width: 640px) {
+@media (min-width: 768px) {
   .filters-grid-engine {
-    grid-template-columns: 1fr;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -113,22 +116,18 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
 }
 
 .filter-input-group.full-width-grid-item {
-  grid-column: span 2;
-  /* Cancels full row width on desktop so it behaves like standard columns */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-@media (max-width: 640px) {
+@media (min-width: 768px) {
   .filter-input-group.full-width-grid-item {
-    grid-column: span 1;
-  }
-}
-
-@media (min-width: 1024px) {
-  .filter-input-group.full-width-grid-item {
-    grid-column: span 1;
+    grid-column: span 2;
   }
 }
 
@@ -174,6 +173,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  width: 100%;
 }
 
 .dual-range-inputs-row span {
@@ -186,6 +186,7 @@
   flex: 1;
   min-width: 60px;
   /* Prevents input shrinkage layout breaks on narrow desktop screens */
+  width: 100%;
   height: 42px;
   padding: 0 0.5rem;
   text-align: center;
@@ -214,7 +215,7 @@
   /* Vertical offset balancing alignment on large desktop bars */
 }
 
-@media (max-width: 640px) {
+@media (min-width: 768px) {
   .filters-actions-bar {
     justify-content: stretch;
   }
@@ -233,6 +234,7 @@
   font-size: 0.95rem;
   font-weight: 600;
   color: #ffffff;
+  width: 100%;
   background-color: #7c3aed;
   border: none;
   border-radius: 14px;
@@ -242,9 +244,9 @@
   box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
 }
 
-@media (max-width: 640px) {
+@media (min-width: 768px) {
   .filters-actions-bar .btn-apply-filters {
-    width: 100%;
+    width: auto;
   }
 }
 

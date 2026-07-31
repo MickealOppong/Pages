@@ -56,6 +56,35 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
     return <article className={`discover-card ${layout}`} >
 
     <div className="discover-card__media">
+         <div className="discover-card_actions">
+
+                            <button className="secondary-action"   onClick={() =>{
+                                     handleViewProfileFunc(post.userId)
+                                     updateReach(post.postId)
+                                     } }>
+
+                                <FiEye />
+
+                               Zobacz
+
+                            </button>
+
+                            <button className="primary-action"    onClick={() =>{
+                                      handleInterestedFunc(
+                                            senderId,
+                                            post.userId,
+                                            post.postId,
+                                            post.requestReceived
+                                        )
+                                    }
+                                     }>
+
+                                <FiHeart />
+                                Spotkaj
+
+                            </button>
+
+                        </div>
 
         {isVideo ? (
             <VideoPlayer
@@ -145,14 +174,14 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
 
                         </p>
 
-                        <footer>
+                        <footer style={{display:'none'}}>
 
                             <button className="btn-secondary"   onClick={() =>{
                                      handleViewProfileFunc(post.userId)
                                      updateReach(post.postId)
                                      } }>
 
-                                <FiEye size={24}/>
+                                <FiEye />
 
                                 Profile
 
@@ -168,7 +197,7 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
                                     }
                                      }>
 
-                                <FiHeart size={24}/>
+                                <FiHeart/>
 
                                 let's connect
 

@@ -1,5 +1,5 @@
 
-import { redirect, useLoaderData, useNavigate, useRevalidator } from "react-router-dom";
+import { redirect, useLoaderData, useNavigate, useNavigation, useRevalidator } from "react-router-dom";
 import type { Store } from "redux";
 import { transApi, useAcceptLikeMutation, useAddToLikeMutation } from "../features/api/transApi";
 import { useAppSelector, type AppDispatch, type RootState } from "../store";
@@ -8,7 +8,7 @@ import "./../css/Discover.css";
 
 import type { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { useState } from "react";
-import { DiscoverCard, NotificationToast, Pagination } from "../components";
+import { DiscoverCard, Loading, NotificationToast, Pagination } from "../components";
 import DiscoverHeader from "../components/DiscoverHeader";
 import type { TErrorResponse } from "../types/TErrorResponse";
 import { activityColors, getAgeFromDateOfBirth, isFetchBaseQueryError, type ActivityType } from "../util/util";
@@ -55,6 +55,7 @@ export const loader =(store:Store<RootState>)=>async ({request}:{request:Request
 const Discover= () => {
   // 1. Hooks & Routing
   const navigate = useNavigate();
+  const navigation = useNavigation()
   const { revalidate } = useRevalidator();
 
   //state variables
@@ -117,7 +118,11 @@ const Discover= () => {
     }
   };
 
+  
 
+  if(navigation.state==='loading'){
+    return <Loading/>
+  }
 
 
 return (
@@ -148,7 +153,7 @@ return (
                           <div className="empty-state">
                                 <div className="empty-card">
                                   <div className="empty-icon">💔</div>
-                                  <h3>Ooop. Profiles yet</h3>
+                                  <h3>Ooop. No nearby profiles yet</h3>
                                   <p>Don't worry! expand your search range to discover people.</p>
                                 </div>
                               </div>

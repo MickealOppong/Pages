@@ -105,6 +105,18 @@
   margin: 0;
 }
 
+.empty-state .empty-card a {
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 1rem;
+  background-color: #7c3aed;
+  color: #FFFFFF;
+}
+
+.empty-state .empty-card a:hover {
+  background: linear-gradient(135deg, #7C3AED 0%, #ec4899 100%);
+}
+
 .discover-pagination {
   margin: 3rem 0;
   display: none;

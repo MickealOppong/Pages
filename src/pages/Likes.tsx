@@ -45,8 +45,8 @@ const Likes = ()=>{
 
      if ((pending.length===0 && accepted.length===0)) {
       return (
-        <div className="empty-matches-container">
-          <div className="empty-matches-card">
+        <div className="empty-state">
+          <div className="empty-card">
             <div className="empty-icon">💔</div>
             <h3>No matches yet</h3>
             <p>Don't worry! Keep exploring and discovering new people nearby.</p>

@@ -1,7 +1,8 @@
 import { useState, type ChangeEvent } from "react";
 import { FiCalendar, FiHeart, FiLock, FiMail, FiMapPin, FiUser } from "react-icons/fi";
 import { IoMaleFemaleOutline } from "react-icons/io5";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useNavigation } from "react-router-dom";
+import { Loading } from "../components";
 import { useAddUserMutation } from "../features/api/authApi";
 import type { TErrorResponse } from "../types/TErrorResponse";
 import type { TvalidationErrors } from "../types/TValidationErrors";
@@ -13,7 +14,6 @@ import "./../css/RegisterPage.css";
 const RegisterPage = ()=> {
 
   const[isTermsChecked,setIsTermsCheck]=useState<boolean>(false)
-
   const[message,setMessage] = useState<string>('')
   const[errorMessages,setErrorMessages] = useState<TvalidationErrors>()
   const[error,setError] = useState<string>('')
@@ -21,6 +21,7 @@ const RegisterPage = ()=> {
 
       const [register]= useAddUserMutation()
         const navigate = useNavigate();
+        const navigation = useNavigation()
 
 
       
@@ -95,7 +96,9 @@ const RegisterPage = ()=> {
                        }
               }
 
-
+if(navigation.state==='loading'){
+  return <Loading/>
+}
 
     
   return (

@@ -39,7 +39,11 @@
 
   overflow: scroll;
 }
-
+.remove-media-btn{
+  background-color: transparent;
+  border: none;
+  color: $cancel;
+}
 .image-upload {
   border: 2px dashed #d8c9ff;
   border-radius: 24px;

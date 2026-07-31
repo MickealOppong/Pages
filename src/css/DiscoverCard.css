@@ -76,6 +76,101 @@
   height: 100% !important;
 }
 
+.discover-card_actions {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 14px 10px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  width: 76px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+  /* ---------------------------------------------------------
+     COMMON BUTTON COMPONENT BASES
+     --------------------------------------------------------- */
+  /* ---------------------------------------------------------
+     ACTION SUB-CLASS INDEPENDENT INDICATION HOOKS
+     --------------------------------------------------------- */
+}
+
+.discover-card_actions:hover {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+}
+
+.discover-card_actions button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #1a1a1a;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  gap: 4px;
+  padding: 8px 0;
+  border-radius: 12px;
+  transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.discover-card_actions button svg {
+  flex-shrink: 0;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.discover-card_actions button:active {
+  transform: scale(0.92);
+}
+
+.discover-card_actions .secondary-action {
+  font-size: 0.45rem;
+}
+
+.discover-card_actions .secondary-action svg {
+  font-size: 16px;
+}
+
+.discover-card_actions .secondary-action:hover {
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.discover-card_actions .secondary-action:hover svg {
+  transform: translateY(-1px);
+}
+
+.discover-card_actions .primary-action {
+  font-size: 0.55rem;
+  color: #FFFFFF;
+}
+
+.discover-card_actions .primary-action svg {
+  font-size: 2rem;
+}
+
+.discover-card_actions .primary-action:hover {
+  color: #ff4757;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.discover-card_actions .primary-action:hover svg {
+  transform: scale(1.12);
+}
+
 .discover-card__mainOverlay {
   display: flex;
   flex-direction: column;
@@ -330,9 +425,6 @@
     /* ---------------------------------------------------------
      OUTER GEOMETRY PROPORTIONS (Configured on the Media layer)
      --------------------------------------------------------- */
-    /* ==========================================================================
-     MOBILE TOUCH ENGINES (Keeps layout expanded on smaller viewports)
-     =================================a========================================= */
   }
   .discover-card:hover {
     transform: translateY(-6px);
