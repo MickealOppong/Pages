@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
 
-  padding: 24px;
+
 
   .register-card {
     width: 100vw;
@@ -27,8 +27,8 @@
 
       .heart {
         position: absolute;
-        top: -2px;
-        left: 125px;  
+        top: 0px;
+        left: 120px;  
       }
 
       h1 {
@@ -67,6 +67,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+
       }
 
       .input-group {
@@ -91,6 +92,8 @@
         }
 
         select {
+          padding: 0;
+          margin: 0;
           cursor: pointer;
         }
 
@@ -227,5 +230,57 @@
         gap: 16px;
       }
     }
+  }
+}
+
+.error {
+  // Positioning and Layout
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 12px 24px;
+  
+  // Visual Styling
+  background-color: #ffebee;
+  border-left: 5px solid #d32f2f;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  h2 {
+    color: #c62828;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  // 5-Second Animation Config
+  animation-name: fadeOutAndHide;
+  //animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  //animation-fill-mode: forwards; // Keeps the error hidden at the end
+}
+
+// Animation Timeline
+@keyframes fadeOutAndHide {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  5% {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden; // Prevents ghost clicks on invisible box
   }
 }

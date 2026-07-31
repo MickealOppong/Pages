@@ -31,6 +31,7 @@ export const loader =(store:Store<RootState>)=>async ({request}:{request:Request
         const fromAge = Number(url.get('min-age'))
         const toAge = Number(url.get('max-age'))
 
+
             const dispatch = store.dispatch as AppDispatch;
 
             const promise= await dispatch(transApi.endpoints.getAllPost.initiate({userId,page,fromAge,toAge,city,activity,gender},{forceRefetch:true}));
@@ -38,7 +39,7 @@ export const loader =(store:Store<RootState>)=>async ({request}:{request:Request
             
             const data:TResponseDto  = promise.data as TResponseDto;
         
-    
+            
               return data||[];
                
          }else{
@@ -63,6 +64,9 @@ const Discover= () => {
 
     //loader data
   const posts = useLoaderData() as TResponseDto;
+
+
+  
 
   // 2. Redux State
   const senderId = useAppSelector((state) => state.userSlice.id);
@@ -141,10 +145,10 @@ return (
                 <div className="discover-content">
 
                     {!posts?.data || posts.data.length === 0 ? (
-                          <div className="empty-matches-container">
-                                <div className="empty-matches-card">
+                          <div className="empty-state">
+                                <div className="empty-card">
                                   <div className="empty-icon">💔</div>
-                                  <h3>Ooop. Nothing found that meet search criteria</h3>
+                                  <h3>Ooop. Profiles yet</h3>
                                   <p>Don't worry! expand your search range to discover people.</p>
                                 </div>
                               </div>

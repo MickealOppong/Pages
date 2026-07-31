@@ -11,6 +11,10 @@ import "./../css/LoginPage.css";
 const  LoginPage =()=> {
 
       const [showText,setShowText] = useState<String>('password');
+      const[error,setError]=useState<string>('')
+      const[errorEmail,setErrorEmail]=useState<string>('')
+      const[errorPassword,setErrorPassword]=useState<string>('')
+        const[fetchError,setFetchError] = useState<string>('')
       const navigate = useNavigate();
       //http request
       const [login] = useLoginMutation()
@@ -38,24 +42,51 @@ const  LoginPage =()=> {
             const username = formValues.username as string
             const password = formValues.password as string
 
-      
-           try {
-             const res = await login({username,password})
-
-             
-             dispatch(loginUser(res.data?.data));
+    
+           try{
+              const response = await login({username,password}).unwrap()
+              
+              if(response.httpStatus==='202 ACCEPTED'){
+                dispatch(loginUser(response.data))
                 navigate('/landing')
-          
-           } catch (error) {
-           // console.log(error);
+              }
+              
+   
+              if(response.httpStatus==='401 UNAUTHORIZED'){
+        
+                if(response.message.toLowerCase().startsWith('username')){
+                   setErrorEmail(()=>response.message)
+                    setErrorPassword('')
+                }else{
+                   setErrorPassword(()=>response.message)
+                    setErrorEmail('');
+                }
+
+              }
+            
+           }catch(error: any){
+            
+              // Handle Redux Network Level Errors (FETCH_ERROR)
+                            if (error.status === 'FETCH_ERROR') {
+                              setFetchError('Oops network down, please try again in few minutes.');
+                                   setErrorPassword('')
+                                  setErrorEmail('');
+                              return;
+                            }
             
            }
+        
           
           
       }
-
       
   return (
+ <>
+   {
+    fetchError &&  <div className="error">
+    <h2>{fetchError}</h2>
+   </div>
+  }
     <div className="login-page">
       <div className="login-card">
         <div className="brand">
@@ -67,15 +98,21 @@ const  LoginPage =()=> {
         <p>Discover people through their experiences.</p>
 
         <form onSubmit={handleLoginRequest}>
-          <div className="input-group">
+          <div>
+            <div className="input-group">
             <FiMail size={18} />
             <input
               type="email"
               placeholder="Email address" name="username"
             />
           </div>
+           {
+              errorEmail && <span className="error-text">{errorEmail}</span>
+            }
+          </div>
 
-          <div className="input-group">
+          <div>
+              <div className="input-group">
             <FiLock size={18} />
             <input
            type={`${showText==='password'?'password':'text'}`}
@@ -83,6 +120,10 @@ const  LoginPage =()=> {
             />
            <span onClick={()=>handleEyeClick('password')}  style={{display:showText==='text'?'flex':'none'}}><FaEye/></span>
             <span onClick={()=>handleEyeClick('text')} style={{display:showText==='password'?'flex':'none'}}><RiEyeOffFill/></span>
+          </div>
+            {
+              errorPassword && <span className="error-text">{errorPassword}</span>
+            }
           </div>
 
           <button
@@ -111,7 +152,7 @@ const  LoginPage =()=> {
           <a href="/register"> Sign up</a>
         </div>
       </div>
-    </div>
+    </div></>
   );
 }
 

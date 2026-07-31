@@ -53,7 +53,7 @@ const DiscoveryFilters = () => {
               <div className="filter-input-group">
                 <label><FiMapPin /> Target Location</label>
                 <select value={cityFilter||''} name='city' onChange={(e) => setCityFilter(e.target.value)}>
-                  <option value="">Any City (Poland)</option>
+                  <option value={''}>Any City (Poland)</option>
                   {POLISH_CITIES.map((city) => (
                     <option key={city} value={city}>{city}</option>
                   ))}
@@ -64,7 +64,7 @@ const DiscoveryFilters = () => {
               <div className="filter-input-group">
                 <label><FiActivity /> Shared Activity</label>
                 <select value={activityFilter||''} name='activity' onChange={(e) => setActivityFilter(e.target.value)}>
-                  <option value="">Any Activity</option>
+                  <option value="">All</option>
                   {ACTIVITIES_LIST.map((activity) => (
                     <option key={activity} value={activity}>{activity}</option>
                   ))}
@@ -74,7 +74,7 @@ const DiscoveryFilters = () => {
               <div className="filter-input-group">
                 <label><FiUser/> Gender</label>
                 <select value={genderFilter||''} name='gender' onChange={(e) => setGenderFilter(e.target.value)}>
-                  <option value="">All</option>
+                  <option value={''}>All</option>
                   <option value="Male">Men</option>
                   <option value="Female">Women</option>
                   <option value="Non-binary">Non-binary</option>
@@ -84,7 +84,7 @@ const DiscoveryFilters = () => {
               <div className="filter-input-group">
                 <label><FiUmbrella /> Looking For</label>
                 <select value={lookingForFilter||''} name='lookingFor' onChange={(e) => setLookingForFilter(e.target.value)}>
-                  <option value="">All</option>
+                  <option value={''}>All</option>
                   <option value="Long-term relationship">Long term</option>
                   <option value="Friendship">Friendship</option>
                   <option value="Not yet decided">Not yet decided</option>
@@ -102,7 +102,7 @@ const DiscoveryFilters = () => {
                     min="18" 
                     max="99" 
                     name='min-age'
-                    value={ageFilter.min} 
+                    value={ageFilter.min||''} 
                     onChange={(e) => setAgeFilter({min:e.target.value,max:ageFilter.max})}
                     placeholder="Min"
                   />
@@ -112,7 +112,7 @@ const DiscoveryFilters = () => {
                     min="18" 
                     max="99" 
                     name='max-age'
-                    value={ageFilter.max} 
+                    value={ageFilter.max||''} 
                     onChange={(e) => setAgeFilter({max:e.target.value,min:ageFilter.min})}
                     placeholder="Max"
                   />

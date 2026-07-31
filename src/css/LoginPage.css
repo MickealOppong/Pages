@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px;
 }
 
 .login-card {
@@ -39,7 +38,7 @@
 .brand .heart {
   position: absolute;
   top: 0px;
-  left: 170px;
+  left: 165px;
   animation: auth-reset-heartbeat 1.5s infinite ease-in-out;
 }
 
@@ -60,6 +59,11 @@ form {
   flex-direction: column !important;
   gap: 16px;
   background: #FFFFFF;
+}
+
+.error-text {
+  color: #DC2626;
+  font-size: small;
 }
 
 .input-group {

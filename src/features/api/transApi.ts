@@ -73,7 +73,7 @@ export const transApi = createApi({
             }),
             providesTags:['posts']
         }),
-        deletePosByIdt:build.mutation<boolean,number>({
+        deletePosById:build.mutation<TResponseDto,number>({
             query:(postId)=>({
                 url:`/trans/broadcast/delete/${postId}`,
                 params:{
@@ -168,6 +168,6 @@ export const transApi = createApi({
     })
 })
 export const {useCreatePostMutation,useDeletePostMutation,
-    useGetAllPostByUserIdQuery,useDeletePosByIdtMutation,useGetAllPostQuery
+    useGetAllPostByUserIdQuery,useDeletePosByIdMutation,useGetAllPostQuery
 ,useAddToLikeMutation,useLazyMyLikesQuery,useRemoveLikeMutation,useAcceptLikeMutation,useAcceptLikeByIdMutation,useMyMatchesQuery,useLazyGetMatchQuery
 ,useUpdateReachMutation}= transApi

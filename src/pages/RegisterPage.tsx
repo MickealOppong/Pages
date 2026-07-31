@@ -1,11 +1,11 @@
-import type { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { useState, type ChangeEvent } from "react";
 import { FiCalendar, FiHeart, FiLock, FiMail, FiMapPin, FiUser } from "react-icons/fi";
+import { IoMaleFemaleOutline } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import { useAddUserMutation } from "../features/api/authApi";
 import type { TErrorResponse } from "../types/TErrorResponse";
 import type { TvalidationErrors } from "../types/TValidationErrors";
-import { isFetchBaseQueryError, POLISH_CITIES } from "../util/util";
+import { POLISH_CITIES } from "../util/util";
 import "./../css/RegisterPage.css";
 
 
@@ -17,6 +17,7 @@ const RegisterPage = ()=> {
   const[message,setMessage] = useState<string>('')
   const[errorMessages,setErrorMessages] = useState<TvalidationErrors>()
   const[error,setError] = useState<string>('')
+  const[fetchError,setFetchError] = useState<string>('')
 
       const [register]= useAddUserMutation()
         const navigate = useNavigate();
@@ -32,7 +33,7 @@ const RegisterPage = ()=> {
     
   
                   
-                    try{
+      
                         const firstName = formValues.firstName as string
                     const lastName = formValues.lastName as string
                     const gender= formValues.gender as string
@@ -42,55 +43,68 @@ const RegisterPage = ()=> {
                     const email = formValues.email as string
                 
                         
-                    
-                    
-                        if(isTermsChecked){
-                           const response=await register({firstName,lastName,dob,email,password,gender,location,isTermsChecked})  
-                    
-                     
-                           if(response.error && isFetchBaseQueryError(response.error)){
+                    if (isTermsChecked) {
+                          try {
+                            // 1. .unwrap() forces RTK-Query to throw an error if the HTTP status is not 2xx
+                              await register({
+                              firstName, lastName, dob, email, password, gender, location, isTermsChecked
+                            }).unwrap();
 
-                            if(response.error.status==409){
-                              const errorResponse=response.error.data as {error:string, status:number,message:string}
-                              const {error} = errorResponse
+                            // 2. SUCCESS FLOW: Since we unwrapped, we know the backend returned a 2xx success code
+                            //console.log('Registration Successful:', payload);
+                            
+                            // Clear old errors on successful registration
+                            setError('');
 
-                              setError(()=>error)
+                            
+                            // Redirect the user right away
+                            navigate('/');
 
-            
-                                
+                          } catch (error: any) {
+                            // 3. ERROR FLOW: This catches all 4xx, 5xx, and network ERR_CONNECTION_REFUSED errors
+                           // console.error('Registration Failed:', error);
+
+                            // Handle Redux Network Level Errors (FETCH_ERROR)
+                            if (error.status === 'FETCH_ERROR') {
+                              setFetchError('Oops network down, please try again in few minutes.');
+                              return;
                             }
-                            const errorResponse = response.error  as FetchBaseQueryError;
-                            const {error} = errorResponse.data as TErrorResponse
-                           const data = error as TvalidationErrors
-                      
-                          
-                           setErrorMessages(()=>data)                          
-                            
-                           }
-                        
-                           
-                              if(response.data){
-                                navigate('/');
-                              }
-                        }else{
-                          setMessage(()=>"Please accept terms and condition to proceed")
-                        }
-                  
-        
-                   
-                    }   catch(error){
-                                                    
-                            
-                    }
-                   
-                    
-        
-        }
+
+                             // Handle Server Errors (401, 500, etc.)
+                            if ( error.status === 500 || error.status === 401) {
+                              const errorResponse = error.data as { error: string; status: number; message: string };
+                              setFetchError(errorResponse.error);
+                            }
+
+                            // Handle Server Validation & Response Errors (401, 409, 500, etc.)
+                            if (error.status === 409) {
+                              const errorResponse = error.data as { error: string; status: number; message: string };
+                              setError(errorResponse.error);
+                            }
+
+                            // Handle Client-Side Field Validation Errors (403 Forbidden)
+                            if (error.status === 403) {
+                                // const errorResponse = error  as FetchBaseQueryError;
+                                 const errorData= error as {status:number,data:TErrorResponse}
+                                   const errors = errorData.data.error as TvalidationErrors                              
+                                  setErrorMessages(()=>errors);
+                            }
+                                            }
+                  } else {
+                    setMessage("Please accept terms and condition to proceed");
+                       }
+              }
 
 
 
     
   return (
+   <>
+  {
+    fetchError &&  <div className="error">
+    <h2>{fetchError}</h2>
+   </div>
+  }
     <div className="register-page">
    
       <div className="register-card">
@@ -136,7 +150,7 @@ const RegisterPage = ()=> {
          <div>
            <div className="input-group">
             <FiCalendar size={18} />
-            <input type="date" name="dob" defaultValue={new Date().getDate()}/>
+            <input type="date" name="dob" defaultValue={new Date().toISOString().split('T')[0]}/>
           </div>
              {
               errorMessages?.dob && <span>{errorMessages.dob}</span>
@@ -152,11 +166,11 @@ const RegisterPage = ()=> {
             />
           </div>
             {
-              errorMessages?.email && <span>{errorMessages.email}</span>
+              errorMessages?.email  && <span>{errorMessages.email}</span>
      
             }
-                 {
-              error && <span>{error}</span>
+              {
+             error  && <span>{error}</span>
      
             }
          </div>
@@ -164,9 +178,9 @@ const RegisterPage = ()=> {
           <div className="row">
           <div>
               <div className="input-group">
-            <FiUser size={18} />
+            <IoMaleFemaleOutline  size={18} />
             <select name="gender" required>
-              <option disabled>
+              <option disabled value={'Select Gender'}>
                 Select Gender
               </option>
               <option value="Male">Male</option>
@@ -187,7 +201,7 @@ const RegisterPage = ()=> {
                 id="city-select"
                 name="location" required
               >
-                <option disabled>-- Choose a city --</option>
+                <option disabled value={'Choose a city'}>-- Choose a city --</option>
                 {POLISH_CITIES.map((city) => (
                   <option key={city} value={city}>
                     {city}
@@ -221,7 +235,7 @@ const RegisterPage = ()=> {
                     name="agreeToTerms" 
                     required
                     checked={isTermsChecked}
-                    onChange={()=>setIsTermsCheck(()=>!isTermsChecked)} 
+                    onChange={()=>setIsTermsCheck(!isTermsChecked)} 
                   />
                   <span className="checkbox-text">
                     I accept the <Link to="/terms" className="legal-link" target="_blank">Terms of Service</Link> and <Link to="/terms" className="legal-link" target="_blank">Privacy Policy</Link> of Spotkac.
@@ -246,6 +260,7 @@ const RegisterPage = ()=> {
 
       </div>
     </div>
+   </>
 
   );
 }

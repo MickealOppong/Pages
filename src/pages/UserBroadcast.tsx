@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useLoaderData, useRevalidator } from "react-router-dom";
 import type { Store } from "redux";
 import { CreateBroadcast, Overlay, VideoPlayer } from "../components/index";
-import { transApi, useDeletePosByIdtMutation } from "../features/api/transApi";
+import { transApi, useDeletePosByIdMutation } from "../features/api/transApi";
 import { showForm } from "../features/slice/utilSlice";
 import type { AppDispatch, RootState } from "../store";
 import { useAppSelector } from "../store";
@@ -29,7 +29,7 @@ const UserBroadcast = () => {
 
     
     // Delete post hook
-    const [deleteBroadcast] = useDeletePosByIdtMutation();
+    const [deleteBroadcast] = useDeletePosByIdMutation();
     const showBroadcastForm = useAppSelector((state) => state.utilSlice.showForm);
     const dispatch = useDispatch();
 
@@ -39,12 +39,15 @@ const UserBroadcast = () => {
 
     const handleDeleteBroadcast = async (id: number) => {
         try {
-            const response = await deleteBroadcast(id);
-            if (response) {
+            const response = await deleteBroadcast(id);             
+                
+            if (String(response.data?.httpStatus)==='200 OK') {
               revalidate.revalidate();
             }
-        } catch (error) {
-            console.error(error);
+
+        
+        } catch (error:any) {
+
         }
     }
 
