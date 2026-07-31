@@ -11,7 +11,6 @@ import "./../css/LoginPage.css";
 const  LoginPage =()=> {
 
       const [showText,setShowText] = useState<String>('password');
-      const[error,setError]=useState<string>('')
       const[errorEmail,setErrorEmail]=useState<string>('')
       const[errorPassword,setErrorPassword]=useState<string>('')
         const[fetchError,setFetchError] = useState<string>('')
