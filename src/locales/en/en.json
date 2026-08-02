@@ -222,6 +222,7 @@
     "Message": "Don't worry! Keep exploring and discovering new people",
     "btn": "Start discovering"
   },
+
   "filter_dialog": {
     "title": "Ooop. No nearby profiles yet",
     "Message": "Don't worry! expand your search range to discover people."
@@ -444,8 +445,26 @@
       "title":"Danger Zone",
       "text":"Deleting your account deletes your conversations and matches permanently.",
       "btn":"Delete My Account"
+    },
+    "Reset_password":{
+      "title":"Reset Password",
+      "fields":{
+        "email_label":"Email",
+        "email_placeholder":"Email",
+        "date_of_birth_label":"Date of birth",
+        "location":"location",
+        "location_placeholder":"Location",
+        "new_password_label":"New Password",
+        "password_placeholder":"Minimum 8 characters",
+        "confirm_password_label":"Confirm Password",
+        "btn":"Change Password"
+      }
     }
 
+  },
+      "discover_Dialog": {
+    "title": "No profile matches your search",
+    "Message": "Don't worry! expand your search range to discover people."
   }
 
 }

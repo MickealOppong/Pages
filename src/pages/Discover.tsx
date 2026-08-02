@@ -8,6 +8,8 @@ import "./../css/Discover.css";
 
 import type { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { AiOutlineFileSearch } from "react-icons/ai";
 import { DiscoverCard, Loading, NotificationToast, Pagination } from "../components";
 import DiscoverHeader from "../components/DiscoverHeader";
 import type { TErrorResponse } from "../types/TErrorResponse";
@@ -66,7 +68,8 @@ const Discover= () => {
     //loader data
   const posts = useLoaderData() as TResponseDto;
 
-
+    ///translation hook
+    const {t} = useTranslation();
   
 
   // 2. Redux State
@@ -152,9 +155,9 @@ return (
                     {!posts?.data || posts.data.length === 0 ? (
                           <div className="empty-state">
                                 <div className="empty-card">
-                                  <div className="empty-icon">💔</div>
-                                  <h3>Ooop. No nearby profiles yet</h3>
-                                  <p>Don't worry! expand your search range to discover people.</p>
+                                  <div className="empty-icon"><AiOutlineFileSearch/></div>
+                                  <h3>{t('discover_Dialog.title')}</h3>
+                                  <p>{t('discover_Dialog.Message')}</p>
                                 </div>
                               </div>
 

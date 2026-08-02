@@ -437,7 +437,26 @@
     "title": "Strefa zagrożenia",
     "text": "Usunięcie konta trwale usunie Twoje rozmowy oraz pary.",
     "btn": "Usuń moje konto"
+  },
+  "Reset_password": {
+  "title": "Resetowanie hasła",
+  "fields": {
+    "email_label": "E-mail",
+    "email_placeholder": "Adres e-mail",
+    "date_of_birth_label": "Data urodzenia",
+    "location": "Lokalizacja",
+    "location_placeholder": "Miejscowość",
+    "new_password_label": "Nowe hasło",
+    "password_placeholder": "Minimum 8 znaków",
+    "confirm_password_label": "Potwierdź nowe hasło",
+    "btn": "Zmień hasło"
   }
+}
+
+},
+"discover_Dialog": {
+  "title": "Brak profili spełniających kryteria wyszukiwania",
+  "Message": "Nie martw się! Zwiększ zakres wyszukiwania, aby odkryć nowe osoby."
 }
 
 

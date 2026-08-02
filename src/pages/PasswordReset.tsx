@@ -1,4 +1,5 @@
 import { type ChangeEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FiHeart } from 'react-icons/fi';
 import { useNavigate, useNavigation } from 'react-router-dom';
 import { Loading } from '../components';
@@ -11,6 +12,9 @@ const PasswordReset= () => {
 
   const navigation = useNavigation()
   const navigate = useNavigate()
+
+  //translation hook
+  const {t}=useTranslation();
 
   //reset hook
   const[resetPassword,{isLoading}] = useResetPasswordMutation()
@@ -44,39 +48,39 @@ const PasswordReset= () => {
   <div className='password-reset-container'>
       <div className="reset-viewport-shell">
          <div className="reset-interactive-card">        
-          <h1>spotkac</h1>
+          <h1>{t('DiscoverFeed.brand_name')}</h1>
           <FiHeart  size={16} className="reset-brand-heart-ico"/>
         </div>
 
         <div className='title'>
-          <h2>Reset Password</h2>
+          <h2>{t('Settings.Reset_password.title')}</h2>
         </div>
            <form className='form-input' onSubmit={handleFormSubmit}>
                 <div className='form-center'>
                    <div className="account-field-group">
-                  <label>Email</label>
+                  <label>{t('Settings.Reset_password.fields.email_label')}</label>
                   <input type="email" name="username" placeholder="Email" />
                 </div>
                   <div className="account-field-group">
-                  <label>Date of birth</label>
-                  <input type="date" name="dob" placeholder="" />
+                  <label>{t('Settings.Reset_password.fields.date_of_birth_label')}</label>
+                  <input type="date" name="dob" defaultValue={new Date().toISOString().split('T')[0]}/>
                 </div>
                 <div className="account-field-group">
-                  <label>Location</label>
-                  <input type="text" name="location" placeholder="Location" />
+                  <label>{t('Settings.Reset_password.fields.location')}</label>
+                  <input type="text" name="location" placeholder={t('Settings.Reset_password.fields.location')} />
                 </div>
                    <div className="account-field-group">
-                  <label>New Password</label>
-                  <input type="password" name="newPassword" placeholder="Minimum 8 characters" />
+                  <label>{t('Settings.Reset_password.fields.new_password_label')}</label>
+                  <input type="password" name="newPassword" placeholder={t('Settings.Reset_password.fields.password_placeholder')} />
                 </div>
                   <div className="account-field-group">
-                  <label>Confirm Password</label>
-                  <input type="password" name="confirmNewPassword" placeholder="Minimum 8 characters" />
+                  <label>{t('Settings.Reset_password.fields.confirm_password_label')}</label>
+                  <input type="password" name="confirmNewPassword" placeholder={t('Settings.Reset_password.fields.password_placeholder')}/>
                 </div>
                 </div>
                 <div className="account-field-group">
                   <button type="submit" className="account-btn-inline-confirm" >
-                    {navigation.state==='loading'?'loading':'Password Change'}
+                    {navigation.state==='loading'?'loading':t('Settings.Reset_password.fields.btn')}
                   </button>
                 </div>
                

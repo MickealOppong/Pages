@@ -437,8 +437,28 @@
     "title": "Gefahrenzone",
     "text": "Das Löschen Ihres Kontos entfernt Ihre Chats und Matches unwiderruflich.",
     "btn": "Mein Konto löschen"
+  },
+  "Reset_password": {
+  "title": "Passwort zurücksetzen",
+  "fields": {
+    "email_label": "E-Mail",
+    "email_placeholder": "E-Mail-Adresse",
+    "date_of_birth_label": "Geburtsdatum",
+    "location": "Standort",
+    "location_placeholder": "Stadt oder Region",
+    "new_password_label": "Neues Passwort",
+    "password_placeholder": "Mindestens 8 Zeichen",
+    "confirm_password_label": "Passwort bestätigen",
+    "btn": "Passwort ändern"
   }
 }
+
+},
+"discover_Dialog": {
+  "title": "Keine Profile entsprechen deiner Suche",
+  "Message": "Keine Sorge! Erweitere deinen Suchradius, um neue Leute zu entdecken."
+}
+
 
 
 }

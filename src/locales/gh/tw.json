@@ -437,7 +437,26 @@
     "title": "Asiane Beaeɛ",
     "text": "Sɛ wopopa w'akawnt a, wo nkɔmmɔbɔ ne wo nkabom nyinaa bɛyera afebɔɔ.",
     "btn": "Popa M'akawnt"
+  },
+  "Reset_password": {
+  "title": "Sesa Akodeɛ",
+  "fields": {
+    "email_label": "Imeili",
+    "email_placeholder": "Imeili adrɛse",
+    "date_of_birth_label": "Awoɔ Da",
+    "location": "Beaeɛ a Wɔwɔ",
+    "location_placeholder": "Kuro a wɔwɔ",
+    "new_password_label": "Akodeɛ Foforɔ",
+    "password_placeholder": "Nkyerɛwee nnanna nwɔtwe (8) pɛeɛ",
+    "confirm_password_label": "Si Akodeɛ no Pi",
+    "btn": "Sesa Akodeɛ"
   }
+}
+
+},
+"discover_Dialog": {
+  "title": "Annya obiara a ɔne wo pɛ hyehyɛeɛ pɛ",
+  "Message": "Nhwɛ fam! Trɛw wo mpasua mu na woahu afoforɔ."
 }
 
 
