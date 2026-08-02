@@ -1,0 +1,443 @@
+{
+  "DiscoverFeed": {
+    "brand_name": "Spotkac",
+    "tagline": "Trouvez votre partenaire idéal",
+    "card_actions": {
+      "view_profile": "Voir le profil",
+      "connect": "Rencontrer"
+    },
+    "profile_meta": {
+      "header_message": "Trouvez des personnes qui partagent vos intérêts.",
+      "sub_message": "Parce que les relations significatives commencent par des expériences partagées."
+    }
+  },
+  "Messages": {
+    "title": "Messages",
+    "search_placeholder": "Rechercher...",
+    "search_result": "Aucun profil ne correspond aux critères de recherche"
+  },
+  "Matches": {
+    "ConnectionsPage": {
+      "title": "Connexions",
+      "tabs": {
+        "interests_received": "Intérêts reçus",
+        "matches": "Matchs"
+      },
+      "card1": {
+        "connected_via": "Connecté via votre",
+        "moment_suffix": "moment",
+        "actions": {
+          "pass": "Passer",
+          "accept": "Accepter"
+        }
+      },
+      "matches": "Matchs",
+      "card2": {
+        "title": "Cliquez pour ouvrir le chat"
+      }
+    }
+  },
+  "My_moments": {
+    "welcomeMessage": "Mes Moments",
+    "sub_message": "Les connexions significatives commencent lorsque vous partagez vos intérêts et vos expériences de vie",
+    "btn": "Ajouter un moment",
+    "delete_btn": "Supprimer",
+    "visibility": {
+      "public": "PUBLIC",
+      "match_only": "MATCH_UNIQUEMENT"
+    }
+  },
+  "ProfilePage": {
+    "title": "Mon profil",
+    "edit_btn": "Modifier le profil",
+    "cancel_btn": "Annuler la modification",
+    "change_image_btn": "Changer de photo",
+    "update_btn": "Mettre à jour",
+    "sections": {
+      "basic_information": {
+        "title": "Informations de base",
+        "fields": {
+          "first_name": "Prénom",
+          "last_name": "Nom",
+          "date_of_birth": "Date de naissance",
+          "email": "E-mail",
+          "gender": "Genre",
+          "age": "Âge",
+          "preference": "Préférence",
+          "from": "Originaire de",
+          "speaks": "Parle",
+          "profession": "Profession",
+          "city": "Ville",
+          "country": "Pays",
+          "height": "Taille (cm)"
+        }
+      },
+      "about_me": {
+        "title": "À propos de moi",
+        "fields": {
+          "bio_label": "Courte biographie",
+          "education": "Éducation",
+          "basics": "Essentiels",
+          "relationship": "Relation",
+          "drinks": "Alcool",
+          "smokes": "Tabac",
+          "pets": "Animaux",
+          "exercise": "Sport"
+        }
+      },
+      "what_im_looking_for": {
+        "title": "Ce que je recherche",
+        "fields": {
+          "ideal_preference": "Préférence idéale"
+        }
+      },
+      "looking_for_meta": {
+        "title": "Recherche",
+        "fields": {
+          "looking_for_label": "Recherche",
+          "interested_in_label": "Intéressé(e) par"
+        }
+      },
+      "lifestyle": {
+        "title": "Style de vie",
+        "fields": {
+          "language": "LANGUE",
+          "education": "ÉDUCATION",
+          "profession": "PROFESSION",
+          "drinks": "ALCOOL",
+          "smoking": "TABAC",
+          "pets": "ANIMAUX DE COMPAGNIE"
+        }
+      }
+    }
+  },
+  "SettingsPage": {
+    "sections": {
+      "login_credentials": {
+        "title": "Identifiants de connexion",
+        "email_label": "Adresse e-mail",
+        "password_label": "Mot de passe",
+        "change_password_btn": "Changer le mot de passe",
+        "new_password_label": "Nouveau mot de passe",
+        "confirm_password_label": "Confirmer le nouveau mot de passe",
+        "cancel_password_change": "Annuler le changement de mot de passe"
+      },
+      "support_legal": {
+        "title": "Assistance & Mentions légales",
+        "help_center": "Centre d'aide & FAQ",
+        "privacy_policy": "Politique de confidentialité",
+        "terms_of_service": "Conditions d'utilisation"
+      },
+      "danger_zone": {
+        "title": "Zone de danger",
+        "warning_text": "Supprimer votre compte effacera définitivement vos conversations et vos matchs.",
+        "delete_btn": "Supprimer mon compte"
+      }
+    },
+    "actions": {
+      "save_changes_btn": "Enregistrer les modifications",
+      "logout_btn": "Se déconnecter"
+    }
+  },
+  "LoginPage": {
+    "brand_name": "spotkac",
+    "title": "Bon retour",
+    "subtitle": "Découvrez des personnes à travers leurs expériences.",
+    "email": {
+      "placeholder": "Adresse e-mail",
+      "email_error": "Ce nom d'utilisateur n'existe pas."
+    },
+    "password": {
+      "placeholder": "Mot de passe",
+      "password_error": "Mot de passe incorrect."
+    },
+    "submit_btn": "Se connecter",
+    "divider_text": "ou",
+    "forgot_password_link": "Réinitialiser le mot de passe",
+    "signup_prompt": {
+      "text": "Vous n'avez pas de compte ?",
+      "link": "S'inscrire"
+    }
+  },
+  "RegisterPage": {
+    "brand_name": "spotkac",
+    "title": "Créer un compte",
+    "subtitle": "Trouvez quelqu'un qui correspond à votre vibe",
+    "fields": {
+      "firstName": {
+        "placeholder": "Prénom",
+        "firstname_error": "Le prénom nie peut pas être vide"
+      },
+      "lastName": {
+        "placeholder": "Nom",
+        "lastname_error": "Le nom ne peut pas être vide"
+      },
+      "email": {
+        "placeholder": "Adresse e-mail",
+        "email_error": "Veuillez fournir une adresse e-mail valide comme identifiant",
+        "error": "Erreur"
+      },
+      "dob_error": "Vous devez avoir au moins 18 ans pour accéder à cette plateforme.",
+      "gender": "Genre",
+      "location": "Localisation",
+      "location_error": "La localisation ne peut pas être vide",
+      "gender_error": "Le genre ne peut pas être vide",
+      "password": {
+        "placeholder": "Mot de passe",
+        "password_error": "Le mot de passe doit contenir au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial"
+      },
+      "terms_and_privacy": {
+        "link": "J'accepte les",
+        "terms": "Conditions d'utilisation",
+        "and": "et la",
+        "privacy_policy": "Politique de confidentialité",
+        "brand_name": "de Spotkac"
+      },
+      "submit_btn": "Créer un compte",
+      "login_prompt": {
+        "text": "Vous avez déjà un compte ?",
+        "link": "Se connecter"
+      }
+    }
+  },
+  "Landing": {
+    "Discover": "Découvrir",
+    "Matches": "Matchs",
+    "Messages": "Messages",
+    "My moments": "Mes moments",
+    "Settings": "Paramètres",
+    "Profile": {
+      "logged in": "Connecté(e)"
+    },
+    "logout": "Se déconnecter"
+  },
+  "match_Dialog": {
+    "title": "Pas encore de matchs",
+    "Message": "Ne vous inquiétez pas ! Continuez à explorer et à rencontrer de nouvelles personnes",
+    "btn": "Commencer à explorer"
+  },
+  "message_Dialog": {
+    "title": "Pas encore de messages",
+    "Message": "Ne vous inquiétez pas ! Continuez à explorer et à rencontrer de nouvelles personnes",
+    "btn": "Commencer à explorer"
+  },
+  "filter_dialog": {
+    "title": "Oups ! Aucun profil à proximité",
+    "Message": "Ne vous inquiétez pas ! Élargissez votre rayon de recherche pour découvrir du monde."
+  },
+  "warning_dialog": {
+    "title": "Partagez un moment public",
+    "Message": "Avant de pouvoir envoyer une demande de match, votre profil doit contenir au moins un Moment Public. Les Moments Publics aident les gens à découvrir qui vous êtes. Les Moments privés (match uniquement) ne sont visibles qu'après connexion et ne débloquent donc pas les fonctionnalités d'interaction.",
+    "btn": "Ajouter un moment"
+  },
+  "Chatroom": {
+    "status": {
+      "online": "En ligne",
+      "offline": "Hors ligne"
+    },
+    "header": {
+      "connected_via": "Connecté(e) via"
+    },
+    "menu": {
+      "unmatch": "Annuler le match",
+      "view_profile": "Voir le profil"
+    },
+    "footer": {
+      "input_placeholder": "Envoyer un message à {{name}}"
+    }
+  },
+  "Options": {
+    "Gender": {
+      "MALE": "Homme",
+      "FEMALE": "Femme",
+      "NON_BINARY": "Non-binaire",
+      "All": "Tous"
+    },
+    "Preference": {
+      "MALE": "Hommes",
+      "FEMALE": "Femmes",
+      "NON_BINARY": "Personnes non-binaires",
+      "All": "Tous"
+    },
+    "language": {
+      "ENGLISH": "Anglais",
+      "POLISH": "Polonais",
+      "FRENCH": "Français",
+      "OTHER": "Autre"
+    },
+    "education": {
+      "BACHELORS_DEGREE": "Licence",
+      "MASTERS_DEGREE": "Master",
+      "PHD": "Doctorat",
+      "VOCATIONAL": "Formation professionnelle",
+      "HIGH_SCHOOL": "Lycée"
+    },
+    "Questions": {
+      "Yes": "Oui",
+      "No": "Non",
+      "Not_sure": "Pas sûr(e)"
+    },
+    "drinks": {
+      "DONT_DRINK": "Ne boit pas",
+      "YES": "Oui",
+      "NO": "Non",
+      "OCCASIONAL": "Occasionnellement"
+    },
+    "Header": {
+      "any_city": "Toutes les villes",
+      "all": "Tout",
+      "Looking_for": "Recherche",
+      "Age_limit": "Limite d'âge",
+      "Target_location": "Lieu ciblé",
+      "Shared_activity": "Activité partagée",
+      "Gender": "Genre",
+      "filter_btn": "Appliquer les filtres",
+      "title": "Préférences de découverte",
+      "Reset_all": "Tout réinitialiser"
+    },
+    "LookingFor": {
+      "LONG_TERM_RELATIONSHIP": "Relation sérieuse",
+      "SHORT_TERM_RELATIONSHIP": "Rencontres éphémères",
+      "NOT_DECIDED": "Non décidé(e)",
+      "FRIENDS": "Amis"
+    }
+  },
+  "Professions": {
+    "SOFTWARE_ENGINEER": "Ingénieur Logiciel",
+    "DATA_SCIENTIST": "Data Scientist",
+    "PRODUCT_MANAGER": "Chef de Produit",
+    "UX_UI_DESIGNER": "Designer UX/UI",
+    "DIGITAL_MARKETER": "Responsable Marketing Digital",
+    "FINANCIAL_ANALYST": "Analyste Financier",
+    "ACCOUNTANT": "Comptable",
+    "HUMAN_RESOURCES_SPECIALIST": "Spécialiste RH",
+    "SALES_EXECUTIVE": "Responsable Commercial",
+    "CUSTOMER_SUPPORT_REPRESENTATIVE": "Conseiller Clientèle",
+    "REGISTERED_NURSE": "Infirmier(e)",
+    "PHYSICIAN": "Médecin",
+    "PHARMACIST": "Pharmacien(ne)",
+    "PHYSICAL_THERAPIST": "Kinésithérapeute",
+    "TEACHER": "Enseignant(e)",
+    "PROFESSOR": "Professeur",
+    "GRAPHIC_DESIGNER": "Graphiste",
+    "CONTENT_WRITER": "Rédacteur Web",
+    "ARCHITECT": "Architecte",
+    "CIVIL_ENGINEER": "Ingénieur Civil",
+    "MECHANICAL_ENGINEER": "Ingénieur Mécanicien",
+    "DATA_ANALYST": "Analyste de Données",
+    "PROJECT_MANAGER": "Chef de Projet",
+    "OPERATIONS_MANAGER": "Directeur des Opérations",
+    "LEGAL_COUNSEL": "Conseiller Juridique",
+    "CHEF": "Chef Cuisinier",
+    "ELECTRICIAN": "Électricien",
+    "PLUMBER": "Plombier",
+    "REAL_ESTATE_AGENT": "Agent Immobilier",
+    "PHOTOGRAPHER": "Photographe"
+  },
+  "Moments": {
+    "HAVING_COFFEE": "Prendre un café",
+    "WALKING_MY_DOG": "Promener mon chien",
+    "WORKING_OUT_AT_THE_GYM": "S'entraîner à la salle",
+    "COOKING_DINNER": "Cuisiner le dîner",
+    "BAKING": "Faire de la pâtisserie",
+    "READING_A_BOOK": "Lire un livre",
+    "WATCHING_A_MOVIE": "Regarder un film",
+    "PLAYING_VIDEO_GAMES": "Jouer aux jeux vidéo",
+    "PLAYING_BOARD_GAMES": "Jouer à des jeux de société",
+    "OUT_WITH_FRIENDS": "Sortir entre amis",
+    "HAVING_BRUNCH": "Prendre un brunch",
+    "DINING_OUT": "Dîner au restaurant",
+    "HIKING": "Faire de la randonnée",
+    "GOING_FOR_A_RUN": "Faire du jogging",
+    "CYCLING": "Faire du vélo",
+    "AT_THE_BEACH": "À la plage",
+    "WATCHING_THE_SUNSET": "Regarder le coucher de soleil",
+    "ON_VACATION": "En vacances",
+    "ROAD_TRIP": "Voyage en voiture",
+    "CAMPING": "Faire du camping",
+    "TAKING_PHOTOS": "Prendre des photos",
+    "MAKING_ART": "Créer de l'art",
+    "PLAYING_MUSIC": "Jouer de la musique",
+    "DANCING": "Danser",
+    "SHOPPING": "Faire du shopping",
+    "VOLUNTEERING": "Faire du bénévolat",
+    "STUDYING": "Étudier",
+    "WORKING": "Travailler",
+    "RELAXING_AT_HOME": "Se détendre à la maison",
+    "TRYING_SOMETHING_NEW": "Tester de nouvelles choses"
+  },
+  "Cities": {
+    "any_city": "Toutes les villes",
+    "WARSZAWA": "Varsovie",
+    "KRAKÓW": "Cracovie",
+    "ŁÓDŹ": "Lodz",
+    "WROCŁAW": "Wroclaw",
+    "POZNAŃ": "Poznan",
+    "GDAŃSK": "Gdansk",
+    "SZCZECIN": "Szczecin",
+    "BYDGOSZCZ": "Bydgoszcz",
+    "LUBLIN": "Lublin",
+    "BIAŁYSTOK": "Bialystok",
+    "KATOWICE": "Katowice",
+    "GDYNIA": "Gdynia",
+    "CZĘSTOCHOWA": "Czestochowa",
+    "RADOM": "Radom",
+    "RZESZÓW": "Rzeszow",
+    "TORUŃ": "Torun",
+    "SOSNOWIEC": "Sosnowiec",
+    "KIELCE": "Kielce",
+    "GLIWICE": "Gliwice",
+    "OLSZTYN": "Olsztyn",
+    "ZABRZE": "Zabrze",
+    "BIELSKO_BIAŁA": "Bielsko-Biala",
+    "BYTOM": "Bytom",
+    "ZIELONA_GÓRA": "Zielona Gora",
+    "RYBNIK": "Rybnik",
+    "RUDA_ŚLĄSKA": "Ruda Slaska",
+    "OPOLE": "Opole",
+    "TYCHY": "Tychy",
+    "GORZÓW_WIELKOPOLSKI": "Gorzow Wielkopolski",
+    "ELBLĄG": "Elblag"
+  },
+  "CTA": { "View": "Voir", "Spotkac": "Rencontrer" },
+  "Menu": {
+    "Discover": "Découvrir",
+    "Matches": "Matchs",
+    "Messages": "Messages",
+    "Moments": "Mes Moments",
+    "Settings": "Paramètres",
+    "Profile": "Profil",
+    "Log_in": "Connecté(e)",
+    "Log_out": "Se déconnecter"
+  },
+  "Recent_Activities": {
+  "title": "Activités récentes",
+  "Activities": "Moments"
+},
+"Settings": {
+  "title": "Paramètres du compte",
+  "header": "Identifiants de connexion",
+  "fields": {
+    "email_label": "Adresse e-mail",
+    "password_label": "Mot de passe",
+    "change_password_label": "Modifier le mot de passe",
+    "current_password_label": "Mot de passe actuel",
+    "new_password_label": "Nouveau mot de passe",
+    "confirm_password_label": "Confirmer le mot de passe",
+    "cancel_password_change_label": "Annuler la modification"
+  },
+  "Support_&_Legal": {
+    "title": "Assistance et mentions légales",
+    "help_center_link": "Centre d'aide & FAQ",
+    "privacy_policy": "Politique de confidentialité",
+    "terms_of_service": "Conditions d'utilisation",
+    "btn": "Enregistrer les modifications"
+  },
+  "Danger_zone": {
+    "title": "Zone de danger",
+    "text": "La suppression de votre compte effacera définitivement vos conversations et vos matchs.",
+    "btn": "Supprimer mon compte"
+  }
+}
+
+}

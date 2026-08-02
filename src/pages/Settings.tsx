@@ -4,6 +4,7 @@ import "./../css/Settings.css";
 
 
 import { useState, type ChangeEvent } from 'react';
+import { useTranslation } from "react-i18next";
 import { FiBell, FiHelpCircle, FiLock, FiLogOut, FiMail, FiShield, FiTrash2 } from 'react-icons/fi';
 import { Link, useNavigate } from "react-router-dom";
 import { useLogoutMutation } from "../features/api/authApi";
@@ -20,6 +21,9 @@ const Settings= () => {
 
   //navigate hoot
   const navigate = useNavigate()
+
+  //translation hook
+  const {t} = useTranslation()
 
  //change password hook
  const [chnageMyPassword,{isSuccess}] = useChangePasswordMutation()
@@ -103,7 +107,7 @@ return (
       
       {/* Component Title Header */}
       <div className="account-page-header">
-        <h1>Account Settings</h1>
+        <h1>{t('Settings.title')}</h1>
       </div>
 
       <form className="account-settings-form-shell" onSubmit={handleFormSubmit}>
@@ -111,42 +115,42 @@ return (
         {/* Section 1: Security & Credentials */}
         <div className="account-card-panel">
           <div className="account-section-header">
-            <h2><FiShield /> Login Credentials</h2>
+            <h2><FiShield />{t('Settings.header')}</h2>
           </div>
           
           <div className="account-credentials-stack">
             <div className="account-field-group">
-              <label><FiMail /> Email Address</label>
+              <label><FiMail />{t('Settings.fields.email_label')}</label>
               <input type="email" defaultValue={username} name="username" placeholder="yourname@example.com" disabled/>
             </div>
 
             {!isEditingPassword ? (
               <div className="account-field-group">
-                <label><FiLock /> Password</label>
+                <label><FiLock /> {t('Settings.fields.password_label')}</label>
                 <div className="account-password-static-row">
                   <p>••••••••••••</p>
                   <button type="button" className="account-btn-inline" onClick={() => setIsEditingPassword(true)}>
-                    Change Password
+                   {t('Settings.fields.change_password_label')}
                   </button>
                 </div>
               </div>
             ) : (
               <>
                 <div className="account-field-group">
-                  <label>Current Password</label>
+                  <label>{t('Settings.fields.current_password_label')}</label>
                   <input type="password" name="currentPassword" placeholder="Enter current password" />
                 </div>
                 <div className="account-field-group">
-                  <label>New Password</label>
+                  <label>{t('Settings.fields.new_password_label')}</label>
                   <input type="password" name="newPassword" placeholder="Minimum 8 characters" />
                 </div>
                   <div className="account-field-group">
-                  <label>Confirm Password</label>
+                  <label>{t('Settings.fields.confirm_password_label')}</label>
                   <input type="password" name="confirmNewPassword" placeholder="Minimum 8 characters" />
                 </div>
                 <div className="account-field-group">
                   <button type="button" className="account-btn-inline-cancel" onClick={() => setIsEditingPassword(false)}>
-                    Cancel Password Change
+                   {t('Settings.fields.cancel_password_change_label')}
                   </button>
                 </div>
               </>
@@ -212,37 +216,37 @@ return (
         {/* Section 4: Support & Help Desk Links */}
         <div className="account-card-panel">
           <div className="account-section-header">
-            <h2><FiHelpCircle /> Support & Legal</h2>
+            <h2><FiHelpCircle />{t('Settings.Support_&_Legal.title')}</h2>
           </div>
           <div className="account-support-links-grid">
-            <Link to="/help" className="account-support-nav-link">Help Center & FAQ</Link>
-            <Link to="/terms" className="account-support-nav-link">Privacy Policy</Link>
-            <Link to="/terms" className="account-support-nav-link">Terms of Service</Link>
+            <Link to="/help" className="account-support-nav-link">{t('Settings.Support_&_Legal.help_center_link')}</Link>
+            <Link to="/terms" className="account-support-nav-link">{t('Settings.Support_&_Legal.privacy_policy')}</Link>
+            <Link to="/terms" className="account-support-nav-link">{t('Settings.Support_&_Legal.terms_of_service')}</Link>
           </div>
         </div>
 
         {/* Form Changes Submission Button */}
         <div className="account-form-actions-bar">
           <button type="submit" className="account-submit-update-btn">
-            Save Account Changes
+           {t('Settings.Support_&_Legal.btn')}
           </button>
         </div>
 
         {/* Destructive Zone Component Wrapper */}
         <div className="account-danger-zone-wrapper">
           <div className="account-danger-zone-header">
-            <h3>Danger Zone</h3>
-            <p>Deleting your account deletes your conversations and matches permanently.</p>
+            <h3>{t('Settings.Danger_zone.title')}</h3>
+            <p>{t('Settings.Danger_zone.text')}</p>
           </div>
           <button type="button" className="account-delete-profile-btn" onClick={()=>handleAccountDeletion()}>
-            <FiTrash2 /> Delete My Account
+            <FiTrash2 /> {t('Settings.Danger_zone.btn')}
           </button>
         </div>
 
       </form>
       <button className="logout-btn" onClick={handleUserLogout}>
               <FiLogOut size={20} />
-              <span>Logout</span>
+              <span>{t('Menu.Log_out')}</span>
             </button>
     </div>
 

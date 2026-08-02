@@ -38,7 +38,11 @@
     width: 100%;
     box-sizing: border-box; /* Enforces strict internal width boundaries */
     background:$background;
+
+
 }
+
+
 
 .settings_container {
     display: flex;
@@ -368,7 +372,7 @@
 
 .edit-btn button:hover { 
     background-color: #e5def3; 
-    color: #5c4db3;
+    color:$primary;
 }
 
 .edit-btn button:active {

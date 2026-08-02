@@ -70,6 +70,7 @@ z-index: 22;
 
    
     &.portrait {
+     
       grid-column: span 1;
       
     }
@@ -109,6 +110,7 @@ z-index: 22;
       font-weight: 700;
       color: #1a1a1a;
       margin: 0 0 0.5rem 0;
+      
     }
 
     p {
@@ -116,6 +118,7 @@ z-index: 22;
       color: #666666;
       line-height: 1.5;
       margin: 0;
+      height: 6rem;
     }
     a{
       text-decoration: none;

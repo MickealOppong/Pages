@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FiFilter } from 'react-icons/fi';
 import './../css/DiscoverHeader.css';
 import DiscoveryFilters from './DiscoveryFilters';
@@ -6,6 +7,9 @@ import DiscoveryFilters from './DiscoveryFilters';
 const DiscoverHeader =() =>{
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  //translation hook
+  const {t} = useTranslation();
 
   // Close automatically if user presses the Escape key
   useEffect(() => {
@@ -33,8 +37,8 @@ const DiscoverHeader =() =>{
     <header className="discover_header" ref={containerRef}>
       <div className="header_container">
         <div className="header_message">
-          <h2>Spotkac</h2>
-          <p>Find your perfect match</p>
+          <h2>{t('DiscoverFeed.brand_name')}</h2>
+          <p>{t('DiscoverFeed.tagline')}</p>
         </div>
            <button 
           type="button" 
@@ -46,8 +50,8 @@ const DiscoverHeader =() =>{
           <FiFilter size={32} />
         </button>
        <div className="auth-message">
-          <span>Find people who share your interests.</span>
-          <span>Because meaningful relationships start with shared experiences.</span>
+          <span>{t('DiscoverFeed.profile_meta.header_message')}</span>
+          <span>{t('DiscoverFeed.profile_meta.sub_message')}</span>
         </div>
      
       </div>

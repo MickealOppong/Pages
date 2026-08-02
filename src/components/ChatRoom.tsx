@@ -1,5 +1,6 @@
 import { Client } from '@stomp/stompjs';
 import { useEffect, useRef, useState, type ChangeEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { IconType } from 'react-icons';
 import { FiArrowLeft, FiMoreVertical, FiSend } from 'react-icons/fi';
 import { Link, useNavigate, useParams, useRevalidator } from 'react-router-dom';
@@ -9,7 +10,7 @@ import { useCreateMessageNotifMutation, useLazyGetMessagesQuery, useMarkNotifAsR
 import { useAppSelector } from '../store';
 import type { TLikes } from '../types/TLikes';
 import type { TMessages } from '../types/TMessages';
-import { formatLastSentDate, MOMENT_OPTIONS } from '../util/util';
+import { formatLastSentDate, MOMENT_OPTIONS, sanitizeBackendKey } from '../util/util';
 import defImage from './../assets/default.jpeg';
 import './../css/ChatRoom.css';
 import ReactIcon from './ReactIcon';
@@ -237,6 +238,11 @@ const ChatRoom = () => {
     }
   };
 
+
+    //translation hook
+    const {t} = useTranslation();
+
+    
   return (
     <section className="chatroom">
       <section className="chatWindow">
@@ -258,12 +264,13 @@ const ChatRoom = () => {
               <div className='status-container'>
                 <div className='status'>
                   <div className={`${matchUser.online ? 'active' : 'not-active'}`}></div>
-                  <span>{matchUser.online ? 'Online' : 'offline'}</span>
+                  <span>{matchUser.online ? t('Chatroom.status.online'): t('Chatroom.status.offline')}</span>
                 </div>
                 {matchUser.activity && (
                   <div className="system-context-icebreaker">
                     {/* FIXED: Changed to lowercase prop definition */}
-                    <span>Connected via <ReactIcon icon={MOMENT_OPTIONS.find((moment) => moment.label === matchUser.activity)?.icon as IconType}/> {matchUser.activity}</span>
+                    <span>{t('Chatroom.header.connected_via')} <ReactIcon icon={MOMENT_OPTIONS.find((moment) => moment.label === matchUser.activity)?.icon as IconType}/> 
+                      {t(`Moments.${sanitizeBackendKey(matchUser.activity)}`)}</span>
                   </div>
                 )}
               </div>
@@ -275,8 +282,8 @@ const ChatRoom = () => {
               <FiMoreVertical size={22} />
             </button>
             <div className="action-buttons" style={{ display: showMenu ? 'flex' : 'none' }}>
-              <button className="btn" onClick={handleUnmatchUser}>Unmatch</button>
-              <Link to={`/landing/view/${partnerId}`} className="btn">View profile</Link>
+              <button className="btn" onClick={handleUnmatchUser}>{t('Chatroom.menu.unmatch')}</button>
+              <Link to={`/landing/view/${partnerId}`} className="btn">{t('Chatroom.menu.view_profile')}</Link>
             </div>
           </div>
         </header>
@@ -301,7 +308,7 @@ const ChatRoom = () => {
         <footer className='message-footer'>
           <form onSubmit={handleMessageSend} className='message-form'>
             <input 
-              placeholder={`Message ${matchUser.firstName || ''}`} 
+              placeholder={t('Chatroom.footer.input_placeholder',{name:matchUser.firstName||''})} 
               value={input} 
               onChange={(e) => setInput(e.target.value)} 
               onFocus={handleInputFocus}

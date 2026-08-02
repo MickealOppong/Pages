@@ -3,6 +3,7 @@ export type TUserPost={
     content:string,
     visibility:string,
     type:string,
-    image:string,
+    media:string,
+    mediaOrientation:string,
     viewAllowed:boolean
 }

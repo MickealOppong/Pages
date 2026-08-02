@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { FiEye, FiPlus, FiTrash } from "react-icons/fi";
 import { GoPeople } from "react-icons/go";
 import { useDispatch } from "react-redux";
@@ -9,6 +10,7 @@ import { showForm } from "../features/slice/utilSlice";
 import type { AppDispatch, RootState } from "../store";
 import { useAppSelector } from "../store";
 import type { TResponseDto } from "../types/TResponseDto";
+import { sanitizeBackendKey } from "../util/util";
 import "./../css/UserPost.css";
 import "./../css/overlay.css";
 
@@ -51,6 +53,9 @@ const UserBroadcast = () => {
         }
     }
 
+        //translation hook
+      const {t} = useTranslation();
+    
 
     
     const portrait = userPosts.data.filter((data)=>data.mediaOrientation==='portrait')
@@ -69,13 +74,13 @@ const UserBroadcast = () => {
 
             <div className="page-header">
                 <div>
-                    <h1>Your Moments</h1>
-                    <p>Meaningful connections begin when you share your interests and life experiences.</p>
+                    <h1>{t('My_moments.welcomeMessage')}</h1>
+                    <p>{t('My_moments.sub_message')}</p>
                 </div>
 
                 <button className="create-btn" onClick={handleShowForm}>
                     <FiPlus size={20} />
-                    Add Moment
+                {t('My_moments.btn')}
                 </button>
             </div>
 
@@ -88,7 +93,7 @@ const UserBroadcast = () => {
 
                     return (
                         <article className={`post-portrait`} key={post.postId}>
-                            <span className="visibility">{post.visibility}</span>
+                            <span className="visibility">{t(`My_moments.visibility.${post.visibility.toLowerCase()}`)}</span>
             
                             {isVideo ?
                                <>
@@ -100,7 +105,7 @@ const UserBroadcast = () => {
                             <div className="post-content">
                                 <div className="post-meta">
                                     <span className="category">
-                                        {post.type}
+                                       {t(`Moments.${sanitizeBackendKey(post.type)}`)}
                                     </span>
                                 </div>
 
@@ -115,7 +120,7 @@ const UserBroadcast = () => {
                                     </button>
                                     <button className="btn delete-btn" onClick={() => handleDeleteBroadcast(post.postId)}>
                                         <FiTrash size={18} />
-                                        Delete
+                                      {t('My_moments.delete_btn')}
                                     </button>
                                 </div>
                             </div>
@@ -132,7 +137,7 @@ const UserBroadcast = () => {
 
                     return (
                         <article className={`post-landscape`} key={post.postId}>
-                            <span className="visibility">{post.visibility}</span>
+                            <span className="visibility">{t(`My_moments.visibility.${post.visibility.toLowerCase()}`)}</span>
             
                             {isVideo ?
                                <>
@@ -144,7 +149,7 @@ const UserBroadcast = () => {
                             <div className="post-content">
                                 <div className="post-meta">
                                     <span className="category">
-                                        {post.type}
+                                       {t(`Moments.${sanitizeBackendKey(post.type)}`)}
                                     </span>
                                 </div>
 
@@ -157,7 +162,7 @@ const UserBroadcast = () => {
                                     </button>
                                     <button className="btn delete-btn" onClick={() => handleDeleteBroadcast(post.postId)}>
                                         <FiTrash size={18} />
-                                        Delete
+                                    {t('My_moments.delete_btn')}
                                     </button>
                                 </div>
                             </div>

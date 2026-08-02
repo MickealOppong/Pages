@@ -1,11 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import type { IconType } from "react-icons";
 import { FaRuler } from "react-icons/fa";
 import { FiBriefcase, FiEye, FiHeart, FiMapPin } from "react-icons/fi";
 import { RiHeart2Fill } from "react-icons/ri";
 import { useUpdateReachMutation } from "../features/api/transApi";
 import type { TPostList } from "../types/TPostList";
-import { MOMENT_OPTIONS, type ActivityType } from "../util/util";
+import { MOMENT_OPTIONS, sanitizeBackendKey, type ActivityType } from "../util/util";
 import defImage from './../assets/default.jpeg';
 import './../css/DiscoverCard.css';
 import ReactIcon from "./ReactIcon";
@@ -50,6 +51,8 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
     const [updateReach] = useUpdateReachMutation()
 
 
+    //translation hook
+    const {t} = useTranslation();
     
     
 
@@ -65,7 +68,7 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
 
                                 <FiEye />
 
-                               Zobacz
+                               {t(`CTA.View`)}
 
                             </button>
 
@@ -80,7 +83,7 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
                                      }>
 
                                 <FiHeart />
-                                Spotkaj
+                                 {t(`CTA.Spotkac`)}
 
                             </button>
 
@@ -118,7 +121,7 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
 
                     <span>
                         <FiMapPin/>
-                        {post.location}
+                       {t(`Cities.${sanitizeBackendKey(post.location)}`)}
                     </span>
                    </div>
                     <div className="tags_outer">
@@ -131,13 +134,13 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
                                 }}
                             >
                                 <ReactIcon icon={ MOMENT_OPTIONS.find((moment)=>moment.label===post.type)?.icon as IconType}/>
-                               {post.type}
+                               {t(`Moments.${sanitizeBackendKey(post.type)}`)}
                             </span>
 
                             {post.lookingFor &&
                                 <span className="goal-badge">
                                     <RiHeart2Fill/>
-                                  {post?.lookingFor.substring(0,10)}
+                                     {t(`Options.LookingFor.${sanitizeBackendKey(post?.lookingFor.substring(0,10))}`)}
                                 </span>
                             }
 
@@ -162,7 +165,7 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
                             {post.profession &&
                                 <span className="goal-badge">
                                     <FiBriefcase/>
-                                    {post.profession}
+                                   {t(`Professions.${sanitizeBackendKey(post.profession)}`)}
                                 </span>
                             }
 

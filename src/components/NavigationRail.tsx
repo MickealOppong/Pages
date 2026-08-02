@@ -14,6 +14,7 @@ import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom"
 
 import { useMemo, useState } from "react";
 
+import { useTranslation } from "react-i18next";
 import { GoPin } from "react-icons/go";
 import { useLogoutMutation } from "../features/api/authApi";
 import { useUnreadNotifCountQuery } from "../features/api/userApi";
@@ -40,6 +41,9 @@ const  NavigationRail=() =>{
      const profileImageChange = useAppSelector((state)=>state.userSlice.profileImage)  
      const userId = useAppSelector((state)=>state.userSlice.id)
 
+     //translation hook
+     const {t} = useTranslation();
+     
        //logout hook
          const [logout] = useLogoutMutation()
          //get notification hook
@@ -94,7 +98,7 @@ const  NavigationRail=() =>{
 
         {
             path: "/landing/create-moment",
-            label: "My Moments",
+            label: "Moments",
             icon: MdPostAdd
         },
 
@@ -130,7 +134,7 @@ const handleMenuPinned=()=>{
 
                     <FiHeart style={{display:expanded?'none':'flex'}}/>
 
-                    <span>spotkac</span>
+                    <span>{t('DiscoverFeed.brand_name')}</span>
 
                 </div>
                 <button
@@ -185,8 +189,7 @@ const handleMenuPinned=()=>{
 
                                 <span className="rail-label">
 
-                                    {item.label}
-
+                                    {t(`Menu.${item.label}`)}
                                 </span>
 
                             </Link>
@@ -210,13 +213,13 @@ const handleMenuPinned=()=>{
         </div>
         <div className="avatar__info" >
           <h4>{firstName ? `${firstName} ${lastName}` : 'User Account'}</h4>
-          <p>Logged In</p>
+          <p>  {t(`Menu.Log_in`)}</p>
         </div>
       </div>
 
       <button className="logout-btn" onClick={handleUserLogout}>
         <FiLogOut size={20} />
-        <span>Logout</span>
+        <span>{t(`Menu.Log_out`)}</span>
       </button>
          </div>
         }

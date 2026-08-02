@@ -1,0 +1,451 @@
+{
+  "DiscoverFeed": {
+    "brand_name": "Spotkac",
+    "tagline": "Find your perfect match",
+    "card_actions": {
+      "view_profile": "zobacz",
+      "connect": "spotkaj"
+    },
+    "profile_meta": {
+      "header_message": "Find people who share your interests.",
+      "sub_message": "Because meaningful relationships start with shared experiences."
+    }
+  },
+  "Messages": {
+    "title": "Messages",
+    "search_placeholder": "search",
+    "search_result":"No match mett search criteria"
+  },
+  "Matches": {
+    "ConnectionsPage": {
+      "title": "Connections",
+      "tabs": {
+        "interests_received": "Interests received",
+        "matches": "Matches"
+      },
+      "card1": {
+        "connected_via": "Connected via your",
+        "moment_suffix": "moment",
+        "actions": {
+          "pass": "Pass",
+          "accept": "Accept"
+        }
+      },
+      "matches": "Matches",
+      "card2": {
+        "title": "click to open chat"
+      }
+    }
+  },
+  "My_moments": {
+    "welcomeMessage": "My Moments",
+    "sub_message": "Meaningful connections begin when you share your interests and life experiences",
+    "btn":"Add Moment",
+    "delete_btn":"Delete",
+    "visibility":{
+      "public":"PUBLIC",
+      "match_only":"MATCH_ONLY"
+    }
+  },
+  "ProfilePage": {
+    "title":"My Profile",
+    "edit_btn":"Edit Profile",
+    "cancel_btn":"Cancel edit",
+    "change_image_btn": "change photo",
+    "update_btn": "update",
+    "sections": {
+      "basic_information": {
+        "title": "Basic Information",
+        "fields": {
+          "first_name": "First Name",
+          "last_name": "Last Name",
+          "date_of_birth": "Date of Birth",
+          "email": "Email",
+          "gender": "Gender",
+          "age":"age",
+          "prefernce":"Preference",
+          "from":"From",
+          "speaks":"Speaks",
+          "profession":"Profession",
+          "city": "City",
+          "country": "Country",
+          "height": "Height(cm)"
+        }
+      },
+      "about_me": {
+        "title": "About me",
+        "fields": {
+          "bio_label": "Short bio",
+          "education":"Education",
+          "basics":"Basics",
+          "prefernce":"Preference",
+          "relationship":"Relationship",
+          "drinks":"Drinks",
+          "smokes":"Smokes",
+          "pets":"Pets",
+          "exercise":"Exercise"
+        }
+      },
+      "what_im_looking_for": {
+        "title": "What i'm looking for",
+        "fields": {
+          "ideal_preference": "Ideal preference"
+        }
+      },
+      "looking_for_meta": {
+        "title": "Looking for",
+        "fields": {
+          "looking_for_label": "Looking For",
+          "interested_in_label": "Interested in"
+        }
+      },
+      "lifestyle": {
+        "title": "Lifestyle",
+        "fields": {
+          "language": "LANGUAGE",
+          "education": "EDUCATION",
+          "profession": "PROFESSION",
+          "drinks": "DRINKS",
+          "smoking": "SMOKING",
+          "pets": "PETS"
+        }
+      }
+    }
+  },
+  "SettingsPage": {
+    "sections": {
+      "login_credentials": {
+        "title": "Login Credentials",
+        "email_label": "Email Address",
+        "password_label": "Password",
+        "change_password_btn": "Change Password",
+        "New_password_lable": "New password",
+        "Comfirm_password_lable": "New password",
+        "cancel_password_change": "Cancel password change"
+      },
+      "support_legal": {
+        "title": "Support & Legal",
+        "help_center": "Help Center & FAQ",
+        "privacy_policy": "Privacy Policy",
+        "terms_of_service": "Terms of Service"
+      },
+      "danger_zone": {
+        "title": "Danger Zone",
+        "warning_text": "Deleting your account deletes your conversations and matches permanently.",
+        "delete_btn": "Delete My Account"
+      }
+    },
+    "actions": {
+      "save_changes_btn": "Save Account Changes",
+      "logout_btn": "Logout"
+    }
+  },
+  "LoginPage": {
+    "brand_name": "spotkac",
+    "title": "Welcome back",
+    "subtitle": "Discover people through their experiences.",
+    "email": {
+      "placeholder": "Email address",
+      "email_error": "Username does not exist."
+    },
+    "password": {
+      "placeholder": "Password",
+      "password_error": "Incorrect password."
+    },
+    "submit_btn": "Log In",
+    "divider_text": "or",
+    "forgot_password_link": "Reset password",
+    "signup_prompt": {
+      "text": "Don't have an account?",
+      "link": "Sign up"
+    }
+  },
+  "RegisterPage": {
+    "brand_name": "spotkac",
+    "title": "Create Account",
+    "subtitle": "Find someone that matches your fever",
+    "fields": {
+      "firstName": {
+        "placeholder": "FirstName",
+        "firstname_error": "First name cannot be empty"
+      },
+      "lastName": {
+        "placeholder": "lastName",
+        "lastname_error": "last Name cannot be empty"
+      },
+      "email": {
+        "placeholder": "Email Address",
+        "email_error": "Please provide a valid email address as your username",
+        "error": "error"
+      },
+      "dob_error": "You must be at least 18 years old to access this platform.",
+      "gender": "gender",
+      "location": "location",
+      "location_error": "Location cannot be empty",
+      "gender_error": "Gender cannot be empty",
+      "password": {
+        "placeholder": "password",
+        "password_error": "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"
+      },
+      "terms_and_privacy": {
+        "link": "I accept the",
+        "terms": "Terms of Service",
+        "and": "and",
+        "privacy_policy": "Privacy Policy",
+        "brand_name": "of Spotkac"
+      },
+      "submit_btn": "Create Account",
+      "login_prompt": {
+        "text": "Already have an account?",
+        "link": "Log In"
+      }
+    }
+  },
+  "Landing": {
+    "Discover": "Discover",
+    "Matches": "Matches",
+    "Messages": "Messages",
+    "My moments": "My moments",
+    "Settings": "Settings",
+    "Profile": {
+      "logged in": "logged in"
+    },
+    "logout": "Logout"
+  },
+  "match_Dialog": {
+    "title": "No matches yet",
+    "Message": "Don't worry! Keep exploring and discovering new people",
+    "btn": "Start discovering"
+  },
+  "message_Dialog": {
+    "title": "No messages yet",
+    "Message": "Don't worry! Keep exploring and discovering new people",
+    "btn": "Start discovering"
+  },
+  "filter_dialog": {
+    "title": "Ooop. No nearby profiles yet",
+    "Message": "Don't worry! expand your search range to discover people."
+  },
+  "warning_dialog": {
+    "title": "Share one public moment",
+    "Message": "Before you can send match request, your profile needs at least one Public Moment. Public Moments help people discover who you are. Match-only Moments are only visible after you've connected, so they don't unlock connection features.",
+    "btn": "add moment"
+  },
+  "Chatroom": {
+    "status": {
+      "online": "Online",
+      "offline": "Offline"
+    },
+    "header": {
+      "connected_via": "Connected via"
+    },
+    "menu": {
+      "unmatch": "Unmatch",
+      "view_profile": "View profile"
+    },
+    "footer": {
+      "input_placeholder": "Message {{name}}"
+    }
+  },
+  "Options": {
+    "Gender": {
+      "MALE": "Male",
+      "FEMALE": "Female",
+      "NON_BINARY": "Non-binary",
+      "All":"All"
+    },
+      "Preference": {
+    "MALE": "Men",
+    "FEMALE": "Women",
+    "NON_BINARY": "Non-binary",
+    "All": "All"
+  },
+  "language":{
+    "ENGLISH":"English",
+    "POLISH":"Polish",
+    "FRENCH":"French",
+    "OTHER":"Other"
+  },
+  "education":{
+    "BACHELORS_DEGREE":"Bachelor's degree",
+    "MASTERS_DEGREE":"Master's degree",
+    "PHD":"PHD",
+    "VOCATIONAL":"Vocational",
+    "HIGH_SCHOOL":"High School"
+  },
+  "Questions":{
+    "Yes":"Yes",
+    "No":"No",
+    "Not_sure":"Not sure"
+  },
+  "drinks":{
+    "DONT_DRINK":"Don't drink",
+    "YES":"Yes",
+    "NO":"No",
+    "OCCASIONAL":"Occasional"
+  }
+,
+    "Header":{
+      "any_city":"Any city",
+      "all":"All",
+      "Looking_for":"Looking for",
+      "Age_limit":"Age limit",
+      "Target_location":"Target Location",
+      "Shared_activity":"Shared Activity",
+      "Gender":"Gender",
+      "filter_btn": "Apply filters",
+      "title":"Discover preferences",
+      "Reset_all":"Reset all"
+    },
+   "LookingFor": {
+  "LONG_TERM_RELATIONSHIP": "Long-term relationship",
+  "SHORT_TERM_RELATIONSHIP": "Casual dating",
+  "NOT_DECIDED": "Not decided",
+  "FRIENDS":"Friends"
+}
+  },
+  "Professions": {
+    "SOFTWARE_ENGINEER": "Software Engineer",
+    "DATA_SCIENTIST": "Data Scientist",
+    "PRODUCT_MANAGER": "Product Manager",
+    "UX_UI_DESIGNER": "UX/UI Designer",
+    "DIGITAL_MARKETER": "Digital Marketer",
+    "FINANCIAL_ANALYST": "Financial Analyst",
+    "ACCOUNTANT": "Accountant",
+    "HUMAN_RESOURCES_SPECIALIST": "Human Resources Specialist",
+    "SALES_EXECUTIVE": "Sales Executive",
+    "CUSTOMER_SUPPORT_REPRESENTATIVE": "Customer Support Representative",
+    "REGISTERED_NURSE": "Registered Nurse",
+    "PHYSICIAN": "Physician",
+    "PHARMACIST": "Pharmacist",
+    "PHYSICAL_THERAPIST": "Physical Therapist",
+    "TEACHER": "Teacher",
+    "PROFESSOR": "Professor",
+    "GRAPHIC_DESIGNER": "Graphic Designer",
+    "CONTENT_WRITER": "Content Writer",
+    "ARCHITECT": "Architect",
+    "CIVIL_ENGINEER": "Civil Engineer",
+    "MECHANICAL_ENGINEER": "Mechanical Engineer",
+    "DATA_ANALYST": "Data Analyst",
+    "PROJECT_MANAGER": "Project Manager",
+    "OPERATIONS_MANAGER": "Operations Manager",
+    "LEGAL_COUNSEL": "Legal Counsel",
+    "CHEF": "Chef",
+    "ELECTRICIAN": "Electrician",
+    "PLUMBER": "Plumber",
+    "REAL_ESTATE_AGENT": "Real Estate Agent",
+    "PHOTOGRAPHER": "Photographer"
+  }
+,
+  "Moments": {
+    "HAVING_COFFEE": "Having coffee",
+    "WALKING_MY_DOG": "Walking my dog",
+    "WORKING_OUT_AT_THE_GYM": "Working out at the gym",
+    "COOKING_DINNER": "Cooking dinner",
+    "BAKING": "Baking",
+    "READING_A_BOOK": "Reading a book",
+    "WATCHING_A_MOVIE": "Watching a movie",
+    "PLAYING_VIDEO_GAMES": "Playing video games",
+    "PLAYING_BOARD_GAMES": "Playing board games",
+    "OUT_WITH_FRIENDS": "Out with friends",
+    "HAVING_BRUNCH": "Having brunch",
+    "DINING_OUT": "Dining out",
+    "HIKING": "Hiking",
+    "GOING_FOR_A_RUN": "Going for a run",
+    "CYCLING": "Cycling",
+    "AT_THE_BEACH": "At the beach",
+    "WATCHING_THE_SUNSET": "Watching the sunset",
+    "ON_VACATION": "On vacation",
+    "ROAD_TRIP": "Road trip",
+    "CAMPING": "Camping",
+    "TAKING_PHOTOS": "Taking photos",
+    "MAKING_ART": "Making art",
+    "PLAYING_MUSIC": "Playing music",
+    "DANCING": "Dancing",
+    "SHOPPING": "Shopping",
+    "VOLUNTEERING": "Volunteering",
+    "STUDYING": "Studying",
+    "WORKING": "Working",
+    "RELAXING_AT_HOME": "Relaxing at home",
+    "TRYING_SOMETHING_NEW": "Trying something new"
+  }
+,
+    "Cities": {
+    "any_city": "Any city",
+    "WARSZAWA": "Warsaw",
+    "KRAKÓW": "Krakow",
+    "ŁÓDŹ": "Lodz",
+    "WROCŁAW": "Wroclaw",
+    "POZNAŃ": "Poznan",
+    "GDAŃSK": "Gdansk",
+    "SZCZECIN": "Szczecin",
+    "BYDGOSZCZ": "Bydgoszcz",
+    "LUBLIN": "Lublin",
+    "BIAŁYSTOK": "Bialystok",
+    "KATOWICE": "Katowice",
+    "GDYNIA": "Gdynia",
+    "CZĘSTOCHOWA": "Czestochowa",
+    "RADOM": "Radom",
+    "RZESZÓW": "Rzeszow",
+    "TORUŃ": "Torun",
+    "SOSNOWIEC": "Sosnowiec",
+    "KIELCE": "Kielce",
+    "GLIWICE": "Gliwice",
+    "OLSZTYN": "Olsztyn",
+    "ZABRZE": "Zabrze",
+    "BIELSKO_BIAŁA": "Bielsko-Biala",
+    "BYTOM": "Bytom",
+    "ZIELONA_GÓRA": "Zielona Gora",
+    "RYBNIK": "Rybnik",
+    "RUDA_ŚLĄSKA": "Ruda Slaska",
+    "OPOLE": "Opole",
+    "TYCHY": "Tychy",
+    "GORZÓW_WIELKOPOLSKI": "Gorzow Wielkopolski",
+    "ELBLĄG": "Elblag"
+  },
+  "CTA":{
+    "View":"view",
+    "Spotkac":"spotkaj"
+  },
+  "Menu": {
+    "Discover": "Discover",
+    "Matches": "Matches",
+    "Messages": "Messages",
+    "Moments": "My Moments",
+    "Settings": "Settings",
+    "Profile": "Profile",
+    "Log_in": "Logged in",
+    "Log_out": "Logout"
+  },
+  "Recent_Activities":{
+    "title":"Recent Activities",
+    "Activities":"Moments"
+  },
+  "Settings":{
+    "title":"Account Settings",
+    "header":"Login Credentials",
+    "fields":{
+      "email_label":"Emal Address",
+      "password_label":"Password",
+      "change_password_label":"Change Password",
+      "current_password_label":"Current Password",
+      "new_password_label":"New Password",
+      "confirm_password_label":"Confirm Password",
+      "cancel_password_change_label":"Cancel Password Change"
+    },
+    "Support_&_Legal":{
+      "title":"Support & Legal",
+      "help_center_link":"Help Center & FAQ",
+      "privacy_policy":"Privacy Policy",
+      "terms_of_service":"Terms of Service",
+      "btn":"Save Account Changes"
+    },
+    "Danger_zone":{
+      "title":"Danger Zone",
+      "text":"Deleting your account deletes your conversations and matches permanently.",
+      "btn":"Delete My Account"
+    }
+
+  }
+
+}

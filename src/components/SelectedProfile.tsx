@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { BsFillHeartFill } from 'react-icons/bs';
-import { CgGym } from 'react-icons/cg';
 import { FiBriefcase, FiCalendar, FiHeart, FiMapPin } from 'react-icons/fi';
 import { GoPerson } from 'react-icons/go';
 import { HiLanguage } from 'react-icons/hi2';
@@ -10,7 +10,7 @@ import { TbSchool } from 'react-icons/tb';
 import { useLazyGetUserViewProfileQuery } from '../features/api/userApi';
 import type { TUserData } from '../types/TUserData';
 import type { TUserPost } from '../types/TUserPost';
-import { getAgeFromDateOfBirth } from '../util/util';
+import { getAgeFromDateOfBirth, sanitizeBackendKey, sanitizeKey } from '../util/util';
 import './../css/ViewProfile.css';
 import { RecentActivities } from './index';
 
@@ -27,12 +27,14 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
          setData(()=>response.data?.data as TUserData)
     }
 
-    
+    //translation hook
+    const {t} = useTranslation()
 
     
    useEffect(()=>{
         getUserDataQuery()
    },[userId,requestorUserId])
+
 
     
     if(data){
@@ -53,7 +55,7 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                          <span>{getAgeFromDateOfBirth(date_of_birth)}</span>
                     </div>
                     <div className='location_status'>
-                        <p>{city},Poland</p>
+                        <p>{city},{country}</p>
                     </div>
                  </div>
                 <div className='request-btn' style={{display:'none'}}>
@@ -69,8 +71,8 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                              <PiRuler/>
                            </div>
                         <div className='attribute'>
-                            <h2>{`${height}cm`}</h2>
-                            <p>Height</p>
+                            <h2>{height||''}</h2>
+                            <p>{t('ProfilePage.sections.basic_information.fields.height')}</p>
                         </div>
                         </div>
                         <div className='attribute_container'>
@@ -78,8 +80,8 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                              <FiBriefcase/>
                            </div>
                         <div className='attribute'>
-                            <h2>{profession}</h2>
-                            <p>Profession</p>
+                            <h2>{t(`Professions.${sanitizeBackendKey(profession)}`)}</h2>
+                            <p>{t('ProfilePage.sections.basic_information.fields.profession')}</p>
                         </div>
                         </div>
                          <div className='attribute_container'>
@@ -87,8 +89,8 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                              <PiPerson/>
                            </div>
                         <div className='attribute'>
-                            <h2>{gender}</h2>
-                            <p>Gender</p>
+                            <h2>{t(`Options.Gender.${sanitizeKey(gender)}`)}</h2>
+                            <p>{t('ProfilePage.sections.basic_information.fields.gender')}</p>
                         </div>
                         </div>
                           <div className='attribute_container'>
@@ -97,7 +99,7 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                            </div>
                         <div className='attribute'>
                             <h2>{getAgeFromDateOfBirth(date_of_birth)}</h2>
-                            <p>Age</p>
+                            <p>{t('ProfilePage.sections.basic_information.fields.age')}</p>
                         </div>
                         </div>
                           <div className='attribute_container'>
@@ -105,8 +107,8 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                              <GoPerson/>
                            </div>
                         <div className='attribute'>
-                            <h2>{preference}</h2>
-                            <p>Preference</p>
+                            <h2>{t(`Options.Preference.${sanitizeBackendKey(preference)}`)}</h2>
+                            <p>{t('ProfilePage.sections.basic_information.fields.preference')}</p>
                         </div>
                         </div>
                         <div className='attribute_container'>
@@ -114,8 +116,8 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                              <FiMapPin/>
                            </div>
                         <div className='attribute'>
-                            <h2>{`${city}, ${country}`}</h2>
-                            <p>From</p>
+                            <h2>{t(`Cities.${sanitizeBackendKey(city)}`)}</h2>
+                            <p>{t('ProfilePage.sections.basic_information.fields.from')}</p>
                         </div>
                         </div>
                         
@@ -124,8 +126,8 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                              <HiLanguage/>
                            </div>
                         <div className='attribute'>
-                            <h2>{language}</h2>
-                            <p>Speaks</p>
+                            <h2>{t(`Options.language.${sanitizeKey(language)}`)}</h2>
+                            <p>{t('ProfilePage.sections.basic_information.fields.speaks')}</p>
                         </div>
                         </div>
                     </div>
@@ -133,19 +135,19 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                 <div className='about_container'>
                     <div className='about'>
                         <div className='about_me'>
-                            <h4>About me</h4>
+                            <h4>{t('ProfilePage.sections.about_me.title')}</h4>
                              <p>{aboutMe}</p>
                         </div>
                         <div className='basic_container'>
-                            <h4>Basics</h4>
+                            <h4>{t('ProfilePage.sections.about_me.title')}</h4>
                           <div className='basic_info'>
                               <div className='attribute_container'>
                                 <div className='svg'>
                                     <FiHeart/>
                                 </div>
                                 <div className='attribute'>
-                                    <h2>Relationship</h2>
-                                    <p>{lookingFor}</p>
+                                    <h2>{t('ProfilePage.sections.about_me.fields.relationship')}</h2>
+                                    <p>{t(`Options.LookingFor.${sanitizeBackendKey(lookingFor)}`)}</p>
                                 </div>
                             </div>
                              <div className='attribute_container'>
@@ -153,8 +155,8 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                                     <TbSchool/>
                                 </div>
                                 <div className='attribute'>
-                                    <h2>Education</h2>
-                                    <p>{education}</p>
+                                    <h2>{t('ProfilePage.sections.about_me.fields.education')}</h2>
+                                    <p>{t(`Options.education.${sanitizeKey(education)}`)}</p>
                                 </div>
                             </div>
                              <div className='attribute_container'>
@@ -162,8 +164,8 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                                     <PiBeerBottle/>
                                 </div>
                                 <div className='attribute'>
-                                    <h2>Drinks</h2>
-                                    <p>{drinking}</p>
+                                    <h2>{t('ProfilePage.sections.about_me.fields.drinks')}</h2>
+                                    <p>{t(`Options.drinks.${sanitizeKey(drinking)}`)}</p>
                                 </div>
                             </div>
                             <div className='attribute_container'>
@@ -171,8 +173,8 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                                     <PiCigarette/>
                                 </div>
                                 <div className='attribute'>
-                                    <h2>Smokes</h2>
-                                    <p>{smoking}</p>
+                                    <h2>{t('ProfilePage.sections.about_me.fields.smokes')}</h2>
+                                    <p>{t(`Options.Questions.${smoking}`)}</p>
                                 </div>
                             </div>
                              <div className='attribute_container'>
@@ -180,17 +182,8 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                                     <MdPets/>
                                 </div>
                                 <div className='attribute'>
-                                    <h2>Pets</h2>
-                                    <p>{pets}</p>
-                                </div>
-                            </div>
-                             <div className='attribute_container'>
-                                <div className='svg'>
-                                    <CgGym/>
-                                </div>
-                                <div className='attribute'>
-                                    <h2>Exercise</h2>
-                                    <p>Regularly</p>
+                                    <h2>{t('ProfilePage.sections.about_me.fields.pets')}</h2>
+                                    <p>{t(`Options.Questions.${pets}`)}</p>
                                 </div>
                             </div>
                           </div>
@@ -199,26 +192,10 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
      
                 </div>
                     </div>
-                <div className='main_right' >
-                  {/**
-                   * 
-                   * <div className='interests_container'>
-                 
-                     <div className='interests'>
-                           <h2>Interests</h2>
-                           {
-                            data?.activities?.map((item)=>{
-                                return <span key={item}>{item}</span>
-                            })
-                           }
-                       
-                      </div>
-                  </div>
-                   */}
-                  
+                <div className='main_right' >            
                   <div className='expect_container'>
                     <div className='expect'>
-                        <h2>what i'm looking for</h2>
+                        <h2>{t('ProfilePage.sections.what_im_looking_for.title')}</h2>
                         <p>{aboutThem}</p>
                         <div className='heart'>
                             <BsFillHeartFill/>

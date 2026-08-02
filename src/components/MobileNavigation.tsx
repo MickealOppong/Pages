@@ -10,6 +10,7 @@ import { LuMessageCircle, LuSettings } from "react-icons/lu";
 import { Link, useLocation } from "react-router-dom";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { useUnreadNotifCountQuery } from "../features/api/userApi";
 import { showForm } from "../features/slice/utilSlice";
@@ -20,6 +21,9 @@ import "./../css/MobileNavigation.css";
 const  MobileNavigation=() =>{
   const userId = useAppSelector((state)=>state.userSlice.id)
     const [open, setOpen] = useState<Boolean>(false);
+
+    //translation hook
+    const {t} = useTranslation();
 
     //hook
     const {data:notificationCounter} = useUnreadNotifCountQuery(userId,{refetchOnFocus:true})
@@ -163,7 +167,7 @@ const  MobileNavigation=() =>{
         >
           <div className="drawer-left">
             <FiCompass />
-          <span>Discover</span>
+          <span>{t('Menu.Discover')}</span>
           </div>
         </Link>
 
@@ -178,7 +182,7 @@ const  MobileNavigation=() =>{
         >
           <div className="drawer-left">
             <FiHeart />
-            <span>Matches</span>
+            <span>{t('Menu.Matches')}</span>
           </div>
 
           {(notificationCounter && notificationCounter?.notif["LIKE"]>0) && (
@@ -199,7 +203,7 @@ const  MobileNavigation=() =>{
         >
           <div className="drawer-left">
             <FiPlus className="moment-btn"/>
-            <span className="moment">Moment</span>
+            <span className="moment">{t('Menu.Moments')}</span>
           </div>
         </Link>
 
@@ -214,7 +218,7 @@ const  MobileNavigation=() =>{
         >
           <div className="drawer-left">
             <LuMessageCircle />
-            <span>Messages</span>
+            <span>{t('Menu.Messages')}</span>
           </div>
 
           { (notificationCounter && notificationCounter?.notif["MESSAGE"]>0)
@@ -236,7 +240,7 @@ const  MobileNavigation=() =>{
         >
           <div className="drawer-left">
               <LuSettings />
-           <span>Settings</span>
+           <span>{t('Menu.Settings')}</span>
           </div>
          
         </Link>
@@ -252,7 +256,7 @@ const  MobileNavigation=() =>{
         >
           <div className="drawer-left">
             <FiUser />
-          <span>Profile</span>
+          <span>{t('Menu.Profile')}</span>
           </div>
         </Link>
       </aside>

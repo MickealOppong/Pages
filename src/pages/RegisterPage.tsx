@@ -1,4 +1,5 @@
 import { useState, type ChangeEvent } from "react";
+import { useTranslation } from "react-i18next";
 import { FiCalendar, FiHeart, FiLock, FiMail, FiMapPin, FiUser } from "react-icons/fi";
 import { IoMaleFemaleOutline } from "react-icons/io5";
 import { Link, useNavigate, useNavigation } from "react-router-dom";
@@ -23,7 +24,8 @@ const RegisterPage = ()=> {
         const navigate = useNavigate();
         const navigation = useNavigation()
 
-
+  //translation hook
+  const {t} = useTranslation();
       
     
         const handleFormSubmit = async (e:ChangeEvent<HTMLFormElement>)=>{
@@ -114,11 +116,11 @@ if(navigation.state==='loading'){
 
         <div className="brand">
                <FiHeart size={16} className="heart"/>
-          <h1>spotkac</h1>
+          <h1>{t('RegisterPage.brand_name')}</h1>
         </div>
 
-        <h2>Create Account</h2>
-        <p>Find someone that matches your fever</p>
+        <h2>{t('RegisterPage.title')}</h2>
+        <p>{t('RegisterPage.subtitle')}</p>
     
         <form onSubmit={handleFormSubmit}>
           <div className="row">
@@ -127,12 +129,12 @@ if(navigation.state==='loading'){
               <FiUser size={18} />
               <input
                 type="text" 
-                placeholder="First Name" name="firstName"
+                placeholder={t('RegisterPage.fields.firstName.placeholder')} name="firstName"
               />
                          
             </div>
             {
-              errorMessages?.firstName && <span>{errorMessages.firstName}</span>
+              errorMessages?.firstName && <span>{t('RegisterPage.fields.firstName.firstname_error')}</span>
             }
            </div>
 
@@ -141,11 +143,11 @@ if(navigation.state==='loading'){
               <FiUser size={18} />
               <input
                 type="text"
-                placeholder="Last Name" name="lastName"
+                placeholder={t('RegisterPage.fields.lastName.placeholder')} name="lastName"
               />
             </div>
               {
-              errorMessages?.lastName && <span>{errorMessages.lastName}</span>
+              errorMessages?.lastName && <span>{t('RegisterPage.fields.lastName.lastname_error')}</span>
             }
             </div>
           </div>
@@ -156,7 +158,7 @@ if(navigation.state==='loading'){
             <input type="date" name="dob" defaultValue={new Date().toISOString().split('T')[0]}/>
           </div>
              {
-              errorMessages?.dob && <span>{errorMessages.dob}</span>
+              errorMessages?.dob && <span>{t('RegisterPage.fields.dob_error')}</span>
             }
          </div>
 
@@ -165,15 +167,15 @@ if(navigation.state==='loading'){
             <FiMail size={18} />
             <input
               type="email" required
-              placeholder="Email Address" name="email"
+              placeholder={t('RegisterPage.fields.email.placeholder')} name="email"
             />
           </div>
             {
-              errorMessages?.email  && <span>{errorMessages.email}</span>
+              errorMessages?.email  && <span>{t('RegisterPage.fields.email.email_error')}</span>
      
             }
               {
-             error  && <span>{error}</span>
+             error  && <span>{t('RegisterPage.fields.email.error')}</span>
      
             }
          </div>
@@ -186,14 +188,14 @@ if(navigation.state==='loading'){
               <option disabled value={'Select Gender'}>
                 Select Gender
               </option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Non-binary">Non-binary</option>
+              <option value="Male">{t('Options.Gender.MALE')}</option>
+              <option value="Female">{t('Options.Gender.FEMALE')}</option>
+              <option value="Non-binary">{t('Options.Gender.NON_BINARY')}</option>
             </select>
           
           </div>
               {
-              errorMessages?.gender && <span>{errorMessages.gender}</span>
+              errorMessages?.gender && <span>{t('RegisterPage.fields.gender_error')}</span>
             }
           </div>
  
@@ -213,7 +215,7 @@ if(navigation.state==='loading'){
               </select>
             </div>
              {
-              errorMessages?.location && <span>{errorMessages.location}</span>
+              errorMessages?.location && <span>{t('RegisterPage.fields.location_error')}</span>
             }
           </div>
        </div>
@@ -223,11 +225,11 @@ if(navigation.state==='loading'){
             <FiLock size={18} />
             <input
               type="password" required
-              placeholder="Password" name="password"
+              placeholder={t('RegisterPage.fields.password.placeholder')} name="password"
             />
           </div>
              {
-              errorMessages?.password && <span>{errorMessages.password}</span>
+              errorMessages?.password && <span>{t('RegisterPage.fields.password.password_error')}</span>
             }
           </div>
           <div className="form-group terms-condition-group">
@@ -241,7 +243,7 @@ if(navigation.state==='loading'){
                     onChange={()=>setIsTermsCheck(!isTermsChecked)} 
                   />
                   <span className="checkbox-text">
-                    I accept the <Link to="/terms" className="legal-link" target="_blank">Terms of Service</Link> and <Link to="/terms" className="legal-link" target="_blank">Privacy Policy</Link> of Spotkac.
+                   {t('RegisterPage.fields.terms_and_privacy.link')}{" "}<Link to="/terms" className="legal-link" target="_blank">{t('RegisterPage.fields.terms_and_privacy.terms')}{" "}</Link> {t('RegisterPage.fields.terms_and_privacy.and')}{" "}<Link to="/terms" className="legal-link" target="_blank">{t('RegisterPage.fields.terms_and_privacy.privacy_policy')}{" "}</Link>{t('RegisterPage.fields.terms_and_privacy.brand_name')}
                   </span>
                 </label>
               </div>
@@ -252,13 +254,13 @@ if(navigation.state==='loading'){
             type="submit"
             className="register-btn"
           >
-            Create Account
+           {t('RegisterPage.fields.submit_btn')}
           </button>
         </form>
 
         <div className="login-link">
-          Already have an account?
-          <Link to={'/'}> Log In</Link>
+     {t('RegisterPage.fields.login_prompt.text')}
+          <Link to={'/'}> {t('RegisterPage.fields.login_prompt.link')}</Link>
         </div>
 
       </div>

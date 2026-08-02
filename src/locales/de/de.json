@@ -1,0 +1,444 @@
+{
+  "DiscoverFeed": {
+    "brand_name": "Spotkac",
+    "tagline": "Finde dein perfektes Match",
+    "card_actions": {
+      "view_profile": "Profil anzeigen",
+      "connect": "Treffen"
+    },
+    "profile_meta": {
+      "header_message": "Finde Menschen, die deine Interessen teilen.",
+      "sub_message": "Weil bedeutungsvolle Beziehungen mit gemeinsamen Erlebnissen beginnen."
+    }
+  },
+  "Messages": {
+    "title": "Nachrichten",
+    "search_placeholder": "Suchen...",
+    "search_result": "Keine Treffer für die Suchkriterien gefunden"
+  },
+  "Matches": {
+    "ConnectionsPage": {
+      "title": "Verbindungen",
+      "tabs": {
+        "interests_received": "Erhaltene Interessen",
+        "matches": "Matches"
+      },
+      "card1": {
+        "connected_via": "Verbunden über deinen",
+        "moment_suffix": "Moment",
+        "actions": {
+          "pass": "Weiter",
+          "accept": "Annehmen"
+        }
+      },
+      "matches": "Matches",
+      "card2": {
+        "title": "Klicken, um Chat zu öffnen"
+      }
+    }
+  },
+  "My_moments": {
+    "welcomeMessage": "Meine Momente",
+    "sub_message": "Bedeutungsvolle Verbindungen entstehen, wenn du deine Interessen und Lebenserfahrungen teilst",
+    "btn": "Moment hinzufügen",
+    "delete_btn": "Löschen",
+    "visibility": {
+      "public": "ÖFFENTLICH",
+      "match_only": "NUR_MATCHES"
+    }
+  },
+  "ProfilePage": {
+    "title": "Mein Profil",
+    "edit_btn": "Profil bearbeiten",
+    "cancel_btn": "Bearbeiten abbrechen",
+    "change_image_btn": "Foto ändern",
+    "update_btn": "Aktualisieren",
+    "sections": {
+      "basic_information": {
+        "title": "Basisinformationen",
+        "fields": {
+          "first_name": "Vorname",
+          "last_name": "Nachname",
+          "date_of_birth": "Geburtsdatum",
+          "email": "E-Mail",
+          "gender": "Geschlecht",
+          "age": "Alter",
+          "preference": "Präferenz",
+          "from": "Herkunft",
+          "speaks": "Spricht",
+          "profession": "Beruf",
+          "city": "Stadt",
+          "country": "Land",
+          "height": "Größe (cm)"
+        }
+      },
+      "about_me": {
+        "title": "Über mich",
+        "fields": {
+          "bio_label": "Kurzbiografie",
+          "education": "Ausbildung",
+          "basics": "Basics",
+          "relationship": "Beziehung",
+          "drinks": "Alkohol",
+          "smokes": "Rauchen",
+          "pets": "Haustiere",
+          "exercise": "Sport"
+        }
+      },
+      "what_im_looking_for": {
+        "title": "Wonach ich suche",
+        "fields": {
+          "ideal_preference": "Ideale Präferenz"
+        }
+      },
+      "looking_for_meta": {
+        "title": "Suche nach",
+        "fields": {
+          "looking_for_label": "Suche nach",
+          "interested_in_label": "Interessiert an"
+        }
+      },
+      "lifestyle": {
+        "title": "Lifestyle",
+        "fields": {
+          "language": "SPRACHE",
+          "education": "AUSBILDUNG",
+          "profession": "BERUF",
+          "drinks": "ALKOHOL",
+          "smoking": "RAUCHEN",
+          "pets": "HAUSTIERE"
+        }
+      }
+    }
+  },
+  "SettingsPage": {
+    "sections": {
+      "login_credentials": {
+        "title": "Anmeldedaten",
+        "email_label": "E-Mail-Adresse",
+        "password_label": "Passwort",
+        "change_password_btn": "Passwort ändern",
+        "new_password_label": "Neues Passwort",
+        "confirm_password_label": "Neues Passwort bestätigen",
+        "cancel_password_change": "Passwortänderung abbrechen"
+      },
+      "support_legal": {
+        "title": "Support & Rechtliches",
+        "help_center": "Hilfebereich & FAQ",
+        "privacy_policy": "Datenschutzerklärung",
+        "terms_of_service": "Nutzungsbedingungen"
+      },
+      "danger_zone": {
+        "title": "Gefahrenzone",
+        "warning_text": "Das Löschen deines Kontos entfernt deine Chats und Matches unwiderruflich.",
+        "delete_btn": "Mein Konto löschen"
+      }
+    },
+    "actions": {
+      "save_changes_btn": "Kontoänderungen speichern",
+      "logout_btn": "Abmelden"
+    }
+  },
+  "LoginPage": {
+    "brand_name": "spotkac",
+    "title": "Willkommen zurück",
+    "subtitle": "Entdecke Menschen durch ihre Erlebnisse.",
+    "email": {
+      "placeholder": "E-Mail-Adresse",
+      "email_error": "Benutzername existiert nicht."
+    },
+    "password": {
+      "placeholder": "Passwort",
+      "password_error": "Falsches Passwort."
+    },
+    "submit_btn": "Einloggen",
+    "divider_text": "oder",
+    "forgot_password_link": "Passwort zurücksetzen",
+    "signup_prompt": {
+      "text": "Du hast noch kein Konto?",
+      "link": "Registrieren"
+    }
+  },
+  "RegisterPage": {
+    "brand_name": "spotkac",
+    "title": "Konto erstellen",
+    "subtitle": "Finde jemanden, der zu deinem Vibe passt",
+    "fields": {
+      "firstName": {
+        "placeholder": "Vorname",
+        "firstname_error": "Vorname darf nicht leer sein"
+      },
+      "lastName": {
+        "placeholder": "Nachname",
+        "lastname_error": "Nachname darf nicht leer sein"
+      },
+      "email": {
+        "placeholder": "E-Mail-Adresse",
+        "email_error": "Bitte gib eine gültige E-Mail-Adresse als Benutzernamen an",
+        "error": "Fehler"
+      },
+      "dob_error": "Du musst mindestens 18 Jahre alt sein, um diese Plattform zu nutzen.",
+      "gender": "Geschlecht",
+      "location": "Standort",
+      "location_error": "Standort darf nicht leer sein",
+      "gender_error": "Geschlecht darf nicht leer sein",
+      "password": {
+        "placeholder": "Passwort",
+        "password_error": "Das Passwort muss mindestens einen Großbuchstaben, einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen enthalten"
+      },
+      "terms_and_privacy": {
+        "link": "Ich akzeptiere die",
+        "terms": "Nutzungsbedingungen",
+        "and": "und die",
+        "privacy_policy": "Datenschutzerklärung",
+        "brand_name": "von Spotkac"
+      },
+      "submit_btn": "Konto erstellen",
+      "login_prompt": {
+        "text": "Hast du bereits ein Konto?",
+        "link": "Einloggen"
+      }
+    }
+  },
+  "Landing": {
+    "Discover": "Entdecken",
+    "Matches": "Matches",
+    "Messages": "Nachrichten",
+    "My moments": "Meine Momente",
+    "Settings": "Einstellungen",
+    "Profile": {
+      "logged in": "Eingeloggt"
+    },
+    "logout": "Abmelden"
+  },
+  "match_Dialog": {
+    "title": "Noch keine Matches",
+    "Message": "Keine Sorge! Suche weiter und entdecke neue Leute",
+    "btn": "Jetzt entdecken"
+  },
+  "message_Dialog": {
+    "title": "Noch keine Nachrichten",
+    "Message": "Keine Sorge! Suche weiter und entdecke neue Leute",
+    "btn": "Jetzt entdecken"
+  },
+  "filter_dialog": {
+    "title": "Ups! Keine Profile in der Nähe",
+    "Message": "Keine Sorge! Erweitere deinen Suchradius, um Leute zu entdecken."
+  },
+  "warning_dialog": {
+    "title": "Teile einen öffentlichen Moment",
+    "Message": "Bevor du eine Match-Anfrage senden kannst, benötigt dein Profil mindestens einen öffentlichen Moment. Öffentliche Momente helfen anderen zu sehen, wer du bist. Nur-Match-Momente sind erst nach einer Verbindung sichtbar und schalten die Verbindungsfeatures nicht frei.",
+    "btn": "Moment hinzufügen"
+  },
+  "Chatroom": {
+    "status": {
+      "online": "Online",
+      "offline": "Offline"
+    },
+    "header": {
+      "connected_via": "Verbunden über"
+    },
+    "menu": {
+      "unmatch": "Match auflösen",
+      "view_profile": "Profil anzeigen"
+    },
+    "footer": {
+      "input_placeholder": "Nachricht an {{name}}"
+    }
+  },
+  "Options": {
+    "Gender": {
+      "MALE": "Mann",
+      "FEMALE": "Frau",
+      "NON_BINARY": "Nicht-binär",
+      "All": "Alle"
+    },
+    "Preference": {
+      "MALE": "Männer",
+      "FEMALE": "Frauen",
+      "NON_BINARY": "Nicht-binäre Personen",
+      "All": "Alle"
+    },
+    "language": {
+      "ENGLISH": "Englisch",
+      "POLISH": "Polnisch",
+      "FRENCH": "Französisch",
+      "OTHER": "Andere"
+    },
+    "education": {
+      "BACHELORS_DEGREE": "Bachelor",
+      "MASTERS_DEGREE": "Master",
+      "PHD": "Promotion / PhD",
+      "VOCATIONAL": "Berufsausbildung",
+      "HIGH_SCHOOL": "Abitur / Schule"
+    },
+    "Questions": {
+      "Yes": "Ja",
+      "No": "Nein",
+      "Not_sure": "Nicht sicher"
+    },
+    "drinks": {
+      "DONT_DRINK": "Trinke nicht",
+      "YES": "Ja",
+      "NO": "Nein",
+      "OCCASIONAL": "Gelegentlich"
+    },
+    "Header": {
+      "any_city": "Beliebige Stadt",
+      "all": "Alle",
+      "Looking_for": "Suche nach",
+      "Age_limit": "Altersgrenze",
+      "Target_location": "Zielort",
+      "Shared_activity": "Gemeinsame Aktivität",
+      "Gender": "Geschlecht",
+      "filter_btn": "Filter anwenden",
+      "title": "Entdeckungseinstellungen",
+      "Reset_all": "Alles zurücksetzen"
+    },
+    "LookingFor": {
+      "LONG_TERM_RELATIONSHIP": "Langzeitbeziehung",
+      "SHORT_TERM_RELATIONSHIP": "Zwangloses Dating",
+      "NOT_DECIDED": "Nicht festgelegt",
+      "FRIENDS": "Freunde"
+    }
+  },
+  "Professions": {
+    "SOFTWARE_ENGINEER": "Softwareentwickler",
+    "DATA_SCIENTIST": "Data Scientist",
+    "PRODUCT_MANAGER": "Produktmanager",
+    "UX_UI_DESIGNER": "UX/UI-Designer",
+    "DIGITAL_MARKETER": "Digital Marketer",
+    "FINANCIAL_ANALYST": "Finanzanalyst",
+    "ACCOUNTANT": "Buchhalter",
+    "HUMAN_RESOURCES_SPECIALIST": "HR-Spezialist",
+    "SALES_EXECUTIVE": "Vertriebsmitarbeiter",
+    "CUSTOMER_SUPPORT_REPRESENTATIVE": "Kundenservice-Mitarbeiter",
+    "REGISTERED_NURSE": "Pflegefachkraft",
+    "PHYSICIAN": "Arzt / Ärztin",
+    "PHARMACIST": "Apotheker",
+    "PHYSICAL_THERAPIST": "Physiotherapeut",
+    "TEACHER": "Lehrer",
+    "PROFESSOR": "Professor",
+    "GRAPHIC_DESIGNER": "Grafikdesigner",
+    "CONTENT_WRITER": "Texter / Content Writer",
+    "ARCHITECT": "Architekt",
+    "CIVIL_ENGINEER": "Bauingenieur",
+    "MECHANICAL_ENGINEER": "Maschinenbauingenieur",
+    "DATA_ANALYST": "Datenanalyst",
+    "PROJECT_MANAGER": "Projektmanager",
+    "OPERATIONS_MANAGER": "Betriebsleiter",
+    "LEGAL_COUNSEL": "Unternehmensjurist",
+    "CHEF": "Koch / Köchin",
+    "ELECTRICIAN": "Elektriker",
+    "PLUMBER": "Sanitärinstallateur",
+    "REAL_ESTATE_AGENT": "Immobilienmakler",
+    "PHOTOGRAPHER": "Fotograf"
+  },
+  "Moments": {
+    "HAVING_COFFEE": "Kaffee trinken",
+    "WALKING_MY_DOG": "Gassi gehen",
+    "WORKING_OUT_AT_THE_GYM": "Im Fitnessstudio trainieren",
+    "COOKING_DINNER": "Abendessen kochen",
+    "BAKING": "Backen",
+    "READING_A_BOOK": "Ein Buch lesen",
+    "WATCHING_A_MOVIE": "Einen Film schauen",
+    "PLAYING_VIDEO_GAMES": "Videospiele spielen",
+    "PLAYING_BOARD_GAMES": "Brettspiele spielen",
+    "OUT_WITH_FRIENDS": "Mit Freunden unterwegs",
+    "HAVING_BRUNCH": "Brunchen",
+    "DINING_OUT": "Essen gehen",
+    "HIKING": "Wandern",
+    "GOING_FOR_A_RUN": "Laufen gehen",
+    "CYCLING": "Radfahren",
+    "AT_THE_BEACH": "Am Strand",
+    "WATCHING_THE_SUNSET": "Sonnenuntergang anschauen",
+    "ON_VACATION": "Im Urlaub",
+    "ROAD_TRIP": "Roadtrip",
+    "CAMPING": "Campen",
+    "TAKING_PHOTOS": "Fotos machen",
+    "MAKING_ART": "Kunst machen",
+    "PLAYING_MUSIC": "Musik machen",
+    "DANCING": "Tanzen",
+    "SHOPPING": "Shopping",
+    "VOLUNTEERING": "Ehrenamtliche Arbeit",
+    "STUDYING": "Lernen / Studieren",
+    "WORKING": "Arbeiten",
+    "RELAXING_AT_HOME": "Zuhause entspannen",
+    "TRYING_SOMETHING_NEW": "Etwas Neues ausprobieren"
+  },
+  "Cities": {
+    "any_city": "Beliebige Stadt",
+    "WARSZAWA": "Warschau",
+    "KRAKÓW": "Krakau",
+    "ŁÓDŹ": "Lodz",
+    "WROCŁAW": "Breslau",
+    "POZNAŃ": "Posen",
+    "GDAŃSK": "Danzig",
+    "SZCZECIN": "Stettin",
+    "BYDGOSZCZ": "Bydgoszcz",
+    "LUBLIN": "Lublin",
+    "BIAŁYSTOK": "Bialystok",
+    "KATOWICE": "Kattowitz",
+    "GDYNIA": "Gdingen",
+    "CZĘSTOCHOWA": "Tschenstochau",
+    "RADOM": "Radom",
+    "RZESZÓW": "Rzeszow",
+    "TORUŃ": "Thorn",
+    "SOSNOWIEC": "Sosnowiec",
+    "KIELCE": "Kielce",
+    "GLIWICE": "Gleiwitz",
+    "OLSZTYN": "Allenstein",
+    "ZABRZE": "Zabrze",
+    "BIELSKO_BIAŁA": "Bielitz-Biala",
+    "BYTOM": "Beuthen",
+    "ZIELONA_GÓRA": "Grünberg",
+    "RYBNIK": "Rybnik",
+    "RUDA_ŚLĄSKA": "Ruda Slaska",
+    "OPOLE": "Oppeln",
+    "TYCHY": "Tychy",
+    "GORZÓW_WIELKOPOLSKI": "Landsberg an der Warthe",
+    "ELBLĄG": "Elbing"
+  },
+  "CTA": { "View": "Anzeigen", "Spotkac": "Treffen" },
+  "Menu": {
+    "Discover": "Entdecken",
+    "Matches": "Matches",
+    "Messages": "Nachrichten",
+    "Moments": "Meine Momente",
+    "Settings": "Einstellungen",
+    "Profile": "Profil",
+    "Log_in": "Eingeloggt",
+    "Log_out": "Abmelden"
+  },
+  "Recent_Activities": {
+  "title": "Letzte Aktivitäten",
+  "Activities": "Momente"
+},
+"Settings": {
+  "title": "Kontoeinstellungen",
+  "header": "Anmeldedaten",
+  "fields": {
+    "email_label": "E-Mail-Adresse",
+    "password_label": "Passwort",
+    "change_password_label": "Passwort ändern",
+    "current_password_label": "Aktuelles Passwort",
+    "new_password_label": "Neues Passwort",
+    "confirm_password_label": "Passwort bestätigen",
+    "cancel_password_change_label": "Passwortänderung abbrechen"
+  },
+  "Support_&_Legal": {
+    "title": "Hilfe & Rechtliches",
+    "help_center_link": "Hilfebereich & FAQ",
+    "privacy_policy": "Datenschutzerklärung",
+    "terms_of_service": "Nutzungsbedingungen",
+    "btn": "Kontoänderungen speichern"
+  },
+  "Danger_zone": {
+    "title": "Gefahrenzone",
+    "text": "Das Löschen Ihres Kontos entfernt Ihre Chats und Matches unwiderruflich.",
+    "btn": "Mein Konto löschen"
+  }
+}
+
+
+}

@@ -520,3 +520,26 @@ export const ACTIVITIES_LIST: string[] = [
 export function isFetchBaseQueryError(error: unknown): error is FetchBaseQueryError {
   return typeof error === 'object' && error !== null && 'status' in error;
 }
+
+export function sanitizeBackendKey(rawString:string, fallbackKey = 'NOT_DECIDED') {
+  if (!rawString) return fallbackKey;
+  
+  return rawString
+    .trim()
+    .toUpperCase()
+      .replace(/[']+/g, '') // remove apostrophy
+    .replace(/\//g, '_')     // CRUCIAL: Converts forward slashes (/) to underscores (_)
+    .replace(/[-\s]+/g, '_') // Converts spaces and dashes directly to underscores
+    .replace(/__+/g, '_')    // Fixes duplicate underscores (e.g. UX__UI becomes UX_UI)
+    .replace(/^_+|_+$/g, ''); // Trims trailing or leading underscores
+}
+// src/utils/sanitizeCityKey.js
+export function sanitizeKey(rawCityString:string) {
+  if (!rawCityString) return 'any_city';
+  
+  return rawCityString
+    .trim()
+    .replace(/[']+/g, '') // remove apostrophy
+    .replace(/[-\s]/g, '_') // Converts all spaces and dashes to underscores cleanly
+    .toUpperCase();          // Converts the string to uppercase to match the JSON keys perfectly
+}

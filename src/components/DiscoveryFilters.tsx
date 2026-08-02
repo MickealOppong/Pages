@@ -1,18 +1,18 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FiActivity, FiCalendar, FiMapPin, FiSliders, FiUmbrella, FiUser } from 'react-icons/fi';
-import { ACTIVITIES_LIST, POLISH_CITIES } from '../util/util';
+import { MOMENT_OPTIONS, POLISH_CITIES, sanitizeBackendKey } from '../util/util';
 import './../css/DiscoverFilter.scss';
 
 
 
 const DiscoveryFilters = () => {
-  /*
-  const [selectedCity, setSelectedCity] = useState<string>('');
-  const [ageRange, setAgeRange] = useState<{ min: number; max: number }>({ min: 18, max: 35 });
-  const [selectedActivity, setSelectedActivity] = useState<string>('');
-  */
+
       //get current params
   const url =  new URLSearchParams(location.href.split('?')[1]);
+
+    //translation hook
+    const {t} = useTranslation();
 
     //filter query state
     const [cityFilter,setCityFilter] = useState<string>(url.get('city') as string)
@@ -37,9 +37,9 @@ const DiscoveryFilters = () => {
         
         {/* Panel Dynamic Heading Row */}
         <div className="filters-page-header">
-          <h2><FiSliders /> Discovery Preferences</h2>
+          <h2><FiSliders />   {t('Options.Header.title')}</h2>
           <button type="button" className="btn-clear-link" onClick={handleReset}>
-            Reset All
+           {t('Options.Header.Reset_all')}
           </button>
         </div>
 
@@ -51,51 +51,49 @@ const DiscoveryFilters = () => {
               
               {/* Filter 1: Regional City Choice Selector Dropdown */}
               <div className="filter-input-group">
-                <label><FiMapPin /> Target Location</label>
+                <label><FiMapPin /> {t('Options.Header.Target_location')}</label>
                 <select value={cityFilter||''} name='city' onChange={(e) => setCityFilter(e.target.value)}>
-                  <option value={''}>Any City (Poland)</option>
+                  <option value={''}>Wszystko</option>
                   {POLISH_CITIES.map((city) => (
-                    <option key={city} value={city}>{city}</option>
+                    <option key={city} value={city}>{t(`Cities.${sanitizeBackendKey(city)}`)}</option>
                   ))}
                 </select>
               </div>
 
               {/* Filter 2: Shared Activity Selector Dropdown */}
               <div className="filter-input-group">
-                <label><FiActivity /> Shared Activity</label>
+                <label><FiActivity />{t('Options.Header.Shared_activity')}</label>
                 <select value={activityFilter||''} name='activity' onChange={(e) => setActivityFilter(e.target.value)}>
-                  <option value="">All</option>
-                  {ACTIVITIES_LIST.map((activity) => (
-                    <option key={activity} value={activity}>{activity}</option>
+                  <option value="">{t(`Options.Header.all`)}</option>
+                  {MOMENT_OPTIONS.map((activity) => (
+                    <option key={activity.label} value={activity.label}>{t(`Moments.${sanitizeBackendKey(activity.label)}`)}</option>
                   ))}
                 </select>
               </div>
                {/* Filter 3: gender Selector Dropdown */}
               <div className="filter-input-group">
-                <label><FiUser/> Gender</label>
+                <label><FiUser/>{t('Options.Header.Gender')}</label>
                 <select value={genderFilter||''} name='gender' onChange={(e) => setGenderFilter(e.target.value)}>
-                  <option value={''}>All</option>
-                  <option value="Male">Men</option>
-                  <option value="Female">Women</option>
-                  <option value="Non-binary">Non-binary</option>
+                  <option value={''}>{t(`Options.Header.all`)}</option>
+                  <option value="Male">{t('Options.Preference.MALE')}</option>
+                  <option value="Female">{t('Options.Preference.FEMALE')}</option>
+                  <option value="Non-binary">{t('Options.Preference.NON_BINARY')}</option>
                 </select>
               </div>
                   {/* Filter 3: gender Selector Dropdown */}
               <div className="filter-input-group">
-                <label><FiUmbrella /> Looking For</label>
+                <label><FiUmbrella /> {t('Options.Header.Looking_for')}</label>
                 <select value={lookingForFilter||''} name='lookingFor' onChange={(e) => setLookingForFilter(e.target.value)}>
-                  <option value={''}>All</option>
-                  <option value="Long-term relationship">Long term</option>
-                  <option value="Friendship">Friendship</option>
-                  <option value="Not yet decided">Not yet decided</option>
-                  <option value="Short-term relation">Short term</option>
-                  <option value="Casual">Casual</option>
+                  <option value={''}>{t(`Options.Header.all`)}</option>
+                  <option value="Friendship">{t('Options.LookingFor.LONG_TERM')}</option>
+                  <option value="Not yet decided">{t('Options.LookingFor.SHORT_TERM')}</option>
+                  <option value="Short-term relation">{t('Options.LookingFor.NOT_DECIDED')}</option>
                 </select>
               </div>
 
               {/* Filter 4: Age Range Parameters Field */}
               <div className="filter-input-group full-width-grid-item">
-                <label><FiCalendar /> Age Limits</label>
+                <label><FiCalendar />{t('Options.Header.Age_limit')}</label>
                 <div className="dual-range-inputs-row">
                   <input 
                     type="text" 
@@ -125,7 +123,7 @@ const DiscoveryFilters = () => {
           {/* Apply Operations Submission Footer Block */}
           <div className="filters-actions-bar">
             <button type="submit" className="btn-apply-filters">
-              Apply Filters
+             {t('Options.Header.filter_btn')}
             </button>
           </div>
 

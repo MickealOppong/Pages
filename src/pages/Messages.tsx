@@ -1,4 +1,5 @@
 import { useState, type ChangeEvent } from "react";
+import { useTranslation } from "react-i18next";
 import { FiSearch } from "react-icons/fi";
 import { Link, useLoaderData } from "react-router-dom";
 import type { Store } from "redux";
@@ -41,19 +42,23 @@ const Messages = () => {
     item.firstName.toLowerCase().includes(searchQuery)
   ) : [];
 
+    //translation hook
+  const {t} = useTranslation();
+
   // 4. Global Guard: Fixed structural execution order to avoid runtime crashes
   if (!data || data.length === 0) {
     return (
       <div className="empty-state">
         <div className="empty-card">
           <div className="empty-icon">💔</div>
-          <h3>No messages yet</h3>
-          <p>Don't worry! Keep exploring and discovering new people nearby.</p>
-          <Link to={'/landing'} className="discover-btn">Start Discovering</Link>
+          <h3>{t('message_Dialog.title')}</h3>
+          <p>{t('message_Dialog.Message')}</p>
+          <Link to={'/landing'} className="discover-btn">{t('message_Dialog.btn')}</Link>
         </div>
       </div>
     );
   }
+
 
   
   return (
@@ -61,14 +66,14 @@ const Messages = () => {
       <div className="messages-center">     
           <div className="header-container">
             <div className="header">
-              <h2>Messages</h2>
+              <h2>{t('Messages.title')}</h2>
             </div>
             <div className="search-container">
               <FiSearch />
               <input 
                 type="text" 
                 name="search" 
-                placeholder="Search" 
+                placeholder={t('Messages.search_placeholder')}
                 value={searchQuery} // Component is now fully controlled
                 onChange={handleSearch}
               />
@@ -77,7 +82,7 @@ const Messages = () => {
           <div className="match-section">
             {/* Inline search fallback: user gets feedback if search yields 0 items */}
             {filteredMatchData.length === 0 ? (
-              <p className="no-results">No matches found for "{searchQuery}"</p>
+              <p className="no-results">{t('Messages.search_result')}{" "}{searchQuery}</p>
             ) : (
               <MatchList data={filteredMatchData} />
             )}

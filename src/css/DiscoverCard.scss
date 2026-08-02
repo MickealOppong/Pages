@@ -61,7 +61,7 @@
     position: relative;
     overflow: hidden;
     flex-shrink: 0; // Completely prevents deep bio copy from squeezing image layouts
-    min-height: 0;
+  
 
     img, video, .media-cover-img {
       width: 100%;

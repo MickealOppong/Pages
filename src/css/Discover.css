@@ -103,6 +103,7 @@
   color: #666666;
   line-height: 1.5;
   margin: 0;
+  height: 6rem;
 }
 
 .empty-state .empty-card a {

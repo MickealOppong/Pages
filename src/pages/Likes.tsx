@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FiHeart } from "react-icons/fi";
 import { Link, useLoaderData } from "react-router-dom";
 import type { Store } from "redux";
@@ -35,6 +36,8 @@ const Likes = ()=>{
     const[tabSelected,setTabSelected]=useState<string>(localStorage.getItem('tab')||'');
 
 
+    //translation hook
+  const {t} = useTranslation();
 
 
 
@@ -48,9 +51,9 @@ const Likes = ()=>{
         <div className="empty-state">
           <div className="empty-card">
             <div className="empty-icon">💔</div>
-            <h3>No matches yet</h3>
-            <p>Don't worry! Keep exploring and discovering new people nearby.</p>
-            <Link to={'/landing'} className="discover-btn">Start Discovering</Link>
+            <h3>{t('match_Dialog.title')}</h3>
+            <p>{t('match_Dialog.Message')}</p>
+          <Link to={'/landing'} className="discover-btn">{t('match_Dialog.btn')}</Link>
           </div>
         </div>
       );

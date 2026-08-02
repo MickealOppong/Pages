@@ -1,27 +1,32 @@
+import { useTranslation } from "react-i18next";
 import type { TUserPost } from "../types/TUserPost";
+import { sanitizeBackendKey } from "../util/util";
 import './../css/RecentActivities.css';
+import VideoPlayer from "./VideoPlayer";
 
 
 const RecentActivities = ({activities}:{activities:TUserPost[]}) => {
+console.log(activities);
 
 
-
+  //translation hook
+  const {t} = useTranslation();
 
     return (
         <section className="recent_activities">
 
           <div className="section_center">
               <div className="sectionHeader">
-                <h2>Recent Activities</h2>
-                <span>{activities?.length} Activities</span>
+                <h2>{t('Recent_Activities.title')}</h2>
+                <span>{activities?.length} {t('Recent_Activities.Activities')}</span>
             </div>
           <div className="activities">
 
                 {activities.map((activity )=>  {
 
-                     const isVideo = activity.image?.toLowerCase().endsWith('.mp4') || 
-                                    activity.image?.toLowerCase().endsWith('.mov') || 
-                                    activity.image?.toLowerCase().endsWith('.webm'); 
+                     const isVideo = activity.media?.toLowerCase().endsWith('.mp4') || 
+                                    activity.media?.toLowerCase().endsWith('.mov') || 
+                                    activity.media?.toLowerCase().endsWith('.webm'); 
 
                     return   <article
                         key={activity.postId}
@@ -29,38 +34,25 @@ const RecentActivities = ({activities}:{activities:TUserPost[]}) => {
                     >
 
                     {/* Media */}
-  <div className="media-wrapper">
+                    <div className={`media-wrapper ${activity.mediaOrientation}`}>
 
-    {isVideo ? (
-      <>
-        <video
-          src={activity.image}
-          controls
-          className="post-media"
-          playsInline
-        />
+                      {isVideo ? (
+                        <VideoPlayer src={activity.media} view={activity.mediaOrientation} poster=""/>
+                      ) : (
+                        <img
+                          src={activity.media}
+                          alt=""
+                          className="post-media"
+                        />
+                      )}
 
-        <span className="video-duration" style={{display:'none'}}>
-          8 sec
-        </span>
-      </>
-    ) : (
-      <img
-        src={activity.image}
-        alt=""
-        className="post-media"
-      />
-    )}
-
-  </div>
-     
-
+                    </div>              
                         <div className="activityContent">
 
                             <div className="activityHeader">
 
                                 <span className="tag">
-                                    {activity.type}
+                                    {t(`Moments.${sanitizeBackendKey(activity.type)}`)}
                                 </span>
 
                             </div>
@@ -72,7 +64,6 @@ const RecentActivities = ({activities}:{activities:TUserPost[]}) => {
                 
 
                         </div>
-
                     </article>
                 }                   
                   
