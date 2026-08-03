@@ -66,6 +66,8 @@ const Settings= () => {
   const handleAccountDeletion=async()=>{
       try {
         const response = await deleteAccount()
+        console.log(response);
+        
           if(response.data){
           localStorage.clear()
           navigate("/")

@@ -224,6 +224,7 @@
   "filter_dialog": {
     "title": "Ups! Keine Profile in der Nähe",
     "Message": "Keine Sorge! Erweitere deinen Suchradius, um Leute zu entdecken."
+
   },
   "warning_dialog": {
     "title": "Teile einen öffentlichen Moment",
@@ -293,7 +294,9 @@
       "Gender": "Geschlecht",
       "filter_btn": "Filter anwenden",
       "title": "Entdeckungseinstellungen",
-      "Reset_all": "Alles zurücksetzen"
+      "Reset_all": "Alles zurücksetzen",
+       "Min": "Min",
+       "Max": "Max"
     },
     "LookingFor": {
       "LONG_TERM_RELATIONSHIP": "Langzeitbeziehung",
@@ -332,7 +335,8 @@
     "ELECTRICIAN": "Elektriker",
     "PLUMBER": "Sanitärinstallateur",
     "REAL_ESTATE_AGENT": "Immobilienmakler",
-    "PHOTOGRAPHER": "Fotograf"
+    "PHOTOGRAPHER": "Fotograf",
+    "OTHER": "Andere"
   },
   "Moments": {
     "HAVING_COFFEE": "Kaffee trinken",

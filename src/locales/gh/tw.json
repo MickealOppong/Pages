@@ -293,7 +293,9 @@
       "Gender": "Bɔbeasu",
       "filter_btn": "Sɔn nsɛm no",
       "title": "Hwehwɛ nea wopɛ",
-      "Reset_all": "Sesa nyinaa gu"
+      "Reset_all": "Sesa nyinaa gu",
+      "Min": "Ketewa",
+      "Max": "Kɛseɛ"
     },
     "LookingFor": {
       "LONG_TERM_RELATIONSHIP": "Ayɔnkofa a ɛbɛkyɛ",
@@ -332,7 +334,9 @@
     "ELECTRICIAN": "Anyinam Kyɛfoɔ",
     "PLUMBER": "Su tumpoɔ Yɛfoɔ",
     "REAL_ESTATE_AGENT": "Adan ne Asaase Tɔnfoɔ",
-    "PHOTOGRAPHER": "Mfoninitwafoɔ"
+    "PHOTOGRAPHER": "Mfoninitwafoɔ",
+    "OTHER": "Foforɔ"
+
   },
   "Moments": {
     "HAVING_COFFEE": "Renom kɔfe",
@@ -411,53 +415,50 @@
     "Log_out": "Firi Mu"
   },
   "Recent_Activities": {
-  "title": "Nneyɛeɛ a Ɛtwam Nnansa Yi",
-  "Activities": "Mmerɛ Pa"
-},
-"Settings": {
-  "title": "Akawnt Settings",
-  "header": "Log In Nsɛm",
-  "fields": {
-    "email_label": "Imeili Adrɛse",
-    "password_label": "Akodeɛ (Password)",
-    "change_password_label": "Sesa Akodeɛ",
-    "current_password_label": "Akodeɛ a Wode Di Dwuma Seesei",
-    "new_password_label": "Akodeɛ Foforɔ",
-    "confirm_password_label": "Si Akodeɛ no Pi",
-    "cancel_password_change_label": "Twa Akodeɛ Nsesaeɛ mu"
+    "title": "Nneyɛeɛ a Ɛtwam Nnansa Yi",
+    "Activities": "Mmerɛ Pa"
   },
-  "Support_&_Legal": {
-    "title": "Mmoa ne Mmara",
-    "help_center_link": "Mmoa Beaeɛ ne Nsɛmmisa",
-    "privacy_policy": "Kokoamsɛm Mmara",
-    "terms_of_service": "Ɔsom No Ho Mmara",
-    "btn": "Kora Nsesaeɛ So"
+  "Settings": {
+    "title": "Akawnt Settings",
+    "header": "Log In Nsɛm",
+    "fields": {
+      "email_label": "Imeili Adrɛse",
+      "password_label": "Akodeɛ (Password)",
+      "change_password_label": "Sesa Akodeɛ",
+      "current_password_label": "Akodeɛ a Wode Di Dwuma Seesei",
+      "new_password_label": "Akodeɛ Foforɔ",
+      "confirm_password_label": "Si Akodeɛ no Pi",
+      "cancel_password_change_label": "Twa Akodeɛ Nsesaeɛ mu"
+    },
+    "Support_&_Legal": {
+      "title": "Mmoa ne Mmara",
+      "help_center_link": "Mmoa Beaeɛ ne Nsɛmmisa",
+      "privacy_policy": "Kokoamsɛm Mmara",
+      "terms_of_service": "Ɔsom No Ho Mmara",
+      "btn": "Kora Nsesaeɛ So"
+    },
+    "Danger_zone": {
+      "title": "Asiane Beaeɛ",
+      "text": "Sɛ wopopa w'akawnt a, wo nkɔmmɔbɔ ne wo nkabom nyinaa bɛyera afebɔɔ.",
+      "btn": "Popa M'akawnt"
+    },
+    "Reset_password": {
+      "title": "Sesa Akodeɛ",
+      "fields": {
+        "email_label": "Imeili",
+        "email_placeholder": "Imeili adrɛse",
+        "date_of_birth_label": "Awoɔ Da",
+        "location": "Beaeɛ a Wɔwɔ",
+        "location_placeholder": "Kuro a wɔwɔ",
+        "new_password_label": "Akodeɛ Foforɔ",
+        "password_placeholder": "Nkyerɛwee nnanna nwɔtwe (8) pɛeɛ",
+        "confirm_password_label": "Si Akodeɛ no Pi",
+        "btn": "Sesa Akodeɛ"
+      }
+    }
   },
-  "Danger_zone": {
-    "title": "Asiane Beaeɛ",
-    "text": "Sɛ wopopa w'akawnt a, wo nkɔmmɔbɔ ne wo nkabom nyinaa bɛyera afebɔɔ.",
-    "btn": "Popa M'akawnt"
-  },
-  "Reset_password": {
-  "title": "Sesa Akodeɛ",
-  "fields": {
-    "email_label": "Imeili",
-    "email_placeholder": "Imeili adrɛse",
-    "date_of_birth_label": "Awoɔ Da",
-    "location": "Beaeɛ a Wɔwɔ",
-    "location_placeholder": "Kuro a wɔwɔ",
-    "new_password_label": "Akodeɛ Foforɔ",
-    "password_placeholder": "Nkyerɛwee nnanna nwɔtwe (8) pɛeɛ",
-    "confirm_password_label": "Si Akodeɛ no Pi",
-    "btn": "Sesa Akodeɛ"
+  "discover_Dialog": {
+    "title": "Annya obiara a ɔne wo pɛ hyehyɛeɛ pɛ",
+    "Message": "Nhwɛ fam! Trɛw wo mpasua mu na woahu afoforɔ."
   }
-}
-
-},
-"discover_Dialog": {
-  "title": "Annya obiara a ɔne wo pɛ hyehyɛeɛ pɛ",
-  "Message": "Nhwɛ fam! Trɛw wo mpasua mu na woahu afoforɔ."
-}
-
-
 }

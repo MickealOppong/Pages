@@ -17,7 +17,7 @@ const LANGUAGES: LangOption[] = [
   { code: 'en', label: 'EN' },
   { code: 'de', label: 'DE' },
   { code: 'fr', label: 'FR' },
-  { code: 'tw', label: 'TW' }
+  { code: 'tw', label: 'TWI' }
 ];
 
 

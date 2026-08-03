@@ -102,7 +102,7 @@ const DiscoveryFilters = () => {
                     name='min-age'
                     value={ageFilter.min||''} 
                     onChange={(e) => setAgeFilter({min:e.target.value,max:ageFilter.max})}
-                    placeholder="Min"
+                    placeholder={t('Options.Header.Min')}
                   />
                   <span>to</span>
                   <input 
@@ -112,7 +112,7 @@ const DiscoveryFilters = () => {
                     name='max-age'
                     value={ageFilter.max||''} 
                     onChange={(e) => setAgeFilter({max:e.target.value,min:ageFilter.min})}
-                    placeholder="Max"
+                    placeholder={t('Options.Header.Max')}
                   />
                 </div>
               </div>

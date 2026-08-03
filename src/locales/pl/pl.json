@@ -293,7 +293,9 @@
       "Gender": "Płeć",
       "filter_btn": "Zastosuj filtry",
       "title": "Preferencje odkrywania",
-      "Reset_all": "Resetuj wszystko"
+      "Reset_all": "Resetuj wszystko",
+      "Min": "Min",
+      "Max": "Maks"
     },
     "LookingFor": {
       "LONG_TERM_RELATIONSHIP": "Długotrwały związek",
@@ -332,7 +334,9 @@
     "ELECTRICIAN": "Elektryk",
     "PLUMBER": "Hydraulik",
     "REAL_ESTATE_AGENT": "Agent nieruchomości",
-    "PHOTOGRAPHER": "Fotograf"
+    "PHOTOGRAPHER": "Fotograf",
+    "OTHER": "Inne"
+
   },
   "Moments": {
     "HAVING_COFFEE": "Picie kawy",
@@ -411,53 +415,50 @@
     "Log_out": "Wyloguj się"
   },
   "Recent_Activities": {
-  "title": "Ostatnie aktywności",
-  "Activities": "Momenty"
-},
-"Settings": {
-  "title": "Ustawienia konta",
-  "header": "Dane logowania",
-  "fields": {
-    "email_label": "Adres e-mail",
-    "password_label": "Hasło",
-    "change_password_label": "Zmień hasło",
-    "current_password_label": "Aktualne hasło",
-    "new_password_label": "Nowe hasło",
-    "confirm_password_label": "Potwierdź hasło",
-    "cancel_password_change_label": "Anuluj zmianę hasła"
+    "title": "Ostatnie aktywności",
+    "Activities": "Momenty"
   },
-  "Support_&_Legal": {
-    "title": "Wsparcie i kwestie prawne",
-    "help_center_link": "Centrum pomocy i FAQ",
-    "privacy_policy": "Polityka prywatności",
-    "terms_of_service": "Regulamin świadczenia usług",
-    "btn": "Zapisz zmiany na koncie"
+  "Settings": {
+    "title": "Ustawienia konta",
+    "header": "Dane logowania",
+    "fields": {
+      "email_label": "Adres e-mail",
+      "password_label": "Hasło",
+      "change_password_label": "Zmień hasło",
+      "current_password_label": "Aktualne hasło",
+      "new_password_label": "Nowe hasło",
+      "confirm_password_label": "Potwierdź hasło",
+      "cancel_password_change_label": "Anuluj zmianę hasła"
+    },
+    "Support_&_Legal": {
+      "title": "Wsparcie i kwestie prawne",
+      "help_center_link": "Centrum pomocy i FAQ",
+      "privacy_policy": "Polityka prywatności",
+      "terms_of_service": "Regulamin świadczenia usług",
+      "btn": "Zapisz zmiany na koncie"
+    },
+    "Danger_zone": {
+      "title": "Strefa zagrożenia",
+      "text": "Usunięcie konta trwale usunie Twoje rozmowy oraz pary.",
+      "btn": "Usuń moje konto"
+    },
+    "Reset_password": {
+      "title": "Resetowanie hasła",
+      "fields": {
+        "email_label": "E-mail",
+        "email_placeholder": "Adres e-mail",
+        "date_of_birth_label": "Data urodzenia",
+        "location": "Lokalizacja",
+        "location_placeholder": "Miejscowość",
+        "new_password_label": "Nowe hasło",
+        "password_placeholder": "Minimum 8 znaków",
+        "confirm_password_label": "Potwierdź nowe hasło",
+        "btn": "Zmień hasło"
+      }
+    }
   },
-  "Danger_zone": {
-    "title": "Strefa zagrożenia",
-    "text": "Usunięcie konta trwale usunie Twoje rozmowy oraz pary.",
-    "btn": "Usuń moje konto"
-  },
-  "Reset_password": {
-  "title": "Resetowanie hasła",
-  "fields": {
-    "email_label": "E-mail",
-    "email_placeholder": "Adres e-mail",
-    "date_of_birth_label": "Data urodzenia",
-    "location": "Lokalizacja",
-    "location_placeholder": "Miejscowość",
-    "new_password_label": "Nowe hasło",
-    "password_placeholder": "Minimum 8 znaków",
-    "confirm_password_label": "Potwierdź nowe hasło",
-    "btn": "Zmień hasło"
+  "discover_Dialog": {
+    "title": "Brak profili spełniających kryteria wyszukiwania",
+    "Message": "Nie martw się! Zwiększ zakres wyszukiwania, aby odkryć nowe osoby."
   }
-}
-
-},
-"discover_Dialog": {
-  "title": "Brak profili spełniających kryteria wyszukiwania",
-  "Message": "Nie martw się! Zwiększ zakres wyszukiwania, aby odkryć nowe osoby."
-}
-
-
 }

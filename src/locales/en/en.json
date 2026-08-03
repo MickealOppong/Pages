@@ -226,6 +226,7 @@
   "filter_dialog": {
     "title": "Ooop. No nearby profiles yet",
     "Message": "Don't worry! expand your search range to discover people."
+
   },
   "warning_dialog": {
     "title": "Share one public moment",
@@ -296,7 +297,9 @@
       "Gender":"Gender",
       "filter_btn": "Apply filters",
       "title":"Discover preferences",
-      "Reset_all":"Reset all"
+      "Reset_all":"Reset all",
+        "Min": "Min",
+         "Max": "Max"
     },
    "LookingFor": {
   "LONG_TERM_RELATIONSHIP": "Long-term relationship",
@@ -335,7 +338,8 @@
     "ELECTRICIAN": "Electrician",
     "PLUMBER": "Plumber",
     "REAL_ESTATE_AGENT": "Real Estate Agent",
-    "PHOTOGRAPHER": "Photographer"
+    "PHOTOGRAPHER": "Photographer",
+    "OTHER":"Other"
   }
 ,
   "Moments": {

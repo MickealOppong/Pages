@@ -190,6 +190,8 @@ const dispatch=useDispatch()
             
         }
 
+        console.log(languageU);
+        
 
 
 
@@ -416,7 +418,7 @@ const dispatch=useDispatch()
                                                 <option value="Polish">{t(`Options.language.POLISH`)}</option>
                                                 <option value="French">{t(`Options.language.FRENCH`)}</option>
                                                 <option value="Other">{t(`Options.language.OTHER`)}</option>
-                                                </select>:<p>{t(`Options.language.${sanitizeKey(languageU)}`)}</p>
+                                                </select>:<p>{languageU===null?t(`Options.language.OTHER`):t(`Options.language.${sanitizeKey(languageU)}`)}</p>
                                                 }
                                             </div>
                                                 
@@ -427,11 +429,11 @@ const dispatch=useDispatch()
                                                     <label htmlFor="education">{t('ProfilePage.sections.lifestyle.fields.education')}</label>
                                                 {
                                                     isEditProfile?<select name="education" defaultValue={t(`Options.education.${sanitizeBackendKey(educationU)}`)}>
-                                                <option value="Master's degree">{t(`Options.education.MASTER'S_DEGREE`)}</option>
-                                                <option value="Bachelor's degree">{t(`Options.education.BACHELOR'S_DEGREE`)}</option>
+                                                <option value="Master's degree">{t(`Options.education.MASTERS_DEGREE`)}</option>
+                                                <option value="Bachelor's degree">{t(`Options.education.BACHELORS_DEGREE`)}</option>
                                                 <option value="PDH">{t(`Options.education.PHD`)}</option>
                                                 <option value="High School">{t(`Options.education.HIGH_SCHOOL`)}</option>
-                                                </select>   :<p>{t(`Options.education.${sanitizeKey(educationU)}`)}</p>
+                                                </select>   :<p>{educationU===null?t(`Options.education.HIGH_SCHOOL`):t(`Options.education.${sanitizeBackendKey(educationU)}`)}</p>
                                                 }
                                                     
                                                 </div>
@@ -448,7 +450,7 @@ const dispatch=useDispatch()
                                                         return <option value={prof} key={prof}>{t(`Professions.${sanitizeBackendKey(prof)}`)}</option>
                                                     })
                                                 }
-                                                </select>:<p>{t(`Professions.${sanitizeBackendKey(profession)}`)}</p>
+                                                </select>:<p>{profession===null?t(`Professions.OTHER`):t(`Professions.${sanitizeBackendKey(profession)}`)}</p>
                                             }
                                         </div>
                                         </div>
@@ -462,7 +464,7 @@ const dispatch=useDispatch()
                                                 <option value="Occassional">{t('Options.drinks.OCCASIONAL')}</option>
                                                 <option value="No">{t('Options.drinks.NO')}</option>
                                                 <option value="Don't drink">{t('Options.drinks.DONT_DRINK')}</option>
-                                                </select>:<p>{t(`Options.drinks.${sanitizeBackendKey(drinkingU)}`)}</p>
+                                                </select>:<p>{drinkingU===null?t(`Options.drinks.NO`):t(`Options.drinks.${sanitizeBackendKey(drinkingU)}`)}</p>
                                             }
                                         </div>
                                         </div>
@@ -471,11 +473,11 @@ const dispatch=useDispatch()
                                         <div className="input_container">
                                             <label htmlFor="smoking" >{t('ProfilePage.sections.lifestyle.fields.smoking')}</label>
                                             {
-                                                isEditProfile? <select name="smoking"  defaultValue={smokingU}>
+                                                isEditProfile? <select name="smoking"  defaultValue={`Options.drinks.${sanitizeBackendKey(smokingU)}`}>
                                              <option value="No">{t(`Options.Questions.No`)}</option>
                                                 <option value="Yes">{t(`Options.Questions.Yes`)}</option>
                                                 <option value="Not sure">{t(`Options.Questions.Not_sure`)}</option>
-                                                </select>:<p>{t(`Options.Questions.${smokingU}`)}</p>
+                                                </select>:<p>{smokingU===null?t(`Options.Questions.No`):t(`Options.Questions.${smokingU}`)}</p>
                                             }
                                         </div>
                                         </div>
@@ -488,7 +490,7 @@ const dispatch=useDispatch()
                                                 <option value="No">{t(`Options.Questions.No`)}</option>
                                                 <option value="Yes">{t(`Options.Questions.Yes`)}</option>
                                                 <option value="Not sure">{t(`Options.Questions.Not_sure`)}</option>
-                                                </select>:<p>{t(`Options.Questions.${petsU}`)}</p>
+                                                </select>:<p>{petsU===null?t(`Options.Questions.No`):t(`Options.Questions.${petsU}`)}</p>
                                                 }
                                         </div>
                                         </div>

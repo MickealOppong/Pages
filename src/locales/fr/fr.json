@@ -293,7 +293,9 @@
       "Gender": "Genre",
       "filter_btn": "Appliquer les filtres",
       "title": "Préférences de découverte",
-      "Reset_all": "Tout réinitialiser"
+      "Reset_all": "Tout réinitialiser",
+      "Min": "Min",
+      "Max": "Max"
     },
     "LookingFor": {
       "LONG_TERM_RELATIONSHIP": "Relation sérieuse",
@@ -332,7 +334,8 @@
     "ELECTRICIAN": "Électricien",
     "PLUMBER": "Plombier",
     "REAL_ESTATE_AGENT": "Agent Immobilier",
-    "PHOTOGRAPHER": "Photographe"
+    "PHOTOGRAPHER": "Photographe",
+    "OTHER": "Autre"
   },
   "Moments": {
     "HAVING_COFFEE": "Prendre un café",
@@ -411,53 +414,50 @@
     "Log_out": "Se déconnecter"
   },
   "Recent_Activities": {
-  "title": "Activités récentes",
-  "Activities": "Moments"
-},
-"Settings": {
-  "title": "Paramètres du compte",
-  "header": "Identifiants de connexion",
-  "fields": {
-    "email_label": "Adresse e-mail",
-    "password_label": "Mot de passe",
-    "change_password_label": "Modifier le mot de passe",
-    "current_password_label": "Mot de passe actuel",
-    "new_password_label": "Nouveau mot de passe",
-    "confirm_password_label": "Confirmer le mot de passe",
-    "cancel_password_change_label": "Annuler la modification"
+    "title": "Activités récentes",
+    "Activities": "Moments"
   },
-  "Support_&_Legal": {
-    "title": "Assistance et mentions légales",
-    "help_center_link": "Centre d'aide & FAQ",
-    "privacy_policy": "Politique de confidentialité",
-    "terms_of_service": "Conditions d'utilisation",
-    "btn": "Enregistrer les modifications"
+  "Settings": {
+    "title": "Paramètres du compte",
+    "header": "Identifiants de connexion",
+    "fields": {
+      "email_label": "Adresse e-mail",
+      "password_label": "Mot de passe",
+      "change_password_label": "Modifier le mot de passe",
+      "current_password_label": "Mot de passe actuel",
+      "new_password_label": "Nouveau mot de passe",
+      "confirm_password_label": "Confirmer le mot de passe",
+      "cancel_password_change_label": "Annuler la modification"
+    },
+    "Support_&_Legal": {
+      "title": "Assistance et mentions légales",
+      "help_center_link": "Centre d'aide & FAQ",
+      "privacy_policy": "Politique de confidentialité",
+      "terms_of_service": "Conditions d'utilisation",
+      "btn": "Enregistrer les modifications"
+    },
+    "Danger_zone": {
+      "title": "Zone de danger",
+      "text": "La suppression de votre compte effacera définitivement vos conversations et vos matchs.",
+      "btn": "Supprimer mon compte"
+    },
+    "Reset_password": {
+      "title": "Réinitialiser le mot de passe",
+      "fields": {
+        "email_label": "E-mail",
+        "email_placeholder": "Adresse e-mail",
+        "date_of_birth_label": "Date de naissance",
+        "location": "Localisation",
+        "location_placeholder": "Ville ou région",
+        "new_password_label": "Nouveau mot de passe",
+        "password_placeholder": "Minimum 8 caractères",
+        "confirm_password_label": "Confirmer le mot de passe",
+        "btn": "Modifier le mot de passe"
+      }
+    }
   },
-  "Danger_zone": {
-    "title": "Zone de danger",
-    "text": "La suppression de votre compte effacera définitivement vos conversations et vos matchs.",
-    "btn": "Supprimer mon compte"
-  },
-  "Reset_password": {
-  "title": "Réinitialiser le mot de passe",
-  "fields": {
-    "email_label": "E-mail",
-    "email_placeholder": "Adresse e-mail",
-    "date_of_birth_label": "Date de naissance",
-    "location": "Localisation",
-    "location_placeholder": "Ville ou région",
-    "new_password_label": "Nouveau mot de passe",
-    "password_placeholder": "Minimum 8 caractères",
-    "confirm_password_label": "Confirmer le mot de passe",
-    "btn": "Modifier le mot de passe"
+  "discover_Dialog": {
+    "title": "Aucun profil ne correspond à votre recherche",
+    "Message": "Ne vous inquiétez pas ! Élargissez votre champ de recherche pour découvrir de nouvelles personnes."
   }
-}
-
-},
-"discover_Dialog": {
-  "title": "Aucun profil ne correspond à votre recherche",
-  "Message": "Ne vous inquiétez pas ! Élargissez votre champ de recherche pour découvrir de nouvelles personnes."
-}
-
-
 }

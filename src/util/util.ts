@@ -447,7 +447,8 @@ export const professions = [
   "Electrician",
   "Plumber",
   "Real Estate Agent",
-  "Photographer"
+  "Photographer",
+  "Other"
 ];
 
 
