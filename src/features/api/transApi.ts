@@ -123,9 +123,9 @@ export const transApi = createApi({
             }),
             providesTags:['match']
         }),
-        removeLike:build.mutation<boolean,number>({
+        removeLike:build.mutation<TResponseDto,number>({
             query:(matchId)=>({
-                url:`/request/my-like/${matchId}`,
+                url:`/request/remove/${matchId}`,
                 params:{
                   matchId
                 },

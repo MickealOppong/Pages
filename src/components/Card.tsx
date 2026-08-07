@@ -32,16 +32,22 @@ const Card = ({data}:{data:TLikes})=>{
       }
   
 
+
       
 
-  const handlePass = (e:SyntheticEvent) => {
+  const handlePass = async (e:SyntheticEvent) => {
     e.preventDefault();
     e.stopPropagation();
     setIsFolding(true);
     
+      const re= await deleteLikeRequest(data.matchId);
+    console.log(re);
+
     // Wait for the SCSS paper-fold animation to finish before removing from state/DB
     setTimeout(() => {
-      deleteLikeRequest(data.matchId);
+    //const re=  deleteLikeRequest(data.matchId);
+    console.log(re);
+    
     }, 600); 
   };
  

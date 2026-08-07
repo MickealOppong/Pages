@@ -40,7 +40,7 @@ export const loader =(store:Store<RootState>)=>async ({request}:{request:Request
                 
             
             const data:TResponseDto  = promise.data as TResponseDto;
-        
+    
             
               return data||[];
                
@@ -67,6 +67,9 @@ const Discover= () => {
 
     //loader data
   const posts = useLoaderData() as TResponseDto;
+
+  console.log(posts);
+  
 
     ///translation hook
     const {t} = useTranslation();
@@ -99,10 +102,10 @@ const Discover= () => {
   ) => {
     try {
       if (isAcceptRequest) {
-        const response = await acceptLikeRequest({ senderId, receiverId });
+        const response = await acceptLikeRequest({ senderId, receiverId });        
         if ('data' in response && response.data) revalidate();
       } else {
-        const response = await addToLike({ senderId, receiverId, postId });
+        const response = await addToLike({ senderId, receiverId, postId })  
         if ('data' in response && response.data) revalidate();
         if (response.error && isFetchBaseQueryError(response.error)) {
            

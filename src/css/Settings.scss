@@ -1,5 +1,117 @@
 @import './variables.scss';
 
+// Variables for easy customization
+$color-danger: #dc3545;
+$color-danger-hover: #bd2130;
+$color-neutral-dark: #2d3748;
+$color-neutral-light: #edf2f7;
+$color-neutral-hover: #e2e8f0;
+$color-overlay: rgba(0, 0, 0, 0.5);
+$radius-md: 12px;
+$radius-sm: 6px;
+$font-sans: 'Inter', system-ui, sans-serif;
+
+// Dimmed background backdrop
+.delete-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-overlay;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px); // Subtle modern blur effect
+}
+
+// The core modal box
+.delete-dialog-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: $radius-md;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  font-family: $font-sans;
+  animation: fadeInScale 0.2s ease-out;
+
+  // The FiDelete Icon styling
+  .delete-icon {
+    font-size: 3rem;
+    color: $color-danger;
+    margin-bottom: 1rem;
+  }
+
+  // The text paragraph
+  .delete-message {
+    color: $color-neutral-dark;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 0 0 1.5rem 0;
+    font-weight: 500;
+  }
+
+  // Button layout wrapper
+  .delete-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    // Shared button basics
+    .btn {
+      padding: 0.75rem 1.75rem;
+      border: none;
+      border-radius: $radius-sm;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      min-width: 80px;
+
+      &:focus-visible {
+        outline: 3px solid rgba($color-danger, 0.4);
+        outline-offset: 2px;
+      }
+    }
+
+    // "Yes" Danger Button
+    .btn-confirm {
+      background-color: $color-danger;
+      color: #ffffff;
+
+      &:hover {
+        background-color: $color-danger-hover;
+      }
+    }
+
+    // "No" Neutral Button
+    .btn-cancel {
+      background-color: $color-neutral-light;
+      color: $color-neutral-dark;
+
+      &:hover {
+        background-color: $color-neutral-hover;
+      }
+    }
+  }
+}
+
+// Smooth entrance animation
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
 .account-settings-page {
     display: flex;
     min-height: 100vh;

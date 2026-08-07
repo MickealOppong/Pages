@@ -26,11 +26,14 @@ export const loader =(store:Store<RootState>)=>async ()=>{
     const accepted:TLikes  = promise_two.data as TLikes;
         
         const dto={ pending,accepted}
-    return dto;
+    return dto ||[];
 }
 
 const Likes = ()=>{
     const { pending,accepted}= useLoaderData() as TMatchDto
+
+    console.log(accepted);
+    
 
     //tab switch on handler
     const[tabSelected,setTabSelected]=useState<string>(localStorage.getItem('tab')||'');

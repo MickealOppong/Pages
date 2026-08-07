@@ -5,7 +5,7 @@ import "./../css/Settings.css";
 
 import { useState, type ChangeEvent } from 'react';
 import { useTranslation } from "react-i18next";
-import { FiBell, FiHelpCircle, FiLock, FiLogOut, FiMail, FiShield, FiTrash2 } from 'react-icons/fi';
+import { FiBell, FiDelete, FiHelpCircle, FiLock, FiLogOut, FiMail, FiShield, FiTrash2 } from 'react-icons/fi';
 import { Link, useNavigate } from "react-router-dom";
 import { useLogoutMutation } from "../features/api/authApi";
 import { useChangePasswordMutation, useDeleteAccountMutation } from "../features/api/userApi";
@@ -18,6 +18,8 @@ const Settings= () => {
   const [pushNotifications, setPushNotifications] = useState(true);
   const [hideMyAge, setHideMyAge] = useState<boolean>(false);
   const [message, setMessage] = useState<string>();
+  const [confirmDelete,setConfirmDelete] = useState<boolean>(false);
+  const [openDialog,setOpenDialog]=useState<boolean>(false);
 
   //navigate hoot
   const navigate = useNavigate()
@@ -43,7 +45,6 @@ const Settings= () => {
     const confirmNewPassword = formValues.confirmNewPassword as string;
     
       const changePasswordDto={confirmNewPassword,currentPassword,newPassword}
-      console.log(changePasswordDto);
       
     try {
           if(currentPassword && newPassword &&confirmNewPassword){
@@ -63,18 +64,30 @@ const Settings= () => {
   }
 
 
+  const handleDeleteAction=async()=>{
+     if(!openDialog){
+       setOpenDialog(()=>true)
+     }
+  }
+
+
+
   const handleAccountDeletion=async()=>{
-      try {
-        const response = await deleteAccount()
-        console.log(response);
         
-          if(response.data){
-          localStorage.clear()
-          navigate("/")
-          }        
-      } catch (error) {
-        
-      }
+         try {
+          
+                const response = await deleteAccount()
+                  
+                if(response.data){
+                localStorage.clear()
+                navigate("/")
+                }   
+                      
+          } catch (error) {
+            
+          }
+
+     
   }
 
   //logout function
@@ -101,6 +114,22 @@ const Settings= () => {
     }
 
 return (
+ <>
+{
+  openDialog && (
+    <div className="delete-dialog-overlay">
+      <div className="delete-dialog-card">
+        <FiDelete className="delete-icon" />
+        <p className="delete-message">We are sorry to lose you, do you want to delete Account?</p>
+        <div className="delete-actions">
+          <button className="btn btn-confirm" onClick={() => handleAccountDeletion()}>Yes</button>
+          <button className="btn btn-cancel" onClick={() => setOpenDialog(()=>false)}>No</button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
   <section className="account-settings-page">
     <div className="dialog" style={{display:isSuccess?'flex':'none'}}>
       <span>{message}</span>
@@ -240,7 +269,7 @@ return (
             <h3>{t('Settings.Danger_zone.title')}</h3>
             <p>{t('Settings.Danger_zone.text')}</p>
           </div>
-          <button type="button" className="account-delete-profile-btn" onClick={()=>handleAccountDeletion()}>
+          <button type="button" className="account-delete-profile-btn" onClick={()=>handleDeleteAction()}>
             <FiTrash2 /> {t('Settings.Danger_zone.btn')}
           </button>
         </div>
@@ -253,6 +282,7 @@ return (
     </div>
 
   </section>
+ </>
 );
 
 };

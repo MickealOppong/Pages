@@ -92,11 +92,6 @@
   height: 100%;
 }
 
-.landscape {
-  max-width: 430px;
-  max-height: 200px;
-}
-
 .activityContent {
   padding: 16px;
   display: flex;
