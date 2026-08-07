@@ -18,7 +18,6 @@ const Settings= () => {
   const [pushNotifications, setPushNotifications] = useState(true);
   const [hideMyAge, setHideMyAge] = useState<boolean>(false);
   const [message, setMessage] = useState<string>();
-  const [confirmDelete,setConfirmDelete] = useState<boolean>(false);
   const [openDialog,setOpenDialog]=useState<boolean>(false);
 
   //navigate hoot
