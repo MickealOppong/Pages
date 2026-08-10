@@ -45,6 +45,7 @@ const RegisterPage = ()=> {
                     const location = formValues.location as string
                     const email = formValues.email as string
                 
+                        console.log(lastName,email);
                         
                     if (isTermsChecked) {
                           try {
