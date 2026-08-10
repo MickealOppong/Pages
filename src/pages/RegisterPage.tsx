@@ -22,7 +22,7 @@ const RegisterPage = ()=> {
 
       const [register]= useAddUserMutation()
         const navigate = useNavigate();
-        const navigation = useNavigation()
+        const navigation = useNavigation() 
 
   //translation hook
   const {t} = useTranslation();
@@ -50,10 +50,10 @@ const RegisterPage = ()=> {
                     if (isTermsChecked) {
                           try {
                             // 1. .unwrap() forces RTK-Query to throw an error if the HTTP status is not 2xx
-                            const res=  await register({
+                             await register({
                               firstName, lastName, dob, email, password, gender, location, isTermsChecked
                             }).unwrap();
-                            console.log(res);
+                        
                             
 
                             // 2. SUCCESS FLOW: Since we unwrapped, we know the backend returned a 2xx success code
@@ -68,7 +68,7 @@ const RegisterPage = ()=> {
 
                           } catch (error: any) {
                             // 3. ERROR FLOW: This catches all 4xx, 5xx, and network ERR_CONNECTION_REFUSED errors
-                           // console.error('Registration Failed:', error);
+                            console.error('Registration Failed:', error);
 
                             // Handle Redux Network Level Errors (FETCH_ERROR)
                             if (error.status === 'FETCH_ERROR') {
@@ -77,7 +77,7 @@ const RegisterPage = ()=> {
                             }
 
                              // Handle Server Errors (401, 500, etc.)
-                            if ( error.status === 500 || error.status === 401) {
+                            if ( error.status === 500 ) {
                               const errorResponse = error.data as { error: string; status: number; message: string };
                             
                               setFetchError(errorResponse.error);
