@@ -2,6 +2,8 @@
   "DiscoverFeed": {
     "brand_name": "Spotkac",
     "tagline": "Znajdź swoją idealną parę",
+     "real_moments": "Prawdziwe chwile.",
+  "real_connections": "Prawdziwe relacje.",
     "card_actions": {
       "view_profile": "Zobacz profil",
       "connect": "Spotkaj"
@@ -37,14 +39,30 @@
       }
     }
   },
-  "My_moments": {
-    "welcomeMessage": "Moje Momenty",
-    "sub_message": "Wartościowe relacje zaczynają się, gdy dzielisz się swoimi zainteresowaniami i doświadczeniami życiowymi",
-    "btn": "Dodaj Moment",
+ "My_moments": {
+    "welcomeMessage": "Moje Chwile",
+    "sub_message": "Wartościowe relacje zaczynają się od dzielenia się swoimi zainteresowaniami i doświadczeniami życiowymi",
+    "btn": "Dodaj Chwilę",
     "delete_btn": "Usuń",
     "visibility": {
+      "visibility": "widoczność",
       "public": "PUBLICZNE",
-      "match_only": "TYLKO_DLA_DOPASOWANYCH"
+      "match_only": "TYLKO_DLA_DOPASOWAŃ",
+      "public_text": "Wszyscy",
+      "match_only_text": "Zablokowane dla dopasowań"
+    },
+    "Create_moment": {
+      "title": "Podziel się Chwilą",
+      "message": "Zdjęcie lub wideo (Maksymalny rozmiar: 30MB)",
+      "media_title": "Prześlij pliki",
+      "media_message": "Przeciągnij i upuść lub kliknij, aby przeglądać pliki",
+      "fields": {
+        "moment": "Chwila",
+        "caption": "Podpis",
+        "caption_placeholder": "Co ta chwila mówi o Tobie?",
+        "cancel_btn": "Anuluj",
+        "share_btn": "Udostępnij"
+      }
     }
   },
   "ProfilePage": {
@@ -175,7 +193,8 @@
       "email": {
         "placeholder": "Adres e-mail",
         "email_error": "Podaj prawidłowy adres e-mail jako nazwę użytkownika",
-        "error": "Błąd"
+        "error": "Błąd",
+         "email_taken": "Ten adres e-mail jest już zajęty, wybierz inny e-mail."
       },
       "dob_error": "Musisz mieć ukończone co najmniej 18 lat, aby uzyskać dostęp do tej platformy.",
       "gender": "Płeć",
@@ -403,7 +422,13 @@
     "GORZÓW_WIELKOPOLSKI": "Gorzów Wielkopolski",
     "ELBLĄG": "Elbląg"
   },
-  "CTA": { "View": "Zobacz", "Spotkac": "Spotkaj" },
+"CTA": {
+   "View": "Więcej",
+    "Spotkac": "spotkaj",
+    "Message_brand": "Spotkać — ",
+    "Message": "Twój zaufany swat",
+    "Info": "Połączmy się"
+  },
   "Menu": {
     "Discover": "Odkrywaj",
     "Matches": "Dopasowania",
@@ -460,5 +485,46 @@
   "discover_Dialog": {
     "title": "Brak profili spełniających kryteria wyszukiwania",
     "Message": "Nie martw się! Zwiększ zakres wyszukiwania, aby odkryć nowe osoby."
-  }
+  },
+    "Delete_dialog": {
+    "message": "Przykro nam, że odchodzisz. Czy na pewno chcesz usunąć konto?",
+    "yes_btn": "Tak",
+    "no_btn": "Nie"
+  },
+  "Moment_captions":{
+  "HAVING_COFFEE": "Spokojna kawa i chwila ciszy to mój ulubiony sposób na rozpoczęcie dnia.",
+  "WALKING_MY_DOG": "Mój pies sprawia, że jestem aktywny, spędzam czas na świeżym powietrzu i jestem szczęśliwszy, niż na to zasługuję.",
+  "WORKING_OUT_AT_THE_GYM": "Lubię być w ruchu i znajdować czas na to, by czuć się silnym i zdrowym.",
+  "COOKING_DINNER": "Lubię gotować w domu, eksperymentować z nowymi przepisami i tworzyć coś od podstaw.",
+  "BAKING": "Pieczenie to moja ulubiona wymówka, by zwolnić tempo i przygotować coś pysznego.",
+  "READING_A_BOOK": "Daj mi dobrą książkę i spokojne miejsce, a potrafię zniknąć na wiele godzin.",
+  "WATCHING_A_MOVIE": "Dobry film, przekąski i zrelaksowany wieczór – trudno to przebić.",
+  "PLAYING_VIDEO_GAMES": "Lubię zatracić się w dobrej grze, kiedy mam trochę czasu tylko dla siebie.",
+  "PLAYING_BOARD_GAMES": "Uwielbiam odrobinę rywalizacji, wzłaszcza gdy grają ze mną dobrzy znajomi.",
+  "OUT_WITH_FRIENDS": "Niektóre z moich najlepszych chwil to po prostu wieczory spędzone na śmiechu z dobrymi przyjaciółmi.",
+  "HAVING_BRUNCH": "Dobre jedzenie, dobra kawa i brak pośpiechu – to mój idealny weekend.",
+  "DINING_OUT": "Lubię odkrywać nowe miejsca, próbować innego jedzenia i znajdować ukryte perełki.",
+  "HIKING": "Czuję się najszczęśliwszy na łonie natury, odkrywając nowe szlaki i uciekając od codziennej rutyny.",
+  "GOING_FOR_A_RUN": "Bieganie pomaga mi oczyścić głowę, zachować aktywność i cieszyć się czasem na świeżym powietrzu.",
+  "CYCLING": "Uwielbiam wsiadać na rower, odkrywać nowe miejsca i cieszyć się jazdą.",
+  "AT_THE_BEACH": "Daj mi trochę słońca, morze i odrobinę wolnego czasu, a będę szczęśliwy.",
+  "WATCHING_THE_SUNSET": "Nigdy nie nudzi mi się zatrzymywanie na piękny zachód słońca, gdziekolwiek akurat jestem.",
+  "ON_VACATION": "Uwielbiam odkrywać nowe miejsca, próbować nowych rzeczy i zbierać po drodze wspomnienia.",
+  "ROAD_TRIP": "Dobra muzyka, otwarta droga, ciekawe przystanki i brak sztywnych planów – to mój rodzaj przygody.",
+  "CAMPING": "Ucieczka od hałasu i spędzanie czasu na świeżym powietrzu to coś, co naprawdę lubię.",
+  "TAKING_PHOTOS": "Lubię dostrzegać małe chwile i uwieczniać te, które warto zapamiętać.",
+  "MAKING_ART": "Tworzenie czegoś własnymi rękami to jeden z moich ulubionych sposobów na relaks.",
+  "PLAYING_MUSIC": "Muzyka zawsze była częścią mojego życia, niezależnie od tego, czy słucham, czy gram.",
+  "DANCING": "Uwielbiam dobrą muzykę, dobrą energię i każdy powód do tańca.",
+  "SHOPPING": "Lubię odkrywać nowe miejsca, znajdować ciekawe rzeczy i od czasu do czasu sprawiać sobie przyjemność.",
+  "VOLUNTEERING": "Lubię spędzać część swojego czasu robiąc coś pożytecznego dla innych ludzi.",
+  "STUDYING": "Zawsze dążę do czegoś nowego i czerpię radość z nauki po drodze.",
+  "WORKING": "Podchodzę z ambicją do tego, co robię, ale uważam też, że życie to coś więcej niż praca.",
+  "RELAXING_AT_HOME": "Czasami moim idealnym wieczorem jest po prostu zostanie w domu, wyłączenie się i cieszenie się chwilą spokoju.",
+  "TRYING_SOMETHING_NEW": "Lubię dbać o to, by życie było ciekawe, i mówić „tak” doświadczeniom, których wcześniej nie próbowałem."
+}
+
+
+
+
 }

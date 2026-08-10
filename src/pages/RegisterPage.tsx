@@ -76,13 +76,17 @@ const RegisterPage = ()=> {
                              // Handle Server Errors (401, 500, etc.)
                             if ( error.status === 500 || error.status === 401) {
                               const errorResponse = error.data as { error: string; status: number; message: string };
+                            
                               setFetchError(errorResponse.error);
                             }
 
                             // Handle Server Validation & Response Errors (401, 409, 500, etc.)
                             if (error.status === 409) {
                               const errorResponse = error.data as { error: string; status: number; message: string };
-                              setError(errorResponse.error);
+                              //const{error} = errorResponse;
+                              console.log(errorResponse.error);
+                              
+                              setError(()=>errorResponse.error);
                             }
 
                             // Handle Client-Side Field Validation Errors (403 Forbidden)
@@ -175,7 +179,7 @@ if(navigation.state==='loading'){
      
             }
               {
-             error  && <span>{t('RegisterPage.fields.email.error')}</span>
+             error  && <span>{t('RegisterPage.fields.email.email_taken')}</span>
      
             }
          </div>

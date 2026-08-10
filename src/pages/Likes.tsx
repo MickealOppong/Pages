@@ -32,7 +32,6 @@ export const loader =(store:Store<RootState>)=>async ()=>{
 const Likes = ()=>{
     const { pending,accepted}= useLoaderData() as TMatchDto
 
-    console.log(accepted);
     
 
     //tab switch on handler
@@ -67,16 +66,16 @@ const Likes = ()=>{
             <div className="likes-header">
               <div className="header-center">
                  <div className="header">
-                 <h2>Connections</h2>
+                 <h2> {t('Matches.ConnectionsPage.title')}</h2>
                 <FiHeart/>
                </div>
                 <div className="tabs">
                      <div className="tab">
-                        <button onClick={()=>handleTabClick('like')}><span>Interests received</span></button>
+                        <button onClick={()=>handleTabClick('like')}><span>{t('Matches.ConnectionsPage.tabs.interests_received')}</span></button>
                         <div className={`${tabSelected=='like'?'underline active':'underline'}`}></div>
                      </div>
                       <div className="tab">
-                        <button onClick={()=>handleTabClick('match')}><span>Matches</span></button> 
+                        <button onClick={()=>handleTabClick('match')}><span>{t('Matches.ConnectionsPage.tabs.matches')}</span></button> 
                         <div className={`${tabSelected=='match'?'underline active':'underline '}`}></div>
                     </div>   
                 </div>

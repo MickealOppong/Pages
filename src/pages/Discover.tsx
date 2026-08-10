@@ -68,7 +68,6 @@ const Discover= () => {
     //loader data
   const posts = useLoaderData() as TResponseDto;
 
-  console.log(posts);
   
 
     ///translation hook

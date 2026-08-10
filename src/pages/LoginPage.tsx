@@ -43,7 +43,7 @@ const  LoginPage =()=> {
           const formData = new FormData(e.target);
           const formValues = Object.fromEntries(formData)
 
-          console.log(formValues);
+
           
     
             const username = formValues.username as string
@@ -52,7 +52,6 @@ const  LoginPage =()=> {
     
            try{
               const response = await login({username,password}).unwrap()
-              console.log(response);
               
               if(response.httpStatus==='202 ACCEPTED'){
                 dispatch(loginUser(response.data))

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import type { TLikes } from "../types/TLikes";
 import { getAgeFromDateOfBirth } from "../util/util";
@@ -5,6 +6,8 @@ import defImage from './../assets/default.jpeg';
 import './../css/Card.css';
 const MatchCard = ({data}:{data:TLikes})=>{    
 
+  //translation hook
+const {t} = useTranslation()
 
      return (
     <div className="single-match-card">
@@ -21,7 +24,7 @@ const MatchCard = ({data}:{data:TLikes})=>{
           <h2>
             {data.firstName}, {getAgeFromDateOfBirth(data.date_of_birth)}
           </h2>
-          <p>Click to open chat...</p>
+          <p>{t('Matches.ConnectionsPage.card2.title')}</p>
         </div>
 
       </Link>

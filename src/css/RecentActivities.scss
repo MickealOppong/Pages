@@ -79,7 +79,7 @@
     flex-direction: column;
     overflow: hidden;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     box-sizing: border-box;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
@@ -91,11 +91,26 @@
 .media-wrapper{
     display: flex;
     width: 100%;
-    height: 100%
+    height: 100%;
+
+    img, video, .media-cover-img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    img{
+         max-height: 330px;
+    }
+
+    div[class*="video"], div[class*="player"] {
+      width: 100% !important;
+      height: 100% !important;
+    }
 
     
 }
-
 
 
 

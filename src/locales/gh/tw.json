@@ -2,9 +2,12 @@
   "DiscoverFeed": {
     "brand_name": "Spotkac",
     "tagline": "Hwehwɛ wo hokafoɔ pa",
+    "real_moments": "Mmerɛ pa.",
+  "real_connections": "Nkitahodi pa.",
     "card_actions": {
       "view_profile": "Hwɛ ne ho nsɛm",
-      "connect": "Hyia no"
+      "connect": "Spotka"
+   
     },
     "profile_meta": {
       "header_message": "Hwehwɛ nkurɔfoɔ a mo ani gye nnoɔma korɔ ho.",
@@ -37,14 +40,30 @@
       }
     }
   },
-  "My_moments": {
-    "welcomeMessage": "Me Mmerɛ Pa",
-    "sub_message": "Ayɔnkofa pa fi hɔ mmerɛ a wokyɛ wo nnoɔma ne w'asetena mu osuahu afoforɔ",
-    "btn": "Fa Mmerɛ Ka Ho",
-    "delete_btn": "Popa",
+ "My_moments": {
+    "welcomeMessage": "Me Mmerɛ Titiriw",
+    "sub_message": "Nkitahodi pa hyɛ aseɛ berɛ a wokyɛ w'anigyeɛ ne nneɛma a woafa mu wɔ asetena mu",
+    "btn": "Bi Ka Ho",
+    "delete_btn": "Popa Fi Hɔ",
     "visibility": {
-      "public": "AMANNYASOƆ",
-      "match_only": "NKABOMFOƆ NKUTOO"
+      "visibility": "sɛnea ɛda adi",
+      "public": "OBIARA_REHU",
+      "match_only": "WƆNOM_NKOAA",
+      "public_text": "Obiara nipa",
+      "match_only_text": "Yɛatoto mu ama nnipa a yɛapfata nkoaa"
+    },
+    "Create_moment": {
+      "title": "Kyɛ Berɛ Bi",
+      "message": "Mfonini anaasɛ mfididwuma video (Kɛseɛ a ɛboro: 30MB)",
+      "media_title": "Fa Mfonini To So",
+      "media_message": "Twe fa gu so anaasɛ tiopɛ so hwehwɛ mfael mu",
+      "fields": {
+        "moment": "Berɛ Titiriw",
+        "caption": "Asɛm a ɛka ho",
+        "caption_placeholder": "dɛn na saa berɛ yi ka fa wo ho.",
+        "cancel_btn": "Gyae",
+        "share_btn": "Kyɛ"
+      }
     }
   },
   "ProfilePage": {
@@ -175,7 +194,8 @@
       "email": {
         "placeholder": "Imeili Adrɛse",
         "email_error": "Yɛsrɛ wo fa imeili adrɛse pa ma",
-        "error": "Mfomsoɔ"
+        "error": "Mfomsoɔ",
+          "email_taken": "Wadei saa e-mail yi redi dwuma dedaw, paw e-mail foforo firi hɔ."
       },
       "dob_error": "Ɛsɛ sɛ wodi mfeɛ 18 ansa na woatumi awura ha.",
       "gender": "Bɔbeasu",
@@ -403,7 +423,13 @@
     "GORZÓW_WIELKOPOLSKI": "Gorzow Wielkopolski",
     "ELBLĄG": "Elblag"
   },
-  "CTA": { "View": "Hwɛ", "Spotkac": "Hyia" },
+ "CTA": {
+   "View": "Bebree",
+    "Spotkac": "spotkaj",
+    "Message_brand": "Spotkać — ",
+    "Message": "wo hyehyɛfoɔ zaufany",
+    "Info": "Yɛnka yɛn ho"
+  },
   "Menu": {
     "Discover": "Hwehwɛ",
     "Matches": "Nkabom",
@@ -460,5 +486,45 @@
   "discover_Dialog": {
     "title": "Annya obiara a ɔne wo pɛ hyehyɛeɛ pɛ",
     "Message": "Nhwɛ fam! Trɛw wo mpasua mu na woahu afoforɔ."
-  }
+  },
+   "Delete_dialog": {
+    "message": "Yɛdi yaw sɛ yɛrepa wo ho, wopɛ sɛ wuyi wo akawnty no fi hɔ?",
+    "yes_btn": "Aane",
+    "no_btn": "Dabi"
+  },
+  "Moment_captions":{
+  "HAVING_COFFEE": "Kɔfe brɛoo bi ne asomdwoe mmerɛ ne me kwan pa a mede hyɛ da ase.",
+  "WALKING_MY_DOG": "Me kraman ma me nnam, ɔma mifi krow mma m'ani gye kyɛn sɛnea ɛfata me.",
+  "WORKING_OUT_AT_THE_GYM": "Mepɛ sɛ meho yɛ nnam na menya mmerɛ a mede bɛma meho ayɛ den na mayɛ kanyan.",
+  "COOKING_DINNER": "M'anigye fie aduane nnoa ho, sɛ mesɔ nnuane foforo hwɛ, na meyɛ biribi firi mfiase.",
+  "BAKING": "Paanoo toɔ ne me mfatoho pa a mede twentwɛn me nan ase yɛ biribi a ɛyɛ dɛ.",
+  "READING_A_BOOK": "Ma me nwoma pa bi ne baabi a ɛhɔ yɛ dinn, na mɛtumi ayera mfhyehyɛ mmerɛ pii.",
+  "WATCHING_A_MOVIE": "Sini pa bi ne nnuane nketenkete, na anwummere a m'ahome te — eyi deɛ boro biribiara so.",
+  "PLAYING_VIDEO_GAMES": "M'anigye sɛ meyera wɔ agorɔ pa bi mu berɛ a mewɔ mmerɛ ma me ho nkoaa.",
+  "PLAYING_BOARD_GAMES": "Mepɛ nkontabuo nketenkete akansie, titiriw berɛ a nnamfo pa ka ho.",
+  "OUT_WITH_FRIENDS": "Me mmerɛ pa bi ne anwummere a me ne nnamfo pa sere bɔ mmo.",
+  "HAVING_BRUNCH": "Aduane pa, kɔfe pa, na baabiara nni hɔ a merepɛ ntɛm — ɛno ne me kwandabre weekend.",
+  "DINING_OUT": "M'anigye sɛ mehunu mbeae foforo, mesɔ nnuane foforo hwɛ, na mehunu nneɛma a ɛsie.",
+  "HIKING": "Me koraa ani gye wɔ abɔnten, sɛ merehwehwɛ akwan foforo mu na mafiri daa nneyɛe mu.",
+  "GOING_FOR_A_RUN": "Mirika mmirika ma me adwene mu tew, meho yɛ nnam, na m'ani gye abɔnten mmerɛ ho.",
+  "CYCLING": "Mepɛ sɛ mesian me taseɛnam so, mehunu mbeae foforo, na m'ani gye kwan no ho.",
+  "AT_THE_BEACH": "Ma me awia kɛseɛ bi, ɛpo no, ne mmerɛ kakra na m'ani gye.",
+  "WATCHING_THE_SUNSET": "Awia kɔtɔee fɛfɛɛfɛ bi deɛ, m'ani nnyɛ kyee sɛ mɛgyina ahwɛ, baabiara a mɛwɔ.",
+  "ON_VACATION": "Mepɛ sɛ mehunu mbeae foforo, mesɔ nneɛma foforo hwɛ, na manya nkaedi wɔ kwan no so.",
+  "ROAD_TRIP": "Nnwom pa, akwantempɔn, agyinae a ɛyɛ anigye, na nhyehyɛe biara nni hɔ — me ho nhyehyɛe.",
+  "CAMPING": "Sɛ mifi dede mu na mekɔtena abɔnten ne nneɛma a m'ani gye ho kɛse.",
+  "TAKING_PHOTOS": "M'anigye sɛ mehu mmerɛ nketenkete na mefa nneɛma a ɛfata nkaedi.",
+  "MAKING_ART": "Sɛ mede me nsa bɛyɛ biribi foforo ne kwan pa a mede gye m'ahome.",
+  "PLAYING_MUSIC": "Nnwom daa bɛka me bra ho, sɛ mɛtie oo anaasɛ mɛbɔ oo.",
+  "DANCING": "Mepɛ nnwom pa, ahoɔden pa, ne mfatoho biara a mede bɛsa.",
+  "SHOPPING": "M'anigye sɛ mehwehwɛ mbeae foforo mu, mehunu nneɛma foforo, na mmerɛ bi mu no metɔ biribi ma meho.",
+  "VOLUNTEERING": "Mepɛ sɛ mede me mmerɛ bi yɛ biribi a mfasoɔ wɔ so ma nkurɔfo foforo.",
+  "STUDYING": "Daa mereyɛ biribi foforo ho adwuma na m'ani gye suadeɛ ho wɔ kwan no so.",
+  "WORKING": "Mesi me mmanim adwuma so, nanso megye di sɛ asetena boro adwuma nkoaa so.",
+  "RELAXING_AT_HOME": "Mmerɛ bi anwummere pa ne sɛ mɛtena fie, madum biribiara, na m'ani gye asomdwoe mmerɛ ho.",
+  "TRYING_SOMETHING_NEW": "Mepɛ sɛ mema asetena yɛ anigye na maka 'aane' ama nneɛma a mnyɛɛ bi da."
+}
+
+
+
 }

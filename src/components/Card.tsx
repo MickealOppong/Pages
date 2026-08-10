@@ -1,11 +1,12 @@
 import { useState, type SyntheticEvent } from "react";
+import { useTranslation } from "react-i18next";
 import { FaPeopleArrows } from "react-icons/fa";
 import { Link, useRevalidator } from "react-router-dom";
 import { useAcceptLikeByIdMutation, useRemoveLikeMutation } from "../features/api/transApi";
 import { useMarkNotifAsReadMutation } from "../features/api/userApi";
 import { useAppSelector } from "../store";
 import type { TLikes } from "../types/TLikes";
-import { formatLastSentDate, getAgeFromDateOfBirth } from "../util/util";
+import { formatLastSentDate, getAgeFromDateOfBirth, sanitizeBackendKey } from "../util/util";
 import defImage from './../assets/default.jpeg';
 import './../css/Card.css';
 
@@ -14,6 +15,9 @@ const Card = ({data}:{data:TLikes})=>{
    const{ revalidate }= useRevalidator()    
     const [isFolding, setIsFolding] = useState<Boolean>(false);
    
+    //translation hook
+    const {t} = useTranslation();
+    
     //current user id
     const currentUserId = useAppSelector((state)=>state.userSlice.id);
 
@@ -102,7 +106,7 @@ const Card = ({data}:{data:TLikes})=>{
             </h2>
             <div className="activity-badge">
               <FaPeopleArrows className="icon" />
-              <span>Connected via your "{data.activity}" moment</span>
+              <span>{t('Matches.ConnectionsPage.card1.connected_via')}{" "}{t(`Moments.${sanitizeBackendKey(data.activity)}`)}</span>
             </div>
           </div>
 
@@ -113,7 +117,7 @@ const Card = ({data}:{data:TLikes})=>{
 
         <div className="action-button-group">
           <button className="btn-reject" onClick={handlePass}>
-            Pass
+            {t('Matches.ConnectionsPage.card1.actions.pass')}
           </button>
           
           <button 
@@ -124,7 +128,7 @@ const Card = ({data}:{data:TLikes})=>{
               handleAcceptMatchRequest(data.matchId, currentUserId); 
             }}
           >
-            Accept
+    {t('Matches.ConnectionsPage.card1.actions.accept')}
           </button>
         </div>
 

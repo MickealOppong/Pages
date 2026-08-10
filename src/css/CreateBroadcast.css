@@ -146,6 +146,11 @@
   cursor: pointer;
 }
 
+.error_span {
+  color: #DC2626;
+  font-size: small;
+}
+
 .textarea-wrapper {
   border: 1px solid #e5e7eb;
   border-radius: 20px;

@@ -2,9 +2,11 @@
   "DiscoverFeed": {
     "brand_name": "Spotkac",
     "tagline": "Finde dein perfektes Match",
+    "real_moments": "Echte Momente.",
+  "real_connections": "Echte Kontakte.",
     "card_actions": {
       "view_profile": "Profil anzeigen",
-      "connect": "Treffen"
+      "connect": "Spotkaj"
     },
     "profile_meta": {
       "header_message": "Finde Menschen, die deine Interessen teilen.",
@@ -37,14 +39,30 @@
       }
     }
   },
-  "My_moments": {
+"My_moments": {
     "welcomeMessage": "Meine Momente",
-    "sub_message": "Bedeutungsvolle Verbindungen entstehen, wenn du deine Interessen und Lebenserfahrungen teilst",
+    "sub_message": "Bedeutungsvolle Verbindungen beginnen, wenn Sie Ihre Interessen und Lebenserfahrungen teilen",
     "btn": "Moment hinzufügen",
     "delete_btn": "Löschen",
     "visibility": {
+      "visibility": "Sichtbarkeit",
       "public": "ÖFFENTLICH",
-      "match_only": "NUR_MATCHES"
+      "match_only": "NUR_MATCHES",
+      "public_text": "Jeder",
+      "match_only_text": "Für Matches gesperrt"
+    },
+    "Create_moment": {
+      "title": "Einen Moment teilen",
+      "message": "Foto oder Video (Max. Größe: 30MB)",
+      "media_title": "Medien hochladen",
+      "media_message": "Dateien hierher ziehen oder klicken, um sie zu durchsuchen",
+      "fields": {
+        "moment": "Moment",
+        "caption": "Beschreibung",
+        "caption_placeholder": "Was sagt dieser Moment über dich aus?",
+        "cancel_btn": "Abbrechen",
+        "share_btn": "Teilen"
+      }
     }
   },
   "ProfilePage": {
@@ -175,7 +193,8 @@
       "email": {
         "placeholder": "E-Mail-Adresse",
         "email_error": "Bitte gib eine gültige E-Mail-Adresse als Benutzernamen an",
-        "error": "Fehler"
+        "error": "Fehler",
+         "email_taken": "Diese E-Mail-Adresse wird bereits verwendet. Bitte wählen Sie eine andere E-Mail-Adresse."
       },
       "dob_error": "Du musst mindestens 18 Jahre alt sein, um diese Plattform zu nutzen.",
       "gender": "Geschlecht",
@@ -403,7 +422,13 @@
     "GORZÓW_WIELKOPOLSKI": "Landsberg an der Warthe",
     "ELBLĄG": "Elbing"
   },
-  "CTA": { "View": "Anzeigen", "Spotkac": "Treffen" },
+ "CTA": {
+   "View": "Mehr",
+    "Spotkac": "spotkaj",
+    "Message_brand": "Spotkać — ",
+    "Message": "Ihr vertrauenswürdiger Matchmaker",
+    "Info": "Jetzt vernetzen"
+  },
   "Menu": {
     "Discover": "Entdecken",
     "Matches": "Matches",
@@ -462,6 +487,47 @@
   "title": "Keine Profile entsprechen deiner Suche",
   "Message": "Keine Sorge! Erweitere deinen Suchradius, um neue Leute zu entdecken."
 }
+,
+ "Delete_dialog": {
+    "message": "Wir bedauern es sehr, Sie zu verlieren. Möchten Sie Ihr Konto löschen?",
+    "yes_btn": "Ja",
+    "no_btn": "Nein"
+  },
+  "Moment_captions":{
+  "HAVING_COFFEE": "Ein entspannter Kaffee und ein Moment der Ruhe sind meine liebste Art, den Tag zu beginnen.",
+  "WALKING_MY_DOG": "Mein Hund hält mich aktiv, bringt mich raus und macht mich wahrscheinlich glücklicher, als ich es verdiene.",
+  "WORKING_OUT_AT_THE_GYM": "Ich mag es, aktiv zu bleiben und mir Zeit zu nehmen, um mich stark und gesund zu fühlen.",
+  "COOKING_DINNER": "Ich koche gerne zu Hause, experimentiere mit neuen Rezepten und bereite Dinge frisch zu.",
+  "BAKING": "Backen ist meine liebste Ausrede, um einen Gang herunterzuschalten und etwas Leckeres zu zaubern.",
+  "READING_A_BOOK": "Gib mir ein gutes Buch, einen ruhigen Ort und ich kann stundenlang darin versinken.",
+  "WATCHING_A_MOVIE": "Ein guter Film, ein paar Snacks und ein entspannter Abend sind kaum zu schlagen.",
+  "PLAYING_VIDEO_GAMES": "Ich genieße es, mich in einem guten Spiel zu verlieren, wenn ich etwas Zeit für mich habe.",
+  "PLAYING_BOARD_GAMES": "Ich liebe ein wenig Wettkampf, besonders wenn gute Freunde dabei sind.",
+  "OUT_WITH_FRIENDS": "Einige meiner besten Momente sind einfache Abende, an denen ich mit guten Freunden lache.",
+  "HAVING_BRUNCH": "Gutes Essen, guter Kaffee und keine Eile – das ist genau mein Wochenende.",
+  "DINING_OUT": "Ich genieße es, neue Orte zu entdecken, anderes Essen auszuprobieren und Geheimtipps zu finden.",
+  "HIKING": "Ich bin draußen am glücklichsten, wenn ich neue Wege erkunde und dem Alltag entfliehe.",
+  "GOING_FOR_A_RUN": "Laufen hilft mir, den Kopf freizubekommen, aktiv zu bleiben und die Zeit an der frischen Luft zu genießen.",
+  "CYCLING": "Ich liebe es, mich aufs Fahrrad zu setzen, neue Gegenden zu erkunden und die Fahrt zu genießen.",
+  "AT_THE_BEACH": "Gib mir etwas Sonnenschein, das Meer und ein bisschen Freizeit, und ich bin glücklich.",
+  "WATCHING_THE_SUNSET": "Ich werde nie müde, für einen schönen Sonnenuntergang anzuhalten, wo auch immer ich gerade bin.",
+  "ON_VACATION": "Ich liebe es, neue Orte zu entdecken, neue Dinge auszuprobieren und unterwegs Erinnerungen zu sammeln.",
+  "ROAD_TRIP": "Gute Musik, freie Straßen, interessante Zwischenstopps und keine festen Pläne – genau mein Abenteuer.",
+  "CAMPING": "Dem Lärm zu entkommen und Zeit in der Natur zu verbringen, ist etwas, das ich sehr genieße.",
+  "TAKING_PHOTOS": "Ich mag es, auf die kleinen Momente zu achten und diejenigen festzuhalten, die es wert sind.",
+  "MAKING_ART": "Mit meinen eigenen Händen etwas zu erschaffen, ist eine meiner liebsten Arten zu entspannen.",
+  "PLAYING_MUSIC": "Musik war schon immer Teil mein Leben, egal ob ich zuhöre oder selbst spiele.",
+  "DANCING": "Ich liebe gute Musik, tolle Energie und jeden Grund zum Tanzen.",
+  "SHOPPING": "Ich gehe gerne auf Entdeckungstour, finde interessante Dinge und gönne mir ab und zu etwas.",
+  "VOLUNTEERING": "Ich mag es, einen Teil meiner Zeit sinnvoll zu nutzen, um anderen Menschen zu helfen.",
+  "STUDYING": "Ich arbeite immer an etwas Neuem und lerne gerne im Laufe des Prozesses dazu.",
+  "WORKING": "Ich bin ehrgeizig bei dem, was ich tue, glaube aber auch, dass das Leben mehr als nur Arbeit sein sollte.",
+  "RELAXING_AT_HOME": "Manchmal ist mein idealer Abend einfach zu Hause zu bleiben, abzuschalten und ein wenig Ruhe zu genießen.",
+  "TRYING_SOMETHING_NEW": "Ich mag es, das Leben spannend zu halten und Ja zu Erfahrungen zu sagen, die ich noch nie ausprobiert habe."
+}
+
+
+
 
 
 

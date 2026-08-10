@@ -16,6 +16,7 @@
 
 .custom-video-container.mode-portrait {
   aspect-ratio: 9/ 16;
+  max-height: 430px;
 }
 
 .custom-video-container.fullscreen {
@@ -39,7 +40,7 @@
 
 .custom-video-container .native-video-node.mode-portrait {
   width: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .custom-video-container .center-play-hud {
@@ -81,7 +82,7 @@
 
 .custom-video-container .video-controls-panel {
   position: absolute;
-  bottom: 40%;
+  bottom: 50%;
   left: 0;
   right: 0;
   padding: 3rem 1rem 1rem 1rem;
@@ -93,11 +94,11 @@
 }
 
 .custom-video-container .video-controls-panel.mode-landscape {
-  top: 0;
+  top: 50%;
 }
 
 .custom-video-container .video-controls-panel.mode-portrait {
-  top: 0;
+  top: 50%;
 }
 
 .custom-video-container .video-controls-panel.faded {

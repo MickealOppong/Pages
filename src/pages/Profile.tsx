@@ -190,7 +190,6 @@ const dispatch=useDispatch()
             
         }
 
-        console.log(languageU);
         
 
 
@@ -385,9 +384,9 @@ const dispatch=useDispatch()
                                         <label htmlFor="lookingFor">{t('ProfilePage.sections.looking_for_meta.fields.looking_for_label')}</label>
                                                 {
                                                     isEditProfile?<select name="lookingFor" defaultValue={lookingForU}>
-                                                <option value="Long-term Relationship">{t('Options.LookingFor.LONG_TERM')}</option>
+                                                <option value="Long-term Relationship">{t('Options.LookingFor.LONG_TERM_RELATIONSHIP')}</option>
                                                 <option value="Not decided">{t('Options.LookingFor.NOT_DECIDED')}</option>
-                                                <option value="Short-term relationship">{t('Options.LookingFor.SHORT_TERM')}</option>
+                                                <option value="Short-term relationship">{t('Options.LookingFor.SHORT_TERM_RELATIONSHIP')}</option>
                                                 </select>:<p>{t(`Options.LookingFor.${sanitizeBackendKey(lookingForU)}`)}</p>
                                                 }
                                         </div>

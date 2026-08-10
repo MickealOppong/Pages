@@ -15,16 +15,27 @@ export const loader =(store:Store<RootState>)=>async ()=>{
     
     if(username){
 
-      const userId = store.getState().userSlice.id;
+     const userId = store.getState().userSlice.id;
       
       
           const dispatch = store.dispatch as AppDispatch;
       
           const promise = await dispatch(userApi.endpoints.getUser.initiate(userId));
        
-         const response = promise.data as TUserDataDto;
+  
+          if(promise.isSuccess){
+             const response = promise.data as TUserDataDto;
+
+               if(response.httpStatus==='404 NOT_FOUND'){
+           
+                     return redirect('/')
+                 }
 
           return response;
+          }
+          if(promise.isError){
+            return redirect('/')
+          }
           
     }else{
          return redirect('')

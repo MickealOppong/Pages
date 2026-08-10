@@ -58,36 +58,8 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
 
     return <article className={`discover-card ${layout}`} >
 
-    <div className="discover-card__media">
-         <div className="discover-card_actions">
-
-                            <button className="secondary-action"   onClick={() =>{
-                                     handleViewProfileFunc(post.userId)
-                                     updateReach(post.postId)
-                                     } }>
-
-                                <FiEye />
-
-                               {t(`CTA.View`)}
-
-                            </button>
-
-                            <button className="primary-action"    onClick={() =>{
-                                      handleInterestedFunc(
-                                            senderId,
-                                            post.userId,
-                                            post.postId,
-                                            post.requestReceived
-                                        )
-                                    }
-                                     }>
-
-                                <FiHeart />
-                                 {t(`CTA.Spotkac`)}
-
-                            </button>
-
-                        </div>
+    <div className={`discover-card__discoverMedia ${layout}`}>
+      
 
         {isVideo ? (
             <VideoPlayer
@@ -102,6 +74,7 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
                 alt=""
             />
         )}
+          
 
     </div>
      
@@ -140,7 +113,7 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
                             {post.lookingFor &&
                                 <span className="goal-badge">
                                     <RiHeart2Fill/>
-                                     {t(`Options.LookingFor.${sanitizeBackendKey(post?.lookingFor.substring(0,10))}`)}
+                                     {t(`Options.LookingFor.${sanitizeBackendKey(post?.lookingFor)}`)}
                                 </span>
                             }
 
@@ -148,10 +121,7 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
                 </div>
              </header>
 
-              {/* Wrap the hidden items inside this selector node right beneath the header */}
-         <div className="discover-card-drawer-target"  >
-
-                <div className="discover-card-drawer-inner" >
+       <div className="discover-card_target" >
                         <div className="tags">
 
                            {
@@ -171,26 +141,29 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
 
                         </div>
 
-                        <p className="story">
+                      <div className="content">
+                          <p >
 
                             {post.content}
 
                         </p>
+                      </div>
 
-                        <footer style={{display:'none'}}>
+                        <footer className="discover-footer">
+                            <div className="discover-footer_actions" >
 
-                            <button className="btn-secondary"   onClick={() =>{
+                            <button className="secondary-action"   onClick={() =>{
                                      handleViewProfileFunc(post.userId)
                                      updateReach(post.postId)
                                      } }>
 
                                 <FiEye />
 
-                                Profile
+                                <span>{t("CTA.View")} </span>
 
                             </button>
 
-                            <button className="btn-primary"    onClick={() =>{
+                            <button className="primary-action"    onClick={() =>{
                                       handleInterestedFunc(
                                             senderId,
                                             post.userId,
@@ -200,16 +173,30 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
                                     }
                                      }>
 
-                                <FiHeart/>
+                                <FiHeart />
+                                 <div>
+                                    <strong> {t("CTA.Spotkac")}  </strong>
 
-                                let's connect
+                                    <small>  {t("CTA.Info")}  </small>
+                                 </div>
 
                             </button>
 
-                        </footer>
+             </div>
+                                <div className="discover-footer_brand">
+
+                                <span className="discover-footer-brand_icon">
+                                    ✓
+                                </span>
+
+                                <span>
+                                   {t('CTA.Message_brand')} {t('CTA.Message')}
+                                </span>
+
+                                </div>
+
+                         </footer>
                     </div>
-           
-          </div>
            
 
         </div>

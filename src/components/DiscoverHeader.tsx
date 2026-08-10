@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { FaPeopleGroup } from 'react-icons/fa6';
 import { FiFilter } from 'react-icons/fi';
 import './../css/DiscoverHeader.css';
 import DiscoveryFilters from './DiscoveryFilters';
@@ -37,7 +38,7 @@ const DiscoverHeader =() =>{
     <header className="discover_header" ref={containerRef}>
       <div className="header_container">
         <div className="header_message">
-          <h2>{t('DiscoverFeed.brand_name')}</h2>
+          <h2><FaPeopleGroup/>{t('DiscoverFeed.brand_name')}</h2>
           <p>{t('DiscoverFeed.tagline')}</p>
         </div>
            <button 
@@ -47,7 +48,7 @@ const DiscoverHeader =() =>{
           aria-controls="filter-drawer"
           onClick={() => setIsFilterOpen(!isFilterOpen)}
         >
-          <FiFilter size={32} />
+          <FiFilter size={22} />
         </button>
        <div className="auth-message">
           <span>{t('DiscoverFeed.profile_meta.header_message')}</span>

@@ -21,9 +21,6 @@
   /* ---------------------------------------------------------
      THIN GLASS CONTAINER BLOCK (Sits cleanly below picture)
      --------------------------------------------------------- */
-  /* ---------------------------------------------------------
-     THE PURE-CSS ACCORDION DRAWER ENGINE
-     --------------------------------------------------------- */
   /* INTERNAL NESTED WRAPPER (Calculated seamlessly inside the CSS grid row) */
   /* ---------------------------------------------------------
      OUTER GEOMETRY PROPORTIONS (Configured on the Media layer)
@@ -54,126 +51,36 @@
   padding-top: 12px;
 }
 
-.discover-card__media {
+.discover-card__discoverMedia {
   display: flex;
   width: 100%;
-  height: 0px;
+  height: 100%;
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
 }
 
-.discover-card__media img, .discover-card__media video, .discover-card__media .media-cover-img {
+.discover-card__discoverMedia img, .discover-card__discoverMedia video, .discover-card__discoverMedia .media-cover-img {
   width: 100%;
   height: 100%;
   display: block;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.discover-card__media div[class*="video"], .discover-card__media div[class*="player"] {
+.discover-card__discoverMedia img {
+  max-height: 430px;
+}
+
+.discover-card__discoverMedia div[class*="video"], .discover-card__discoverMedia div[class*="player"] {
   width: 100% !important;
   height: 100% !important;
-}
-
-.discover-card_actions {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 14px 10px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  width: 76px;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease;
-  /* ---------------------------------------------------------
-     COMMON BUTTON COMPONENT BASES
-     --------------------------------------------------------- */
-  /* ---------------------------------------------------------
-     ACTION SUB-CLASS INDEPENDENT INDICATION HOOKS
-     --------------------------------------------------------- */
-}
-
-.discover-card_actions:hover {
-  background: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
-}
-
-.discover-card_actions button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #1a1a1a;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  gap: 4px;
-  padding: 8px 0;
-  border-radius: 12px;
-  transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.discover-card_actions button svg {
-  flex-shrink: 0;
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.discover-card_actions button:active {
-  transform: scale(0.92);
-}
-
-.discover-card_actions .secondary-action {
-  font-size: 0.45rem;
-}
-
-.discover-card_actions .secondary-action svg {
-  font-size: 16px;
-}
-
-.discover-card_actions .secondary-action:hover {
-  color: #000000;
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.discover-card_actions .secondary-action:hover svg {
-  transform: translateY(-1px);
-}
-
-.discover-card_actions .primary-action {
-  font-size: 0.55rem;
-  color: #FFFFFF;
-}
-
-.discover-card_actions .primary-action svg {
-  font-size: 2rem;
-}
-
-.discover-card_actions .primary-action:hover {
-  color: #ff4757;
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.discover-card_actions .primary-action:hover svg {
-  transform: scale(1.12);
 }
 
 .discover-card__mainOverlay {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  row-gap: 12px;
   background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(32px);
   -webkit-backdrop-filter: blur(32px);
@@ -248,12 +155,14 @@
 }
 
 .discover-card__mainOverlay .profile-header .avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
+  width: 78px;
+  height: 78px;
+  flex: 0 0 78px;
   object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3px solid #7c3aed;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.14);
 }
 
 .discover-card__mainOverlay .profile-header h3 {
@@ -277,59 +186,51 @@
   color: #ff2e44;
 }
 
-.discover-card .discover-card-drawer-target {
-  display: grid;
-  width: 100%;
-  height: auto;
-  grid-template-rows: 0fr;
-  overflow: hidden;
-  transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.discover-card .discover-card-drawer-inner {
-  min-height: 0;
-  opacity: 0;
-  visibility: hidden;
+.discover-card .discover-card_target {
+  height: 100%;
+  min-height: 100%;
+  opacity: 1;
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0 10px;
-  transition: opacity 0.25s ease-out, padding-top 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   row-gap: 12px;
 }
 
-.discover-card .discover-card-drawer-inner .tags {
+.discover-card .discover-card_target .tags {
   display: flex;
   align-items: center;
   column-gap: 16px;
 }
 
-.discover-card .discover-card-drawer-inner .tags span {
+.discover-card .discover-card_target .tags span {
   display: flex;
   align-items: center;
   column-gap: 8px;
   font-size: 0.85rem;
 }
 
-.discover-card .discover-card-drawer-inner .tags span svg {
+.discover-card .discover-card_target .tags span svg {
   color: #ff2e44;
 }
 
-.discover-card .discover-card-drawer-inner .goal-badge {
+.discover-card .discover-card_target .goal-badge {
   background: rgba(255, 255, 255, 0.6);
   color: #1a1a1a;
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-.discover-card .discover-card-drawer-inner .goal-badge svg {
+.discover-card .discover-card_target .goal-badge svg {
   color: #ff2e44;
 }
 
-.discover-card .discover-card-drawer-inner .story {
-  font-size: 0.85rem;
+.discover-card .discover-card_target .content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  font-size: 0.95rem;
+  font-weight: 500;
   line-height: 1.45;
-  color: #222222;
-  margin: 0 0 1.25rem 0;
+  color: #11142d;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   line-clamp: 3;
@@ -337,46 +238,112 @@
   overflow: hidden;
 }
 
-.discover-card .discover-card-drawer-inner footer {
+.discover-card .discover-card_target .content p {
+  margin: 0;
+}
+
+.discover-card .discover-card_target .discover-footer {
   display: flex;
+  flex-direction: column;
   gap: 10px;
-  margin-top: auto;
   padding: 6px;
 }
 
-.discover-card .discover-card-drawer-inner footer button {
+.discover-card .discover-card_target .discover-footer .discover-footer_brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #7d8494;
+  font-size: 12px;
+  text-align: center;
+}
+
+.discover-card .discover-card_target .discover-footer .discover-footer-brand_icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #13a678;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.discover-card .discover-footer_actions {
+  display: flex;
+  gap: 12px;
+}
+
+.discover-card .discover-footer_actions button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   flex: 1;
-  padding: 10px 14px;
   font-size: 0.75rem;
   font-weight: 600;
-  border-radius: 12px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
   border: none;
   white-space: nowrap;
 }
 
-.discover-card .discover-card-drawer-inner footer .btn-secondary {
+.discover-card .discover-footer_actions .secondary-action {
   background: rgba(0, 0, 0, 0.06);
   color: #1a1a1a;
 }
 
-.discover-card .discover-card-drawer-inner footer .btn-secondary:hover {
+.discover-card .discover-footer_actions .secondary-action:hover {
   background: rgba(0, 0, 0, 0.12);
 }
 
-.discover-card .discover-card-drawer-inner footer .btn-primary {
-  background: #ff4757;
+.discover-card .discover-footer_actions .primary-action {
+  flex: 1;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #7c3aed;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(255, 71, 87, 0.2);
+  box-shadow: 0 10px 28px rgba(116, 45, 205, 0.32);
+  font-size: 16px;
+  font-weight: 700;
 }
 
-.discover-card .discover-card-drawer-inner footer .btn-primary:hover {
-  background: #ff2e44;
+.discover-card .discover-footer_actions .primary-action svg {
+  width: 30px;
+  height: 30px;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+}
+
+.discover-card .discover-footer_actions .primary-action div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.05;
+}
+
+.discover-card .discover-footer_actions .primary-action strong {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.discover-card .discover-footer_actions .primary-action small {
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.88;
+}
+
+.discover-card .discover-footer_actions .primary-action:hover {
+  box-shadow: 0 14px 34px rgba(116, 45, 205, 0.4);
+  background: linear-gradient(135deg, #7C3AED 0%, #ec4899 100%);
 }
 
 .discover-card.portrait {
@@ -600,36 +567,6 @@
     display: flex;
     gap: 10px;
     margin-top: auto;
-  }
-  .discover-card .discover-card-drawer-inner footer button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    flex: 1;
-    padding: 10px 14px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: none;
-    white-space: nowrap;
-  }
-  .discover-card .discover-card-drawer-inner footer .btn-secondary {
-    background: rgba(0, 0, 0, 0.06);
-    color: #1a1a1a;
-  }
-  .discover-card .discover-card-drawer-inner footer .btn-secondary:hover {
-    background: rgba(0, 0, 0, 0.12);
-  }
-  .discover-card .discover-card-drawer-inner footer .btn-primary {
-    background: #ff4757;
-    color: #ffffff;
-    box-shadow: 0 4px 12px rgba(255, 71, 87, 0.2);
-  }
-  .discover-card .discover-card-drawer-inner footer .btn-primary:hover {
-    background: #ff2e44;
   }
   .discover-card.portrait .discover-card__media {
     aspect-ratio: 4 / 4.5;

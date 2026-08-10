@@ -140,10 +140,9 @@
   }
   .discover-feed .discover-card.portrait {
     grid-column: span 1;
-    max-width: 330px;
   }
   .discover-feed .discover-card.landscape {
-    grid-column: span 1;
+    grid-column: span 2;
     max-width: 720px;
   }
   .discover-content {
@@ -160,7 +159,7 @@
      --------------------------------------------------------- */
   }
   .discover-feed .discover-card.portrait {
-    grid-column: span 3;
+    grid-column: span 4;
   }
   .discover-feed .discover-card.landscape {
     grid-column: span 6;
@@ -176,7 +175,7 @@
      --------------------------------------------------------- */
   }
   .discover-feed .discover-card.portrait {
-    grid-column: span 3;
+    grid-column: span 4;
   }
   .discover-feed .discover-card.landscape {
     grid-column: span;

@@ -30,7 +30,7 @@ $player-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   
   &.mode-portrait {
     aspect-ratio:  9/ 16;
-   
+       max-height: 430px;
   }
 
   // Fullscreen Override State
@@ -55,7 +55,8 @@ $player-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
        &.mode-portrait {
         width: 100%;
-        object-fit:cover;
+        object-fit:fill;
+       
     }
     
   }
@@ -104,7 +105,7 @@ $player-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   // Custom Controls Interactive Subpanel
   .video-controls-panel {
     position: absolute;
-    bottom: 40%;
+    bottom: 50%;
     left: 0;
     right: 0;
     padding: 3rem 1rem 1rem 1rem;
@@ -115,12 +116,12 @@ $player-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     transition: opacity 0.3s ease, transform 0.3s ease;
 
     &.mode-landscape {
-       top: 0;
+       top: 50%;
        
        }
 
          &.mode-portrait {
-         top: 0;
+         top: 50%;
        
        }
  

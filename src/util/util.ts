@@ -544,3 +544,96 @@ export function sanitizeKey(rawCityString:string) {
     .replace(/[-\s]/g, '_') // Converts all spaces and dashes to underscores cleanly
     .toUpperCase();          // Converts the string to uppercase to match the JSON keys perfectly
 }
+
+
+export const MOMENT_CAPTIONS: Record<string, string> = {
+  "Having coffee":
+    "A slow coffee and a quiet moment are my favorite ways to start the day.",
+
+  "Walking my dog":
+    "My dog keeps me active, outdoors, and probably happier than I deserve.",
+
+  "Working out at the gym":
+    "I like staying active and making time to feel strong and healthy.",
+
+  "Cooking dinner":
+    "I enjoy cooking at home, experimenting with new recipes, and making something from scratch.",
+
+  "Baking":
+    "Baking is my favorite excuse to slow down and make something delicious.",
+
+  "Reading a book":
+    "Give me a good book, a quiet place, and I can disappear for hours.",
+
+  "Watching a movie":
+    "A good movie, some snacks, and a relaxed evening is hard to beat.",
+
+  "Playing video games":
+    "I enjoy getting lost in a good game when I have some time to myself.",
+
+  "Playing board games":
+    "I love a little competition, especially when good friends are involved.",
+
+  "Out with friends":
+    "Some of my best moments are simple evenings spent laughing with good friends.",
+
+  "Having brunch":
+    "Good food, good coffee, and nowhere to rush to — that's my kind of weekend.",
+
+  "Dining out":
+    "I enjoy discovering new places, trying different food, and finding hidden gems.",
+
+  "Hiking":
+    "I feel happiest outdoors, exploring new trails and getting away from the usual routine.",
+
+  "Going for a run":
+    "Running helps me clear my head, stay active, and enjoy some time outside.",
+
+  "Cycling":
+    "I love getting on my bike, exploring new places, and enjoying the ride.",
+
+  "At the beach":
+    "Give me some sunshine, the sea, and a little free time and I'm happy.",
+
+  "Watching the sunset":
+    "I never get tired of stopping for a beautiful sunset, wherever I happen to be.",
+
+  "On vacation":
+    "I love discovering new places, trying new things, and making memories along the way.",
+
+  "Road trip":
+    "Good music, open roads, interesting stops, and no strict plans — my kind of adventure.",
+
+  "Camping":
+    "Getting away from the noise and spending time outdoors is something I really enjoy.",
+
+  "Taking photos":
+    "I enjoy noticing the little moments and capturing the ones worth remembering.",
+
+  "Making art":
+    "Creating something with my own hands is one of my favorite ways to relax.",
+
+  "Playing music":
+    "Music has always been part of my life, whether I'm listening or playing.",
+
+  "Dancing":
+    "I love good music, good energy, and having an excuse to dance.",
+
+  "Shopping":
+    "I enjoy exploring new places, finding interesting things, and occasionally treating myself.",
+
+  "Volunteering":
+    "I like spending some of my time doing something useful for other people.",
+
+  "Studying":
+    "I'm always working toward something new and enjoy learning along the way.",
+
+  "Working":
+    "I'm ambitious about what I do, but I also believe life should be more than work.",
+
+  "Relaxing at home":
+    "Sometimes my ideal evening is simply staying home, switching off, and enjoying some quiet time.",
+
+  "Trying something new":
+    "I like keeping life interesting and saying yes to experiences I haven't tried before."
+};

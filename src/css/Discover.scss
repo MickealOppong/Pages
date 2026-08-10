@@ -58,6 +58,7 @@ z-index: 22;
   align-items: start; 
   grid-auto-flow: row dense; 
 
+
   /* ---------------------------------------------------------
      GRID BLOCK ROUTING VIA REACT ORIENTATION DATA
      --------------------------------------------------------- */
@@ -67,12 +68,14 @@ z-index: 22;
     // explicitly refuses to let a grid row stretch its shape.
     align-self: start;
     min-height: 0;
+      
 
-   
     &.portrait {
      
       grid-column: span 1;
-      
+  
+
+    
     }
 
     &.landscape {
@@ -159,11 +162,11 @@ z-index: 22;
 
     &.portrait {
       grid-column: span 1;
-      max-width: 330px;
+
     }
 
     &.landscape {
-      grid-column: span 1;
+      grid-column: span 2;
         max-width:720px;
     }
   }
@@ -191,7 +194,8 @@ z-index: 22;
 
 
     &.portrait {
-      grid-column: span 3;
+      grid-column: span 4;
+    
         
     }
 
@@ -216,8 +220,8 @@ z-index: 22;
 
 
     &.portrait {
-      grid-column: span 3;
-
+      grid-column: span 4;
+   
     }
 
     &.landscape {

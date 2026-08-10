@@ -2,9 +2,12 @@
   "DiscoverFeed": {
     "brand_name": "Spotkac",
     "tagline": "Find your perfect match",
+      "real_moments":"Real moments.",
+      "real_connections":"Real connections.",
     "card_actions": {
       "view_profile": "zobacz",
-      "connect": "spotkaj"
+      "connect": "Spotkaj"
+    
     },
     "profile_meta": {
       "header_message": "Find people who share your interests.",
@@ -43,10 +46,26 @@
     "btn":"Add Moment",
     "delete_btn":"Delete",
     "visibility":{
+      "visibility":"visibility",
       "public":"PUBLIC",
-      "match_only":"MATCH_ONLY"
+      "match_only":"MATCH_ONLY",
+      "public_text":"Everyone",
+      "match_only_text":"Locked for matches"
+    },
+    "Create_moment":{
+      "title":"Share a Moment",
+      "message":"Photo or video(Max size:30MB)",
+      "media_title":"Upload Media",
+      "media_message":"Drag & drop or click to browse files",
+      "fields":{
+      "moment":"Moment",
+      "caption":"Caption",
+      "caption_placeholder":"what does this moment say about you.",
+      "cancel_btn":"Cancel",
+      "share_btn":"Share"
     }
-  },
+  }
+},
   "ProfilePage": {
     "title":"My Profile",
     "edit_btn":"Edit Profile",
@@ -176,7 +195,8 @@
       "email": {
         "placeholder": "Email Address",
         "email_error": "Please provide a valid email address as your username",
-        "error": "error"
+        "email_taken": "Email already in use, choose a different email.",
+        "error":"error"
       },
       "dob_error": "You must be at least 18 years old to access this platform.",
       "gender": "gender",
@@ -409,8 +429,11 @@
     "ELBLĄG": "Elblag"
   },
   "CTA":{
-    "View":"view",
-    "Spotkac":"spotkaj"
+    "View":"More",
+    "Spotkac":"spotkaj",
+    "Message_brand":"Spotkać — ",
+    "Message":"your trusted match-maker",
+    "Info":" Let us help you connect"
   },
   "Menu": {
     "Discover": "Discover",
@@ -469,6 +492,45 @@
       "discover_Dialog": {
     "title": "No profile matches your search",
     "Message": "Don't worry! expand your search range to discover people."
-  }
+  },
+  "Delete_dialog":{
+    "message":"We are sorry to lose you, do you want to delete Account?",
+    "yes_btn":"Yes",
+    "no_btn":"No"
+  },
+  "Moment_captions":{
+  "HAVING_COFFEE": "A slow coffee and a quiet moment are my favorite ways to start the day.",
+  "WALKING_MY_DOG": "My dog keeps me active, outdoors, and probably happier than I deserve.",
+  "WORKING_OUT_AT_THE_GYM": "I like staying active and making time to feel strong and healthy.",
+  "COOKING_DINNER": "I enjoy cooking at home, experimenting with new recipes, and making something from scratch.",
+  "BAKING": "Baking is my favorite excuse to slow down and make something delicious.",
+  "READING_A_BOOK": "Give me a good book, a quiet place, and I can disappear for hours.",
+  "WATCHING_A_VOLUME": "A good movie, some snacks, and a relaxed evening is hard to beat.",
+  "PLAYING_VIDEO_GAMES": "I enjoy getting lost in a good game when I have some time to myself.",
+  "PLAYING_BOARD_GAMES": "I love a little competition, especially when good friends are involved.",
+  "OUT_WITH_FRIENDS": "Some of my best moments are simple evenings spent laughing with good friends.",
+  "HAVING_BRUNCH": "Good food, good coffee, and nowhere to rush to — that's my kind of weekend.",
+  "DINING_OUT": "I enjoy discovering new places, trying different food, and finding hidden gems.",
+  "HIKING": "I feel happiest outdoors, exploring new trails and getting away from the usual routine.",
+  "GOING_FOR_A_RUN": "Running helps me clear my head, stay active, and enjoy some time outside.",
+  "CYCLING": "I love getting on my bike, exploring new places, and enjoying the ride.",
+  "AT_THE_BEACH": "Give me some sunshine, the sea, and a little free time and I'm happy.",
+  "WATCHING_THE_SUNSET": "I never get tired of stopping for a beautiful sunset, wherever I happen to be.",
+  "ON_VACATION": "I love discovering new places, trying new things, and making memories along the way.",
+  "ROAD_TRIP": "Good music, open roads, interesting stops, and no strict plans — my kind of adventure.",
+  "CAMPING": "Getting away from the noise and spending time outdoors is something I really enjoy.",
+  "TAKING_PHOTOS": "I enjoy noticing the little moments and capturing the ones worth remembering.",
+  "MAKING_ART": "Creating something with my own hands is one of my favorite ways to relax.",
+  "PLAYING_MUSIC": "Music has always been part of my life, whether I'm listening or playing.",
+  "DANCING": "I love good music, good energy, and having an excuse to dance.",
+  "SHOPPING": "I enjoy exploring new places, finding interesting things, and occasionally treating myself.",
+  "VOLUNTEERING": "I like spending some of my time doing something useful for other people.",
+  "STUDYING": "I'm always working toward something new and enjoy learning along the way.",
+  "WORKING": "I'm ambitious about what I do, but I also believe life should be more than work.",
+  "RELAXING_AT_HOME": "Sometimes my ideal evening is simply staying home, switching off, and enjoying some quiet time.",
+  "TRYING_SOMETHING_NEW": "I like keeping life interesting and saying yes to experiences I haven't tried before."
+}
+
+
 
 }

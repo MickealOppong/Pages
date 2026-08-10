@@ -16,10 +16,14 @@
 .discover_header .header_message {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 60%;
+  padding: 6px;
 }
 
 .discover_header .header_message h2 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   margin: 0 0 0.25rem 0;
   font-size: 1.5rem;
   font-weight: 700;
@@ -83,9 +87,10 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid #F3E8FF;
-  background: #F8F6FC;
+  border: 1px solid #F8F6FC;
+  background: #f6f6fb;
   color: #11142d;
+  padding: 6px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }

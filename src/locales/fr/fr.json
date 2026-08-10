@@ -2,9 +2,11 @@
   "DiscoverFeed": {
     "brand_name": "Spotkac",
     "tagline": "Trouvez votre partenaire idéal",
+    "real_moments": "De vrais moments.",
+  "real_connections": "De vraies connexions.",
     "card_actions": {
       "view_profile": "Voir le profil",
-      "connect": "Rencontrer"
+      "connect": "Spotkaj"
     },
     "profile_meta": {
       "header_message": "Trouvez des personnes qui partagent vos intérêts.",
@@ -37,14 +39,30 @@
       }
     }
   },
-  "My_moments": {
+"My_moments": {
     "welcomeMessage": "Mes Moments",
     "sub_message": "Les connexions significatives commencent lorsque vous partagez vos intérêts et vos expériences de vie",
-    "btn": "Ajouter un moment",
+    "btn": "Ajouter un Moment",
     "delete_btn": "Supprimer",
     "visibility": {
+      "visibility": "visibilité",
       "public": "PUBLIC",
-      "match_only": "MATCH_UNIQUEMENT"
+      "match_only": "MATCHS_UNIQUEMENT",
+      "public_text": "Tout le monde",
+      "match_only_text": "Verrouillé pour les matchs"
+    },
+    "Create_moment": {
+      "title": "Partager un Moment",
+      "message": "Photo ou vidéo (Taille max : 30 Mo)",
+      "media_title": "Importer un média",
+      "media_message": "Glissez-déposez ou cliquez pour parcourir les fichiers",
+      "fields": {
+        "moment": "Moment",
+        "caption": "Légende",
+        "caption_placeholder": "Qu'est-ce que ce moment dit de vous ?",
+        "cancel_btn": "Annuler",
+        "share_btn": "Partager"
+      }
     }
   },
   "ProfilePage": {
@@ -175,7 +193,8 @@
       "email": {
         "placeholder": "Adresse e-mail",
         "email_error": "Veuillez fournir une adresse e-mail valide comme identifiant",
-        "error": "Erreur"
+        "error": "Erreur",
+         "email_taken": "Cet e-mail est déjà utilisé, veuillez en choisir un autre."
       },
       "dob_error": "Vous devez avoir au moins 18 ans pour accéder à cette plateforme.",
       "gender": "Genre",
@@ -402,7 +421,13 @@
     "GORZÓW_WIELKOPOLSKI": "Gorzow Wielkopolski",
     "ELBLĄG": "Elblag"
   },
-  "CTA": { "View": "Voir", "Spotkac": "Rencontrer" },
+ "CTA": {
+    "View": "Plus",
+    "Spotkac": "Spotkaj",
+    "Message_brand": "Spotkać — ",
+    "Message": "votre entremetteur de confiance",
+    "Info": "Connectons-nous"
+  },
   "Menu": {
     "Discover": "Découvrir",
     "Matches": "Matchs",
@@ -459,5 +484,45 @@
   "discover_Dialog": {
     "title": "Aucun profil ne correspond à votre recherche",
     "Message": "Ne vous inquiétez pas ! Élargissez votre champ de recherche pour découvrir de nouvelles personnes."
-  }
+  },
+  "Delete_dialog": {
+    "message": "Nous jesteśmy désolés de vous voir partir, voulez-vous supprimer votre compte ?",
+    "yes_btn": "Oui",
+    "no_btn": "Non"
+  },
+  "Moment_captions":{
+  "HAVING_COFFEE": "Un café doux et un moment de calme, c'est ma façon préférée de commencer la journée.",
+  "WALKING_MY_DOG": "Mon chien me permet de rester actif, d'aller dehors et me rend probablement plus heureux que je ne le mérite.",
+  "WORKING_OUT_AT_THE_GYM": "J'aime rester actif et prendre le temps de me sentir fort et en bonne santé.",
+  "COOKING_DINNER": "J'aime cuisiner à la maison, expérimenter de nouvelles recettes et préparer de bons petits plats maison.",
+  "BAKING": "La pâtisserie est ma meilleure excuse pour ralentir et préparer quelque chose de délicieux.",
+  "READING_A_BOOK": "Donnez-moi un bon livre, un endroit calme, et je peux disparaître pendant des heures.",
+  "WATCHING_A_MOVIE": "Un bon film, de quoi grignoter et une soirée détendue, c'est difficile à battre.",
+  "PLAYING_VIDEO_GAMES": "J'aime m'évader dans un bon jeu quand j'ai un peu de temps pour moi.",
+  "PLAYING_BOARD_GAMES": "J'adore un peu de compétition, surtout quand de bons amis sont de la partie.",
+  "OUT_WITH_FRIENDS": "Certains de mes meilleurs moments sont de simples soirées passées à rire avec de bons amis.",
+  "HAVING_BRUNCH": "De la bonne cuisine, un bon café et nulle part où se presser — c'est ma vision du week-end.",
+  "DINING_OUT": "J'aime découvrir de nouveaux endroits, tester des cuisines différentes et dénicher des perles cachées.",
+  "HIKING": "C'est en plein air que je me sens le plus heureux, à explorer de nouveaux sentiers et à m'évader du quotidien.",
+  "GOING_FOR_A_RUN": "Courir m'aide à me vider la tête, à rester actif et à profiter d'un moment dehors.",
+  "CYCLING": "J'adore monter sur mon vélo, explorer de nouveaux endroits et profiter de la balade.",
+  "AT_THE_BEACH": "Donnez-moi un peu de soleil, la mer, un peu de temps libre et je suis heureux.",
+  "WATCHING_THE_SUNSET": "Je ne me lasse jamais de m'arrêter pour admirer un beau coucher de soleil, où que je sois.",
+  "ON_VACATION": "J'adore découvrir de nouveaux endroits, tester de nouvelles choses et me créer des souvenirs en chemin.",
+  "ROAD_TRIP": "De la bonne musique, des routes dégagées, des arrêts sympas et aucun plan strict — c'est mon genre d'aventure.",
+  "CAMPING": "S'éloigner du bruit et passer du temps en pleine nature est quelque chose que j'apprécie vraiment.",
+  "TAKING_PHOTOS": "J'aime remarquer les petits instants et capturer ceux qui méritent d'être rappelés.",
+  "MAKING_ART": "Créer quelque chose de mes propres mains est l'un de mes moyens préférés pour me détendre.",
+  "PLAYING_MUSIC": "La musique a toujours fait partie de ma vie, que ce soit pour l'écouter ou pour en jouer.",
+  "DANCING": "J'adore la bonne musique, les bonnes énergies et avoir une excuse pour danser.",
+  "SHOPPING": "J'aime explorer de nouveaux endroits, dégoter des choses intéressantes et me faire plaisir de temps en temps.",
+  "VOLUNTEERING": "J'aime consacrer un peu de mon temps à faire quelque chose d'utile pour les autres.",
+  "STUDYING": "Je travaille toujours vers de nouveaux objectifs et j'aime apprendre en cours de route.",
+  "WORKING": "Je suis ambitieux dans ce que je fais, mais je pense aussi que la vie ne se résume pas au travail.",
+  "RELAXING_AT_HOME": "Parfois, ma soirée idéale consiste simplement à rester à la maison, à déconnecter et à profiter d'un moment de calme.",
+  "TRYING_SOMETHING_NEW": "J'aime garder une vie intéressante et dire oui à des expériences que je n'ai encore jamais tentées."
+}
+
+
+
 }

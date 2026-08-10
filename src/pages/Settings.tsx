@@ -119,10 +119,10 @@ return (
     <div className="delete-dialog-overlay">
       <div className="delete-dialog-card">
         <FiDelete className="delete-icon" />
-        <p className="delete-message">We are sorry to lose you, do you want to delete Account?</p>
+        <p className="delete-message">{t('Delete_dialog.message')}</p>
         <div className="delete-actions">
-          <button className="btn btn-confirm" onClick={() => handleAccountDeletion()}>Yes</button>
-          <button className="btn btn-cancel" onClick={() => setOpenDialog(()=>false)}>No</button>
+          <button className="btn btn-confirm" onClick={() => handleAccountDeletion()}>{t('Delete_dialog.yes_btn')}</button>
+          <button className="btn btn-cancel" onClick={() => setOpenDialog(()=>false)}>{t('Delete_dialog.no_btn')}</button>
         </div>
       </div>
     </div>
