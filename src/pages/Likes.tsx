@@ -20,6 +20,7 @@ export const loader =(store:Store<RootState>)=>async ()=>{
 
     const promise_one= await dispatch(transApi.endpoints.myLikes.initiate(userId,{forceRefetch:true}));
     const promise_two= await dispatch(transApi.endpoints.myMatches.initiate(userId,{forceRefetch:true}));
+         console.log(promise_one,promise_two);
          
      
     const pending:TLikes  = promise_one.data as TLikes;
