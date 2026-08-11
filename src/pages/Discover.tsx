@@ -38,6 +38,7 @@ export const loader =(store:Store<RootState>)=>async ({request}:{request:Request
 
             const promise= await dispatch(transApi.endpoints.getAllPost.initiate({userId,page,fromAge,toAge,city,activity,gender},{forceRefetch:true}));
                 
+            console.log(promise);
             
             const data:TResponseDto  = promise.data as TResponseDto;
     
