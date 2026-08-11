@@ -50,11 +50,10 @@ const RegisterPage = ()=> {
                     if (isTermsChecked) {
                           try {
                             // 1. .unwrap() forces RTK-Query to throw an error if the HTTP status is not 2xx
-                           const res=  await register({
+                          await register({
                               firstName, lastName, dob, email, password, gender, location, isTermsChecked
                             }).unwrap();
                         
-                            console.log(res);
                             
 
                             // 2. SUCCESS FLOW: Since we unwrapped, we know the backend returned a 2xx success code
@@ -69,7 +68,8 @@ const RegisterPage = ()=> {
 
                           } catch (error: any) {
                             // 3. ERROR FLOW: This catches all 4xx, 5xx, and network ERR_CONNECTION_REFUSED errors
-                            console.error('Registration Failed:', error);
+                            //console.error('Registration Failed:', error);
+                            setError(()=>'Registration Failed:'+ error)
 
                             // Handle Redux Network Level Errors (FETCH_ERROR)
                             if (error.status === 'FETCH_ERROR') {
