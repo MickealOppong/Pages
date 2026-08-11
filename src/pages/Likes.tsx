@@ -48,7 +48,7 @@ const Likes = ()=>{
         localStorage.setItem('tab',tab)
     }
 
-     if ((pending.length===0 && accepted.length===0)) {
+     if ((pending===null && accepted===null)) {
       return (
         <div className="empty-state">
           <div className="empty-card">
