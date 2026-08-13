@@ -34,7 +34,7 @@
   position: relative;
   display: flex;
   align-items: center;
-
+  width: fit-content;
 
   color: $primary;
 
@@ -49,9 +49,9 @@
     font-style: italic; /* Continuous brand style alignment standard */
   }
   .heart{
-    position: absolute;
+    position:absolute;
     top: 0px;
-    left: 165px;
+    right: -15px;
    animation: auth-reset-heartbeat 1.5s infinite ease-in-out;
    
   }

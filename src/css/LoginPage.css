@@ -21,6 +21,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  width: fit-content;
   color: #7c3aed;
 }
 
@@ -38,7 +39,7 @@
 .brand .heart {
   position: absolute;
   top: 0px;
-  left: 165px;
+  right: -15px;
   animation: auth-reset-heartbeat 1.5s infinite ease-in-out;
 }
 
