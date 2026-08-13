@@ -53,7 +53,7 @@ const DiscoveryFilters = () => {
               <div className="filter-input-group">
                 <label><FiMapPin /> {t('Options.Header.Target_location')}</label>
                 <select value={cityFilter||''} name='city' onChange={(e) => setCityFilter(e.target.value)}>
-                  <option value={''}>Wszystko</option>
+                  <option value={''}>{t(`Options.Header.all`)}</option>
                   {POLISH_CITIES.map((city) => (
                     <option key={city} value={city}>{t(`Cities.${sanitizeBackendKey(city)}`)}</option>
                   ))}

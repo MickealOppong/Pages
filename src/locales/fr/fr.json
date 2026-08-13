@@ -561,7 +561,19 @@
   "WORKING": "Je suis ambitieux dans ce que je fais, mais je pense aussi que la vie ne se résume pas au travail.",
   "RELAXING_AT_HOME": "Parfois, ma soirée idéale consiste simplement à rester à la maison, à déconnecter et à profiter d'un moment de calme.",
   "TRYING_SOMETHING_NEW": "J'aime garder une vie intéressante et dire oui à des expériences que je n'ai encore jamais tentées."
+},
+"Rules": {
+  "title": "Règles d'engagement",
+  "subtitle": "Veuillez accepter nos normes communautaires avant d'explorer les profils correspondants.",
+  "btn_agree": "Je comprends et j'accepte",
+  "respect_title": "Soyez bienveillant et respectueux",
+  "respect_desc": "Le harcèlement, les discours de haine, les menaces ou les comportements toxiques entraîneront un bannissement permanent et immédiat.",
+  "media_title": "L'authenticité est notre marque de fabrique",
+  "media_desc": "Chaque engagement, publication et interaction doit inclure vos vraies images ou vidéos. La véritable authenticité est la marque de fabrique de cette plateforme.",
+  "safety_title": "Restez en sécurité",
+  "safety_desc": "Ne partagez jamais votre mot de passe, vos informations bancaires ou vos adresses physiques avec des personnes que vous venez de rencontrer."
 }
+
 
 
 

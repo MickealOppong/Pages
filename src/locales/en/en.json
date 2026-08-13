@@ -566,7 +566,19 @@
   "WORKING": "I'm ambitious about what I do, but I also believe life should be more than work.",
   "RELAXING_AT_HOME": "Sometimes my ideal evening is simply staying home, switching off, and enjoying some quiet time.",
   "TRYING_SOMETHING_NEW": "I like keeping life interesting and saying yes to experiences I haven't tried before."
+},
+"Rules": {
+  "title": "Rules of Engagement",
+  "subtitle": "Please agree to our community standards before exploring matches.",
+  "btn_agree": "I Understand & Agree",
+  "respect_title": "Be Kind & Respectful",
+  "respect_desc": "Harassment, hate speech, threats, or toxic behavior will result in an immediate permanent ban.",
+  "media_title": "Authenticity is Our Hallmark",
+  "media_desc": "Every single engagement, post, and interaction must include your actual images or videos. True authenticity is the hallmark of this platform.",
+  "safety_title": "Stay Secure",
+  "safety_desc": "Never share your password, banking information, or physical addresses with people you just met."
 }
+
 
 
 

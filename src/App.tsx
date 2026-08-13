@@ -6,6 +6,7 @@ import { store } from './store';
 
   //loaders
 import { ChatRoom } from './components';
+import RulesOfEngagement from './components/RulesOfEngagement';
 import Discover, { loader as discoverLoader } from './pages/Discover';
 import { loader as likeLoader } from './pages/Likes';
 import { loader as matchLoader } from './pages/Messages';
@@ -110,6 +111,11 @@ function App() {
             {
           path:'/terms',
           element:<TermsAndConditions/>,
+          errorElement:<ErrorPage/>
+        },
+            {
+          path:'/rules',
+          element:<RulesOfEngagement/>,
           errorElement:<ErrorPage/>
         },
        

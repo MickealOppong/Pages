@@ -55,7 +55,7 @@ const  LoginPage =()=> {
               
               if(response.httpStatus==='202 ACCEPTED'){
                 dispatch(loginUser(response.data))
-                navigate('/landing')
+                navigate('/rules')
               }
               
    
@@ -81,10 +81,7 @@ const  LoginPage =()=> {
                               return;
                             }
             
-           }
-        
-          
-          
+           }    
       }
       
   return (

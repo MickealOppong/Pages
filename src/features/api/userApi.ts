@@ -119,9 +119,16 @@ export const userApi = createApi({
             }),
             providesTags:['count','notif']
         }),
+          acceptRules:build.mutation<boolean,void>({
+            query:()=>({
+                url:`/users/accept-rules`,
+                method:'PUT',
+            }),
+            invalidatesTags:['user']
+        }),
     }),
  
 })
 export const {useGetUserQuery,useUpdateUserDetailsMutation,useLazyGetMessagesQuery,
     useLazyGetUserProfileQuery,useGetUserProfileQuery,useGetUserViewProfileQuery,useLazyGetUserViewProfileQuery,useChangePasswordMutation
-,useDeleteAccountMutation,useCreateMessageNotifMutation,useMarkNotifAsReadMutation,useUnreadNotifCountQuery}=userApi
+,useDeleteAccountMutation,useCreateMessageNotifMutation,useMarkNotifAsReadMutation,useUnreadNotifCountQuery,useAcceptRulesMutation}=userApi

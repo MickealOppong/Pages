@@ -564,7 +564,19 @@
   "WORKING": "Ich bin ehrgeizig bei dem, was ich tue, glaube aber auch, dass das Leben mehr als nur Arbeit sein sollte.",
   "RELAXING_AT_HOME": "Manchmal ist mein idealer Abend einfach zu Hause zu bleiben, abzuschalten und ein wenig Ruhe zu genießen.",
   "TRYING_SOMETHING_NEW": "Ich mag es, das Leben spannend zu halten und Ja zu Erfahrungen zu sagen, die ich noch nie ausprobiert habe."
+},
+"Rules": {
+  "title": "Regeln für das Miteinander",
+  "subtitle": "Bitte stimme unseren Community-Standards zu, bevor du Profile entdeckst.",
+  "btn_agree": "Ich verstehe & stimme zu",
+  "respect_title": "Sei freundlich & respektvoll",
+  "respect_desc": "Belästigung, Hassrede, Drohungen oder toxisches Verhalten führen zu einer sofortigen, dauerhaften Sperre.",
+  "media_title": "Authentizität ist unser Markenzeichen",
+  "media_desc": "Jede Interaktion, jeder Beitrag und jeder Post muss deine echten Bilder oder Videos enthalten. Wahre Authentizität ist das absolute Markenzeichen dieser Plattform.",
+  "safety_title": "Bleib sicher",
+  "safety_desc": "Teile niemals dein Passwort, deine Bankdaten oder deine Adresse mit Personen, die du gerade erst kennengelernt hast."
 }
+
 
 
 

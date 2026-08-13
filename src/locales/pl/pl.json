@@ -561,7 +561,19 @@
   "WORKING": "Podchodzę z ambicją do tego, co robię, ale uważam też, że życie to coś więcej niż praca.",
   "RELAXING_AT_HOME": "Czasami moim idealnym wieczorem jest po prostu zostanie w domu, wyłączenie się i cieszenie się chwilą spokoju.",
   "TRYING_SOMETHING_NEW": "Lubię dbać o to, by życie było ciekawe, i mówić „tak” doświadczeniom, których wcześniej nie próbowałem."
+},
+"Rules": {
+  "title": "Zasady Społeczności",
+  "subtitle": "Zaakceptuj nasze standardy, zanim przejdziesz do przeglądania profili.",
+  "btn_agree": "Rozumiem i akceptuję",
+  "respect_title": "Bądź kulturalny i życzliwy",
+  "respect_desc": "Nękanie, mowa nienawiści, groźby lub toksyczne zachowania spowodują natychmiastowe usunięcie konta.",
+  "media_title": "Autentyczność to nasz fundament",
+  "media_desc": "Każda interakcja i post musi zawierać Twoje rzeczywiste zdjęcia lub filmy. Prawdziwa autentyczność to znak rozpoznawczy tej platformy.",
+  "safety_title": "Dbaj o bezpieczeństwo",
+  "safety_desc": "Nigdy nie udostępniaj haseł, danych bankowych ani adresów zamieszkania osobom nowo poznanym."
 }
+
 
 
 

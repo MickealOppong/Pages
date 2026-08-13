@@ -562,7 +562,19 @@
   "WORKING": "Mesi me mmanim adwuma so, nanso megye di sɛ asetena boro adwuma nkoaa so.",
   "RELAXING_AT_HOME": "Mmerɛ bi anwummere pa ne sɛ mɛtena fie, madum biribiara, na m'ani gye asomdwoe mmerɛ ho.",
   "TRYING_SOMETHING_NEW": "Mepɛ sɛ mema asetena yɛ anigye na maka 'aane' ama nneɛma a mnyɛɛ bi da."
+},
+"Rules": {
+  "title": "Ahyɛdeɛ ne Mpanyinsem",
+  "subtitle": "Yɛsrɛ wo, gye yɛn amanamfoɔ ahyɛdeɛ tom ansa na woafiri mmofra/nnamfofoɔ hwehwɛ ase.",
+  "btn_agree": "Mate aseɛ na Megye tom",
+  "respect_title": "Yɛ Nipa Pa na Di Obu",
+  "respect_desc": "Didiatwɛm, nitan kasa, ahunahuna, anaa asɛm mmoni biara bɛma yɛatwa w'adwuma mu ntɛmara a yɛnnan yɛn akyi.",
+  "media_title": "Nokorɛyɛ Ne Yɛn Agorɔ Panyin",
+  "media_desc": "Dwumadie biara, post, anaa nkitahodiɔ biara a wobɛyɛ no, ɛwɔ sɛ ɛde wo mfonini anaa wo video ankasa ba. Nokorɛyɛ mapa ne biribi panyin a ɛda saa platform yi adi.",
+  "safety_title": "Bɔ Wo Ho Ban",
+  "safety_desc": "Mma nipa a woahyia no foforɔ biara wo password, wo sika ho nsem (banking info), anaa wo fie address da."
 }
+
 
 
 

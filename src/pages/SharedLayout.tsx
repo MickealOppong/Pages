@@ -1,9 +1,10 @@
 
 import { useEffect, useRef } from "react";
-import { Outlet, redirect } from "react-router-dom";
+import { Outlet, redirect, useLoaderData } from "react-router-dom";
 import type { Store } from "redux";
 import { Nav } from "../components";
 import NavigationRail from "../components/NavigationRail";
+import RulesOfEngagement from "../components/RulesOfEngagement";
 import { userApi } from "../features/api/userApi";
 import { type AppDispatch, type RootState } from "../store";
 import type { TUserDataDto } from "../types/TUserDataDto";
@@ -19,7 +20,7 @@ export const loader =(store:Store<RootState>)=>async ()=>{
       
           const dispatch = store.dispatch as AppDispatch;
       
-          const promise = await dispatch(userApi.endpoints.getUser.initiate(userId));
+          const promise = await dispatch(userApi.endpoints.getUser.initiate(userId,{forceRefetch:true}));
        
   
           if(promise.isSuccess){
@@ -45,7 +46,7 @@ export const loader =(store:Store<RootState>)=>async ()=>{
 
 
 const SharedLayout = ()=>{
-
+const userData = useLoaderData() as TUserDataDto
   
     //state
     const pageRef = useRef<HTMLElement | null>(null);
@@ -72,6 +73,14 @@ const SharedLayout = ()=>{
   window.removeEventListener('resize',()=>{})
  },[width])
 
+
+ 
+
+   if (!userData.data.acceptedRules) {
+    return (
+      <RulesOfEngagement />
+    );
+  }
 
 
     return <section className="sharedLayout" ref={pageRef}>

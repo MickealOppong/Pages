@@ -23,5 +23,6 @@ export type TUserData={
     profileImage:string,
     id:number,
     postDtoList:TUserPost[]
+    acceptedRules:boolean
 
 }
