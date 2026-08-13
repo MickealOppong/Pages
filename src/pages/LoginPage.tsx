@@ -55,7 +55,7 @@ const  LoginPage =()=> {
               
               if(response.httpStatus==='202 ACCEPTED'){
                 dispatch(loginUser(response.data))
-                navigate('/rules')
+                navigate('/landing')
               }
               
    
