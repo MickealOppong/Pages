@@ -18,6 +18,7 @@ let initialState:TUserData = {
      height:'',
      aboutThem:'',
      date_of_birth:'',
+     hasMatchRequest:false,
      country:'',
      city:'',
      gender:'',

@@ -8,12 +8,11 @@ import {
 import { LuMessageCircle } from "react-icons/lu";
 import { MdPostAdd } from "react-icons/md";
 
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { useMemo } from "react";
 
 import { useTranslation } from "react-i18next";
-import { useLogoutMutation } from "../features/api/authApi";
 import { useUnreadNotifCountQuery } from "../features/api/userApi";
 import { useAppSelector } from "../store";
 import "./../css/nav.css";
@@ -22,7 +21,6 @@ const  Nav=() =>{
 
 
     const location = useLocation()
-    const navigate = useNavigate()
 
      //profile image  
      const userId = useAppSelector((state)=>state.userSlice.id)
@@ -30,8 +28,6 @@ const  Nav=() =>{
      //translation hook
      const {t} = useTranslation();
      
-       //logout hook
-         const [logout] = useLogoutMutation()
          //get notification hook
          const {data:notificationCounter} = useUnreadNotifCountQuery(userId,{refetchOnFocus:true})
 
@@ -42,23 +38,8 @@ const  Nav=() =>{
 
    const currentPage = localStorage.getItem('location');
 
-   //refresh token for logout
- const refreshToken = localStorage.getItem('rtk') as string
 
- const handleUserLogout= async ()=> {
-             
-        try {
-           const response= await logout(refreshToken)
-           if(response.data){
-            localStorage.removeItem('rtk')
-            localStorage.removeItem('tk')
-            navigate('/')
-           }
-           
-        } catch (error) {
-            
-        }
-    }
+
 
     const menuItems = useMemo(() => [
 
