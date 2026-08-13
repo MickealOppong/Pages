@@ -55,8 +55,13 @@ const  CreateBroadcast = () =>{
 
     // 4. CRITICAL: Grab the actual binary media file blob from the input array
     if (mediaInput && mediaInput.files && mediaInput.files[0]) {
+
+        const maxAllowedSize = 30 * 1024 * 1024; 
+      if(mediaInput.files[0].size>maxAllowedSize){
+        setMediaError("This image/video is too large! Maximum allowed size is 30MB.");
+        return;
+      }
       dataToSend.append("media", mediaInput.files[0]); // Pushes your raw image or short video blob safely
-    
       
     }
 
@@ -65,22 +70,19 @@ const  CreateBroadcast = () =>{
         
       if(response.error){
         
-        const errorResponse = response.error as {data:{},status:number}
-        if(errorResponse.status===413){
-           const {message} =errorResponse.data as {error:string, message:string}
-            setMediaError(()=>message)
-        }
-
-          if(errorResponse.status===403){
-           const errors =errorResponse.data as {error:{activity:string,content:string,visibility:string},messgae:string}
-          const {activity,content,visibility} = errors.error;
-            
-          setActivityError(()=>activity)
-          setContentError(()=>content);
-          setVisibilityError(()=>visibility)
-        }
-       
+        const errorResponse = response.error as {data:{},status:number|string}
+        if(errorResponse.status===403){
+           const {error} =errorResponse.data as {error:{}, message:string,status:string}
+           const {mediaOrientation,activity,content,visibility} = error as {mediaOrientation:string,activity:string,content:string,visibility:string}
+            setMediaError(()=>mediaOrientation)
+            setActivityError(()=>activity)
+           setContentError(()=>content);
+           setVisibilityError(()=>visibility)
+        }       
          
+        if(errorResponse.status==='FETCH_ERROR'){
+            setMediaError(()=>'Please make sure file size is below 30MB.')
+        }
       }
       
     
@@ -109,8 +111,6 @@ const  CreateBroadcast = () =>{
   }
 
 
-
-
   useEffect(()=>{
     if(!inputValue){
       setTextContent('')
@@ -126,6 +126,7 @@ const  CreateBroadcast = () =>{
   const handleTextInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
     e.preventDefault();
     const text = e.target.value;
+    setTextContent(text);
     const textLength = text.length;
     setCharLength(() => textLength);
   };

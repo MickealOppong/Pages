@@ -134,7 +134,7 @@ const ChatRoom = () => {
   const savedToken = localStorage.getItem("tk");
   
   // 1. Keep the connection string short and clean
-  const socketUrl = `wss://${CLEAN_URL}/ws`;
+  const socketUrl = `ws://${CLEAN_URL}/ws`;
 
   const stompClient = new Client({
     brokerURL: socketUrl,

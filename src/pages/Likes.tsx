@@ -33,9 +33,6 @@ export const loader =(store:Store<RootState>)=>async ()=>{
 const Likes = ()=>{
     const { pending,accepted}= useLoaderData() as TMatchDto
 
-    
-console.log(pending,accepted);
-
     //tab switch on handler
     const[tabSelected,setTabSelected]=useState<string>(localStorage.getItem('tab')||'');
 

@@ -72,6 +72,7 @@ const dispatch=useDispatch()
     const [charLength_two,setCharLength_two] = useState<number>(0)
     const [image,setImgae] = useState<string>(profileImage);
     const [isEditProfile,setIsEditProfile]=useState<boolean>(false)
+    const[imageError,setImageError] = useState<string>('');
 
     //translation hook
     const {t} = useTranslation();
@@ -149,6 +150,12 @@ const dispatch=useDispatch()
     
             // 4. CRITICAL: Grab the actual binary file blob from the file array
             if (imageInput && imageInput.files && imageInput.files[0]) {
+
+                     const maxAllowedSize = 30 * 1024 * 1024; 
+                    if(imageInput.files[0].size>maxAllowedSize){
+                        setImageError("This image/video is too large! Maximum allowed size is 30MB.");
+                        return;
+                    }
                 dataToSend.append("media", imageInput.files[0]); // Gets the raw file blob
                  
             }
@@ -216,7 +223,7 @@ const dispatch=useDispatch()
 
 
                 return <section className="settings">
-                        
+                 
                         <div className="settings_center">
                             <div className="pageHeader">
                                 <h1>{t('ProfilePage.title')}</h1>
@@ -224,6 +231,8 @@ const dispatch=useDispatch()
                                     <button onClick={()=>handleEditProfileButton()}>{isEditProfile?t('ProfilePage.cancel_btn'):t('ProfilePage.edit_btn')}</button>
                                 </div>
                             </div>
+                               {/** IMAGE SIZE ERROR */}
+                                   {imageError &&  <p className="image_error" style={{color:'red'}}>{imageError}</p>}
                         <form className="settings_container" onSubmit={handleFormSubmit}>
                             
                             <div className="pic_container">
@@ -244,7 +253,7 @@ const dispatch=useDispatch()
                                     </div>
                                 </div>
                                 <div className="file_upload" >
-                                    <input type="file" name="new_image" id="image" className="new_file" onChange={handleFileChange}/>
+                                    <input type="file" name="new_image" id="image" className="new_file" onChange={handleFileChange} accept="image/jpeg,image/png,image/webp"/>
                                     <div className="change_foto" style={{display:isEditProfile?'flex':'none'}}>
                                         <FiCamera/>
                                         <span>{t('ProfilePage.change_image_btn')}</span>
