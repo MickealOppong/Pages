@@ -17,7 +17,7 @@ let initialState:TUserData = {
      aboutMe:'',
      height:'',
      aboutThem:'',
-     acceptRules:false,
+     acceptedRules:false,
      date_of_birth:'',
      hasMatchRequest:false,
      country:'',
