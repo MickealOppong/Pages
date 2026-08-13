@@ -36,7 +36,7 @@ const NotificationToast = ({message,type}:{message:string,type:string}) => {
                                 {message &&  <p>
                                     {message}
                                 </p>}
-                               {type==='blocked' &&<Link to={'create-moment'}>Add moment</Link>}
+                               {type==='blocked' &&<Link to={'/landing/create-moment'}>Add moment</Link>}
                             </div>
 
    </section>

@@ -285,7 +285,16 @@ return (
             <LuList size={18} aria-hidden="true" />
             <select name="activity" id="activity-select" onChange={handleSelectActivity} onFocus={handleSelectInputFocus}>
                 <option value=""></option>
-              {MOMENT_OPTIONS.map((activity) => (
+                              {MOMENT_OPTIONS.sort((a,b)=>{
+                    if (a.label === "OTHER") return 1;
+                    if (b.label === "OTHER") return -1;
+
+                     const keyA = sanitizeBackendKey(a.label);
+                     const keyB = sanitizeBackendKey(b.label);
+
+
+                      return t(`Moments.${keyA}`).localeCompare(t(`Moments.${keyB}`));
+                  }).map((activity) => (
                 <option value={activity.label} key={activity.label}>
                 {t(`Moments.${sanitizeBackendKey(activity.label)}`)}
                 </option>

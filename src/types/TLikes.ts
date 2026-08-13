@@ -13,5 +13,7 @@ export type TLikes={
     lastMessage:string,
     hasUnreadMessage:boolean,
     requestDate:Date,
+    hasMatchRequest:boolean
+
 
 }

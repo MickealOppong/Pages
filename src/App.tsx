@@ -85,7 +85,7 @@ function App() {
               errorElement:<ErrorPage/>
             },
              {
-              path:'/landing/view/:id',
+              path:'/landing/view',
               element:<ViewProfile/>,
               errorElement:<ErrorPage/>
             },

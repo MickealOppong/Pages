@@ -1,5 +1,5 @@
 
-import { redirect, useLoaderData, useNavigate, useNavigation, useRevalidator } from "react-router-dom";
+import { redirect, useLoaderData, useNavigate, useNavigation, useRevalidator, useSearchParams } from "react-router-dom";
 import type { Store } from "redux";
 import { transApi, useAcceptLikeMutation, useAddToLikeMutation } from "../features/api/transApi";
 import { useAppSelector, type AppDispatch, type RootState } from "../store";
@@ -38,7 +38,6 @@ export const loader =(store:Store<RootState>)=>async ({request}:{request:Request
 
             const promise= await dispatch(transApi.endpoints.getAllPost.initiate({userId,page,fromAge,toAge,city,activity,gender},{forceRefetch:true}));
                 
-            console.log(promise);
             
             const data:TResponseDto  = promise.data as TResponseDto;
     
@@ -66,6 +65,8 @@ const Discover= () => {
    const[showMessage,setShowMessage]=useState<boolean>(false)
    const[messageType,setMessageType] = useState<string>('');
 
+    const [, setSearchParams] = useSearchParams();
+
     //loader data
   const posts = useLoaderData() as TResponseDto;
 
@@ -90,8 +91,14 @@ const Discover= () => {
     return activityColors[type] ?? { background: "#F3F4F6", color: "#374151" };
   };
 
-  const handleViewProfileButtonClick = (id: number) => {
-    navigate(`/landing/view/${id}`);
+  const handleViewProfileButtonClick = (id: number,postId:number) => {
+     const queryParams = new URLSearchParams(window.location.search);
+        queryParams.set('id',String(id))
+         queryParams.set('postId',String(postId))
+
+        setSearchParams(queryParams);
+     localStorage.setItem('filter',JSON.stringify(queryParams))
+    navigate(`/landing/view/?${queryParams}`);
   };
 
   const handleInterestedButtonClick = async (

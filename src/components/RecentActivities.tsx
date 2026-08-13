@@ -6,8 +6,6 @@ import VideoPlayer from "./VideoPlayer";
 
 
 const RecentActivities = ({activities}:{activities:TUserPost[]}) => {
-console.log(activities);
-
 
   //translation hook
   const {t} = useTranslation();

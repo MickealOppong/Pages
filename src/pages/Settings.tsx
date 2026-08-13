@@ -276,7 +276,7 @@ return (
       </form>
       <button className="logout-btn" onClick={handleUserLogout}>
               <FiLogOut size={20} />
-              <span>{t('Menu.Log_out')}</span>
+              {t('Menu.Log_out')}
             </button>
     </div>
 

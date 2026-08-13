@@ -1,3 +1,4 @@
+import type { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BsFillHeartFill } from 'react-icons/bs';
@@ -7,25 +8,43 @@ import { HiLanguage } from 'react-icons/hi2';
 import { MdPets } from 'react-icons/md';
 import { PiBeerBottle, PiCigarette, PiPerson, PiRuler } from 'react-icons/pi';
 import { TbSchool } from 'react-icons/tb';
+import { useNavigate } from 'react-router-dom';
+import { useAcceptLikeMutation, useAddToLikeMutation } from '../features/api/transApi';
 import { useLazyGetUserViewProfileQuery } from '../features/api/userApi';
+import type { TErrorResponse } from '../types/TErrorResponse';
 import type { TUserData } from '../types/TUserData';
 import type { TUserPost } from '../types/TUserPost';
-import { getAgeFromDateOfBirth, sanitizeBackendKey, sanitizeKey } from '../util/util';
+import { getAgeFromDateOfBirth, isFetchBaseQueryError, sanitizeBackendKey, sanitizeKey } from '../util/util';
 import './../css/ViewProfile.css';
-import { RecentActivities } from './index';
+import { NotificationToast, RecentActivities } from './index';
 
 
 
-const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number})=>{
+const SelectedProfile = ({userId,requestUserId,postId}:{userId:number,requestUserId:number,postId:number})=>{
    const [data,setData] = useState<TUserData>()
 
+   console.log(data);
+   
 
     const [getUserData] = useLazyGetUserViewProfileQuery()
 
     const getUserDataQuery=async()=>{
-         const response=  await getUserData({userId,requestorUserId})
+         const response=  await getUserData({userId,requestorUserId:requestUserId})
          setData(()=>response.data?.data as TUserData)
     }
+
+    
+
+      //state variables
+       const [message,setMessage] = useState<string>('');
+       const[showMessage,setShowMessage]=useState<boolean>(false)
+       const[messageType,setMessageType] = useState<string>('');
+       
+     const navigate = useNavigate();
+
+    //add to match request hook
+     const [addToLike] = useAddToLikeMutation();
+     const [acceptLikeRequest] = useAcceptLikeMutation();
 
     //translation hook
     const {t} = useTranslation()
@@ -33,19 +52,57 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
     
    useEffect(()=>{
         getUserDataQuery()
-   },[userId,requestorUserId])
+   },[userId,requestUserId])
 
 
+     const handleInterestedButtonClick = async (
+       senderId: number,
+       receiverId: number,
+       postId: number,
+       isAcceptRequest: boolean
+     ) => {
+       try {
+         if (isAcceptRequest) {
+           const response = await acceptLikeRequest({ senderId, receiverId });        
+           if ('data' in response && response.data) {
+            localStorage.setItem('tab','match')
+            navigate('/landing/messages')
+            
+           }
+         } else {
+           const response = await addToLike({ senderId, receiverId, postId })  
+           
+           if ('data' in response && response.data) {
+              navigate('/landing')
+           }
+           if (response.error && isFetchBaseQueryError(response.error)) {
+              
+              
+               const errorResponse = response.error as FetchBaseQueryError
+               const errorMessage = errorResponse.data as TErrorResponse
+               console.log(errorMessage.message);
+               setMessage(()=>errorMessage.message)
+               setShowMessage(()=>!showMessage);           
+               setMessageType('blocked')
+             
+           }
+           
+         }
+       } catch (error) {
+         console.error("Failed to process engagement action:", error);
+       }
+     };
     
     if(data){
 
                  const {aboutMe,aboutThem,firstName,lastName,profession,profileImage,date_of_birth,
                     country,city,preference,lookingFor,education,gender,height,pets,drinking,smoking,language} = data
-
-                    return <section className='view-profile-page'>
+                 return <section className='view-profile-page'>
+                         {showMessage && <NotificationToast message={message} type={messageType}/>}
             <section className='view-profile_container'>
                 <div className='component-header'>
-                    <h2>{`${firstName} ${lastName}'s profile`}</h2>
+                
+                    <h2>{t(`ProfilePage.view_profile`,{name:firstName})}</h2>
                 </div>
                 <div className='view-profile_header'>
                     <img src={profileImage} alt="" />
@@ -59,7 +116,16 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                     </div>
                  </div>
                 <div className='request-btn' style={{display:'none'}}>
-                     <button >Interested</button>
+                     {
+                        data.hasMatchRequest ?<button className='cta_btn' onClick={()=>handleInterestedButtonClick(requestUserId,userId,postId,true)}>{t('Matches.ConnectionsPage.card1.actions.accept')}</button>
+                        :<button className='cta_btn' onClick={()=>handleInterestedButtonClick(requestUserId,userId,postId,false)}>
+                                      <FiHeart />
+                                                                    <div>
+                                                                       <strong> {t("CTA.Spotkac")}  </strong>
+                                   
+                                                                       <small>  {t("CTA.Info")}  </small>
+                                                                    </div></button>
+                     }
                 </div>
                 </div>
                   <section className='main'>
@@ -80,7 +146,7 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                              <FiBriefcase/>
                            </div>
                         <div className='attribute'>
-                            <h2>{t(`Professions.${sanitizeBackendKey(profession)}`)}</h2>
+                            <h2>{profession===null?t('Professions.OTHER'):t(`Professions.${sanitizeBackendKey(profession)}`)}</h2>
                             <p>{t('ProfilePage.sections.basic_information.fields.profession')}</p>
                         </div>
                         </div>
@@ -126,7 +192,7 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                              <HiLanguage/>
                            </div>
                         <div className='attribute'>
-                            <h2>{t(`Options.language.${sanitizeKey(language)}`)}</h2>
+                            <h2>{language===null?t('Options.language.OTHER'):t(`Options.language.${sanitizeKey(language)}`)}</h2>
                             <p>{t('ProfilePage.sections.basic_information.fields.speaks')}</p>
                         </div>
                         </div>
@@ -155,8 +221,8 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                                     <TbSchool/>
                                 </div>
                                 <div className='attribute'>
-                                    <h2>{t('ProfilePage.sections.about_me.fields.education')}</h2>
-                                    <p>{t(`Options.education.${sanitizeKey(education)}`)}</p>
+                                    <h2>{education===null?t('Options.education.OTHER'):t(`Options.education.${sanitizeKey(education)}`)}</h2>
+                                    <p>{t('ProfilePage.sections.about_me.fields.education')}</p>
                                 </div>
                             </div>
                              <div className='attribute_container'>
@@ -164,8 +230,8 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                                     <PiBeerBottle/>
                                 </div>
                                 <div className='attribute'>
-                                    <h2>{t('ProfilePage.sections.about_me.fields.drinks')}</h2>
-                                    <p>{t(`Options.drinks.${sanitizeKey(drinking)}`)}</p>
+                                    <h2>{drinking===null?t('Options.drinks.NO'):t(`Options.drinks.${sanitizeKey(drinking)}`)}</h2>
+                                    <p>{t('ProfilePage.sections.about_me.fields.drinks')}</p>
                                 </div>
                             </div>
                             <div className='attribute_container'>
@@ -173,8 +239,8 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                                     <PiCigarette/>
                                 </div>
                                 <div className='attribute'>
-                                    <h2>{t('ProfilePage.sections.about_me.fields.smokes')}</h2>
-                                    <p>{t(`Options.Questions.${smoking}`)}</p>
+                                    <h2>{smoking===null?t('Options.Questions.NO'):t(`Options.Questions.${sanitizeBackendKey(smoking)}`)}</h2>
+                                    <p>{t('ProfilePage.sections.about_me.fields.smokes')}</p>
                                 </div>
                             </div>
                              <div className='attribute_container'>
@@ -182,8 +248,8 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
                                     <MdPets/>
                                 </div>
                                 <div className='attribute'>
-                                    <h2>{t('ProfilePage.sections.about_me.fields.pets')}</h2>
-                                    <p>{t(`Options.Questions.${pets}`)}</p>
+                                    <h2>{pets===null?t('Options.Questions.NO'):t(`Options.Questions.${sanitizeBackendKey(pets)}`)}</h2>
+                                    <p>{t('ProfilePage.sections.about_me.fields.pets')}</p>
                                 </div>
                             </div>
                           </div>
@@ -214,8 +280,6 @@ const Profile = ({userId,requestorUserId}:{userId:number,requestorUserId:number}
           
         </section>
     }
-    /*
-    return <Loading/>
-    */
+     
 }
-export default Profile
+export default SelectedProfile

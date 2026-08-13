@@ -11,6 +11,7 @@ export type TUserData={
     education:string,
     preference:string,
     lookingFor:string,
+    hasMatchRequest:boolean,
     aboutMe:string,
     aboutThem:string,
     date_of_birth:string,

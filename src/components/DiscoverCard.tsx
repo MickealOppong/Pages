@@ -24,7 +24,7 @@ interface DiscoverCardProps {
         postId: number,
         requestReceived: boolean
     ) => void;
-    handleViewProfileFunc: (userId: number) => void;
+    handleViewProfileFunc: (id:number,postId:number) => void;
     getDynamicColours: (type: ActivityType) => {
         background: string,
         color: string;
@@ -153,7 +153,7 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
                             <div className="discover-footer_actions" >
 
                             <button className="secondary-action"   onClick={() =>{
-                                     handleViewProfileFunc(post.userId)
+                                     handleViewProfileFunc(post.userId,post.postId)
                                      updateReach(post.postId)
                                      } }>
 

@@ -7,7 +7,7 @@ import { Loading } from "../components";
 import { useAddUserMutation } from "../features/api/authApi";
 import type { TErrorResponse } from "../types/TErrorResponse";
 import type { TvalidationErrors } from "../types/TValidationErrors";
-import { POLISH_CITIES } from "../util/util";
+import { POLISH_CITIES, sanitizeBackendKey } from "../util/util";
 import "./../css/RegisterPage.css";
 
 
@@ -215,9 +215,13 @@ if(navigation.state==='loading'){
                 name="location" required
               >
                 <option disabled value={'Choose a city'}>-- Choose a city --</option>
-                {POLISH_CITIES.map((city) => (
+                {POLISH_CITIES.sort((a,b)=>{
+                    const keyA = sanitizeBackendKey(a);
+                    const keyB = sanitizeBackendKey(b);
+                  return t(`Cities.${keyA}`).localeCompare(t(`Cities.${keyB}`))
+                  }).map((city) => (
                   <option key={city} value={city}>
-                    {city}
+                    {t(`Cities.${sanitizeBackendKey(city)}`)}
                   </option>
                 ))}
               </select>

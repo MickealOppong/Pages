@@ -8,7 +8,6 @@ import {
 import defImage from './../assets/default.jpeg';
 
 import { LuMessageCircle } from "react-icons/lu";
-import { MdPostAdd } from "react-icons/md";
 
 import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom";
 
@@ -16,6 +15,7 @@ import { useMemo, useState } from "react";
 
 import { useTranslation } from "react-i18next";
 import { GoPin } from "react-icons/go";
+import { MdPostAdd } from "react-icons/md";
 import { useLogoutMutation } from "../features/api/authApi";
 import { useUnreadNotifCountQuery } from "../features/api/userApi";
 import { useAppSelector } from "../store";
@@ -30,7 +30,10 @@ const  NavigationRail=() =>{
 
     const [expanded, setExpanded] = useState<boolean>(false);
 
-    const [pinned, setPinned] = useState<boolean>(JSON.parse(localStorage.getItem('pinned') as string));
+    //const [pinned, setPinned] = useState<boolean>(JSON.parse(localStorage.getItem('pinned') as string));
+    const [pinned, setPinned] = useState(() => {
+        const saved = localStorage.getItem('pinned');
+        return saved === 'true'; });
 
     const isExpanded = expanded || pinned;
 
@@ -116,11 +119,17 @@ const  NavigationRail=() =>{
 
     ], [notificationCounter]);
 
+const handleMenuPinned = () => {
+  // 1. Calculate the next state value immediately
+  const nextPinnedState = !pinned;
+  
+  // 2. Update the React UI state
+  setPinned(nextPinnedState);
+  
+  // 3. Save the exact next state directly to localStorage
+  localStorage.setItem('pinned', String(nextPinnedState));
+};
 
-const handleMenuPinned=()=>{
- !pinned? setPinned(true):setPinned(false)
- localStorage.setItem('pinned',String(pinned))
-}
 
 
     return (

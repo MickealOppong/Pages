@@ -85,8 +85,8 @@ const DiscoveryFilters = () => {
                 <label><FiUmbrella /> {t('Options.Header.Looking_for')}</label>
                 <select value={lookingForFilter||''} name='lookingFor' onChange={(e) => setLookingForFilter(e.target.value)}>
                   <option value={''}>{t(`Options.Header.all`)}</option>
-                  <option value="Friendship">{t('Options.LookingFor.LONG_TERM')}</option>
-                  <option value="Not yet decided">{t('Options.LookingFor.SHORT_TERM')}</option>
+                  <option value="Friendship">{t('Options.LookingFor.LONG_TERM_RELATIONSHIP')}</option>
+                  <option value="Not yet decided">{t('Options.LookingFor.SHORT_TERM_RELATIONSHIP')}</option>
                   <option value="Short-term relation">{t('Options.LookingFor.NOT_DECIDED')}</option>
                 </select>
               </div>

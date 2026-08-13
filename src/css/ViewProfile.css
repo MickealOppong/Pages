@@ -86,6 +86,53 @@
   flex: 1;
 }
 
+.cta_btn {
+  border-color: transparent;
+  flex: 1;
+  padding: 8px;
+  display: flex;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #7c3aed;
+  color: #ffffff;
+  box-shadow: 0 10px 28px rgba(116, 45, 205, 0.32);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.cta_btn svg {
+  width: 30px;
+  height: 30px;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+}
+
+.cta_btn div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.05;
+}
+
+.cta_btn strong {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.cta_btn small {
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.88;
+}
+
+.cta_btn:hover {
+  box-shadow: 0 14px 34px rgba(116, 45, 205, 0.4);
+  background: linear-gradient(135deg, #7C3AED 0%, #ec4899 100%);
+}
+
 .profile_data {
   display: flex;
   align-items: baseline;

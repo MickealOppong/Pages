@@ -20,13 +20,13 @@ export const loader =(store:Store<RootState>)=>async ()=>{
 
     const promise_one= await dispatch(transApi.endpoints.myLikes.initiate(userId,{forceRefetch:true}));
     const promise_two= await dispatch(transApi.endpoints.myMatches.initiate(userId,{forceRefetch:true}));
-         console.log(promise_one,promise_two);
-         
+           
      
     const pending:TLikes  = promise_one.data as TLikes;
     const accepted:TLikes  = promise_two.data as TLikes;
         
         const dto={ pending,accepted}
+        
     return dto ||[];
 }
 
@@ -34,6 +34,7 @@ const Likes = ()=>{
     const { pending,accepted}= useLoaderData() as TMatchDto
 
     
+console.log(pending,accepted);
 
     //tab switch on handler
     const[tabSelected,setTabSelected]=useState<string>(localStorage.getItem('tab')||'');
@@ -49,7 +50,7 @@ const Likes = ()=>{
         localStorage.setItem('tab',tab)
     }
 
-     if ((pending===null && accepted===null)) {
+     if (pending.length===0 && accepted.length===0) {
       return (
         <div className="empty-state">
           <div className="empty-card">

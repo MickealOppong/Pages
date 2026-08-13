@@ -2,8 +2,7 @@
 import { useEffect, useRef } from "react";
 import { Outlet, redirect } from "react-router-dom";
 import type { Store } from "redux";
-import { Nav } from "../components/index";
-import MobileNavigation from "../components/MobileNavigation";
+import { Nav } from "../components";
 import NavigationRail from "../components/NavigationRail";
 import { userApi } from "../features/api/userApi";
 import { type AppDispatch, type RootState } from "../store";
@@ -76,11 +75,8 @@ const SharedLayout = ()=>{
 
 
     return <section className="sharedLayout" ref={pageRef}>
-      <section className="group">
+        <Nav/>
          <NavigationRail />
-         <Nav/>
-       <MobileNavigation/>
-      </section>
          <main>
               <Outlet/>
         </main>

@@ -78,6 +78,9 @@ const Card = ({data}:{data:TLikes})=>{
         
         try {
             const response = await acceptLikeRequestById({matchId,currentUserId});
+
+            console.log(response);
+            
               if(response.data){
                 fireNotification()
                 revalidate()
@@ -93,7 +96,7 @@ const Card = ({data}:{data:TLikes})=>{
 
   return (
     <article className={`single-like-card ${isFolding ? 'fold-out' : ''}`}>
-      <Link to={`/landing/view/${data.senderId}`} className="card-profile-link">
+      <Link to={`/landing/view?id=${data.senderId}`} className="card-profile-link">
         
         <div className="card-main-body">
           <div className="img-wrapper">

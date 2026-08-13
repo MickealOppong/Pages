@@ -45,6 +45,7 @@
   grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
+  width: 100%;
   align-items: start;
   grid-auto-flow: row dense;
   /* ---------------------------------------------------------

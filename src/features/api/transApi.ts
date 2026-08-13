@@ -164,7 +164,7 @@ export const transApi = createApi({
                 method:'PATCH'
             }),
             invalidatesTags:['post','posts']
-        }),
+        })
     })
 })
 export const {useCreatePostMutation,useDeletePostMutation,

@@ -159,9 +159,7 @@ const dispatch=useDispatch()
             
             try{
                   const response = await updateUserDetails(dataToSend);
-                  //console.log(response.data);
-
-
+      
                   if(response.data){
                     setGenderU(()=>genderInput.value)
                     setLanguageU(()=>languageInput.value)
@@ -315,7 +313,11 @@ const dispatch=useDispatch()
                                                 {
                                                     isEditProfile? <select name="city" defaultValue={t(`Cities.${sanitizeBackendKey(cityU)}`)}>
                                                 {
-                                                    POLISH_CITIES.map((city)=>{
+                                                    POLISH_CITIES.sort((a,b)=>{
+                                                        const keyA = sanitizeBackendKey(a);
+                                                        const keyB = sanitizeBackendKey(b);
+                                                        return t(`Cities.${keyA}`).localeCompare(t(`Cities.${keyB}`))
+                                                    }).map((city)=>{
                                                         return <option value={city} key={city}>{t(`Cities.${sanitizeBackendKey(city)}`)}</option>
                                                     })
                                                 }
@@ -445,7 +447,15 @@ const dispatch=useDispatch()
                                             {
                                                 isEditProfile? <select name="profession" defaultValue={t(`Professions.${sanitizeBackendKey(professionU)}`)}>
                                                 {
-                                                    professions.map((prof)=>{
+                                                    professions.sort((a,b)=>{
+                                                        if(a==="OTHER") return 1;
+                                                        if(b==="OTHER") return -1;
+
+                                                        const keyA = sanitizeBackendKey(a);
+                                                        const keyB = sanitizeBackendKey(b);
+                                                        
+                                                        return t(`Professions.${keyA}`).localeCompare(t(`Professions.${keyB}`))
+                                                    }).map((prof)=>{
                                                         return <option value={prof} key={prof}>{t(`Professions.${sanitizeBackendKey(prof)}`)}</option>
                                                     })
                                                 }
@@ -473,10 +483,11 @@ const dispatch=useDispatch()
                                             <label htmlFor="smoking" >{t('ProfilePage.sections.lifestyle.fields.smoking')}</label>
                                             {
                                                 isEditProfile? <select name="smoking"  defaultValue={`Options.drinks.${sanitizeBackendKey(smokingU)}`}>
-                                             <option value="No">{t(`Options.Questions.No`)}</option>
-                                                <option value="Yes">{t(`Options.Questions.Yes`)}</option>
-                                                <option value="Not sure">{t(`Options.Questions.Not_sure`)}</option>
-                                                </select>:<p>{smokingU===null?t(`Options.Questions.No`):t(`Options.Questions.${smokingU}`)}</p>
+                                             <option value="No">{t(`Options.Questions.NO`)}</option>
+                                                <option value="Yes">{t(`Options.Questions.YES`)}</option>
+                                                <option value="Indifferent">{t(`Options.Questions.INDIFFERENT`)}</option>
+                                                <option value="Love to">{t(`Options.Questions.LOVE_TO`)}</option>
+                                                </select>:<p>{smokingU===null?t(`Options.Questions.NO`):t(`Options.Questions.${sanitizeBackendKey(smokingU)}`)}</p>
                                             }
                                         </div>
                                         </div>
@@ -486,10 +497,11 @@ const dispatch=useDispatch()
                                             <label htmlFor="pets" >{t('ProfilePage.sections.lifestyle.fields.pets')}</label>
                                                 {
                                                     isEditProfile?<select name="pets" defaultValue={petsU}>
-                                                <option value="No">{t(`Options.Questions.No`)}</option>
-                                                <option value="Yes">{t(`Options.Questions.Yes`)}</option>
-                                                <option value="Not sure">{t(`Options.Questions.Not_sure`)}</option>
-                                                </select>:<p>{petsU===null?t(`Options.Questions.No`):t(`Options.Questions.${petsU}`)}</p>
+                                               <option value="No">{t(`Options.Questions.NO`)}</option>
+                                                <option value="Yes">{t(`Options.Questions.YES`)}</option>
+                                                <option value="Indifferent">{t(`Options.Questions.INDIFFERENT`)}</option>
+                                                <option value="Love to">{t(`Options.Questions.LOVE_TO`)}</option>
+                                                </select>:<p>{petsU===null?t(`Options.Questions.NO`):t(`Options.Questions.${sanitizeBackendKey(petsU)}`)}</p>
                                                 }
                                         </div>
                                         </div>

@@ -1,6 +1,7 @@
 @import './variables.scss';
 
 .settings {
+    width: 100%;
     min-height: 100vh;
     height: 100%;
     background: $background-1;
@@ -451,14 +452,4 @@ transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s eas
   transform: scale(0.97);
 }
 
-/* Mobile responsive full-bleed expansion rule */
-@media (max-width: 480px) {
-  .btns {
-    margin-top: 4px;
-  }
-  
-  .btns .update-btn {
-    width: 100%; /* Stretches edge-to-edge on mobile for a better thumb target */
-    text-align: center;
-  }
-}
+

@@ -25,6 +25,7 @@ const defUser:TLikes={
   matchId: -1,
   lastMessageDate: new Date(),
   lastMessage: '',
+  hasMatchRequest:false,
   hasUnreadMessage:false,
   online: false,
   activity:'',
@@ -56,15 +57,11 @@ const ChatRoom = () => {
   // Determine chat target partner cleanly
   const partnerId = matchUser.senderId === currentUserId ? matchUser.receiverId : matchUser.senderId;
 
+
+  console.log(matchUser);
+  
   // 1. Guard check for missing route parameters
-  useEffect(() => {
-    if (!matchId) {
-      navigate('/landing/messages');
-    }
-     if (!matchUser) {
-      navigate('/landing/messages');
-    }
-  }, [matchId, navigate]);
+
 
   // 2. Auto-scroll window to bottom when new messages arrive
   useEffect(() => {
@@ -91,6 +88,8 @@ const ChatRoom = () => {
 
     async function getMyMatch(mId: number, cId: number) {
       const res = await getMatch({ matchId: mId, currentUserId: cId });
+      if(res.data===null)   navigate('/landing/messages');
+      
       if (res.data) setMatchUser(res.data as TLikes);
     }
 
@@ -135,7 +134,7 @@ const ChatRoom = () => {
   const savedToken = localStorage.getItem("tk");
   
   // 1. Keep the connection string short and clean
-  const socketUrl = `ws://${CLEAN_URL}/ws`;
+  const socketUrl = `wss://${CLEAN_URL}/ws`;
 
   const stompClient = new Client({
     brokerURL: socketUrl,
@@ -257,7 +256,7 @@ const ChatRoom = () => {
            </div>
           <div className="user">
             <div className="avatar">
-              <Link to={`/landing/view/${partnerId}`}>
+              <Link to={`/landing/view/?id=${partnerId}`}>
                 <img src={matchUser.image || defImage} alt={matchUser.firstName} /> 
               </Link>       
             </div>

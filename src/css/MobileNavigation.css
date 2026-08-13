@@ -12,7 +12,7 @@
   border: none;
   background: #7c3aed;
   color: #FFFFFF;
-  display: grid;
+  display: flex;
   place-items: center;
   box-shadow: 0 12px 28px rgba(124, 58, 237, 0.35);
   z-index: 1200;
