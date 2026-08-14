@@ -221,7 +221,7 @@ const SelectedProfile = ({userId,requestUserId,postId}:{userId:number,requestUse
                                     <TbSchool/>
                                 </div>
                                 <div className='attribute'>
-                                    <h2>{education===null?t('Options.education.OTHER'):t(`Options.education.${sanitizeKey(education)}`)}</h2>
+                                    <h2>{education===null?t('Options.education.OTHER'):t(`Options.education.${sanitizeBackendKey(education)}`)}</h2>
                                     <p>{t('ProfilePage.sections.about_me.fields.education')}</p>
                                 </div>
                             </div>
@@ -230,7 +230,7 @@ const SelectedProfile = ({userId,requestUserId,postId}:{userId:number,requestUse
                                     <PiBeerBottle/>
                                 </div>
                                 <div className='attribute'>
-                                    <h2>{drinking===null?t('Options.drinks.NO'):t(`Options.drinks.${sanitizeKey(drinking)}`)}</h2>
+                                    <h2>{drinking===null?t('Options.drinks.NO'):t(`Options.drinks.${sanitizeBackendKey(drinking)}`)}</h2>
                                     <p>{t('ProfilePage.sections.about_me.fields.drinks')}</p>
                                 </div>
                             </div>
