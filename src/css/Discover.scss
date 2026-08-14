@@ -26,12 +26,12 @@
 }
 
 .discover-header {
-position: sticky;
+position:sticky;
 top: 0;
 left: 0;
 right: 0;
 z-index: 22;
- display:flex;
+ display:none;
  width: 100%;
  
 }
@@ -53,6 +53,7 @@ z-index: 22;
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-top:75px;
 
   
   // Desktop height isolation guardrail
@@ -149,11 +150,16 @@ z-index: 22;
    RESPONSIVE BREAKPOINTS (Fixed Grid Alignment Overrides)
    ========================================================================== */
 @media (min-width: 768px) {
+
+  .discover-header{
+    display: flex;
+  }
 .discover-feed {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 36px;
   padding: 2rem;
+   margin-top:0px;
 
   /* ---------------------------------------------------------
      GRID BLOCK ROUTING VIA REACT ORIENTATION DATA

@@ -16,6 +16,7 @@ import { useTranslation } from "react-i18next";
 import { useUnreadNotifCountQuery } from "../features/api/userApi";
 import { useAppSelector } from "../store";
 import "./../css/nav.css";
+import DiscoverHeader from "./DiscoverHeader";
 
 const  Nav=() =>{
 
@@ -125,6 +126,7 @@ const  Nav=() =>{
                 }
 
             </nav>
+            <DiscoverHeader/>
         </aside>
 
     );
