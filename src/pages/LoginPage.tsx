@@ -127,7 +127,7 @@ const  LoginPage =()=> {
             <span onClick={()=>handleEyeClick('text')} style={{display:showText==='password'?'flex':'none'}}><RiEyeOffFill/></span>
           </div>
             {
-              errorPassword && <span className="error-text">{t('LoginPage.email.password_error')}</span>
+              errorPassword && <span className="error-text">{t('LoginPage.password.password_error')}</span>
             }
           </div>
 
