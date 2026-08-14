@@ -50,7 +50,7 @@ const DiscoverHeader =() =>{
         >
           <FiFilter size={22} />
         </button>
-       <div className="auth-message">
+       <div className="auth-message" style={{display:'none'}}>
           <span>{t('DiscoverFeed.profile_meta.header_message')}</span>
           <span>{t('DiscoverFeed.profile_meta.sub_message')}</span>
         </div>
