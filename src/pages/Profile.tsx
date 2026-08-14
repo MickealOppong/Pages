@@ -479,7 +479,7 @@ const dispatch=useDispatch()
                                             {
                                                 isEditProfile? <select name="drinking" defaultValue={t(`Options.drinks.${sanitizeBackendKey(drinkingU)}`)}>
                                                 <option value="Yes">{t('Options.drinks.YES')}</option>
-                                                <option value="Occassional">{t('Options.drinks.OCCASIONAL')}</option>
+                                                <option value="Occasional">{t('Options.drinks.OCCASIONAL')}</option>
                                                 <option value="No">{t('Options.drinks.NO')}</option>
                                                 <option value="Don't drink">{t('Options.drinks.DONT_DRINK')}</option>
                                                 </select>:<p>{drinkingU===null?t(`Options.drinks.NO`):t(`Options.drinks.${sanitizeBackendKey(drinkingU)}`)}</p>
