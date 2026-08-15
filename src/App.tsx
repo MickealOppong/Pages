@@ -118,6 +118,7 @@ function App() {
           element:<RulesOfEngagement/>,
           errorElement:<ErrorPage/>
         },
+    
        
   ])
   return  <RouterProvider router={router}/>

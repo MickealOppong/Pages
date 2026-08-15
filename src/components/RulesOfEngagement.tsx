@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { FiAlertOctagon, FiAward, FiHeart, FiShield } from 'react-icons/fi';
+import { MdPostAdd } from 'react-icons/md';
 import { useNavigate, useRevalidator } from 'react-router';
 import { useAcceptRulesMutation } from '../features/api/userApi';
 import './../css/Rules.css';
@@ -60,8 +61,16 @@ const RulesOfEngagement = () => {
               <p>{t('Rules.media_desc')}</p>
             </div>
           </div>
+              {/* Rule 3: Moments */}
+          <div className="rule-card-row">
+            <MdPostAdd className="rule-row-icon color-safe" />
+            <div className="rule-row-body">
+              <h4>{t('Rules.moment_title')}</h4>
+              <p>{t('Rules.moment_desc')}</p>
+            </div>
+          </div>
 
-          {/* Rule 3: Safety */}
+          {/* Rule 4: Safety */}
           <div className="rule-card-row">
             <FiAlertOctagon className="rule-row-icon color-safe" />
             <div className="rule-row-body">
@@ -69,6 +78,7 @@ const RulesOfEngagement = () => {
               <p>{t('Rules.safety_desc')}</p>
             </div>
           </div>
+        
 
         </div>
 

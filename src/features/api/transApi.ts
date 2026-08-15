@@ -4,6 +4,7 @@ import type { TLikeRequest } from "../../types/TLikeRequest";
 import type { TLikeResponse } from "../../types/TLikeResponse";
 import type { TLikes } from "../../types/TLikes";
 import type { TMatchRequest } from "../../types/TMatchRequest";
+import type { TMatchResultDto } from "../../types/TMatchResultDto";
 import type { TResponseDto } from "../../types/TResponseDto";
 import { baseUrl } from "./baseUrl";
 
@@ -164,10 +165,19 @@ export const transApi = createApi({
                 method:'PATCH'
             }),
             invalidatesTags:['post','posts']
+        }),
+           getCompatibility:build.query<TMatchResultDto,{userA:number,userB:number}>({
+            query:({userA,userB})=>({
+                url:`/api/analytics/compatibility`,
+                params:{
+                 userA,
+                 userB
+                },
+            }),
         })
     })
 })
 export const {useCreatePostMutation,useDeletePostMutation,
     useGetAllPostByUserIdQuery,useDeletePosByIdMutation,useGetAllPostQuery
 ,useAddToLikeMutation,useLazyMyLikesQuery,useRemoveLikeMutation,useAcceptLikeMutation,useAcceptLikeByIdMutation,useMyMatchesQuery,useLazyGetMatchQuery
-,useUpdateReachMutation}= transApi
+,useUpdateReachMutation,useLazyGetCompatibilityQuery}= transApi

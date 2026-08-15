@@ -29,6 +29,7 @@
         "connected_via": "Verbunden über deinen",
         "moment_suffix": "Moment",
         "actions": {
+          "compatibility": "Kompatibilität anzeigen",
           "pass": "Weiter",
           "accept": "Annehmen"
         }
@@ -572,10 +573,24 @@
   "respect_title": "Sei freundlich & respektvoll",
   "respect_desc": "Belästigung, Hassrede, Drohungen oder toxisches Verhalten führen zu einer sofortigen, dauerhaften Sperre.",
   "media_title": "Authentizität ist unser Markenzeichen",
-  "media_desc": "Jede Interaktion, jeder Beitrag und jeder Post muss deine echten Bilder oder Videos enthalten. Wahre Authentizität ist das absolute Markenzeichen dieser Plattform.",
+  "media_desc": "Jeder geteilte Moment muss dein echtes Bild oder ein kurzes Video enthalten. Wahre Authentizität ist das absolute Markenzeichen dieser Plattform.",
+  "moment_title": "Geteilte Momente",
+  "moment_desc": "Du kannst öffentliche Momente oder Momente nur für Matches erstellen. Um jedoch eine Match-Anfrage zu senden, musst du mindestens einen öffentlichen Moment haben.",
   "safety_title": "Bleib sicher",
   "safety_desc": "Teile niemals dein Passwort, deine Bankdaten oder deine Adresse mit Personen, die du gerade erst kennengelernt hast."
-}
+},
+  "Compatibility": {
+    "chart_title": "Was ihr gemeinsam habt",
+    "chart_desc": "{{shared}} gemeinsame Interessen, sowie einzigartige Merkmale für jede Person.",
+    "row_shared": "Gemeinsame Interessen",
+    "row_you": "Deine einzigartigen Interessen",
+    "row_them": "Deren einzigartige Interessen",
+    "details_shared": "Was ihr beide teilt",
+    "details_unique": "Einzigartige Lebensstil-Merkmale",
+    "match_label": "Match",
+    "loading": "Übereinstimmungsdaten werden analysiert..."
+  }
+
 
 
 

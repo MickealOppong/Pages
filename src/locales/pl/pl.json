@@ -29,6 +29,7 @@
         "connected_via": "Połączono przez Twój",
         "moment_suffix": "moment",
         "actions": {
+          "compatibility": "Zobacz dopasowanie",
           "pass": "Odrzuć",
           "accept": "Akceptuj"
         }
@@ -569,12 +570,23 @@
   "respect_title": "Bądź kulturalny i życzliwy",
   "respect_desc": "Nękanie, mowa nienawiści, groźby lub toksyczne zachowania spowodują natychmiastowe usunięcie konta.",
   "media_title": "Autentyczność to nasz fundament",
-  "media_desc": "Każda interakcja i post musi zawierać Twoje rzeczywiste zdjęcia lub filmy. Prawdziwa autentyczność to znak rozpoznawczy tej platformy.",
+  "media_desc": "Każdy udostępniony Moment musi zawierać Twoje rzeczywiste zdjęcie lub krótki film. Prawdziwa autentyczność to znak rozpoznawczy tej platformy.",
+  "moment_title": "Udostępnione Momenty",
+  "moment_desc": "Możesz tworzyć Momenty publiczne lub widoczne tylko dla dopasowań. Aby jednak wysłać prośbę o dopasowanie, musisz mieć przynajmniej jeden publiczny Moment.",
   "safety_title": "Dbaj o bezpieczeństwo",
   "safety_desc": "Nigdy nie udostępniaj haseł, danych bankowych ani adresów zamieszkania osobom nowo poznanym."
-}
-
-
+},
+  "Compatibility": {
+    "chart_title": "Co macie ze sobą wspólnego",
+    "chart_desc": "{{shared}} wspólnych zainteresowań, oraz unikalne cechy dla każdej osoby.",
+    "row_shared": "Wspólne zainteresowania",
+    "row_you": "Twoje unikalne zainteresowania",
+    "row_them": "Ich unikalne zainteresowania",
+    "details_shared": "To, co oboje dzielicie",
+    "details_unique": "Unikalne Cechy Stylu Życia",
+    "match_label": "Dopasowanie",
+    "loading": "Analizowanie profili dopasowania..."
+  }
 
 
 

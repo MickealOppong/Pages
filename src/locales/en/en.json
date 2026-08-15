@@ -30,6 +30,7 @@
         "connected_via": "Connected via your",
         "moment_suffix": "moment",
         "actions": {
+          "compatibility":"View compatibility",
           "pass": "Pass",
           "accept": "Accept"
         }
@@ -574,9 +575,20 @@
   "respect_title": "Be Kind & Respectful",
   "respect_desc": "Harassment, hate speech, threats, or toxic behavior will result in an immediate permanent ban.",
   "media_title": "Authenticity is Our Hallmark",
-  "media_desc": "Every single engagement, post, and interaction must include your actual images or videos. True authenticity is the hallmark of this platform.",
+  "media_desc": "Every single moment shared must include your actual image or short video. True authenticity is the hallmark of this platform.",
+  "moment_title": "Shared moments",
+  "moment_desc": "You can create public or match only moments, however to send a match request, you must have at least one public moment ",
   "safety_title": "Stay Secure",
   "safety_desc": "Never share your password, banking information, or physical addresses with people you just met."
+},
+"Compatibility": {
+  "chart_title": "What you have in common",
+  "chart_desc": "{{shared}} shared interests, with unique interests for each person.",
+  "row_shared": "Shared interests",
+  "row_you": "Your unique interests",
+  "row_them": "Their unique interests",
+  "details_shared": "You both share",
+  "details_unique": "Unique Lifestyle Traits"
 }
 
 

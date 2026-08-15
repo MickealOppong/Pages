@@ -1,0 +1,396 @@
+// ==========================================================================
+// BACKDROP MASK OVERLAY & BACKPANEL CONTAINMENT LAYER
+// ==========================================================================
+.compatibility-backdrop-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.4); // Tailored dark slate backdrop
+  backdrop-filter: blur(8px);               // Soft background blur
+  z-index: 2000;                            // Ensures card sits cleanly on top of main app shell
+  display: flex;
+  align-items: flex-end;                    // Pulls bottom sheet on mobile devices
+  justify-content: center;
+  padding: 0;
+
+  @media (min-width: 640px) {
+    align-items: center;                    // Center as a structured modal view on large screen frames
+    padding: 2rem;
+  }
+}
+
+.sheet-positioning-container {
+  width: 100%;
+  max-width: 520px;                         // Keeps the layout tight and crisp
+  box-sizing: border-box;
+}
+
+// ==========================================================================
+// THE CHART CONTAINER BLOCK (SHEET LAYOUT CONFIGURATION)
+// ==========================================================================
+.compatibility-chart-container {
+  background-color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  // Sheet-panel specific behaviors for overlay context injection
+  &.is-sheet-panel {
+    border-radius: 24px 24px 0 0;          // Crown curvature look on mobile sheet displays
+    max-height: 85vh;                       // Safe view height constraint preventing overflows
+    overflow-y: auto;
+    position: relative;
+    padding-top: 3rem;                      // Gives upper padding clearance for close button frame
+    box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.1);
+    animation: slideUpSheet 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+    @media (min-width: 640px) {
+      border-radius: 20px;                  // Even round corners on all sides for full desktops view modes
+      max-height: 75vh;
+      animation: zoomInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  }
+
+  // Loading indicator template overrides
+  &.is-loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+    gap: 1.25rem;
+    color: #4b5563;
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    .loading-shimmer-ring {
+      width: 40px;
+      height: 40px;
+      border: 3.5px solid #f3f4f6;
+      border-top-color: #5596f6;            // Linked to chart blueprint identity color
+      border-radius: 50%;
+      animation: spinLoading 0.8s linear infinite;
+    }
+  }
+}
+
+// Absolute close layout link button
+.sheet-dismiss-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #f3f4f6;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+
+  &:hover {
+    background-color: #e5e7eb;
+    color: #111827;
+    transform: scale(1.05);
+  }
+}
+
+// ==========================================================================
+// WIDGET CARD TOP RATIO LAYOUT ROWS (HEADER BLOCK METRICS)
+// ==========================================================================
+.chart-header-row-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 1.25rem;
+
+  .chart-header-text-block {
+    flex-grow: 1;
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 0.35rem 0;
+    }
+
+    .chart-subtitle {
+      font-size: 0.85rem;
+      color: #6b7280;
+      line-height: 1.4;
+      margin: 0;
+    }
+  }
+}
+
+// Proportional Conic Match score ring gauge
+.gauge-score-sector {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  // Background conic-gradient dynamically uses real percentage counts mapped via internal elements
+  background: conic-gradient(#5596f6 0%, #5596f6 var(--score-pct, 0%), #f3f4f6 var(--score-pct, 0%), #f3f4f6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(85, 150, 246, 0.15);
+
+  .gauge-inner-content {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .gauge-percent-digit {
+      font-size: 1rem;
+      font-weight: 900;
+      color: #111827;
+      line-height: 1;
+    }
+
+    .gauge-subtext {
+      font-size: 0.55rem;
+      font-weight: 800;
+      color: #9ca3af;
+      text-transform: uppercase;
+      margin-top: 0.15rem;
+      letter-spacing: 0.02em;
+    }
+  }
+}
+
+// ==========================================================================
+// MAIN HORIZONTAL BAR GRAPH FRAMEWORK SYSTEM
+// ==========================================================================
+.horizontal-graph-canvas {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  margin-top: 0.5rem;
+
+  // Visual layout dashed vertical rules
+  .graph-gridlines-overlay {
+    position: absolute;
+    left: 140px;                             // Perfectly aligned with the grid labels row
+    right: 0;
+    top: 0;
+    bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 1;
+
+    .gridline {
+      width: 1px;
+      border-left: 1px dashed #e5e7eb;
+      height: 100%;
+    }
+  }
+}
+
+.graph-row-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 130px 1fr;         // Solid alignment layout anchoring metrics safely
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+
+  .row-axis-title {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #4b5563;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .bar-track-area {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+// Flat Horizontal Soft Blue Data Blocks
+.horizontal-data-bar {
+  height: 40px;
+  background-color: #5596f6;                 // Visual matching identity blue tint
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding-left: 0.75rem;
+  box-sizing: border-box;
+  transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+
+  .bar-inline-val {
+    color: #ffffff;
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+}
+
+.graph-x-axis-labels {
+  padding-left: 140px;                      // Aligns grid numerals with standard chart track metrics
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+// ==========================================================================
+// COMPACT EXPLICIT DATA CLOUD LISTS (SHARED & UNIQUE SECTORS)
+// ==========================================================================
+.details-breakdown-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  .details-section-card {
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    border: 1px solid #f3f4f6;
+
+    h5 {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: #374151;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0;
+    }
+
+    // Matching features box styles
+    &.shared-box {
+      background-color: #f0fdf4;
+      border-color: #d1fae5;
+    }
+
+    // Divergent unique features box styles
+    &.unique-box {
+      background-color: #f9fafb;
+    }
+  }
+}
+
+.sub-user-cloud {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+
+  .sub-cloud-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+}
+
+.details-chips-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.metric-detail-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+
+  .pill-icon {
+    font-size: 0.9rem;
+  }
+
+  .pill-text {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  // Color modifier configurations matching data pools
+  &.is-shared {
+    background-color: #ffffff;
+    border-color: #a7f3d0;
+    .pill-text { color: #047857; font-weight: 700; }
+  }
+  
+  &.is-you { 
+    border-color: rgba(59, 130, 246, 0.25); 
+    .pill-text { color: #1d4ed8; }
+  }
+  
+  &.is-them { 
+    border-color: rgba(236, 72, 153, 0.25); 
+    .pill-text { color: #be185d; }
+  }
+}
+
+// ==========================================================================
+// ANIMATION TIMING PIPELINES
+// ==========================================================================
+@keyframes slideUpSheet {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes zoomInModal {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes spinLoading {
+  to { transform: rotate(360deg); }
+}
+
+// ==========================================================================
+// RESPONSIVE SCREEN ADJUSTMENTS FOR MOBILE GRID DEVICES
+// ==========================================================================
+@media (max-width: 480px) {
+  .chart-header-row-wrapper {
+    flex-direction: column-reverse;          // Keeps matching text on top on tiny breakpoints
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .graph-row-wrapper {
+    grid-template-columns: 100px 1fr;       // Contracts label space slightly to prevent wrap clips
+  }
+  
+  .graph-x-axis-labels {
+    padding-left: 110px;
+  }
+  
+  .horizontal-data-bar {
+height: 36px;
+}
+}

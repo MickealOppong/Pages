@@ -29,6 +29,7 @@
         "connected_via": "Connecté via votre",
         "moment_suffix": "moment",
         "actions": {
+          "compatibility": "Voir la compatibilité",
           "pass": "Passer",
           "accept": "Accepter"
         }
@@ -563,16 +564,30 @@
   "TRYING_SOMETHING_NEW": "J'aime garder une vie intéressante et dire oui à des expériences que je n'ai encore jamais tentées."
 },
 "Rules": {
-  "title": "Règles d'engagement",
-  "subtitle": "Veuillez accepter nos normes communautaires avant d'explorer les profils correspondants.",
+  "title": "Règles d'Engagement",
+  "subtitle": "Veuillez accepter nos standards communautaires avant d'explorer les profils.",
   "btn_agree": "Je comprends et j'accepte",
   "respect_title": "Soyez bienveillant et respectueux",
-  "respect_desc": "Le harcèlement, les discours de haine, les menaces ou les comportements toxiques entraîneront un bannissement permanent et immédiat.",
+  "respect_desc": "Le harcèlement, les discours de haine, les menaces ou les comportements toxiques entraîneront un bannissement permanent immédiat.",
   "media_title": "L'authenticité est notre marque de fabrique",
-  "media_desc": "Chaque engagement, publication et interaction doit inclure vos vraies images ou vidéos. La véritable authenticité est la marque de fabrique de cette plateforme.",
+  "media_desc": "Chaque moment partagé doit inclure votre véritable image ou une courte vidéo. La vraie authenticité est la marque de fabrique de cette plateforme.",
+  "moment_title": "Moments partagés",
+  "moment_desc": "Vous pouvez créer des Moments publics ou réservés à vos correspondances. Cependant, pour envoyer une demande de correspondance, vous devez avoir au moins un Moment public.",
   "safety_title": "Restez en sécurité",
   "safety_desc": "Ne partagez jamais votre mot de passe, vos informations bancaires ou vos adresses physiques avec des personnes que vous venez de rencontrer."
-}
+},
+  "Compatibility": {
+    "chart_title": "Ce que vous avez en commun",
+    "chart_desc": "{{shared}} centres d'intérêt communs, avec des intérêts uniques pour chaque personne.",
+    "row_shared": "Intérêts communs",
+    "row_you": "Vos intérêts uniques",
+    "row_them": "Leurs intérêts uniques",
+    "details_shared": "Ce que vous partagez",
+    "details_unique": "Traits de style de vie uniques",
+    "match_label": "Compatibilité",
+    "loading": "Analyse des profils de compatibilité..."
+  }
+
 
 
 

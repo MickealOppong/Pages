@@ -30,6 +30,7 @@
         "connected_via": "Yɛnam wo",
         "moment_suffix": "berɛ so na ɛkaboom",
         "actions": {
+          "compatibility": "Hwɛ sɛnea mobɔ mu",
           "pass": "Twa mu",
           "accept": "Gye tom"
         }
@@ -565,15 +566,28 @@
 },
 "Rules": {
   "title": "Ahyɛdeɛ ne Mpanyinsem",
-  "subtitle": "Yɛsrɛ wo, gye yɛn amanamfoɔ ahyɛdeɛ tom ansa na woafiri mmofra/nnamfofoɔ hwehwɛ ase.",
+  "subtitle": "Yɛsrɛ wo, gye yɛn amanamfoɔ ahyɛdeɛ tom ansa na woafiri nnamfofoɔ hwehwɛ ase.",
   "btn_agree": "Mate aseɛ na Megye tom",
   "respect_title": "Yɛ Nipa Pa na Di Obu",
   "respect_desc": "Didiatwɛm, nitan kasa, ahunahuna, anaa asɛm mmoni biara bɛma yɛatwa w'adwuma mu ntɛmara a yɛnnan yɛn akyi.",
   "media_title": "Nokorɛyɛ Ne Yɛn Agorɔ Panyin",
-  "media_desc": "Dwumadie biara, post, anaa nkitahodiɔ biara a wobɛyɛ no, ɛwɔ sɛ ɛde wo mfonini anaa wo video ankasa ba. Nokorɛyɛ mapa ne biribi panyin a ɛda saa platform yi adi.",
+  "media_desc": "Moment biara a wobɛkyɛ no, ɛwɔ sɛ ɛde wo mfonini anaa wo video tiawa ankasa ba. Nokorɛyɛ mapa ne biribi panyin a ɛda saa platform yi adi.",
+  "moment_title": "Moments A Wakyɛ",
+  "moment_desc": "Wobɛtumi ayɛ Moments ama ɔmanfoɔ nyinaa (public) anaa nipa a wone bɔn fapem pɛ (matches). Nanso, ansa na wobɛtumi de match request akɔma obi no, gye sɛ wowɔ public moment baako pɛ mpo.",
   "safety_title": "Bɔ Wo Ho Ban",
   "safety_desc": "Mma nipa a woahyia no foforɔ biara wo password, wo sika ho nsem (banking info), anaa wo fie address da."
-}
+},
+"Compatibility": {
+    "chart_title": "Nneɛma a mo bom kyɛ",
+    "chart_desc": "Mo bom kyɛ nneɛma {{shared}}, na obiara nso wɔ ne su pɔtee.",
+    "row_shared": "Nneɛma a mo bom kyɛ",
+    "row_you": "Nneɛma pɔtee a wopɛ",
+    "row_them": "Nneɛma pɔtee a ɔpɛ",
+    "details_shared": "Nea mo mmienu nyinaa pɛ",
+    "details_unique": "Akwantenpon Mu Suban Pɔtee",
+    "match_label": "Bɔ Mu",
+    "loading": "Yɛreyɛ nsusuwii foforɔ..."
+  }
 
 
 
