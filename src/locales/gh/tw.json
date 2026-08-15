@@ -599,21 +599,30 @@
   "safety_desc": "Mma nipa a woahyia no foforɔ biara wo password, wo sika ho nsem (banking info), anaa wo fie address da."
 },
 "Compatibility": {
-    "chart_title": "Nneɛma a mo bom kyɛ",
-    "chart_desc": "Mo bom kyɛ nneɛma {{shared}}, na obiara nso wɔ ne su pɔtee.",
-    "row_shared": "Nneɛma a mo bom kyɛ",
-    "row_you": "Nneɛma pɔtee a wopɛ",
-    "row_them": "Nneɛma pɔtee a ɔpɛ",
-    "details_shared": "Nea mo mmienu nyinaa pɛ",
-    "details_unique": "Akwantenpon Mu Suban Pɔtee",
-    "match_label": "Bɔ Mu",
-    "loading": "Yɛreyɛ nsusuwii foforɔ...",
-      "opposites": {
-    "SOCIAL_ENERGY": "Nnipa mu kyɛfa (Nea ɔpɛ gyinabea & Nea ɔpɛ dwoodwoo)",
-    "CHRONOTYPE": "Anopa ne Anadwo (Anopa bayerɛ & Anadwo kɔkɔte)",
-    "PLANNING_STYLE": "Akwantenpon Mu (Nhyehyɛefoɔ & Ogyefoɔ)"
-  }
-
+    "eyebrow": "Mo abɔmu",
+    "title": "Mowɔ nneɛma pii a ɛbɔ mu",
+    "description": "Nneɛma {{shared}} a mo bom kyɛ ma mo anya nnyinasoɔ pa.",
+    "compatible": "Mo bɔ mu pa",
+    "shared": "Bom kyɛ",
+    "complementary": "Kyɛfa nsonson",
+    "unique": "Koraa korɔ",
+    "unique_interests": "nneɛma pɔtee a wopɛ",
+    "details_shared": "Nea mo bom kyɛ",
+    "shared_description": "Nneɛma ne suban a mo mmienu nyinaa wɔ dedaw.",
+    "details_opposites_header": "Baabi a mo hyia mu pa",
+    "opposites_description": "Ɛnyɛ nneɛma nyinaa na ɛsɛ sɛ ɛyɛ pɛ. Nsonsonoeɛ bi ma kwan ma mo bɔ mu pa.",
+    "details_unique": "Nea wode reba abɔmu yi mu",
+    "unique_description": "Nneɛma pɔtee a ɛma obiara yɛ soronko.",
+    "footer": "Abɔmu pa firi nneɛma a mo mmienu nyinaa wɔ dedaw.",
+    "compatibility": "Hwɛ sɛnea mobɔ mu",
+    "loading": "Yɛrehwɛ nea ɛma mo bɔ mu pa...",
+    "opposites": {
+      "SOCIAL_ENERGY": "Nnipa mu kyɛfa (Nea ɔpɛ gyinabea & Nea ɔpɛ dwoodwoo)",
+      "CHRONOTYPE": "Anopa ne Anadwo (Anopa bayerɛ & Anadwo kɔkɔte)",
+      "PLANNING_STYLE": "Akwantenpon Mu (Nhyehyɛefoɔ & Ogyefoɔ)",
+      "COMMUNICATION_PROFILE": "Nkɔmmɔbɔ (Kasafoɔ & Osetiefoɔ)",
+      "FINANCIAL_MINDSET": "Sika Siesiee (Korafoɔ & Sika fɛrefoɔ)"
+    }
   }
 
 

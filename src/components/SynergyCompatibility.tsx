@@ -153,10 +153,7 @@ const SynergyCompatibility = ({
 
         <div className="compatibility-hero__content">
           <h2>
-            {t(
-              'Compatibility.title',
-              'You have a lot in common'
-            )}
+            {t('Compatibility.title')}
           </h2>
 
           <p>

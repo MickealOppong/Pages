@@ -172,7 +172,7 @@ const dispatch=useDispatch()
                  
             }
 
-           console.log(Object.fromEntries(dataToSend));
+          // console.log(Object.fromEntries(dataToSend));
            
            
             

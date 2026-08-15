@@ -600,22 +600,31 @@
   "safety_title": "Bleib sicher",
   "safety_desc": "Teile niemals dein Passwort, deine Bankdaten oder deine Adresse mit Personen, die du gerade erst kennengelernt hast."
 },
-  "Compatibility": {
-    "chart_title": "Was ihr gemeinsam habt",
-    "chart_desc": "{{shared}} gemeinsame Interessen, sowie einzigartige Merkmale für jede Person.",
-    "row_shared": "Gemeinsame Interessen",
-    "row_you": "Deine einzigartigen Interessen",
-    "row_them": "Deren einzigartige Interessen",
-    "details_shared": "Was ihr beide teilt",
-    "details_unique": "Einzigartige Lebensstil-Merkmale",
-    "match_label": "Match",
-    "loading": "Übereinstimmungsdaten werden analysiert...",
-      "opposites": {
-    "SOCIAL_ENERGY": "Soziale Balance (Introvertiert & Extrovertiert)",
-    "CHRONOTYPE": "Tag- & Nacht-Balance (Frühaufsteher & Nachteule)",
-    "PLANNING_STYLE": "Lebensharmonie (Planer & Freigeist)"
-  }
-
+ "Compatibility": {
+    "eyebrow": "Eure Verbindung",
+    "title": "Ihr habt viel gemeinsam",
+    "description": "{{shared}} gemeinsame Interessen und Erfahrungen bieten euch eine natürliche Basis.",
+    "compatible": "Kompatibel",
+    "shared": "Gemeinsam",
+    "complementary": "Komplementär",
+    "unique": "Einzigartig",
+    "unique_interests": "einzigartige Interessen",
+    "details_shared": "Was ihr teilt",
+    "shared_description": "Dies sind die Interessen und Werte, die ihr bereits gemeinsam habt.",
+    "details_opposites_header": "Wo ihr euch ergänzt",
+    "opposites_description": "Nicht alles muss gleich sein. Manche Unterschiede schaffen die perfekte Balance.",
+    "details_unique": "Was du in die Beziehung einbringst",
+    "unique_description": "Dies sind die Eigenschaften, die jeden von euch besonders machen.",
+    "footer": "Die besten Verbindungen beginnen mit etwas, das man bereits teilt.",
+    "compatibility": "Kompatibilität anzeigen",
+    "loading": "Wir finden heraus, was euch verbindet...",
+    "opposites": {
+      "SOCIAL_ENERGY": "Soziale Balance (Introvertiert & Extrovertiert)",
+      "CHRONOTYPE": "Tag- & Nacht-Balance (Frühaufsteher & Nachteule)",
+      "PLANNING_STYLE": "Lebensharmonie (Planer & Freigeist)",
+      "COMMUNICATION_PROFILE": "Gesprächschemie (Redner & Zuhörer)",
+      "FINANCIAL_MINDSET": "Lebensstil-Stabilität (Sparer & Spender)"
+    }
   }
 
 

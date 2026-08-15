@@ -602,19 +602,31 @@
   "safety_desc": "Never share your password, banking information, or physical addresses with people you just met."
 },
 "Compatibility": {
-  "chart_title": "What you have in common",
-  "chart_desc": "{{shared}} shared interests, with unique interests for each person.",
-  "row_shared": "Shared interests",
-  "row_you": "Your unique interests",
-  "row_them": "Their unique interests",
-  "details_shared": "You both share",
-  "details_unique": "Unique Lifestyle Traits",
+    "eyebrow": "Your connection",
+    "title": "You have a lot in common",
+    "description": "{{shared}} shared interests and experiences give you a natural place to start.",
+    "compatible": "Compatible",
+    "shared": "Shared",
+    "complementary": "Complementary",
+    "unique": "Unique",
+    "unique_interests": "unique interests",
+    "details_shared": "What you share",
+    "shared_description": "These are the interests and values you already have in common.",
+    "details_opposites_header": "Where you complement each other",
+    "opposites_description": "Not everything has to be the same. Some differences can create balance.",
+    "details_unique": "What you bring to the connection",
+    "unique_description": "These are the things that make each of you different.",
+    "footer": "The best connections start with something you already share.",
+    "compatibility": "View compatibility",
+    "loading": "Discovering what makes you compatible...",
     "opposites": {
-    "SOCIAL_ENERGY": "Social Balance (Introvert & Extrovert)",
-    "CHRONOTYPE": "Day & Night Balance (Early Bird & Night Owl)",
-    "PLANNING_STYLE": "Life Harmony (Planner & Free Spirit)"
+      "SOCIAL_ENERGY": "Social Balance (Introvert & Extrovert)",
+      "CHRONOTYPE": "Day & Night Balance (Early Bird & Night Owl)",
+      "PLANNING_STYLE": "Life Harmony (Planner & Free Spirit)",
+      "COMMUNICATION_PROFILE": "Conversation Chemistry (Talker & Listener)",
+      "FINANCIAL_MINDSET": "Lifestyle Stability (Saver & Spender)"
+    }
   }
-}
 
 
 

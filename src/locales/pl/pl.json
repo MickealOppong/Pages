@@ -598,21 +598,30 @@
   "safety_desc": "Nigdy nie udostępniaj haseł, danych bankowych ani adresów zamieszkania osobom nowo poznanym."
 },
   "Compatibility": {
-    "chart_title": "Co macie ze sobą wspólnego",
-    "chart_desc": "{{shared}} wspólnych zainteresowań, oraz unikalne cechy dla każdej osoby.",
-    "row_shared": "Wspólne zainteresowania",
-    "row_you": "Twoje unikalne zainteresowania",
-    "row_them": "Ich unikalne zainteresowania",
-    "details_shared": "To, co oboje dzielicie",
-    "details_unique": "Unikalne Cechy Stylu Życia",
-    "match_label": "Dopasowanie",
-    "loading": "Analizowanie profili dopasowania...",
-      "opposites": {
-    "SOCIAL_ENERGY": "Równowaga społeczna (Introwertyk i Ekstrawertyk)",
-    "CHRONOTYPE": "Dopasowanie dnia i nocy (Ranny ptaszek i Nocny marek)",
-    "PLANNING_STYLE": "Harmonia życiowa (Planista i Wolny duch)"
-  }
-
+    "eyebrow": "Wasze dopasowanie",
+    "title": "Macie ze sobą wiele wspólnego",
+    "description": "{{shared}} wspólnych zainteresowań i doświadczeń daje Wam naturalny punkt wyjścia.",
+    "compatible": "Dopasowani",
+    "shared": "Wspólne",
+    "complementary": "Uzup. się",
+    "unique": "Unikalne",
+    "unique_interests": "unikalne zainteresowania",
+    "details_shared": "Co dzielicie",
+    "shared_description": "To są zainteresowania i wartości, które już macie ze sobą wspólne.",
+    "details_opposites_header": "Gdzie się uzupełniacie",
+    "opposites_description": "Nie wszystko musi być takie samo. Niektóre różnice tworzą świetną równowagę.",
+    "details_unique": "Co wnosisz do tej relacji",
+    "unique_description": "To są rzeczy, które sprawiają, że każde z Was jest wyjątkowe i inne.",
+    "footer": "Najlepsze relacje zaczynają się od czegoś, co już Was łączy.",
+    "compatibility": "Zobacz dopasowanie",
+    "loading": "Odkrywanie, co sprawia, że do siebie pasujecie...",
+    "opposites": {
+      "SOCIAL_ENERGY": "Równowaga społeczna (Introwertyk i Ekstrawertyk)",
+      "CHRONOTYPE": "Dopasowanie dnia i nocy (Ranny ptaszek i Nocny marek)",
+      "PLANNING_STYLE": "Harmonia życiowa (Planista i Wolny duch)",
+      "COMMUNICATION_PROFILE": "Chemia rozmowy (Mówca i Słuchacz)",
+      "FINANCIAL_MINDSET": "Stabilność życiowa (Oszczędny i Rozrzutny)"
+    }
   }
 
 
