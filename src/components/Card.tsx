@@ -37,6 +37,8 @@ const Card = ({ data }: { data: TLikes }) => {
     if (!matchData) {
       try {
         const response = await getCompatibility({ userA: currentUserId, userB: data.senderId }).unwrap();
+        console.log(response);
+        
         setMatchData(response);
       } catch (err) {
         console.error("Failed loading match chart metrics:", err);

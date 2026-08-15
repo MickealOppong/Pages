@@ -126,7 +126,12 @@
           "profession": "BERUF",
           "drinks": "ALKOHOL",
           "smoking": "RAUCHEN",
-          "pets": "HAUSTIERE"
+          "pets": "HAUSTIERE",
+          "chronoType":"Chronotyp",
+"planningStyle":"Planungsstil",
+"socialEnergy":"Soziale Energie",
+"communication":"Kommunikationsstil"
+
         }
       }
     }
@@ -275,6 +280,22 @@
       "NON_BINARY": "Nicht-binär",
       "All": "Alle"
     },
+    "chronoType":{
+  "EARLY_BIRD":"Frühaufsteher",
+  "NIGHT_OWL":"Nachteule",
+  "FLEXIBLE":"Flexibel"
+},
+"planningStyle":{
+  "STRUCTURED_PLANNER":"Strukturierter Planer",
+  "SPONTANEOUS":"Spontan",
+  "BALANCED":"Es kommt darauf an"
+},
+"socialEnergy":{
+  "INTROVERT":"Introvertiert",
+  "EXTROVERT":"Extravertiert",
+  "BALANCED":"Es kommt darauf an"
+}
+,
     "Preference": {
       "MALE": "Männer",
       "FEMALE": "Frauen",
@@ -588,7 +609,13 @@
     "details_shared": "Was ihr beide teilt",
     "details_unique": "Einzigartige Lebensstil-Merkmale",
     "match_label": "Match",
-    "loading": "Übereinstimmungsdaten werden analysiert..."
+    "loading": "Übereinstimmungsdaten werden analysiert...",
+      "opposites": {
+    "SOCIAL_ENERGY": "Soziale Balance (Introvertiert & Extrovertiert)",
+    "CHRONOTYPE": "Tag- & Nacht-Balance (Frühaufsteher & Nachteule)",
+    "PLANNING_STYLE": "Lebensharmonie (Planer & Freigeist)"
+  }
+
   }
 
 

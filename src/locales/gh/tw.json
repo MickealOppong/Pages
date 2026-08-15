@@ -127,7 +127,12 @@
           "profession": "ADWUMA",
           "drinks": "NSA NONOM",
           "smoking": "SIGARƐTE NONOM",
-          "pets": "MMOA A WƆWƆ FIE"
+          "pets": "MMOA A WƆWƆ FIE",
+          "socialEnergy":"Ewiase mu nkitahodie ahoɔden",
+"planningStyle":"Nhyehyɛeɛ kwan",
+"chronoType":"Da ne nyan mmerɛ kwan",
+"communication":"Nkɔmmɔdi kwan"
+
         }
       }
     }
@@ -275,6 +280,22 @@
       "NON_BINARY": "Bɔbeasu foforɔ",
       "All": "Nyinaa"
     },
+    "chronoType":{
+  "EARLY_BIRD":"Anɔpa nipa",
+  "NIGHT_OWL":"Anadwo nipa",
+  "FLEXIBLE":"Nsakraeɛ"
+},
+"planningStyle":{
+  "STRUCTURED_PLANNER":"Nhyehyɛeɛ nipa",
+  "SPONTANEOUS":"Mpofirim nipa",
+  "BALANCED":"Egyina tebea no so"
+},
+"socialEnergy":{
+  "INTROVERT":"Kommyɔ nipa",
+  "EXTROVERT":"Gye dɔm nipa",
+  "BALANCED":"Egyina tebea no so"
+}
+,
     "Preference": {
       "MALE": "Mmarima",
       "FEMALE": "Mmaa",
@@ -586,7 +607,13 @@
     "details_shared": "Nea mo mmienu nyinaa pɛ",
     "details_unique": "Akwantenpon Mu Suban Pɔtee",
     "match_label": "Bɔ Mu",
-    "loading": "Yɛreyɛ nsusuwii foforɔ..."
+    "loading": "Yɛreyɛ nsusuwii foforɔ...",
+      "opposites": {
+    "SOCIAL_ENERGY": "Nnipa mu kyɛfa (Nea ɔpɛ gyinabea & Nea ɔpɛ dwoodwoo)",
+    "CHRONOTYPE": "Anopa ne Anadwo (Anopa bayerɛ & Anadwo kɔkɔte)",
+    "PLANNING_STYLE": "Akwantenpon Mu (Nhyehyɛefoɔ & Ogyefoɔ)"
+  }
+
   }
 
 

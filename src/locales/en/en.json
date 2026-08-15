@@ -127,7 +127,11 @@
           "profession": "PROFESSION",
           "drinks": "DRINKS",
           "smoking": "SMOKING",
-          "pets": "PETS"
+          "pets": "PETS",
+          "socialEnergy":"Social Energy",
+          "planningStyle":"Planning Style",
+          "chronoType":"Chrono Type",
+          "communication":"Communication Style"
         }
       }
     }
@@ -276,6 +280,22 @@
       "FEMALE": "Female",
       "NON_BINARY": "Non-binary",
       "All":"All"
+    },
+    "chronoType":{
+      "EARLY_BIRD":"Early bird",
+      "NIGHT_OWL":"Night Owl",
+      "FLEXIBLE":"Flexible"
+    },
+    "planningStyle":{
+      "STRUCTURED_PLANNER":"Structured Planner",
+      "SPONTANEOUS":"Spontaneous",
+      "BALANCED":"It depends"
+
+    },
+    "socialEnergy":{
+      "INTROVERT":"Introvert",
+      "EXTROVERT":"Extrovert",
+      "BALANCED":"It depends"
     },
       "Preference": {
     "MALE": "Men",
@@ -588,7 +608,12 @@
   "row_you": "Your unique interests",
   "row_them": "Their unique interests",
   "details_shared": "You both share",
-  "details_unique": "Unique Lifestyle Traits"
+  "details_unique": "Unique Lifestyle Traits",
+    "opposites": {
+    "SOCIAL_ENERGY": "Social Balance (Introvert & Extrovert)",
+    "CHRONOTYPE": "Day & Night Balance (Early Bird & Night Owl)",
+    "PLANNING_STYLE": "Life Harmony (Planner & Free Spirit)"
+  }
 }
 
 

@@ -23,6 +23,9 @@ export type TUserData={
     profileImage:string,
     id:number,
     postDtoList:TUserPost[]
-    rulesAccepted:boolean
+    rulesAccepted:boolean,
+    planningStyle:string,
+    chronoType:string,
+    socialEnergy:string
 
 }

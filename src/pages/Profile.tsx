@@ -1,6 +1,8 @@
 import { useState, type ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
-import { FiBriefcase, FiCamera, FiMapPin } from "react-icons/fi";
+import { FcPlanner } from "react-icons/fc";
+import { FiActivity, FiBriefcase, FiCamera, FiMapPin } from "react-icons/fi";
+import { GiTimeSynchronization } from "react-icons/gi";
 import { IoSchool } from "react-icons/io5";
 import { LuDot } from "react-icons/lu";
 import { MdOutlineLanguage, MdPets } from "react-icons/md";
@@ -32,6 +34,7 @@ export const loader =(store:Store<RootState>)=>async ()=>{
     
    const response = promise.data as TUserDataDto;
 
+
     
     return response;
 }
@@ -40,7 +43,7 @@ const Profile = () => {
 
 const data = useLoaderData() as TUserDataDto;
   const {aboutMe,aboutThem,firstName,lastName,profession,profileImage,date_of_birth,
-                    country,city,preference,lookingFor,education,gender,height,pets,drinking,smoking,language,username} = data.data;
+                    country,city,preference,lookingFor,education,gender,height,pets,drinking,smoking,language,username,socialEnergy,planningStyle,chronoType} = data.data;
 
 //state variables
 const[genderU,setGenderU]=useState<string>(gender)
@@ -57,6 +60,9 @@ const[petsU,setPetsU]=useState<string>(pets)
 const[professionU,setProfessionU]=useState<string>(profession)
 const[languageU,setLanguageU]=useState<string>(language)
 const[heightU,setHeightU]=useState<string>(height)
+const[chronoTypeU,setChronoTypeU]=useState<string>(chronoType)
+const[planningStyleU,setPlanningStyleU]=useState<string>(planningStyle)
+const[socialEnergyU,setSocialEnergyU]=useState<string>(socialEnergy)
 
 
 
@@ -122,6 +128,9 @@ const dispatch=useDispatch()
     const  petsInput = formElement.elements.namedItem("pets") as HTMLInputElement;
     const  genderInput = formElement.elements.namedItem("gender") as HTMLInputElement;
     const  heightInput = formElement.elements.namedItem("height") as HTMLInputElement;
+    const  chronoTypeInput = formElement.elements.namedItem("chronoType") as HTMLInputElement;
+    const  socialEnergyInput = formElement.elements.namedItem("socialEnergy") as HTMLInputElement;
+    const  planningStyleInput = formElement.elements.namedItem("planningStyle") as HTMLInputElement;
 
 
    
@@ -144,6 +153,9 @@ const dispatch=useDispatch()
     dataToSend.append("pets", petsInput?.value || "");
     dataToSend.append("gender", genderInput?.value || "");
     dataToSend.append("height", heightInput?.value || "");
+    dataToSend.append("chronoType", chronoTypeInput?.value || "");
+    dataToSend.append("planningStyle", planningStyleInput?.value || "");
+    dataToSend.append("socialEnergy", socialEnergyInput?.value || "");
     
 
    
@@ -160,7 +172,7 @@ const dispatch=useDispatch()
                  
             }
 
-          // console.log(Object.fromEntries(dataToSend));
+           console.log(Object.fromEntries(dataToSend));
            
            
             
@@ -182,6 +194,9 @@ const dispatch=useDispatch()
                     setProfessionU(()=>professionInput.value);
                     setEducationU(()=>educationInput.value)
                     setHeightU(()=>heightInput.value)
+                    setChronoTypeU(()=>chronoTypeInput.value)
+                    setSocialEnergyU(()=>socialEnergyInput.value)
+                    setPlanningStyleU(()=>planningStyleInput.value)
 
                     setIsEditProfile(()=>false)
                     dispatch(updateProfileImage(image))
@@ -196,6 +211,7 @@ const dispatch=useDispatch()
         }
 
         
+
 
 
 
@@ -511,6 +527,45 @@ const dispatch=useDispatch()
                                                 <option value="Indifferent">{t(`Options.Questions.INDIFFERENT`)}</option>
                                                 <option value="Love to">{t(`Options.Questions.LOVE_TO`)}</option>
                                                 </select>:<p>{petsU===null?t(`Options.Questions.NO`):t(`Options.Questions.${sanitizeBackendKey(petsU)}`)}</p>
+                                                }
+                                        </div>
+                                        </div>
+                                           <div className="life_group">
+                                            <GiTimeSynchronization/>
+                                        <div className="input_container">
+                                            <label htmlFor="pets" >{t('ProfilePage.sections.lifestyle.fields.chronoType')}</label>
+                                                {
+                                                    isEditProfile?<select name="chronoType" defaultValue={chronoTypeU}>
+                                               <option value="Early bird">{t(`Options.chronoType.EARLY_BIRD`)}</option>
+                                                <option value="Night owl">{t(`Options.chronoType.NIGHT_OWL`)}</option>
+                                                <option value="Flexible">{t(`Options.chronoType.FLEXIBLE`)}</option>
+                                                </select>:<p>{chronoTypeU===null?t(`Options.chronoType.FLEXIBLE`):t(`Options.chronoType.${sanitizeBackendKey(chronoTypeU)}`)}</p>
+                                                }
+                                        </div>
+                                        </div>
+                                           <div className="life_group">
+                                            <FiActivity/>
+                                        <div className="input_container">
+                                            <label htmlFor="pets" >{t('ProfilePage.sections.lifestyle.fields.socialEnergy')}</label>
+                                                {
+                                                    isEditProfile?<select name="socialEnergy" defaultValue={socialEnergyU}>
+                                               <option value="Introvert">{t(`Options.socialEnergy.INTROVERT`)}</option>
+                                                <option value="Extrovert">{t(`Options.socialEnergy.EXTROVERT`)}</option>
+                                                <option value="Balanced">{t(`Options.socialEnergy.BALANCED`)}</option>
+                                                </select>:<p>{socialEnergyU===null?t(`Options.socialEnergy.BALANCED`):t(`Options.socialEnergy.${sanitizeBackendKey(socialEnergyU)}`)}</p>
+                                                }
+                                        </div>
+                                        </div>
+                                             <div className="life_group">
+                                            <FcPlanner/>
+                                        <div className="input_container">
+                                            <label htmlFor="pets" >{t('ProfilePage.sections.lifestyle.fields.planningStyle')}</label>
+                                                {
+                                                    isEditProfile?<select name="planningStyle" defaultValue={planningStyleU}>
+                                               <option value="Spontaneous">{t(`Options.planningStyle.SPONTANEOUS`)}</option>
+                                                <option value="Structured planner">{t(`Options.planningStyle.STRUCTURED_PLANNER`)}</option>
+                                                <option value="Balanced">{t(`Options.planningStyle.BALANCED`)}</option>
+                                                </select>:<p>{planningStyleU===null?t(`Options.planningStyle.BALANCED`):t(`Options.planningStyle.${sanitizeBackendKey(planningStyleU)}`)}</p>
                                                 }
                                         </div>
                                         </div>

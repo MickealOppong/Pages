@@ -126,7 +126,12 @@
           "profession": "ZAWÓD",
           "drinks": "ALKOHOL",
           "smoking": "PALENIE",
-          "pets": "ZWIERZĘTA"
+          "pets": "ZWIERZĘTA",
+          "socialEnergy":"Energia społeczna",
+"planningStyle":"Styl planowania",
+"chronoType":"Chronotyp",
+"communication":"Styl komunikacji"
+
         }
       }
     }
@@ -274,6 +279,22 @@
       "NON_BINARY": "Niebinarny",
       "All": "Wszyscy"
     },
+    "chronoType":{
+  "EARLY_BIRD":"Ranny ptaszek",
+  "NIGHT_OWL":"Nocny marek",
+  "FLEXIBLE":"Elastyczny"
+},
+"planningStyle":{
+  "STRUCTURED_PLANNER":"Zorganizowany",
+  "SPONTANEOUS":"Spontaniczny",
+  "BALANCED":"To zależy"
+},
+"socialEnergy":{
+  "INTROVERT":"Introwertyk",
+  "EXTROVERT":"Ekstrawertyk",
+  "BALANCED":"To zależy"
+}
+,
     "Preference": {
       "MALE": "Mężczyźni",
       "FEMALE": "Kobiety",
@@ -585,7 +606,13 @@
     "details_shared": "To, co oboje dzielicie",
     "details_unique": "Unikalne Cechy Stylu Życia",
     "match_label": "Dopasowanie",
-    "loading": "Analizowanie profili dopasowania..."
+    "loading": "Analizowanie profili dopasowania...",
+      "opposites": {
+    "SOCIAL_ENERGY": "Równowaga społeczna (Introwertyk i Ekstrawertyk)",
+    "CHRONOTYPE": "Dopasowanie dnia i nocy (Ranny ptaszek i Nocny marek)",
+    "PLANNING_STYLE": "Harmonia życiowa (Planista i Wolny duch)"
+  }
+
   }
 
 
