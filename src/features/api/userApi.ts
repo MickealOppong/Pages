@@ -11,10 +11,12 @@ import { baseUrl } from "./baseUrl";
 
 
 
+
+
 export const userApi = createApi({
     reducerPath:'userApi',
     baseQuery:fetchBaseQuery({
-        baseUrl,
+    baseUrl,
                   prepareHeaders: (headers) => {
       // RTK Query runs this function EVERY time you make a request
      const token = localStorage.getItem('tk')??'';
