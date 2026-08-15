@@ -132,6 +132,7 @@
 @media (min-width: 768px) {
   .discover-header {
     display: flex;
+    top: 0;
   }
   .discover-feed {
     display: grid;
