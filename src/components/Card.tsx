@@ -1,6 +1,8 @@
 import { useState, type SyntheticEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { FaPeopleArrows } from "react-icons/fa";
+import { FiBarChart, FiHeart } from "react-icons/fi";
+import { LiaTimesSolid } from "react-icons/lia";
 import { useRevalidator } from "react-router-dom";
 import { useAcceptLikeByIdMutation, useLazyGetCompatibilityQuery, useRemoveLikeMutation } from "../features/api/transApi";
 import { useMarkNotifAsReadMutation } from "../features/api/userApi";
@@ -13,6 +15,10 @@ import './../css/Card.css';
 import SynergyCompatibility from "./SynergyCompatibility";
 
 const Card = ({ data }: { data: TLikes }) => {
+
+  //locale for date trqnslation
+  const locale = localStorage.getItem('i18nextLng') as string
+
   const { revalidate } = useRevalidator();    
   const [isFolding, setIsFolding] = useState<Boolean>(false);
   const [showChart, setShowChart] = useState<boolean>(false);
@@ -113,30 +119,34 @@ const Card = ({ data }: { data: TLikes }) => {
             </div>
 
             <div className="timestamp">
-              {formatLastSentDate(data.requestDate)}
+              {formatLastSentDate(data.requestDate,locale)}
             </div>
           </div>
 
           <div className="action-button-group">
             {/* The Specific Compatibility View Controller Action Trigger */}
-            <button className="btn-compatibility-trigger" onClick={handleOpenCompatibility}>
-              📊 {t('Matches.ConnectionsPage.card1.actions.compatibility')}
-            </button>
+           <button className="btn-compatibility-trigger" onClick={handleOpenCompatibility}>
+             <FiBarChart className="report-btn" />
+            <span >
+               {t('Matches.ConnectionsPage.card1.actions.compatibility')}
+            </span>
+           </button>
             
-            <button className="btn-reject" onClick={handlePass}>
+            <button className="reject-container" onClick={handlePass}>
+              <LiaTimesSolid className="reject-btn" />
+              <span  >
               {t('Matches.ConnectionsPage.card1.actions.pass')}
+            </span>
             </button>
             
-            <button 
-              className="btn-accept" 
-              onClick={(e) => { 
+           <button className="accept-container" onClick={(e) => { 
                 e.preventDefault(); 
                 e.stopPropagation();
                 handleAcceptMatchRequest(data.matchId, currentUserId); 
-              }}
-            >
-              {t('Matches.ConnectionsPage.card1.actions.accept')}
-            </button>
+              }}>
+            <FiHeart className="accept-btn"  />
+            <span>{t('Matches.ConnectionsPage.card1.actions.accept')}</span>
+           </button>
           </div>
 
         </div>

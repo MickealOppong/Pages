@@ -115,45 +115,54 @@ $transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   // Button Group Container Layout
-  .action-button-group {
+  .action-button-group{
+
     display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
+    gap: 24px;
 
-    button {
-      padding: 10px 24px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      border: none;
-      outline: none;
-    }
+          .btn-compatibility-trigger,
+        .accept-container,
+        .reject-container{
+          display:flex ;
+          flex-direction: column;
+        align-items: center;
 
-    .btn-reject {
-      background: transparent;
-      color: $text-muted;
-      border: 1px solid #D0D5DD;
+        background-color: transparent;
+        border-color: transparent;
+        cursor: pointer;
+        }
 
-      &:hover {
-        background: #F9FAFB;
-        color: $text-dark;
-        border-color: #98A2B3;
-      }
-    }
+        .btn-compatibility-trigger{
 
-    .btn-accept {
-      background: $purple-primary;
-      color: $bg-white;
-      box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+          .report-btn{
+            color: $color-accent;
+            font-size: 2rem;
+          }
+           span{
+              color: $primary;
+           }
+        }
 
-      &:hover {
-        background: darken($purple-primary, 8%);
-        box-shadow: 0 4px 12px rgba(127, 86, 217, 0.2);
-      }
-    }
+        .accept-container{
+
+          color: $cancel;
+
+             .accept-btn{
+            font-size: 2rem;
+          }
+         
+        }
+       
+
+        .reject-container{
+          color: $text-light;
+
+          .reject-btn{
+            font-size: 2rem;
+          }
+        }
+
+      
   }
 
   // ----------------------------------------------------

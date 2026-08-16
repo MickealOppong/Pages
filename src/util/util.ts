@@ -492,14 +492,26 @@ export const countries = [
 ];
 
 
-export function formatLastSentDate(dateInput:Date) {
+
+// Translation dictionary for "Yesterday" and fallback day formatting for Twi
+const translations: Record<string, { yesterday: string; weekdays?: string[]; shortMonth?: string }> = {
+  en: { yesterday: "Yesterday" },
+  fr: { yesterday: "Hier" },
+  pl: { yesterday: "Wczoraj" },
+  de: { yesterday: "Gestern" },
+  tw: { 
+    yesterday: "Anwummerɛ", 
+    weekdays: ["Kwasieda", "Dwowda", "Benada", "Wukuda", "Yawoada", "Fiada", "Memeneda"]
+  }
+};
+
+export function formatLastSentDate(dateInput: Date | string | number, localeInput:string) {
   if (!dateInput) return "";
 
-  // 1. Convert input (Date object, timestamp, or ISO string) into a standard Date object
+  const locale =localeInput;
   const msgDate = new Date(dateInput);
-  const now = new Date()
+  const now = new Date();
 
-  // 2. Set up midnight comparisons to isolate true day differences accurately
   const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const yesterdayMidnight = new Date(todayMidnight);
   yesterdayMidnight.setDate(yesterdayMidnight.getDate() - 1);
@@ -507,23 +519,38 @@ export function formatLastSentDate(dateInput:Date) {
   const sevenDaysAgoMidnight = new Date(todayMidnight);
   sevenDaysAgoMidnight.setDate(sevenDaysAgoMidnight.getDate() - 7);
 
-  // --- SCENARIO 1: SENT TODAY -> Return Time (e.g., "10:15 AM") ---
+  const t = translations[locale] || translations.en;
+
+  // --- SCENARIO 1: SENT TODAY -> Return Time (e.g., "10:15 AM" or "22:15") ---
   if (msgDate >= todayMidnight) {
-    return msgDate.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true });
+    // Automatically uses 12-hour clock for EN, and 24-hour clock for FR/PL/DE based on global standards
+    const use12Hour = locale === 'en' || locale === 'tw';
+    return msgDate.toLocaleTimeString(locale === 'tw' ? 'en' : locale, { 
+      hour: 'numeric', 
+      minute: '2-digit', 
+      hour12: use12Hour 
+    });
   }
 
-  // --- SCENARIO 2: SENT YESTERDAY -> Return "Yesterday" ---
+  // --- SCENARIO 2: SENT YESTERDAY -> Return Translated "Yesterday" ---
   if (msgDate >= yesterdayMidnight && msgDate < todayMidnight) {
-    return "Yesterday";
+    return t.yesterday;
   }
 
-  // --- SCENARIO 3: SENT WITHIN 7 DAYS -> Return Day Name (e.g., "Wednesday") ---
+  // --- SCENARIO 3: SENT WITHIN 7 DAYS -> Return Day Name (e.g., "Wednesday" / "Mercredi") ---
   if (msgDate >= sevenDaysAgoMidnight && msgDate < yesterdayMidnight) {
-    return msgDate.toLocaleDateString([], { weekday: 'long' });
+    if (locale === 'tw' && t.weekdays) {
+      return t.weekdays[msgDate.getDay()];
+    }
+    return msgDate.toLocaleDateString(locale, { weekday: 'long' });
   }
 
-  // --- SCENARIO 4: OLDER THAN A WEEK -> Return Calendar Date (e.g., "Jul 09") ---
-  return msgDate.toLocaleDateString([], { month: 'short', day: '2-digit' });
+  // --- SCENARIO 4: OLDER THAN A WEEK -> Return Calendar Date (e.g., "Jul 09" / "09 juil.") ---
+  if (locale === 'tw') {
+    // Custom fallback string formatting for Twi (Day / Month Number) since short names aren't standardized
+    return `${msgDate.getDate()} / ${msgDate.getMonth() + 1}`;
+  }
+  return msgDate.toLocaleDateString(locale, { month: 'short', day: '2-digit' });
 }
 
 export const ACTIVITIES_LIST: string[] = [

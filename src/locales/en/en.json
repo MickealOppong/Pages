@@ -29,6 +29,8 @@
       "card1": {
         "connected_via": "Connected via your",
         "moment_suffix": "moment",
+        "time_now":"Now",
+        "time_yesterday":"Yesterday",
         "actions": {
           "compatibility":"View compatibility",
           "pass": "Pass",

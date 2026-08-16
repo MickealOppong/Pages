@@ -98,43 +98,43 @@
 
 .single-like-card .action-button-group {
   display: flex;
+  gap: 24px;
+}
+
+.single-like-card .action-button-group .btn-compatibility-trigger,
+.single-like-card .action-button-group .accept-container,
+.single-like-card .action-button-group .reject-container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-}
-
-.single-like-card .action-button-group button {
-  padding: 10px 24px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border-radius: 20px;
+  background-color: transparent;
+  border-color: transparent;
   cursor: pointer;
-  transition: all 0.2s ease;
-  border: none;
-  outline: none;
 }
 
-.single-like-card .action-button-group .btn-reject {
-  background: transparent;
-  color: #667085;
-  border: 1px solid #D0D5DD;
+.single-like-card .action-button-group .btn-compatibility-trigger .report-btn {
+  color: #00c853;
+  font-size: 2rem;
 }
 
-.single-like-card .action-button-group .btn-reject:hover {
-  background: #F9FAFB;
-  color: #1D2939;
-  border-color: #98A2B3;
+.single-like-card .action-button-group .btn-compatibility-trigger span {
+  color: #7c3aed;
 }
 
-.single-like-card .action-button-group .btn-accept {
-  background: #7F56D9;
-  color: #FFFFFF;
-  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+.single-like-card .action-button-group .accept-container {
+  color: #DC2626;
 }
 
-.single-like-card .action-button-group .btn-accept:hover {
-  background: #6635d2;
-  box-shadow: 0 4px 12px rgba(127, 86, 217, 0.2);
+.single-like-card .action-button-group .accept-container .accept-btn {
+  font-size: 2rem;
+}
+
+.single-like-card .action-button-group .reject-container {
+  color: #6b7280;
+}
+
+.single-like-card .action-button-group .reject-container .reject-btn {
+  font-size: 2rem;
 }
 
 .single-like-card.fold-out {
