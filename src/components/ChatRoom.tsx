@@ -43,6 +43,9 @@ const ChatRoom = () => {
   const { revalidate } = useRevalidator();
   const navigate = useNavigate();
 
+    //locale for date trqnslation
+  const locale = localStorage.getItem('i18nextLng') as string
+
   const [matchUser, setMatchUser] = useState<TLikes>(defUser);
   
   const stompClientRef = useRef<Client | null>(null);
@@ -297,7 +300,7 @@ const ChatRoom = () => {
                 <div key={message.id} className={`message ${isMine ? 'mine' : ''}`}>
                   <div className="bubble">
                     {message.message}
-                    <span>{formatLastSentDate(message.createdAt as Date)}</span>
+                    <span>{formatLastSentDate(message.createdAt as Date,locale)}</span>
                   </div>
                 </div>
               );

@@ -8,7 +8,8 @@ import defImage from './../assets/default.jpeg';
 const Match = ({matchId,image, firstName,lastMessageDate,lastMessage,online}:{matchId:number,image:string,lastMessageDate:Date,firstName:string,lastMessage:string,online:boolean})=>{
 
   const id = useAppSelector((state)=>state.userSlice.id)
-
+  //locale for date trqnslation
+  const locale = localStorage.getItem('i18nextLng') as string
   //notification read
      const [updateNotif] = useMarkNotifAsReadMutation()
 
@@ -37,7 +38,7 @@ const Match = ({matchId,image, firstName,lastMessageDate,lastMessage,online}:{ma
 
               <div className="date-meta-container">
                 <div className="date-container">
-                  <span>{formatLastSentDate(lastMessageDate)}</span>
+                  <span>{formatLastSentDate(lastMessageDate,locale)}</span>
                 </div>
         
               </div>
