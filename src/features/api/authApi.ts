@@ -46,7 +46,7 @@ export const authApi = createApi({
                }
             })
         }),
-         resetPassword:build.mutation<boolean,TResetPasswordDto>({
+         resetPassword:build.mutation<TResponseDto,TResetPasswordDto>({
             query:(body)=>({
                    url:'/auth/reset',
                 method:'PUT',

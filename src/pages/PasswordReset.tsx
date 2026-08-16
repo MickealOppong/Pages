@@ -1,4 +1,4 @@
-import { type ChangeEvent } from 'react';
+import { useState, type ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FiHeart } from 'react-icons/fi';
 import { useNavigate, useNavigation } from 'react-router-dom';
@@ -9,7 +9,7 @@ import './../css/PasswordReset.css';
 
 const PasswordReset= () => {
 
-
+const [error,setError]=useState<string>('')
   const navigation = useNavigation()
   const navigate = useNavigate()
 
@@ -23,7 +23,7 @@ const PasswordReset= () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formValues = Object.fromEntries(formData);
-    console.log(formValues);
+
     const username = formValues.username as string
     const date_of_birth = formValues.dob as string
     const location = formValues.location as string
@@ -31,13 +31,15 @@ const PasswordReset= () => {
     const confirmNewPassword = formValues.confirmNewPassword as string
 
     
-    const response = await resetPassword({username,date_of_birth,location,newPassword,confirmNewPassword})
-    console.log(response);
-    
-      if(response.data){
-        navigate('/')
+    const response = await resetPassword({username,date_of_birth,location,newPassword,confirmNewPassword}).unwrap()
+  
+
+      if(!response.data){
+        setError(response.message)
+       return 
       }
-    
+      navigate('/')
+
   };
 
   if(isLoading){
@@ -46,6 +48,7 @@ const PasswordReset= () => {
 
   return (
   <div className='password-reset-container'>
+    
       <div className="reset-viewport-shell">
          <div className="reset-interactive-card">        
           <h1>{t('DiscoverFeed.brand_name')}</h1>
@@ -55,11 +58,13 @@ const PasswordReset= () => {
         <div className='title'>
           <h2>{t('Settings.Reset_password.title')}</h2>
         </div>
+         {error && <p className='error_message'>{error}</p>}
            <form className='form-input' onSubmit={handleFormSubmit}>
                 <div className='form-center'>
                    <div className="account-field-group">
                   <label>{t('Settings.Reset_password.fields.email_label')}</label>
                   <input type="email" name="username" placeholder="Email" />
+                 
                 </div>
                   <div className="account-field-group">
                   <label>{t('Settings.Reset_password.fields.date_of_birth_label')}</label>

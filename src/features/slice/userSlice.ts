@@ -53,8 +53,7 @@ const userSlice = createSlice({
 
     },
      updateProfileImage: (state,{payload}) => {
-      console.log(payload);
-      
+     
        state.profileImage=payload
     },
   

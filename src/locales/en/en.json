@@ -291,17 +291,17 @@
     "planningStyle":{
       "STRUCTURED_PLANNER":"Structured Planner",
       "SPONTANEOUS":"Spontaneous",
-      "BALANCED":"It depends"
+      "IT_DEPENDS":"It depends"
 
     },
     "socialEnergy":{
       "INTROVERT":"Introvert",
       "EXTROVERT":"Extrovert",
-      "BALANCED":"It depends"
+      "IT_DEPENDS":"It depends"
     },
       "Preference": {
-    "MALE": "Men",
-    "FEMALE": "Women",
+    "MEN": "Men",
+    "WOMEN": "Women",
     "NON_BINARY": "Non-binary",
     "All": "All"
   },
@@ -604,6 +604,7 @@
   "safety_desc": "Never share your password, banking information, or physical addresses with people you just met."
 },
 "Compatibility": {
+  "owner":"YOU",
     "eyebrow": "Your connection",
     "title": "You have a lot in common",
     "description": "{{shared}} shared interests and experiences give you a natural place to start.",
@@ -623,7 +624,7 @@
     "loading": "Discovering what makes you compatible...",
     "opposites": {
       "SOCIAL_ENERGY": "Social Balance (Introvert & Extrovert)",
-      "CHRONOTYPE": "Day & Night Balance (Early Bird & Night Owl)",
+      "CHRONO_TYPE": "Day & Night Balance (Early Bird & Night Owl)",
       "PLANNING_STYLE": "Life Harmony (Planner & Free Spirit)",
       "COMMUNICATION_PROFILE": "Conversation Chemistry (Talker & Listener)",
       "FINANCIAL_MINDSET": "Lifestyle Stability (Saver & Spender)"

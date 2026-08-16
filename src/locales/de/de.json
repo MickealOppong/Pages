@@ -288,17 +288,17 @@
 "planningStyle":{
   "STRUCTURED_PLANNER":"Strukturierter Planer",
   "SPONTANEOUS":"Spontan",
-  "BALANCED":"Es kommt darauf an"
+  "IT_DEPENDS":"Es kommt darauf an"
 },
 "socialEnergy":{
   "INTROVERT":"Introvertiert",
   "EXTROVERT":"Extravertiert",
-  "BALANCED":"Es kommt darauf an"
+  "IT_DEPENDS":"Es kommt darauf an"
 }
 ,
     "Preference": {
-      "MALE": "Männer",
-      "FEMALE": "Frauen",
+      "MEN": "Männer",
+      "WOMEN": "Frauen",
       "NON_BINARY": "Nicht-binäre Personen",
       "All": "Alle"
     },
@@ -600,7 +600,9 @@
   "safety_title": "Bleib sicher",
   "safety_desc": "Teile niemals dein Passwort, deine Bankdaten oder deine Adresse mit Personen, die du gerade erst kennengelernt hast."
 },
- "Compatibility": {
+ 
+  "Compatibility": {
+    "owner": "DU",
     "eyebrow": "Eure Verbindung",
     "title": "Ihr habt viel gemeinsam",
     "description": "{{shared}} gemeinsame Interessen und Erfahrungen bieten euch eine natürliche Basis.",
@@ -620,12 +622,14 @@
     "loading": "Wir finden heraus, was euch verbindet...",
     "opposites": {
       "SOCIAL_ENERGY": "Soziale Balance (Introvertiert & Extrovertiert)",
-      "CHRONOTYPE": "Tag- & Nacht-Balance (Frühaufsteher & Nachteule)",
+      "CHRONO_TYPE": "Tag- & Nacht-Balance (Frühaufsteher & Nachteule)",
       "PLANNING_STYLE": "Lebensharmonie (Planer & Freigeist)",
       "COMMUNICATION_PROFILE": "Gesprächschemie (Redner & Zuhörer)",
       "FINANCIAL_MINDSET": "Lebensstil-Stabilität (Sparer & Spender)"
     }
   }
+
+
 
 
 

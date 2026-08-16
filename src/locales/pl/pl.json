@@ -287,17 +287,17 @@
 "planningStyle":{
   "STRUCTURED_PLANNER":"Zorganizowany",
   "SPONTANEOUS":"Spontaniczny",
-  "BALANCED":"To zależy"
+  "IT_DEPENDS":"To zależy"
 },
 "socialEnergy":{
   "INTROVERT":"Introwertyk",
   "EXTROVERT":"Ekstrawertyk",
-  "BALANCED":"To zależy"
+  "IT_DEPENDS":"To zależy"
 }
 ,
     "Preference": {
-      "MALE": "Mężczyźni",
-      "FEMALE": "Kobiety",
+      "MEN": "Mężczyźni",
+      "WOMEN": "Kobiety",
       "NON_BINARY": "Osoby niebinarne",
       "All": "Wszyscy"
     },
@@ -597,7 +597,9 @@
   "safety_title": "Dbaj o bezpieczeństwo",
   "safety_desc": "Nigdy nie udostępniaj haseł, danych bankowych ani adresów zamieszkania osobom nowo poznanym."
 },
+ 
   "Compatibility": {
+    "owner": "TY",
     "eyebrow": "Wasze dopasowanie",
     "title": "Macie ze sobą wiele wspólnego",
     "description": "{{shared}} wspólnych zainteresowań i doświadczeń daje Wam naturalny punkt wyjścia.",
@@ -617,12 +619,14 @@
     "loading": "Odkrywanie, co sprawia, że do siebie pasujecie...",
     "opposites": {
       "SOCIAL_ENERGY": "Równowaga społeczna (Introwertyk i Ekstrawertyk)",
-      "CHRONOTYPE": "Dopasowanie dnia i nocy (Ranny ptaszek i Nocny marek)",
+      "CHRONO_TYPE": "Dopasowanie dnia i nocy (Ranny ptaszek i Nocny marek)",
       "PLANNING_STYLE": "Harmonia życiowa (Planista i Wolny duch)",
       "COMMUNICATION_PROFILE": "Chemia rozmowy (Mówca i Słuchacz)",
       "FINANCIAL_MINDSET": "Stabilność życiowa (Oszczędny i Rozrzutny)"
     }
-  }
+  
+}
+
 
 
 

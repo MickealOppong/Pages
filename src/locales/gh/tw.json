@@ -288,17 +288,17 @@
 "planningStyle":{
   "STRUCTURED_PLANNER":"Nhyehyɛeɛ nipa",
   "SPONTANEOUS":"Mpofirim nipa",
-  "BALANCED":"Egyina tebea no so"
+  "IT_DEPENDS":"Egyina tebea no so"
 },
 "socialEnergy":{
   "INTROVERT":"Kommyɔ nipa",
   "EXTROVERT":"Gye dɔm nipa",
-  "BALANCED":"Egyina tebea no so"
+  "IT_DEPENDS":"Egyina tebea no so"
 }
 ,
     "Preference": {
-      "MALE": "Mmarima",
-      "FEMALE": "Mmaa",
+      "MEN": "Mmarima",
+      "WOMEN": "Mmaa",
       "NON_BINARY": "Bɔbeasu foforɔ",
       "All": "Nyinaa"
     },
@@ -598,7 +598,9 @@
   "safety_title": "Bɔ Wo Ho Ban",
   "safety_desc": "Mma nipa a woahyia no foforɔ biara wo password, wo sika ho nsem (banking info), anaa wo fie address da."
 },
-"Compatibility": {
+
+  "Compatibility": {
+    "owner": "WOPO",
     "eyebrow": "Mo abɔmu",
     "title": "Mowɔ nneɛma pii a ɛbɔ mu",
     "description": "Nneɛma {{shared}} a mo bom kyɛ ma mo anya nnyinasoɔ pa.",
@@ -618,13 +620,13 @@
     "loading": "Yɛrehwɛ nea ɛma mo bɔ mu pa...",
     "opposites": {
       "SOCIAL_ENERGY": "Nnipa mu kyɛfa (Nea ɔpɛ gyinabea & Nea ɔpɛ dwoodwoo)",
-      "CHRONOTYPE": "Anopa ne Anadwo (Anopa bayerɛ & Anadwo kɔkɔte)",
+      "CHRONO_TYPE": "Anopa ne Anadwo (Anopa bayerɛ & Anadwo kɔkɔte)",
       "PLANNING_STYLE": "Akwantenpon Mu (Nhyehyɛefoɔ & Ogyefoɔ)",
       "COMMUNICATION_PROFILE": "Nkɔmmɔbɔ (Kasafoɔ & Osetiefoɔ)",
       "FINANCIAL_MINDSET": "Sika Siesiee (Korafoɔ & Sika fɛrefoɔ)"
     }
-  }
-
+  
+}
 
 
 

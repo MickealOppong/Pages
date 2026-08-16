@@ -1,7 +1,14 @@
 import { useTranslation } from 'react-i18next';
-import { FiArrowRight, FiHeart, FiX } from 'react-icons/fi';
+import { AiOutlineThunderbolt } from 'react-icons/ai';
+import { FaSmoking } from 'react-icons/fa';
+import { FiActivity, FiArrowRight, FiHeart, FiX } from 'react-icons/fi';
+import { IoSchool } from 'react-icons/io5';
+import { MdPets } from 'react-icons/md';
+import { RiBeerFill } from 'react-icons/ri';
 import type { TMatchResultDto } from '../types/TMatchResultDto';
+import { sanitizeBackendKey } from '../util/util';
 import './../css/matchCompact.css';
+import ReactIcon from './ReactIcon';
 
 export const getCleanTagConfig = (rawTag: string) => {
   const cleanKey = (value: string) =>
@@ -12,54 +19,54 @@ export const getCleanTagConfig = (rawTag: string) => {
 
     return {
       label: `Compatibility.opposites.${cleanKey(rawValue)}`,
-      icon: '⚡',
+      icon:<ReactIcon icon={AiOutlineThunderbolt}/>,
       type: 'opposite',
     };
   }
 
   if (rawTag.startsWith('LOOKING_FOR_')) {
     return {
-      label: `LookingFor.${cleanKey(rawTag.replace('LOOKING_FOR_', ''))}`,
-      icon: '❤️',
+      label: `Options.LookingFor.${sanitizeBackendKey(rawTag.replace('LOOKING_FOR_', ''))}`,
+      icon: <ReactIcon icon={FiHeart}/>,
       type: 'shared',
     };
   }
 
   if (rawTag.startsWith('PET_')) {
     return {
-      label: `Questions.${cleanKey(rawTag.replace('PET_', ''))}`,
-      icon: '🐾',
+      label: `Options.Questions.${sanitizeBackendKey(rawTag.replace('PET_', ''))}`,
+      icon: <ReactIcon icon={MdPets}/>,
       type: 'shared',
     };
   }
 
   if (rawTag.startsWith('EDUCATION_')) {
     return {
-      label: `Education.${cleanKey(rawTag.replace('EDUCATION_', ''))}`,
-      icon: '🎓',
+      label: `Options.education.${sanitizeBackendKey(rawTag.replace('EDUCATION_', ''))}`,
+      icon: <ReactIcon icon={IoSchool}/>,
       type: 'shared',
     };
   }
 
   if (rawTag.startsWith('DRINKING_')) {
     return {
-      label: `Lifestyle.${cleanKey(rawTag.replace('DRINKING_', ''))}`,
-      icon: '🍹',
+      label: `Options.drinks.${cleanKey(rawTag.replace('DRINKING_', ''))}`,
+      icon:<ReactIcon icon={RiBeerFill}/>,
       type: 'shared',
     };
   }
 
   if (rawTag.startsWith('SMOKING_')) {
     return {
-      label: `Lifestyle.${cleanKey(rawTag.replace('SMOKING_', ''))}`,
-      icon: '🚭',
+      label: `Options.Questions.${cleanKey(rawTag.replace('SMOKING_', ''))}`,
+      icon: <ReactIcon icon={FaSmoking}/>,
       type: 'shared',
     };
   }
 
   return {
-    label: `Moments.${rawTag.trim().toUpperCase()}`,
-    icon: '📸',
+    label: `Moments.${sanitizeBackendKey(rawTag.trim())}`,
+    icon: <ReactIcon icon={FiActivity}/>,
     type: 'moment',
   };
 };
@@ -78,6 +85,7 @@ const SynergyCompatibility = ({
   onClose,
 }: SynergyCompatibilityProps) => {
   const { t } = useTranslation();
+  
 
   if (isLoading || !matchData) {
     return (
@@ -333,7 +341,7 @@ const SynergyCompatibility = ({
 
                   <div>
                     <span>
-                      {t('Generic.you', 'You')}
+                      {t('Compatibility.owner', 'You')}
                     </span>
 
                     <small>

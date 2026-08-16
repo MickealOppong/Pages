@@ -287,17 +287,17 @@
 "planningStyle":{
   "STRUCTURED_PLANNER":"Planificateur structuré",
   "SPONTANOUES":"Spontané",
-  "BALANCED":"Ça dépend"
+  "IT_DEPENDS":"Ça dépend"
 },
 "socialEnergy":{
   "INTROVERT":"Introverti",
   "EXTROVERT":"Extraverti",
-  "BALANCED":"Ça dépend"
+  "IT_DEPENDS":"Ça dépend"
 }
 ,
     "Preference": {
-      "MALE": "Hommes",
-      "FEMALE": "Femmes",
+      "MEN": "Hommes",
+      "WOMEN": "Femmes",
       "NON_BINARY": "Personnes non-binaires",
       "All": "Tous"
     },
@@ -597,23 +597,35 @@
   "safety_title": "Restez en sécurité",
   "safety_desc": "Ne partagez jamais votre mot de passe, vos informations bancaires ou vos adresses physiques avec des personnes que vous venez de rencontrer."
 },
+ 
   "Compatibility": {
-    "chart_title": "Ce que vous avez en commun",
-    "chart_desc": "{{shared}} centres d'intérêt communs, avec des intérêts uniques pour chaque personne.",
-    "row_shared": "Intérêts communs",
-    "row_you": "Vos intérêts uniques",
-    "row_them": "Leurs intérêts uniques",
+    "owner": "VOUS",
+    "eyebrow": "Votre connexion",
+    "title": "Vous avez beaucoup en commun",
+    "description": "{{shared}} centres d'intérêt et expériences partagés vous donnent un excellent point de départ.",
+    "compatible": "Compatible",
+    "shared": "Partagé",
+    "complementary": "Complémentaire",
+    "unique": "Unique",
+    "unique_interests": "intérêts uniques",
     "details_shared": "Ce que vous partagez",
-    "details_unique": "Traits de style de vie uniques",
-    "match_label": "Compatibilité",
-    "loading": "Analyse des profils de compatibilité...",
-      "opposites": {
-    "SOCIAL_ENERGY": "Équilibre social (Introverti & Extraverti)",
-    "CHRONOTYPE": "Équilibre jour & nuit (Lève-tôt & Couche-tard)",
-    "PLANNING_STYLE": "Harmonie de vie (Planificateur & Esprit libre)"
+    "shared_description": "Ce sont les centres d'intérêt et les valeurs que vous avez déjà en commun.",
+    "details_opposites_header": "Là où vous vous complétez",
+    "opposites_description": "Tout n'a pas besoin d'être identique. Certaines différences créent un équilibre parfait.",
+    "details_unique": "Ce que vous apportez à la connexion",
+    "unique_description": "Ce sont les choses qui rendent chacun de vous unique et différent.",
+    "footer": "Les meilleures connexions commencent par quelque chose que vous partagez déjà.",
+    "compatibility": "Voir la compatibilité",
+    "loading": "Découverte de ce qui vous rend compatible...",
+    "opposites": {
+      "SOCIAL_ENERGY": "Équilibre social (Introverti & Extraverti)",
+      "CHRONO_TYPE": "Équilibre jour & nuit (Lève-tôt & Couche-tard)",
+      "PLANNING_STYLE": "Harmonie de vie (Planificateur & Esprit libre)",
+      "COMMUNICATION_PROFILE": "Chimie de discussion (Parleur & Écouteur)",
+      "FINANCIAL_MINDSET": "Stabilité de vie (Épargnant & Dépensier)"
+    }
   }
 
-  }
 
 
 

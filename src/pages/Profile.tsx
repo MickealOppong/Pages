@@ -16,7 +16,7 @@ import { userApi, useUpdateUserDetailsMutation } from "../features/api/userApi";
 import { updateProfileImage } from "../features/slice/userSlice";
 import { useAppSelector, type AppDispatch, type RootState } from "../store";
 import type { TUserDataDto } from "../types/TUserDataDto";
-import { countries, POLISH_CITIES, professions, sanitizeBackendKey, sanitizeKey } from "../util/util";
+import { countries, DRINKING_RESPONSES, OPTIONS_CHRONO, OPTIONS_EDUCATION, OPTIONS_GENDER, OPTIONS_LANGUAGE, OPTIONS_LOOKINGFOR, OPTIONS_PLANNING, OPTIONS_PREFERENCE, OPTIONS_SOCIAL, POLISH_CITIES, professions, QUESTION_RESPONSES, sanitizeBackendKey, sanitizeKey } from "../util/util";
 import defaultPic from './../assets/default.jpeg';
 import "./../css/Profile.css";
 import "./../css/loading.css";
@@ -44,6 +44,7 @@ const Profile = () => {
 const data = useLoaderData() as TUserDataDto;
   const {aboutMe,aboutThem,firstName,lastName,profession,profileImage,date_of_birth,
                     country,city,preference,lookingFor,education,gender,height,pets,drinking,smoking,language,username,socialEnergy,planningStyle,chronoType} = data.data;
+
 
 //state variables
 const[genderU,setGenderU]=useState<string>(gender)
@@ -327,16 +328,18 @@ const dispatch=useDispatch()
                                         <label htmlFor="gender">{t('ProfilePage.sections.basic_information.fields.gender')}</label>
                                             {
                                                 isEditProfile? <select name="gender" defaultValue={t(`Options.Gender.${genderU.toUpperCase()}`)}>
-                                                <option value="Male">{t('Options.Gender.MALE')}</option>
-                                                <option value="Female">{t('Options.Gender.FEMALE')}</option>
-                                                <option value="Non-binary">{t('Options.Gender.NON_BINARY')}</option>
+                                                 {
+                                                        OPTIONS_GENDER.map((item)=>{
+                                                            return   <option key={item.label} value={item.value} >{t(`Options.Gender.${sanitizeBackendKey(item.label)}`)}</option>
+                                                        })
+                                                    }
                                                 </select>:<p>{t(`Options.Gender.${genderU.toUpperCase()}`)}</p>
                                             }
                                         </div>
                                         <div className="input_group">
                                         <label htmlFor="city">{t('ProfilePage.sections.basic_information.fields.city')}</label>
                                                 {
-                                                    isEditProfile? <select name="city" defaultValue={t(`Cities.${sanitizeBackendKey(cityU)}`)}>
+                                                    isEditProfile? <select name="city" defaultValue={cityU}>
                                                 {
                                                     POLISH_CITIES.sort((a,b)=>{
                                                         const keyA = sanitizeBackendKey(a);
@@ -411,19 +414,23 @@ const dispatch=useDispatch()
                                         <label htmlFor="lookingFor">{t('ProfilePage.sections.looking_for_meta.fields.looking_for_label')}</label>
                                                 {
                                                     isEditProfile?<select name="lookingFor" defaultValue={lookingForU}>
-                                                <option value="Long-term Relationship">{t('Options.LookingFor.LONG_TERM_RELATIONSHIP')}</option>
-                                                <option value="Not decided">{t('Options.LookingFor.NOT_DECIDED')}</option>
-                                                <option value="Short-term relationship">{t('Options.LookingFor.SHORT_TERM_RELATIONSHIP')}</option>
+                                                 {
+                                                        OPTIONS_LOOKINGFOR.map((item)=>{
+                                                            return   <option key={item.label} value={item.value} >{t(`Options.LookingFor.${sanitizeBackendKey(item.label)}`)}</option>
+                                                        })
+                                                    }
                                                 </select>:<p>{t(`Options.LookingFor.${sanitizeBackendKey(lookingForU)}`)}</p>
                                                 }
                                         </div>
                                         <div className="input_group">
                                         <label htmlFor="preference">{t('ProfilePage.sections.looking_for_meta.fields.interested_in_label')}</label>
                                                 {
-                                                    isEditProfile?<select name="preference" defaultValue={t(`Options.Preference.${sanitizeBackendKey(preferenceU)}`)}>
-                                                <option value="Female">{t('Options.Preference.FEMALE')}</option>
-                                                <option value="Male">{t('Options.Preference.MALE')}</option>
-                                                <option value="Non-binary">{t('Options.Preference.NON_BINARY')}</option>
+                                                    isEditProfile?<select name="preference" defaultValue={preferenceU}>
+                                                  {
+                                                        OPTIONS_PREFERENCE.map((item)=>{
+                                                            return   <option key={item.label} value={item.value} >{t(`Options.Preference.${item.label}`)}</option>
+                                                        })
+                                                    }
                                                 </select>:<p>{t(`Options.Preference.${sanitizeBackendKey(preferenceU)}`)}</p>
                                                 }
                                         </div>
@@ -439,11 +446,12 @@ const dispatch=useDispatch()
                                             <div className="input_container">
                                                 <label htmlFor="language">{t('ProfilePage.sections.lifestyle.fields.language')}</label>
                                                 {
-                                                    isEditProfile?<select name="language" defaultValue={t(`Options.language.${sanitizeKey(languageU)}`)}>
-                                                <option value="English">{t(`Options.language.ENGLISH`)}</option>
-                                                <option value="Polish">{t(`Options.language.POLISH`)}</option>
-                                                <option value="French">{t(`Options.language.FRENCH`)}</option>
-                                                <option value="Other">{t(`Options.language.OTHER`)}</option>
+                                                    isEditProfile?<select name="language" defaultValue={languageU}>
+                                               {
+                                                        OPTIONS_LANGUAGE.map((item)=>{
+                                                            return   <option key={item.label} value={item.value} >{t(`Options.language.${item.label}`)}</option>
+                                                        })
+                                                    }
                                                 </select>:<p>{languageU===null?t(`Options.language.OTHER`):t(`Options.language.${sanitizeKey(languageU)}`)}</p>
                                                 }
                                             </div>
@@ -454,11 +462,12 @@ const dispatch=useDispatch()
                                                 <div className="input_container">
                                                     <label htmlFor="education">{t('ProfilePage.sections.lifestyle.fields.education')}</label>
                                                 {
-                                                    isEditProfile?<select name="education" defaultValue={t(`Options.education.${sanitizeBackendKey(educationU)}`)}>
-                                                <option value="Master's degree">{t(`Options.education.MASTERS_DEGREE`)}</option>
-                                                <option value="Bachelor's degree">{t(`Options.education.BACHELORS_DEGREE`)}</option>
-                                                <option value="PDH">{t(`Options.education.PHD`)}</option>
-                                                <option value="High School">{t(`Options.education.HIGH_SCHOOL`)}</option>
+                                                    isEditProfile?<select name="education" defaultValue={educationU}>
+                                                  {
+                                                        OPTIONS_EDUCATION.map((item)=>{
+                                                            return   <option key={item.label} value={item.value} >{t(`Options.education.${item.label}`)}</option>
+                                                        })
+                                                    }
                                                 </select>   :<p>{educationU===null?t(`Options.education.HIGH_SCHOOL`):t(`Options.education.${sanitizeBackendKey(educationU)}`)}</p>
                                                 }
                                                     
@@ -470,7 +479,7 @@ const dispatch=useDispatch()
                                         <div className="input_container">
                                             <label htmlFor="profession">{t('ProfilePage.sections.lifestyle.fields.profession')}</label>
                                             {
-                                                isEditProfile? <select name="profession" defaultValue={t(`Professions.${sanitizeBackendKey(professionU)}`)}>
+                                                isEditProfile? <select name="profession" defaultValue={professionU}>
                                                 {
                                                     professions.sort((a,b)=>{
                                                         if(a==="OTHER") return 1;
@@ -484,7 +493,7 @@ const dispatch=useDispatch()
                                                         return <option value={prof} key={prof}>{t(`Professions.${sanitizeBackendKey(prof)}`)}</option>
                                                     })
                                                 }
-                                                </select>:<p>{profession===null?t(`Professions.OTHER`):t(`Professions.${sanitizeBackendKey(profession)}`)}</p>
+                                                </select>:<p>{profession===null?t(`Professions.OTHER`):t(`Professions.${sanitizeBackendKey(professionU)}`)}</p>
                                             }
                                         </div>
                                         </div>
@@ -493,11 +502,12 @@ const dispatch=useDispatch()
                                         <div className="input_container">
                                             <label htmlFor="drinking">{t('ProfilePage.sections.lifestyle.fields.drinks')}</label>
                                             {
-                                                isEditProfile? <select name="drinking" defaultValue={t(`Options.drinks.${sanitizeBackendKey(drinkingU)}`)}>
-                                                <option value="Yes">{t('Options.drinks.YES')}</option>
-                                                <option value="Occasional">{t('Options.drinks.OCCASIONAL')}</option>
-                                                <option value="No">{t('Options.drinks.NO')}</option>
-                                                <option value="Don't drink">{t('Options.drinks.DONT_DRINK')}</option>
+                                                isEditProfile? <select name="drinking" defaultValue={drinkingU}>
+                                                    {
+                                                        DRINKING_RESPONSES.map((item)=>{
+                                                            return   <option key={item.label} value={item.value} >{t(`Options.drinks.${item.label}`)}</option>
+                                                        })
+                                                    }
                                                 </select>:<p>{drinkingU===null?t(`Options.drinks.NO`):t(`Options.drinks.${sanitizeBackendKey(drinkingU)}`)}</p>
                                             }
                                         </div>
@@ -507,11 +517,12 @@ const dispatch=useDispatch()
                                         <div className="input_container">
                                             <label htmlFor="smoking" >{t('ProfilePage.sections.lifestyle.fields.smoking')}</label>
                                             {
-                                                isEditProfile? <select name="smoking"  defaultValue={`Options.drinks.${sanitizeBackendKey(smokingU)}`}>
-                                             <option value="No">{t(`Options.Questions.NO`)}</option>
-                                                <option value="Yes">{t(`Options.Questions.YES`)}</option>
-                                                <option value="Indifferent">{t(`Options.Questions.INDIFFERENT`)}</option>
-                                                <option value="Love to">{t(`Options.Questions.LOVE_TO`)}</option>
+                                                isEditProfile? <select name="smoking" defaultValue={smokingU}>
+                                                    {
+                                                        QUESTION_RESPONSES.map((item)=>{
+                                                            return   <option key={item.label} value={item.value} >{t(`Options.Questions.${item.label}`)}</option>
+                                                        })
+                                                    }
                                                 </select>:<p>{smokingU===null?t(`Options.Questions.NO`):t(`Options.Questions.${sanitizeBackendKey(smokingU)}`)}</p>
                                             }
                                         </div>
@@ -521,11 +532,12 @@ const dispatch=useDispatch()
                                         <div className="input_container">
                                             <label htmlFor="pets" >{t('ProfilePage.sections.lifestyle.fields.pets')}</label>
                                                 {
-                                                    isEditProfile?<select name="pets" defaultValue={petsU}>
-                                               <option value="No">{t(`Options.Questions.NO`)}</option>
-                                                <option value="Yes">{t(`Options.Questions.YES`)}</option>
-                                                <option value="Indifferent">{t(`Options.Questions.INDIFFERENT`)}</option>
-                                                <option value="Love to">{t(`Options.Questions.LOVE_TO`)}</option>
+                                                    isEditProfile?<select name="pets" defaultValue={petsU} >
+                                                   {
+                                                        QUESTION_RESPONSES.map((item)=>{
+                                                            return   <option key={item.label} value={item.value}>{t(`Options.Questions.${item.label}`)}</option>
+                                                        })
+                                                    }
                                                 </select>:<p>{petsU===null?t(`Options.Questions.NO`):t(`Options.Questions.${sanitizeBackendKey(petsU)}`)}</p>
                                                 }
                                         </div>
@@ -536,9 +548,11 @@ const dispatch=useDispatch()
                                             <label htmlFor="pets" >{t('ProfilePage.sections.lifestyle.fields.chronoType')}</label>
                                                 {
                                                     isEditProfile?<select name="chronoType" defaultValue={chronoTypeU}>
-                                               <option value="Early bird">{t(`Options.chronoType.EARLY_BIRD`)}</option>
-                                                <option value="Night owl">{t(`Options.chronoType.NIGHT_OWL`)}</option>
-                                                <option value="Flexible">{t(`Options.chronoType.FLEXIBLE`)}</option>
+                                                 {
+                                                        OPTIONS_CHRONO.map((item)=>{
+                                                            return   <option key={item.label} value={item.value} >{t(`Options.chronoType.${sanitizeBackendKey(item.label)}`)}</option>
+                                                        })
+                                                    }
                                                 </select>:<p>{chronoTypeU===null?t(`Options.chronoType.FLEXIBLE`):t(`Options.chronoType.${sanitizeBackendKey(chronoTypeU)}`)}</p>
                                                 }
                                         </div>
@@ -549,10 +563,12 @@ const dispatch=useDispatch()
                                             <label htmlFor="pets" >{t('ProfilePage.sections.lifestyle.fields.socialEnergy')}</label>
                                                 {
                                                     isEditProfile?<select name="socialEnergy" defaultValue={socialEnergyU}>
-                                               <option value="Introvert">{t(`Options.socialEnergy.INTROVERT`)}</option>
-                                                <option value="Extrovert">{t(`Options.socialEnergy.EXTROVERT`)}</option>
-                                                <option value="Balanced">{t(`Options.socialEnergy.BALANCED`)}</option>
-                                                </select>:<p>{socialEnergyU===null?t(`Options.socialEnergy.BALANCED`):t(`Options.socialEnergy.${sanitizeBackendKey(socialEnergyU)}`)}</p>
+                                                   {
+                                                        OPTIONS_SOCIAL.map((item)=>{
+                                                            return   <option key={item.label} value={item.value}>{t(`Options.socialEnergy.${sanitizeBackendKey(item.label)}`)}</option>
+                                                        })
+                                                    }
+                                                </select>:<p>{socialEnergyU===null?t(`Options.socialEnergy.IT_DEPENDS`):t(`Options.socialEnergy.${sanitizeBackendKey(socialEnergyU)}`)}</p>
                                                 }
                                         </div>
                                         </div>
@@ -562,10 +578,12 @@ const dispatch=useDispatch()
                                             <label htmlFor="pets" >{t('ProfilePage.sections.lifestyle.fields.planningStyle')}</label>
                                                 {
                                                     isEditProfile?<select name="planningStyle" defaultValue={planningStyleU}>
-                                               <option value="Spontaneous">{t(`Options.planningStyle.SPONTANEOUS`)}</option>
-                                                <option value="Structured planner">{t(`Options.planningStyle.STRUCTURED_PLANNER`)}</option>
-                                                <option value="Balanced">{t(`Options.planningStyle.BALANCED`)}</option>
-                                                </select>:<p>{planningStyleU===null?t(`Options.planningStyle.BALANCED`):t(`Options.planningStyle.${sanitizeBackendKey(planningStyleU)}`)}</p>
+                                                  {
+                                                        OPTIONS_PLANNING.map((item)=>{
+                                                            return   <option key={item.label} value={item.value}>{t(`Options.planningStyle.${sanitizeBackendKey(item.label)}`)}</option>
+                                                        })
+                                                    }
+                                                </select>:<p>{planningStyleU===null?t(`Options.planningStyle.IT_DEPENDS`):t(`Options.planningStyle.${sanitizeBackendKey(planningStyleU)}`)}</p>
                                                 }
                                         </div>
                                         </div>

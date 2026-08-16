@@ -700,3 +700,68 @@ export const MOMENT_CAPTIONS: Record<string, string> = {
   "Trying something new":
     "I like keeping life interesting and saying yes to experiences I haven't tried before."
 };
+
+
+export const QUESTION_RESPONSES=[
+  {label:"YES",value:'Yes'},
+  {label:"NO",value:'No'},
+  {label:"INDIFFERENT",value:'Indifferent'},
+  {label:"LOVE_TO",value:'Love to'}
+]
+
+export const DRINKING_RESPONSES=[
+  {label:"NO",value:'N0'},
+  {label:"YES",value:'Yes'},
+  {label:"OCCASIONAL",value:'Occasional'},
+]
+
+export const OPTIONS_EDUCATION=[
+   {label:"MASTERS_DEGREE",value:"Master's degree"},
+  {label:"BACHELORS_DEGREE",value:"Bachelor's degree"},
+  {label:"PHD",value:'PHD'},
+  {label:"HIGH_SCHOOL",value:'High School'},
+  {label:"VOCATIONAL",value:'Vocational'},
+]
+
+export const OPTIONS_LANGUAGE=[
+   {label:"POLISH",value:"Polish"},
+  {label:"ENGLISH",value:"English"},
+  {label:"FRENCH",value:'French'},
+  {label:"OTHER",value:'Other'},
+]
+
+export const OPTIONS_CHRONO=[
+   {label:"NIGHT_OWL",value:"Night owl"},
+  {label:"EARLY_BIRD",value:"Early bird"},
+  {label:"FLEXIBLE",value:'Flexible'},
+]
+
+export const OPTIONS_PLANNING=[
+   {label:"SPONTANEOUS",value:"Spontaneous"},
+  {label:"STRUCTURED_PLANNER",value:"Structured planner"},
+  {label:"IT_DEPENDS",value:'It depends'},
+]
+
+export const OPTIONS_SOCIAL=[
+   {label:"INTROVERT",value:"Introvert"},
+  {label:"EXTROVERT",value:"Extrovert"},
+  {label:"IT_DEPENDS",value:'It depends'},
+]
+
+export const OPTIONS_LOOKINGFOR=[
+   {label:"LONG_TERM_RELATIONSHIP",value:"Long-term Relationship"},
+  {label:"SHORT_TERM_RELATIONSHIP",value:"Short-term Relationship"},
+  {label:"NOT_DECIDED",value:'Not decided'},
+]
+
+export const OPTIONS_PREFERENCE=[
+   {label:"MEN",value:"Men"},
+  {label:"WOMEN",value:"Women"},
+  {label:"NON_BINARY",value:'Non binary'},
+]
+
+export const OPTIONS_GENDER=[
+   {label:"MALE",value:"Male"},
+  {label:"FEMALE",value:"Female"},
+  {label:"NON_BINARY",value:'Non binary'},
+]
