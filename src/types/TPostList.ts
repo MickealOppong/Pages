@@ -21,5 +21,6 @@ export type TPostList={
     requestReceived:boolean,
     lookingFor:string,
     height:string,
-    profession:string
+    profession:string,
+    compatibility:number
 }

@@ -54,7 +54,16 @@ const DiscoveryFilters = () => {
                 <label><FiMapPin /> {t('Options.Header.Target_location')}</label>
                 <select value={cityFilter||''} name='city' onChange={(e) => setCityFilter(e.target.value)}>
                   <option value={''}>{t(`Options.Header.all`)}</option>
-                  {POLISH_CITIES.map((city) => (
+                  {POLISH_CITIES.sort((a,b)=>{
+                    if (a=== "All") return 1;
+                    if (b === "All") return -1;
+
+                     const keyA = sanitizeBackendKey(a);
+                     const keyB = sanitizeBackendKey(b);
+
+
+                      return t(`Moments.${keyA}`).localeCompare(t(`Moments.${keyB}`));
+                  }).map((city) => (
                     <option key={city} value={city}>{t(`Cities.${sanitizeBackendKey(city)}`)}</option>
                   ))}
                 </select>
@@ -65,7 +74,16 @@ const DiscoveryFilters = () => {
                 <label><FiActivity />{t('Options.Header.Shared_activity')}</label>
                 <select value={activityFilter||''} name='activity' onChange={(e) => setActivityFilter(e.target.value)}>
                   <option value="">{t(`Options.Header.all`)}</option>
-                  {MOMENT_OPTIONS.map((activity) => (
+                  {MOMENT_OPTIONS.sort((a,b)=>{
+                    if (a.label === "OTHER") return 1;
+                    if (b.label === "OTHER") return -1;
+
+                     const keyA = sanitizeBackendKey(a.label);
+                     const keyB = sanitizeBackendKey(b.label);
+
+
+                      return t(`Moments.${keyA}`).localeCompare(t(`Moments.${keyB}`));
+                  }).map((activity) => (
                     <option key={activity.label} value={activity.label}>{t(`Moments.${sanitizeBackendKey(activity.label)}`)}</option>
                   ))}
                 </select>
@@ -75,8 +93,8 @@ const DiscoveryFilters = () => {
                 <label><FiUser/>{t('Options.Header.Gender')}</label>
                 <select value={genderFilter||''} name='gender' onChange={(e) => setGenderFilter(e.target.value)}>
                   <option value={''}>{t(`Options.Header.all`)}</option>
-                  <option value="Male">{t('Options.Preference.MALE')}</option>
-                  <option value="Female">{t('Options.Preference.FEMALE')}</option>
+                  <option value="Male">{t('Options.Preference.MEN')}</option>
+                  <option value="Female">{t('Options.Preference.WOMEN')}</option>
                   <option value="Non-binary">{t('Options.Preference.NON_BINARY')}</option>
                 </select>
               </div>

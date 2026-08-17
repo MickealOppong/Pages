@@ -43,6 +43,7 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
     handleViewProfileFunc,
     getDynamicColours}) => {
 
+       console.log(post);
        
 
     const badge = getDynamicColours(post.type as ActivityType);
@@ -151,7 +152,7 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
 
                         <footer className="discover-footer">
                             <div className="discover-footer_actions" >
-
+        
                             <button className="secondary-action"   onClick={() =>{
                                      handleViewProfileFunc(post.userId,post.postId)
                                      updateReach(post.postId)
@@ -182,7 +183,7 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
 
                             </button>
 
-             </div>
+                              </div>
                                 <div className="discover-footer_brand">
 
                                 <span className="discover-footer-brand_icon">
