@@ -48,7 +48,7 @@
     "visibility": {
       "visibility": "widoczność",
       "public": "PUBLICZNE",
-      "match_only": "TYLKO_DLA_DOPASOWAŃ",
+      "match_only": "TYLKO DLA DOPASOWAŃ",
       "public_text": "Wszyscy",
       "match_only_text": "Zablokowane dla dopasowań"
     },

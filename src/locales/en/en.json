@@ -50,7 +50,7 @@
     "visibility": {
       "visibility": "visibility",
       "public": "PUBLIC",
-      "match_only": "MATCH_ONLY",
+      "match_only": "MATCH ONLY",
       "public_text": "Everyone",
       "match_only_text": "Locked for matches"
     },

@@ -48,7 +48,7 @@
     "visibility": {
       "visibility": "Sichtbarkeit",
       "public": "ÖFFENTLICH",
-      "match_only": "NUR_MATCHES",
+      "match_only": "NUR MATCHES",
       "public_text": "Jeder",
       "match_only_text": "Für Matches gesperrt"
     },
