@@ -93,7 +93,7 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
 
                     <span>
                         <FiMapPin/>
-                       {t(`Cities.${sanitizeBackendKey(post.location)}`)}
+                       {post.location}
                     </span>
                    </div>
                     <div className="tags_outer">
