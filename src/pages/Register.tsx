@@ -114,7 +114,7 @@ const Register = () => {
         setLocationError("Could not determine your city name automatically.");
       }
     } catch (err) {
-      //console.error("Geocoding request failed: ", err);
+      console.error("Geocoding request failed: ", err);
       setLocationError("Failed to fetch address. Please fill it manually.");
     } finally {
       setIsLocating(false);
