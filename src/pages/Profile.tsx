@@ -393,7 +393,7 @@ const Profile = () => {
                   <p>
                     {cityU}
                     <LuDot />
-                    {country}
+                    {countryU}
                   </p>
                 </div>
               </div>
