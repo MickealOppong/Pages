@@ -187,6 +187,7 @@
   "RegisterPage": {
     "brand_name": "spotkac",
     "title": "Utwórz konto",
+        "location_message": "Twoja lokalizacja pomaga nam znaleźć osoby w pobliżu. Możesz wpisać ją ręcznie lub włączyć lokalizację i kliknąć pinezkę, aby wykryć ją automatycznie.",
     "subtitle": "Znajdź kogoś, kto pasuje do Twojego klimatu",
     "fields": {
       "firstName": {
@@ -203,6 +204,11 @@
         "error": "Błąd",
          "email_taken": "Ten adres e-mail jest już zajęty, wybierz inny e-mail."
       },
+      "Other": {
+      "date_of_birth": "Data urodzenia",
+      "gender": "Płeć",
+      "location": "Miejscowość lub miasto"
+    },
       "dob_error": "Musisz mieć ukończone co najmniej 18 lat, aby uzyskać dostęp do tej platformy.",
       "gender": "Płeć",
       "location": "Lokalizacja",

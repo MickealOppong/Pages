@@ -2,12 +2,11 @@
   "DiscoverFeed": {
     "brand_name": "Spotkac",
     "tagline": "Find your perfect match",
-      "real_moments":"Real moments.",
-      "real_connections":"Real connections.",
+    "real_moments": "Real moments.",
+    "real_connections": "Real connections.",
     "card_actions": {
       "view_profile": "zobacz",
       "connect": "Spotkaj"
-    
     },
     "profile_meta": {
       "header_message": "Find people who share your interests.",
@@ -17,7 +16,7 @@
   "Messages": {
     "title": "Messages",
     "search_placeholder": "search",
-    "search_result":"No match mett search criteria"
+    "search_result": "No match mett search criteria"
   },
   "Matches": {
     "ConnectionsPage": {
@@ -29,10 +28,10 @@
       "card1": {
         "connected_via": "Connected via your",
         "moment_suffix": "moment",
-        "time_now":"Now",
-        "time_yesterday":"Yesterday",
+        "time_now": "Now",
+        "time_yesterday": "Yesterday",
         "actions": {
-          "compatibility":"View compatibility",
+          "compatibility": "View compatibility",
           "pass": "Pass",
           "accept": "Accept"
         }
@@ -46,34 +45,34 @@
   "My_moments": {
     "welcomeMessage": "My Moments",
     "sub_message": "Meaningful connections begin when you share your interests and life experiences",
-    "btn":"Add Moment",
-    "delete_btn":"Delete",
-    "visibility":{
-      "visibility":"visibility",
-      "public":"PUBLIC",
-      "match_only":"MATCH_ONLY",
-      "public_text":"Everyone",
-      "match_only_text":"Locked for matches"
+    "btn": "Add Moment",
+    "delete_btn": "Delete",
+    "visibility": {
+      "visibility": "visibility",
+      "public": "PUBLIC",
+      "match_only": "MATCH_ONLY",
+      "public_text": "Everyone",
+      "match_only_text": "Locked for matches"
     },
-    "Create_moment":{
-      "title":"Share a Moment",
-      "message":"Photo or video(Max size:30MB)",
-      "media_title":"Upload Media",
-      "media_message":"Drag & drop or click to browse files",
-      "fields":{
-      "moment":"Moment",
-      "caption":"Caption",
-      "caption_placeholder":"what does this moment say about you.",
-      "cancel_btn":"Cancel",
-      "share_btn":"Share"
+    "Create_moment": {
+      "title": "Share a Moment",
+      "message": "Photo or video(Max size:30MB)",
+      "media_title": "Upload Media",
+      "media_message": "Drag & drop or click to browse files",
+      "fields": {
+        "moment": "Moment",
+        "caption": "Caption",
+        "caption_placeholder": "what does this moment say about you.",
+        "cancel_btn": "Cancel",
+        "share_btn": "Share"
+      }
     }
-  }
-},
+  },
   "ProfilePage": {
-    "title":"My Profile",
-"view_profile": "{{name}}'s Profile",
-    "edit_btn":"Edit Profile",
-    "cancel_btn":"Cancel edit",
+    "title": "My Profile",
+    "view_profile": "{{name}}'s Profile",
+    "edit_btn": "Edit Profile",
+    "cancel_btn": "Cancel edit",
     "change_image_btn": "change photo",
     "update_btn": "update",
     "sections": {
@@ -85,11 +84,11 @@
           "date_of_birth": "Date of Birth",
           "email": "Email",
           "gender": "Gender",
-          "age":"age",
-          "preference":"Preference",
-          "from":"From",
-          "speaks":"Speaks",
-          "profession":"Profession",
+          "age": "age",
+          "preference": "Preference",
+          "from": "From",
+          "speaks": "Speaks",
+          "profession": "Profession",
           "city": "City",
           "country": "Country",
           "height": "Height(cm)"
@@ -99,13 +98,13 @@
         "title": "About me",
         "fields": {
           "bio_label": "Short bio",
-          "education":"Education",
-          "basics":"Basics",
-          "relationship":"Relationship",
-          "drinks":"Drinks",
-          "smokes":"Smokes",
-          "pets":"Pets",
-          "exercise":"Exercise"
+          "education": "Education",
+          "basics": "Basics",
+          "relationship": "Relationship",
+          "drinks": "Drinks",
+          "smokes": "Smokes",
+          "pets": "Pets",
+          "exercise": "Exercise"
         }
       },
       "what_im_looking_for": {
@@ -130,10 +129,10 @@
           "drinks": "DRINKS",
           "smoking": "SMOKING",
           "pets": "PETS",
-          "socialEnergy":"Social Energy",
-          "planningStyle":"Planning Style",
-          "chronoType":"Chrono Type",
-          "communication":"Communication Style"
+          "socialEnergy": "Social Energy",
+          "planningStyle": "Planning Style",
+          "chronoType": "Chrono Type",
+          "communication": "Communication Style"
         }
       }
     }
@@ -190,6 +189,7 @@
     "brand_name": "spotkac",
     "title": "Create Account",
     "subtitle": "Find someone that matches your fever",
+    "location_message": "Your location helps us find people nearby. You can enter it manually or enable location and click the pinpoint to auto-detect.",
     "fields": {
       "firstName": {
         "placeholder": "FirstName",
@@ -203,7 +203,7 @@
         "placeholder": "Email Address",
         "email_error": "Please provide a valid email address as your username",
         "email_taken": "Email already in use, choose a different email.",
-        "error":"error"
+        "error": "error"
       },
       "dob_error": "You must be at least 18 years old to access this platform.",
       "gender": "gender",
@@ -213,6 +213,11 @@
       "password": {
         "placeholder": "password",
         "password_error": "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"
+      },
+      "Other":{
+        "date_of_birth":"Date of Birth",
+        "gender":"Gender",
+        "location":"City or Town"
       },
       "terms_and_privacy": {
         "link": "I accept the",
@@ -253,7 +258,6 @@
   "filter_dialog": {
     "title": "Ooop. No nearby profiles yet",
     "Message": "Don't worry! expand your search range to discover people."
-
   },
   "warning_dialog": {
     "title": "Share one public moment",
@@ -281,147 +285,144 @@
       "MALE": "Male",
       "FEMALE": "Female",
       "NON_BINARY": "Non-binary",
-      "All":"All"
+      "All": "All"
     },
-    "chronoType":{
-      "EARLY_BIRD":"Early bird",
-      "NIGHT_OWL":"Night Owl",
-      "FLEXIBLE":"Flexible"
+    "chronoType": {
+      "EARLY_BIRD": "Early bird",
+      "NIGHT_OWL": "Night Owl",
+      "FLEXIBLE": "Flexible"
     },
-    "planningStyle":{
-      "STRUCTURED_PLANNER":"Structured Planner",
-      "SPONTANEOUS":"Spontaneous",
-      "IT_DEPENDS":"It depends"
-
+    "planningStyle": {
+      "STRUCTURED_PLANNER": "Structured Planner",
+      "SPONTANEOUS": "Spontaneous",
+      "IT_DEPENDS": "It depends"
     },
-    "socialEnergy":{
-      "INTROVERT":"Introvert",
-      "EXTROVERT":"Extrovert",
-      "IT_DEPENDS":"It depends"
+    "socialEnergy": {
+      "INTROVERT": "Introvert",
+      "EXTROVERT": "Extrovert",
+      "IT_DEPENDS": "It depends"
     },
-      "Preference": {
-    "MEN": "Men",
-    "WOMEN": "Women",
-    "NON_BINARY": "Non-binary",
-    "All": "All"
-  },
-  "language":{
-    "ENGLISH":"English",
-    "POLISH":"Polish",
-    "FRENCH":"French",
-    "OTHER":"Other"
-  },
-  "education":{
-    "BACHELORS_DEGREE":"Bachelor's degree",
-    "MASTERS_DEGREE":"Master's degree",
-    "PHD":"PHD",
-    "VOCATIONAL":"Vocational",
-    "HIGH_SCHOOL":"High School",
-     "OTHER":"Other"
-  },
-"Questions": {
-  "YES": "Yes, I do",
-  "NO": "No",
-  "INDIFFERENT": "Neutral about it",
-  "LOVE_TO": "Wants someday"
-},
-  "drinks":{
-    "DONT_DRINK":"Don't drink",
-    "YES":"Yes",
-    "NO":"No",
-    "OCCASIONAL":"Occasional"
-  }
-,
-    "Header":{
-      "any_city":"Any city",
-      "all":"All",
-      "Looking_for":"Looking for",
-      "Age_limit":"Age limit",
-      "Target_location":"Target Location",
-      "Shared_activity":"Shared Activity",
-      "Gender":"Gender",
+    "Preference": {
+      "MEN": "Men",
+      "WOMEN": "Women",
+      "NON_BINARY": "Non-binary",
+      "All": "All"
+    },
+    "language": {
+      "ENGLISH": "English",
+      "POLISH": "Polish",
+      "FRENCH": "French",
+      "OTHER": "Other"
+    },
+    "education": {
+      "BACHELORS_DEGREE": "Bachelor's degree",
+      "MASTERS_DEGREE": "Master's degree",
+      "PHD": "PHD",
+      "VOCATIONAL": "Vocational",
+      "HIGH_SCHOOL": "High School",
+      "OTHER": "Other"
+    },
+    "Questions": {
+      "YES": "Yes, I do",
+      "NO": "No",
+      "INDIFFERENT": "Neutral about it",
+      "LOVE_TO": "Wants someday"
+    },
+    "drinks": {
+      "DONT_DRINK": "Don't drink",
+      "YES": "Yes",
+      "NO": "No",
+      "OCCASIONAL": "Occasional"
+    },
+    "Header": {
+      "any_city": "Any city",
+      "all": "All",
+      "Looking_for": "Looking for",
+      "Age_limit": "Age limit",
+      "Target_location": "Target Location",
+      "Shared_activity": "Shared Activity",
+      "Gender": "Gender",
       "filter_btn": "Apply filters",
-      "title":"Discover preferences",
-      "Reset_all":"Reset all",
-        "Min": "Min",
-         "Max": "Max"
+      "title": "Discover preferences",
+      "Reset_all": "Reset all",
+      "Min": "Min",
+      "Max": "Max"
     },
-   "LookingFor": {
-  "LONG_TERM_RELATIONSHIP": "Long-term relationship",
-  "SHORT_TERM_RELATIONSHIP": "Short-term,open to long",
-  "NOT_DECIDED": "Still figuring it out",
-  "FRIENDS":"New friends"
-}
+    "LookingFor": {
+      "LONG_TERM_RELATIONSHIP": "Long-term relationship",
+      "SHORT_TERM_RELATIONSHIP": "Short-term,open to long",
+      "NOT_DECIDED": "Still figuring it out",
+      "FRIENDS": "New friends"
+    }
   },
-"Professions": {
-  "SOFTWARE_ENGINEER": "Software Engineer",
-  "WEB_DEVELOPER": "Web Developer",
-  "DATA_SCIENTIST": "Data Scientist / Analyst",
-  "IT_SUPPORT": "IT Specialist / Support",
-  "PRODUCT_MANAGER": "Product / Project Manager",
-  "MARKETING_SPECIALIST": "Marketing Specialist",
-  "CONTENT_CREATOR": "Content Creator / Influencer",
-  "GRAPHIC_DESIGNER": "Graphic Designer",
-  "UX_UI_DESIGNER": "UX/UI Designer",
-  "PHOTOGRAPHER": "Photographer / Videographer",
-  "WRITER_JOURNALIST": "Writer / Journalist",
-  "ARCHITECT": "Architect",
-  "INTERIOR_DESIGNER": "Interior Designer",
-  "REGISTERED_NURSE": "Registered Nurse",
-  "DOCTOR_PHYSICIAN": "Doctor / Physician",
-  "DENTIST": "Dentist",
-  "PHARMACIST": "Pharmacist",
-  "THERAPIST_COUNSELOR": "Therapist / Counselor",
-  "PHYSIOTHERAPIST": "Physiotherapist",
-  "FITNESS_TRAINER": "Fitness Trainer / Coach",
-  "PRIMARY_TEACHER": "Primary School Teacher",
-  "HIGH_SCHOOL_TEACHER": "High School Teacher",
-  "UNIVERSITY_PROFESSOR": "University Professor",
-  "TUTOR_INSTRUCTOR": "Tutor / Instructor",
-  "CHEF_COOK": "Chef / Cook",
-  "BARTENDER": "Bartender",
-  "BARISTA": "Barista",
-  "RESTAURANT_MANAGER": "Restaurant Manager",
-  "FLIGHT_ATTENDANT": "Flight Attendant",
-  "HOTEL_HOSPITALITY": "Hotel Hospitality",
-  "ELECTRICIAN": "Electrician",
-  "PLUMBER": "Plumber",
-  "CARPENTER_BUILDER": "Carpenter / Builder",
-  "MECHANIC": "Automotive Mechanic",
-  "HAIRDRESSER_STYLIST": "Hairdresser / Barber",
-  "ACCOUNTANT": "Accountant",
-  "FINANCIAL_ANALYST": "Financial Analyst",
-  "BANKER": "Investment Banker",
-  "HR_SPECIALIST": "HR Specialist",
-  "BUSINESS_CONSULTANT": "Business Consultant",
-  "SALES_REPRESENTATIVE": "Sales Representative",
-  "ENTREPRENEUR_OWNER": "Entrepreneur / Business Owner",
-  "REAL_ESTATE_AGENT": "Real Estate Agent",
-  "LAWYER_ATTORNEY": "Lawyer / Attorney",
-  "PARALEGAL": "Paralegal",
-  "CIVIL_SERVANT": "Civil Servant / Government",
-  "FIREFIGHTER": "Firefighter",
-  "PARAMEDIC": "Paramedic",
-  "POLICE_OFFICER": "Police Officer",
-  "SOCIAL_WORKER": "Social Worker",
-  "MILITARY_SERVICE": "Military Personnel",
-  "BLACKSMITH": "Blacksmith / Metal Artisan",
-  "GOLDSMITH_JEWELER": "Goldsmith / Jeweler",
-  "POTTER_CERAMICIST": "Potter / Ceramicist",
-  "SHOE_MAKER_COBBLER": "Shoemaker / Cobbler",
-  "TAILOR_SEAMSTRESS": "Tailor / Seamstress",
-  "LEATHER_WORKER": "Leather Artisan",
-  "STONEMASON": "Stonemason / Sculptor",
-  "WEAVER_TEXTILE": "Weaver / Textile Artisan",
-  "GLASSBLOWER": "Glassblower",
-  "STUDENT_UNDERGRAD": "Undergraduate Student",
-  "STUDENT_POSTGRAD": "Postgraduate / PhD Student",
-  "FREELANCER": "Freelancer",
-  "ARTIST_MUSICIAN": "Artist / Musician",
-  "OTHER": "Other Profession"
-}
+  "Professions": {
+    "SOFTWARE_ENGINEER": "Software Engineer",
+    "WEB_DEVELOPER": "Web Developer",
+    "DATA_SCIENTIST": "Data Scientist / Analyst",
+    "IT_SUPPORT": "IT Specialist / Support",
+    "PRODUCT_MANAGER": "Product / Project Manager",
+    "MARKETING_SPECIALIST": "Marketing Specialist",
+    "CONTENT_CREATOR": "Content Creator / Influencer",
+    "GRAPHIC_DESIGNER": "Graphic Designer",
+    "UX_UI_DESIGNER": "UX/UI Designer",
+    "PHOTOGRAPHER": "Photographer / Videographer",
+    "WRITER_JOURNALIST": "Writer / Journalist",
+    "ARCHITECT": "Architect",
+    "INTERIOR_DESIGNER": "Interior Designer",
+    "REGISTERED_NURSE": "Registered Nurse",
+    "DOCTOR_PHYSICIAN": "Doctor / Physician",
+    "DENTIST": "Dentist",
+    "PHARMACIST": "Pharmacist",
+    "THERAPIST_COUNSELOR": "Therapist / Counselor",
+    "PHYSIOTHERAPIST": "Physiotherapist",
+    "FITNESS_TRAINER": "Fitness Trainer / Coach",
+    "PRIMARY_TEACHER": "Primary School Teacher",
+    "HIGH_SCHOOL_TEACHER": "High School Teacher",
+    "UNIVERSITY_PROFESSOR": "University Professor",
+    "TUTOR_INSTRUCTOR": "Tutor / Instructor",
+    "CHEF_COOK": "Chef / Cook",
+    "BARTENDER": "Bartender",
+    "BARISTA": "Barista",
+    "RESTAURANT_MANAGER": "Restaurant Manager",
+    "FLIGHT_ATTENDANT": "Flight Attendant",
+    "HOTEL_HOSPITALITY": "Hotel Hospitality",
+    "ELECTRICIAN": "Electrician",
+    "PLUMBER": "Plumber",
+    "CARPENTER_BUILDER": "Carpenter / Builder",
+    "MECHANIC": "Automotive Mechanic",
+    "HAIRDRESSER_STYLIST": "Hairdresser / Barber",
+    "ACCOUNTANT": "Accountant",
+    "FINANCIAL_ANALYST": "Financial Analyst",
+    "BANKER": "Investment Banker",
+    "HR_SPECIALIST": "HR Specialist",
+    "BUSINESS_CONSULTANT": "Business Consultant",
+    "SALES_REPRESENTATIVE": "Sales Representative",
+    "ENTREPRENEUR_OWNER": "Entrepreneur / Business Owner",
+    "REAL_ESTATE_AGENT": "Real Estate Agent",
+    "LAWYER_ATTORNEY": "Lawyer / Attorney",
+    "PARALEGAL": "Paralegal",
+    "CIVIL_SERVANT": "Civil Servant / Government",
+    "FIREFIGHTER": "Firefighter",
+    "PARAMEDIC": "Paramedic",
+    "POLICE_OFFICER": "Police Officer",
+    "SOCIAL_WORKER": "Social Worker",
+    "MILITARY_SERVICE": "Military Personnel",
+    "BLACKSMITH": "Blacksmith / Metal Artisan",
+    "GOLDSMITH_JEWELER": "Goldsmith / Jeweler",
+    "POTTER_CERAMICIST": "Potter / Ceramicist",
+    "SHOE_MAKER_COBBLER": "Shoemaker / Cobbler",
+    "TAILOR_SEAMSTRESS": "Tailor / Seamstress",
+    "LEATHER_WORKER": "Leather Artisan",
+    "STONEMASON": "Stonemason / Sculptor",
+    "WEAVER_TEXTILE": "Weaver / Textile Artisan",
+    "GLASSBLOWER": "Glassblower",
+    "STUDENT_UNDERGRAD": "Undergraduate Student",
+    "STUDENT_POSTGRAD": "Postgraduate / PhD Student",
+    "FREELANCER": "Freelancer",
+    "ARTIST_MUSICIAN": "Artist / Musician",
+    "OTHER": "Other Profession"
+  },
 
-,
   "Moments": {
     "HAVING_COFFEE": "Having coffee",
     "WALKING_MY_DOG": "Walking my dog",
@@ -453,9 +454,8 @@
     "WORKING": "Working",
     "RELAXING_AT_HOME": "Relaxing at home",
     "TRYING_SOMETHING_NEW": "Trying something new"
-  }
-,
-    "Cities": {
+  },
+  "Cities": {
     "any_city": "Any city",
     "WARSZAWA": "Warsaw",
     "KRAKÓW": "Krakow",
@@ -488,12 +488,12 @@
     "GORZÓW_WIELKOPOLSKI": "Gorzow Wielkopolski",
     "ELBLĄG": "Elblag"
   },
-  "CTA":{
-    "View":"More",
-    "Spotkac":"spotkaj",
-    "Message_brand":"Spotkać — ",
-    "Message":"your trusted match-maker",
-    "Info":" Let us help you connect"
+  "CTA": {
+    "View": "More",
+    "Spotkac": "spotkaj",
+    "Message_brand": "Spotkać — ",
+    "Message": "your trusted match-maker",
+    "Info": " Let us help you connect"
   },
   "Menu": {
     "Discover": "Discover",
@@ -505,106 +505,105 @@
     "Log_in": "Logged in",
     "Log_out": "Logout"
   },
-  "Recent_Activities":{
-    "title":"Recent Activities",
-    "Activities":"Moments"
+  "Recent_Activities": {
+    "title": "Recent Activities",
+    "Activities": "Moments"
   },
-  "Settings":{
-    "title":"Account Settings",
-    "header":"Login Credentials",
-    "fields":{
-      "email_label":"Emal Address",
-      "password_label":"Password",
-      "change_password_label":"Change Password",
-      "current_password_label":"Current Password",
-      "new_password_label":"New Password",
-      "confirm_password_label":"Confirm Password",
-      "cancel_password_change_label":"Cancel Password Change"
+  "Settings": {
+    "title": "Account Settings",
+    "header": "Login Credentials",
+    "fields": {
+      "email_label": "Emal Address",
+      "password_label": "Password",
+      "change_password_label": "Change Password",
+      "current_password_label": "Current Password",
+      "new_password_label": "New Password",
+      "confirm_password_label": "Confirm Password",
+      "cancel_password_change_label": "Cancel Password Change"
     },
-    "Support_&_Legal":{
-      "title":"Support & Legal",
-      "help_center_link":"Help Center & FAQ",
-      "privacy_policy":"Privacy Policy",
-      "terms_of_service":"Terms of Service",
-      "btn":"Save Account Changes"
+    "Support_&_Legal": {
+      "title": "Support & Legal",
+      "help_center_link": "Help Center & FAQ",
+      "privacy_policy": "Privacy Policy",
+      "terms_of_service": "Terms of Service",
+      "btn": "Save Account Changes"
     },
-    "Danger_zone":{
-      "title":"Danger Zone",
-      "text":"Deleting your account deletes your conversations and matches permanently.",
-      "btn":"Delete My Account"
+    "Danger_zone": {
+      "title": "Danger Zone",
+      "text": "Deleting your account deletes your conversations and matches permanently.",
+      "btn": "Delete My Account"
     },
-    "Reset_password":{
-      "title":"Reset Password",
-      "fields":{
-        "email_label":"Email",
-        "email_placeholder":"Email",
-        "date_of_birth_label":"Date of birth",
-        "location":"location",
-        "location_placeholder":"Location",
-        "new_password_label":"New Password",
-        "password_placeholder":"Minimum 8 characters",
-        "confirm_password_label":"Confirm Password",
-        "btn":"Change Password"
+    "Reset_password": {
+      "title": "Reset Password",
+      "fields": {
+        "email_label": "Email",
+        "email_placeholder": "Email",
+        "date_of_birth_label": "Date of birth",
+        "location": "location",
+        "location_placeholder": "Location",
+        "new_password_label": "New Password",
+        "password_placeholder": "Minimum 8 characters",
+        "confirm_password_label": "Confirm Password",
+        "btn": "Change Password"
       }
     }
-
   },
-      "discover_Dialog": {
+  "discover_Dialog": {
     "title": "No profile matches your search",
     "Message": "Don't worry! expand your search range to discover people."
   },
-  "Delete_dialog":{
-    "message":"We are sorry to lose you, do you want to delete Account?",
-    "yes_btn":"Yes",
-    "no_btn":"No"
+  "Delete_dialog": {
+    "message": "We are sorry to lose you, do you want to delete Account?",
+    "yes_btn": "Yes",
+    "no_btn": "No"
   },
-  "Moment_captions":{
-  "HAVING_COFFEE": "A slow coffee and a quiet moment are my favorite ways to start the day.",
-  "WALKING_MY_DOG": "My dog keeps me active, outdoors, and probably happier than I deserve.",
-  "WORKING_OUT_AT_THE_GYM": "I like staying active and making time to feel strong and healthy.",
-  "COOKING_DINNER": "I enjoy cooking at home, experimenting with new recipes, and making something from scratch.",
-  "BAKING": "Baking is my favorite excuse to slow down and make something delicious.",
-  "READING_A_BOOK": "Give me a good book, a quiet place, and I can disappear for hours.",
-  "WATCHING_A_VOLUME": "A good movie, some snacks, and a relaxed evening is hard to beat.",
-  "PLAYING_VIDEO_GAMES": "I enjoy getting lost in a good game when I have some time to myself.",
-  "PLAYING_BOARD_GAMES": "I love a little competition, especially when good friends are involved.",
-  "OUT_WITH_FRIENDS": "Some of my best moments are simple evenings spent laughing with good friends.",
-  "HAVING_BRUNCH": "Good food, good coffee, and nowhere to rush to — that's my kind of weekend.",
-  "DINING_OUT": "I enjoy discovering new places, trying different food, and finding hidden gems.",
-  "HIKING": "I feel happiest outdoors, exploring new trails and getting away from the usual routine.",
-  "GOING_FOR_A_RUN": "Running helps me clear my head, stay active, and enjoy some time outside.",
-  "CYCLING": "I love getting on my bike, exploring new places, and enjoying the ride.",
-  "AT_THE_BEACH": "Give me some sunshine, the sea, and a little free time and I'm happy.",
-  "WATCHING_THE_SUNSET": "I never get tired of stopping for a beautiful sunset, wherever I happen to be.",
-  "ON_VACATION": "I love discovering new places, trying new things, and making memories along the way.",
-  "ROAD_TRIP": "Good music, open roads, interesting stops, and no strict plans — my kind of adventure.",
-  "CAMPING": "Getting away from the noise and spending time outdoors is something I really enjoy.",
-  "TAKING_PHOTOS": "I enjoy noticing the little moments and capturing the ones worth remembering.",
-  "MAKING_ART": "Creating something with my own hands is one of my favorite ways to relax.",
-  "PLAYING_MUSIC": "Music has always been part of my life, whether I'm listening or playing.",
-  "DANCING": "I love good music, good energy, and having an excuse to dance.",
-  "SHOPPING": "I enjoy exploring new places, finding interesting things, and occasionally treating myself.",
-  "VOLUNTEERING": "I like spending some of my time doing something useful for other people.",
-  "STUDYING": "I'm always working toward something new and enjoy learning along the way.",
-  "WORKING": "I'm ambitious about what I do, but I also believe life should be more than work.",
-  "RELAXING_AT_HOME": "Sometimes my ideal evening is simply staying home, switching off, and enjoying some quiet time.",
-  "TRYING_SOMETHING_NEW": "I like keeping life interesting and saying yes to experiences I haven't tried before."
-},
-"Rules": {
-  "title": "Rules of Engagement",
-  "subtitle": "Please agree to our community standards before exploring matches.",
-  "btn_agree": "I Understand & Agree",
-  "respect_title": "Be Kind & Respectful",
-  "respect_desc": "Harassment, hate speech, threats, or toxic behavior will result in an immediate permanent ban.",
-  "media_title": "Authenticity is Our Hallmark",
-  "media_desc": "Every single moment shared must include your actual image or short video. True authenticity is the hallmark of this platform.",
-  "moment_title": "Shared moments",
-  "moment_desc": "You can create public or match only moments, however to send a match request, you must have at least one public moment ",
-  "safety_title": "Stay Secure",
-  "safety_desc": "Never share your password, banking information, or physical addresses with people you just met."
-},
-"Compatibility": {
-  "owner":"YOU",
+  "Moment_captions": {
+    "HAVING_COFFEE": "A slow coffee and a quiet moment are my favorite ways to start the day.",
+    "WALKING_MY_DOG": "My dog keeps me active, outdoors, and probably happier than I deserve.",
+    "WORKING_OUT_AT_THE_GYM": "I like staying active and making time to feel strong and healthy.",
+    "COOKING_DINNER": "I enjoy cooking at home, experimenting with new recipes, and making something from scratch.",
+    "BAKING": "Baking is my favorite excuse to slow down and make something delicious.",
+    "READING_A_BOOK": "Give me a good book, a quiet place, and I can disappear for hours.",
+    "WATCHING_A_VOLUME": "A good movie, some snacks, and a relaxed evening is hard to beat.",
+    "PLAYING_VIDEO_GAMES": "I enjoy getting lost in a good game when I have some time to myself.",
+    "PLAYING_BOARD_GAMES": "I love a little competition, especially when good friends are involved.",
+    "OUT_WITH_FRIENDS": "Some of my best moments are simple evenings spent laughing with good friends.",
+    "HAVING_BRUNCH": "Good food, good coffee, and nowhere to rush to — that's my kind of weekend.",
+    "DINING_OUT": "I enjoy discovering new places, trying different food, and finding hidden gems.",
+    "HIKING": "I feel happiest outdoors, exploring new trails and getting away from the usual routine.",
+    "GOING_FOR_A_RUN": "Running helps me clear my head, stay active, and enjoy some time outside.",
+    "CYCLING": "I love getting on my bike, exploring new places, and enjoying the ride.",
+    "AT_THE_BEACH": "Give me some sunshine, the sea, and a little free time and I'm happy.",
+    "WATCHING_THE_SUNSET": "I never get tired of stopping for a beautiful sunset, wherever I happen to be.",
+    "ON_VACATION": "I love discovering new places, trying new things, and making memories along the way.",
+    "ROAD_TRIP": "Good music, open roads, interesting stops, and no strict plans — my kind of adventure.",
+    "CAMPING": "Getting away from the noise and spending time outdoors is something I really enjoy.",
+    "TAKING_PHOTOS": "I enjoy noticing the little moments and capturing the ones worth remembering.",
+    "MAKING_ART": "Creating something with my own hands is one of my favorite ways to relax.",
+    "PLAYING_MUSIC": "Music has always been part of my life, whether I'm listening or playing.",
+    "DANCING": "I love good music, good energy, and having an excuse to dance.",
+    "SHOPPING": "I enjoy exploring new places, finding interesting things, and occasionally treating myself.",
+    "VOLUNTEERING": "I like spending some of my time doing something useful for other people.",
+    "STUDYING": "I'm always working toward something new and enjoy learning along the way.",
+    "WORKING": "I'm ambitious about what I do, but I also believe life should be more than work.",
+    "RELAXING_AT_HOME": "Sometimes my ideal evening is simply staying home, switching off, and enjoying some quiet time.",
+    "TRYING_SOMETHING_NEW": "I like keeping life interesting and saying yes to experiences I haven't tried before."
+  },
+  "Rules": {
+    "title": "Rules of Engagement",
+    "subtitle": "Please agree to our community standards before exploring matches.",
+    "btn_agree": "I Understand & Agree",
+    "respect_title": "Be Kind & Respectful",
+    "respect_desc": "Harassment, hate speech, threats, or toxic behavior will result in an immediate permanent ban.",
+    "media_title": "Authenticity is Our Hallmark",
+    "media_desc": "Every single moment shared must include your actual image or short video. True authenticity is the hallmark of this platform.",
+    "moment_title": "Shared moments",
+    "moment_desc": "You can create public or match only moments, however to send a match request, you must have at least one public moment ",
+    "safety_title": "Stay Secure",
+    "safety_desc": "Never share your password, banking information, or physical addresses with people you just met."
+  },
+  "Compatibility": {
+    "owner": "YOU",
     "eyebrow": "Your connection",
     "title": "You have a lot in common",
     "description": "{{shared}} shared interests and experiences give you a natural place to start.",
@@ -630,8 +629,4 @@
       "FINANCIAL_MINDSET": "Lifestyle Stability (Saver & Spender)"
     }
   }
-
-
-
-
 }

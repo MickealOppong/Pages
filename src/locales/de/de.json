@@ -187,6 +187,7 @@
   "RegisterPage": {
     "brand_name": "spotkac",
     "title": "Konto erstellen",
+        "location_message": "Ihr Standort hilft uns, Menschen in Ihrer Nähe zu finden. Sie können ihn manuell eingeben oder den Standort aktivieren und auf die Stecknadel klicken, um ihn automatisch zu erkennen.",
     "subtitle": "Finde jemanden, der zu deinem Vibe passt",
     "fields": {
       "firstName": {
@@ -197,6 +198,11 @@
         "placeholder": "Nachname",
         "lastname_error": "Nachname darf nicht leer sein"
       },
+       "Other": {
+      "date_of_birth": "Geburtsdatum",
+      "gender": "Geschlecht",
+      "location": "Stadt oder Ort"
+    },
       "email": {
         "placeholder": "E-Mail-Adresse",
         "email_error": "Bitte gib eine gültige E-Mail-Adresse als Benutzernamen an",

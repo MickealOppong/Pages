@@ -5,6 +5,10 @@ export  type TRegisterDto={
     gender:string,
     email:string,
     password:string,
-    location:string,
-    isTermsChecked:boolean
+    city:string,
+    country:string,
+    isTermsChecked:boolean,
+    longitude:number,
+    latitude:number,
+    countryCode:string
 }

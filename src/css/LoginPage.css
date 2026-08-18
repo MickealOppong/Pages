@@ -1,18 +1,19 @@
 .login-page {
+  background-color: #FFFFFF;
   min-height: 100vh;
-  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  font-family: "Inter", system-ui, sans-serif;
+  box-sizing: border-box;
 }
 
 .login-card {
-  width: 100vw;
+  width: 100%;
   max-width: 100%;
   background: #FFFFFF;
   border-radius: 12px;
-  padding: 40px 32px;
-  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.12);
+  padding: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -197,20 +198,17 @@ form {
 
 @media (min-width: 768px) {
   .login-page {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 24px;
+    width: 100%;
+    padding: 0;
+    background: linear-gradient(235deg, #e5e4e7 10%, #edebef 100%);
   }
   .login-card {
+    border: none;
+    box-shadow: none;
+    padding: 1.5rem;
     width: 100%;
-    max-width: 420px;
-    background: #FFFFFF;
-    border-radius: 28px;
-    padding: 40px 32px;
-    box-shadow: 0 20px 60px rgba(124, 58, 237, 0.12);
-    display: flex;
-    flex-direction: column;
+    max-width: 640px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.02);
+    border: 1px solid #d1d3d6;
   }
 }

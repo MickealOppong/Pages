@@ -42,8 +42,6 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
     handleInterestedFunc,
     handleViewProfileFunc,
     getDynamicColours}) => {
-
-       console.log(post);
        
 
     const badge = getDynamicColours(post.type as ActivityType);

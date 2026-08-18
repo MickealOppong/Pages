@@ -1,5 +1,5 @@
 
-import { LoginPage } from "./index"
+import { Login } from "./index"
 
 export const loader =()=>async ()=>{
    
@@ -9,7 +9,7 @@ export const loader =()=>async ()=>{
 const Landing = ()=>{
 
     return  <section className="landing">
-            <LoginPage/>
+            <Login/>
     </section>
 }
 export default Landing

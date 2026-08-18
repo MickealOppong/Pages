@@ -1,4 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import type { TLocationRequest } from "../../types/TLocationRequest";
+import type { TLocationResponseDto } from "../../types/TLocationResponseDto";
 import type { TLogin } from "../../types/TLogin";
 import { type TRegisterDto } from "../../types/TRegisterDto";
 import type { TResetPasswordDto } from "../../types/TResetPasswordDto";
@@ -52,8 +54,24 @@ export const authApi = createApi({
                 method:'PUT',
                body,
             })
-        })
+        })  ,
+            getLocation:build.mutation<TLocationResponseDto,TLocationRequest>({
+            query:(body)=>({
+                url:`/location/detect`,
+                body,
+                method:'POST',
+            }),
+        }),
+            getSearchedLocation:build.query<TLocationResponseDto,{city:string,locale:string}>({
+            query:({city,locale})=>({
+                url:`/location/search`,
+                params:{
+                    city,
+                    locale
+                }
+            }),
+        }),
     })
  
 })
-export const {useAddUserMutation,useLoginMutation,useLogoutMutation,useResetPasswordMutation}=authApi
+export const {useAddUserMutation,useLoginMutation,useLogoutMutation,useResetPasswordMutation,useGetLocationMutation,useLazyGetSearchedLocationQuery}=authApi

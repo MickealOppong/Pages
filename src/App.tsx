@@ -1,6 +1,6 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { ErrorPage, Likes, LoginPage, Messages, PasswordReset, Profile, RegisterPage, Settings, SharedLayout, UserBroadcast, ViewProfile } from './pages/index';
+import { ErrorPage, Likes, Messages, PasswordReset, Profile, Settings, SharedLayout, UserBroadcast, ViewProfile } from './pages/index';
 import { store } from './store';
 
 
@@ -9,8 +9,10 @@ import { ChatRoom } from './components';
 import RulesOfEngagement from './components/RulesOfEngagement';
 import Discover, { loader as discoverLoader } from './pages/Discover';
 import { loader as likeLoader } from './pages/Likes';
+import Login from './pages/Login';
 import { loader as matchLoader } from './pages/Messages';
 import { loader as profileLoader } from './pages/Profile';
+import Register from './pages/Register';
 import { loader as sharedLoader } from './pages/SharedLayout';
 import { TermsAndConditions } from './pages/TermsAndConditions';
 import { loader as userBroadcastLoader } from './pages/UserBroadcast';
@@ -24,14 +26,9 @@ function App() {
   const router = createBrowserRouter([
     {
       path:'',
-    element: <LoginPage/>,
+          element: <Login/>,
       errorElement:<ErrorPage/>,
     },
-      {
-          index:true,
-          element: <LoginPage/>,
-          errorElement:<ErrorPage/>
-        },
       {
           path:'/landing/',
           element:<SharedLayout/>,
@@ -100,7 +97,7 @@ function App() {
         },
      {
           path:'/register',
-          element:<RegisterPage/>,
+          element:<Register/>,
           errorElement:<ErrorPage/>
         },
          {

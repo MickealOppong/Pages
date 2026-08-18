@@ -187,6 +187,7 @@
   "RegisterPage": {
     "brand_name": "spotkac",
     "title": "Créer un compte",
+        "location_message": "Votre position nous aide à trouver des personnes à proximité. Vous pouvez l'entrer manuellement ou activer la localisation et cliquer sur le repère pour une détection automatique.",
     "subtitle": "Trouvez quelqu'un qui correspond à votre vibe",
     "fields": {
       "firstName": {
@@ -197,6 +198,11 @@
         "placeholder": "Nom",
         "lastname_error": "Le nom ne peut pas être vide"
       },
+      "Other": {
+      "date_of_birth": "Date de naissance",
+      "gender": "Genre",
+      "location": "Ville ou commune"
+    },
       "email": {
         "placeholder": "Adresse e-mail",
         "email_error": "Veuillez fournir une adresse e-mail valide comme identifiant",

@@ -188,6 +188,7 @@
   "RegisterPage": {
     "brand_name": "spotkac",
     "title": "Yɛ Akawnt",
+        "location_message": "Baabi a wowɔ bɛboa yɛn ma yɛahu nnipa a wɔbɛn wo. Wubetumi de wo nsa akyerɛw afa anaa wobue wo mfiri no dɔn bɛn na wopia mfiri nkyerɛwee no so ma ɛkyerɛ wo baabi a wowɔ wɔ afiri mu.",
     "subtitle": "Hwehwɛ obi a ɔne wo sɔ paa",
     "fields": {
       "firstName": {
@@ -204,6 +205,11 @@
         "error": "Mfomsoɔ",
           "email_taken": "Wadei saa e-mail yi redi dwuma dedaw, paw e-mail foforo firi hɔ."
       },
+       "Other": {
+      "date_of_birth": "Awoda",
+      "gender": "Bɔbeasu",
+      "location": "Kuro anaa Akurase"
+    },
       "dob_error": "Ɛsɛ sɛ wodi mfeɛ 18 ansa na woatumi awura ha.",
       "gender": "Bɔbeasu",
       "location": "Beaeɛ a Wɔwɔ",

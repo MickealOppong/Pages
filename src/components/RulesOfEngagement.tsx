@@ -17,7 +17,7 @@ const RulesOfEngagement = () => {
   const handleAgree = async () => {
     try {
       const response = await acceptRules().unwrap();
-      console.log(response);
+
         if(response){
           revalidate();
           navigate('/landing')

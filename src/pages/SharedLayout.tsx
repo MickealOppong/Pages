@@ -47,6 +47,9 @@ export const loader =(store:Store<RootState>)=>async ()=>{
 const SharedLayout = ()=>{
 const userData = useLoaderData() as TUserDataDto
 const navigate = useNavigate()
+
+
+
   
     //state
     const pageRef = useRef<HTMLElement | null>(null);
@@ -80,6 +83,7 @@ useEffect(() => {
     navigate('/rules');
   }
 }, [userData, navigate]);
+
 
 
     return <section className="sharedLayout" ref={pageRef}>
