@@ -59,7 +59,7 @@ export const userApi = createApi({
             }),
              providesTags:['user'],
         }),
-         updateUserDetails:build.mutation<boolean,FormData>({
+         updateUserDetails:build.mutation<{data:boolean,httpStatus:string,message:string},FormData>({
             query:(body)=>({
                 url:'/users/update-data',
                body,
