@@ -8,7 +8,7 @@ import {
     FiLock,
     FiMail,
     FiMapPin,
-    FiUser
+    FiUser,
 } from "react-icons/fi";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -52,9 +52,30 @@ const Register = () => {
   const [locationError, setLocationError] = useState<string | null>(null);
 
   //global address data
-      const [longitude, setLongitude] = useState<number>(0);
-      const [latitude, setLatitude] = useState<number>(0);
-      const [countryCode, setCountryCode] = useState<string>('');
+  const [longitude, setLongitude] = useState<number>(0);
+  const [latitude, setLatitude] = useState<number>(0);
+  const [countryCode, setCountryCode] = useState<string>("");
+
+  const [extractedData, setExtracted] = useState<boolean>(false);
+
+
+  //capture location input
+  const handleLocationInputChange = (inputValue: string) => {
+    setLocation(inputValue);
+
+    const matchedCity = locationList.find(
+      (item) =>
+        `${item.city}, ${item.country}`.trim().toLowerCase() ===
+        inputValue.trim().toLowerCase(),
+    );
+    if (matchedCity) {
+      setExtracted(true);
+      const { lat, lon, countryCode } = matchedCity as TLocationResponse;
+      setLatitude(lat);
+      setLongitude(lon);
+      setCountryCode(countryCode);
+    }
+  };
 
   // Hardware client capture layout targeting reverse geocoding operations
   const handleDetectLocation = async () => {
@@ -62,12 +83,12 @@ const Register = () => {
     setLocationError(null);
     try {
       const coordinates = await detectUserCoordinates();
-      
+
       const latitude = coordinates.latitude;
       const longitude = coordinates.longitude;
 
-      setLatitude(latitude)
-      setLongitude(longitude)
+      setLatitude(latitude);
+      setLongitude(longitude);
 
       const dto: TLocationRequest = {
         longitude,
@@ -75,16 +96,15 @@ const Register = () => {
         locale,
       };
 
-
       const response = await getLocation(dto);
 
       if (response.error) throw new Error("Network fetch operation failed");
 
       if (response.data.httpStatus === 200) {
         // Extracts city names cleanly (e.g. "Warsaw" or "Piotrków Trybunalski")
-        const { city, country,countryCode } = response.data.locationResponse;
+        const { city, country, countryCode } = response.data.locationResponse;
         setLocation(`${city},${country}`);
-        setCountryCode(countryCode)
+        setCountryCode(countryCode);
       } else {
         setLocationError("Could not determine your city name automatically.");
       }
@@ -113,47 +133,7 @@ const Register = () => {
     findUserLocationManually();
   }, [location]);
 
-  /*
-  
-  const handleFormSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
-    e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
-    const formValues = Object.fromEntries(formData);
-
-    
-
-    const firstName = formValues.firstName as string;
-    const lastName = formValues.lastName as string;
-    const gender = formValues.gender as string;
-    const dob = new Date(formValues.dob as string);
-    const password = formValues.password as string;
-    const location = formValues.location as string;
-    const email = formValues.email as string;
-    
-    const city = location.trim().split(',')[0]
-    const country = location.split(',')[1]
-    
-    
-    try {
-      await register({
-        firstName,
-        lastName,
-        dob,
-        email,
-        password,
-        gender,
-       city,
-       country,
-       isTermsChecked
-      }).unwrap();
-
-      navigate("/");
-    } catch (error) {
-      console.error(error);
-    }
-  };
-*/
 
   const handleFormSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -171,11 +151,10 @@ const Register = () => {
     const city = location.trim().split(",")[0];
     const country = location.split(",")[1];
 
-
     if (isTermsChecked) {
       try {
         // 1. .unwrap() forces RTK-Query to throw an error if the HTTP status is not 2xx
-        await register({
+       await register({
           firstName,
           lastName,
           dob,
@@ -189,6 +168,9 @@ const Register = () => {
           country,
           isTermsChecked,
         }).unwrap();
+
+
+        
 
         // 2. SUCCESS FLOW: Since we unwrapped, we know the backend returned a 2xx success code
         //console.log('Registration Successful:', payload);
@@ -257,7 +239,7 @@ const Register = () => {
         <div className="register-card">
           {/* BRAND */}
           <div className="brand">
-            <FiHeart  className="register-heart"/>
+            <FiHeart className="register-heart" />
             <h1>{t("RegisterPage.brand_name")}</h1>
           </div>
 
@@ -277,7 +259,8 @@ const Register = () => {
                     <label htmlFor="firstName">
                       {t("RegisterPage.fields.firstName.placeholder")}
                     </label>
-                    <input className="register-input"
+                    <input
+                      className="register-input"
                       type="text"
                       name="firstName"
                       placeholder=""
@@ -310,52 +293,54 @@ const Register = () => {
                 </div>
               </div>
               {errorMessages?.lastName && (
-                <span className="error">{t("RegisterPage.fields.lastName.lastname_error")}</span>
+                <span className="error">
+                  {t("RegisterPage.fields.lastName.lastname_error")}
+                </span>
               )}
             </div>
 
             {/* DATE OF BIRTH */}
-              <div>
-                <div className="register-input-group">
-                  <FiCalendar className="input-icon" />
-                  <div className="input-group_div">
-                    <label htmlFor="dob">{t("RegisterPage.fields.Other.date_of_birth")}</label>
-                    <input
-                      type="date"
-                      name="dob"
-                      id="dob"
-                      required
-                      defaultValue={new Date().toISOString().split("T")[0]}
-                    />
-                  </div>
-                </div>
-                {errorMessages?.dob && (
-                  <span className="error">{t("RegisterPage.fields.dob_error")}</span>
-                )}
-              </div>
-              {/* GENDER */}
-              <div className="register-input-group select-group">
-                <PiGenderIntersex className="input-icon" />
+            <div>
+              <div className="register-input-group">
+                <FiCalendar className="input-icon" />
                 <div className="input-group_div">
-                  <label htmlFor="gender">{t("RegisterPage.fields.Other.gender")}</label>
-                  <select
-                    name="gender"
+                  <label htmlFor="dob">
+                    {t("RegisterPage.fields.Other.date_of_birth")}
+                  </label>
+                  <input
+                    type="date"
+                    name="dob"
+                    id="dob"
                     required
-                  >
-                    <option
-                      disabled
-                      value={"Select Gender"}
-                    >
-                      Select Gender
-                    </option>
-                    <option value="Male">{t("Options.Gender.MALE")}</option>
-                    <option value="Female">{t("Options.Gender.FEMALE")}</option>
-                    <option value="Non-binary">
-                      {t("Options.Gender.NON_BINARY")}
-                    </option>
-                  </select>
+                    defaultValue={new Date().toISOString().split("T")[0]}
+                  />
                 </div>
-                <FiChevronDown className="select-arrow" />
+              </div>
+              {errorMessages?.dob && (
+                <span className="error">
+                  {t("RegisterPage.fields.dob_error")}
+                </span>
+              )}
+            </div>
+            {/* GENDER */}
+            <div className="register-input-group select-group">
+              <PiGenderIntersex className="input-icon" />
+              <div className="input-group_div">
+                <label htmlFor="gender">
+                  {t("RegisterPage.fields.Other.gender")}
+                </label>
+                <select
+                  name="gender"
+                  required
+                >
+                  <option value="Male">{t("Options.Gender.MALE")}</option>
+                  <option value="Female">{t("Options.Gender.FEMALE")}</option>
+                  <option value="Non-binary">
+                    {t("Options.Gender.NON_BINARY")}
+                  </option>
+                </select>
+              </div>
+              <FiChevronDown className="select-arrow" />
             </div>
 
             {/* EMAIL */}
@@ -377,10 +362,14 @@ const Register = () => {
               </div>
 
               {errorMessages?.email && (
-                <span className="error">{t("RegisterPage.fields.email.email_error")}</span>
+                <span className="error">
+                  {t("RegisterPage.fields.email.email_error")}
+                </span>
               )}
               {error && (
-                <span className="error">{t("RegisterPage.fields.email.email_taken")}</span>
+                <span className="error">
+                  {t("RegisterPage.fields.email.email_taken")}
+                </span>
               )}
             </div>
 
@@ -389,12 +378,14 @@ const Register = () => {
               <div className="register-input-group location-input-container">
                 <FiMapPin className="input-icon location-icon" />
                 <div className="input-group_div">
-                  <label htmlFor="location">{t("RegisterPage.fields.Other.location")}</label>
+                  <label htmlFor="location">
+                    {t("RegisterPage.fields.Other.location")}
+                  </label>
                   <input
                     type="text"
                     name="location"
                     value={location}
-                    onChange={(e) => setLocation(e.target.value)}
+                    onChange={(e) => handleLocationInputChange(e.target.value)}
                     placeholder=""
                     autoComplete="address-level2"
                     list="polish-cities"
@@ -416,6 +407,26 @@ const Register = () => {
                 </button>
               </div>
 
+              {/* Hidden inputs are an industry-standard mechanism to ensure standard form submissions catch values flawlessly */}
+              {extractedData && (
+                <>
+                  <input
+                    type="hidden"
+                    name="lat"
+                    value={latitude}
+                  />
+                  <input
+                    type="hidden"
+                    name="lon"
+                    value={longitude}
+                  />
+                  <input
+                    type="hidden"
+                    name="countryCode"
+                    value={countryCode}
+                  />
+                </>
+              )}
               <datalist id="polish-cities">
                 {locationList.map((city, index) => (
                   <option
@@ -426,14 +437,14 @@ const Register = () => {
               </datalist>
 
               {locationError && (
-                <div className="error location-error-message">{locationError}</div>
+                <div className="error location-error-message">
+                  {locationError}
+                </div>
               )}
 
               <div className="location-helper">
                 <FiMapPin size={14} />
-                <span>
-                {t("RegisterPage.location_message")}
-                </span>
+                <span>{t("RegisterPage.location_message")}</span>
               </div>
             </div>
 
@@ -455,7 +466,9 @@ const Register = () => {
                 </div>
               </div>
               {errorMessages?.password && (
-                <span className="error">{t("RegisterPage.fields.password.password_error")}</span>
+                <span className="error">
+                  {t("RegisterPage.fields.password.password_error")}
+                </span>
               )}
             </div>
 
@@ -496,7 +509,8 @@ const Register = () => {
               type="submit"
               className="register-btn"
             >
-              {t("RegisterPage.fields.submit_btn")}<FiArrowRight/>
+              {t("RegisterPage.fields.submit_btn")}
+              <FiArrowRight />
             </button>
           </form>
 

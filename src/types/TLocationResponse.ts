@@ -1,5 +1,7 @@
 export type TLocationResponse={
    city:string,
    country:string,
-   countryCode:string
+   countryCode:string,
+   lon:number,
+   lat:number
 }
