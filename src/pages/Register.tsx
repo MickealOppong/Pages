@@ -98,6 +98,11 @@ const Register = () => {
 
       const response = await getLocation(dto);
 
+      console.log(coordinates);
+      console.log(response);
+      
+      
+
       if (response.error) throw new Error("Network fetch operation failed");
 
       if (response.data.httpStatus === 200) {
@@ -389,7 +394,7 @@ const Register = () => {
                     placeholder=""
                     autoComplete="address-level2"
                     list="polish-cities"
-                    required
+                   
                   />
                 </div>
                 <button
