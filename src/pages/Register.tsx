@@ -1,14 +1,12 @@
-import { useEffect, useState, type ChangeEvent } from "react";
+import { useState, type ChangeEvent } from "react";
 import {
-    FiArrowRight,
-    FiCalendar,
-    FiChevronDown,
-    FiHeart,
-    FiLoader,
-    FiLock,
-    FiMail,
-    FiMapPin,
-    FiUser,
+  FiArrowRight,
+  FiCalendar,
+  FiChevronDown,
+  FiHeart,
+  FiLock,
+  FiMail,
+  FiUser
 } from "react-icons/fi";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -16,16 +14,11 @@ import "./../css/Register.css";
 
 import { useTranslation } from "react-i18next";
 import { PiGenderIntersex } from "react-icons/pi";
-import {
-    useAddUserMutation,
-    useGetLocationMutation,
-    useLazyGetSearchedLocationQuery,
-} from "../features/api/authApi";
+import LocationSelector from "../components/LocationSelector";
+import { useAddUserMutation } from "../features/api/authApi";
+import { useLocationSelector } from "../hooks/useLocationSelector";
 import type { TErrorResponse } from "../types/TErrorResponse";
-import type { TLocationRequest } from "../types/TLocationRequest";
-import type { TLocationResponse } from "../types/TLocationResponse";
 import type { TvalidationErrors } from "../types/TValidationErrors";
-import { detectUserCoordinates } from "../util/location";
 
 const Register = () => {
   const [register] = useAddUserMutation();
@@ -34,105 +27,15 @@ const Register = () => {
   //translation hook
   const { t } = useTranslation();
 
-  //locale for date trqnslation
-  const locale = localStorage.getItem("i18nextLng") as string;
-
-  //location hook
-  const [getLocation] = useGetLocationMutation();
-  const [getSearchLocation] = useLazyGetSearchedLocationQuery();
-
-  const [location, setLocation] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [errorMessages, setErrorMessages] = useState<TvalidationErrors>();
   const [message, setMessage] = useState<string>("");
   const [fetchError, setFetchError] = useState<string>("");
-  const [locationList, setLocationList] = useState<TLocationResponse[]>([]);
-  const [isLocating, setIsLocating] = useState<boolean>(false);
   const [isTermsChecked, setIsTermsChecked] = useState<boolean>(false);
-  const [locationError, setLocationError] = useState<string | null>(null);
 
-  //global address data
-  const [longitude, setLongitude] = useState<number>(0);
-  const [latitude, setLatitude] = useState<number>(0);
-  const [countryCode, setCountryCode] = useState<string>("");
+// 1. Initialize the custom location hook inside the parent file
+  const locationSelectorProps = useLocationSelector();
 
-  const [extractedData, setExtracted] = useState<boolean>(false);
-
-
-  //capture location input
-  const handleLocationInputChange = (inputValue: string) => {
-    setLocation(inputValue);
-
-    const matchedCity = locationList.find(
-      (item) =>
-        `${item.city}, ${item.country}`.trim().toLowerCase() ===
-        inputValue.trim().toLowerCase(),
-    );
-    if (matchedCity) {
-      setExtracted(true);
-      const { lat, lon, countryCode } = matchedCity as TLocationResponse;
-      setLatitude(lat);
-      setLongitude(lon);
-      setCountryCode(countryCode);
-    }
-  };
-
-  // Hardware client capture layout targeting reverse geocoding operations
-  const handleDetectLocation = async () => {
-    setIsLocating(true);
-    setLocationError(null);
-    try {
-      const coordinates = await detectUserCoordinates();
-
-      const latitude = coordinates.latitude;
-      const longitude = coordinates.longitude;
-
-      setLatitude(latitude);
-      setLongitude(longitude);
-
-      const dto: TLocationRequest = {
-        longitude,
-        latitude,
-        locale,
-      };
-
-      const response = await getLocation(dto);
-      
-
-      if (response.error) throw new Error("Network fetch operation failed");
-
-      if (response.data.httpStatus === 200) {
-        // Extracts city names cleanly (e.g. "Warsaw" or "Piotrków Trybunalski")
-        const { city, country, countryCode } = response.data.locationResponse;
-        setLocation(`${city},${country}`);
-        setCountryCode(countryCode);
-      } else {
-        setLocationError("Could not determine your city name automatically.");
-      }
-    } catch (err) {
-      //console.error("Geocoding request failed: ", err);
-      setLocationError("Failed to fetch address. Please fill it manually.");
-    } finally {
-      setIsLocating(false);
-    }
-  };
-
-  async function findUserLocationManually() {
-    setLocationError("");
-    const response = await getSearchLocation({
-      city: location,
-      locale,
-    }).unwrap();
-
-    if (response.httpStatus === 200) {
-      const cityList = response.locationResponseList;
-      setLocationList(() => cityList);
-    }
-  }
-
-  useEffect(() => {
-    findUserLocationManually();
-  }, [location]);
 
 
 
@@ -146,16 +49,22 @@ const Register = () => {
     const gender = formValues.gender as string;
     const dob = new Date(formValues.dob as string);
     const password = formValues.password as string;
-    const location = formValues.location as string;
+    const latitude =parseFloat( formValues.lat as string) ||locationSelectorProps.getFallbackData().lat;
+    const longitude = parseFloat(formValues.lon as string) ||locationSelectorProps.getFallbackData().lon;
+    const countryCode = formValues.countryCode as string|| locationSelectorProps.getFallbackData().countryCode;
     const email = formValues.email as string;
 
-    const city = location.trim().split(",")[0];
-    const country = location.split(",")[1];
+    //from useLocationSelector hook
+    const city = locationSelectorProps.location.trim().split(",")[0]||locationSelectorProps.getFallbackData().city;
+    const country = locationSelectorProps.location.split(",")[1]||locationSelectorProps.getFallbackData().country;
+
+   
 
     if (isTermsChecked) {
       try {
         // 1. .unwrap() forces RTK-Query to throw an error if the HTTP status is not 2xx
-       await register({
+        
+        await register({
           firstName,
           lastName,
           dob,
@@ -169,8 +78,6 @@ const Register = () => {
           country,
           isTermsChecked,
         }).unwrap();
-
-
         
 
         // 2. SUCCESS FLOW: Since we unwrapped, we know the backend returned a 2xx success code
@@ -180,7 +87,7 @@ const Register = () => {
         setError("");
 
         // Redirect the user right away
-        navigate("/");
+       navigate("/");
       } catch (error: any) {
         // 3. ERROR FLOW: This catches all 4xx, 5xx, and network ERR_CONNECTION_REFUSED errors
         //console.error('Registration Failed:', error);
@@ -377,75 +284,13 @@ const Register = () => {
             {/* LOCATION */}
             <div className="location-field">
               <div className="register-input-group location-input-container">
-                <FiMapPin className="input-icon location-icon" />
+              
                 <div className="input-group_div">
                   <label htmlFor="location">
                     {t("RegisterPage.fields.Other.location")}
                   </label>
-                  <input
-                    type="text"
-                    name="location"
-                    value={location}
-                    onChange={(e) => handleLocationInputChange(e.target.value)}
-                    placeholder=""
-                    autoComplete="address-level2"
-                    list="polish-cities"
-                   
-                  />
+                  <LocationSelector {...locationSelectorProps} />
                 </div>
-                <button
-                  type="button"
-                  className="detect-location-btn"
-                  onClick={handleDetectLocation}
-                  disabled={isLocating}
-                  title="Detect city automatically"
-                >
-                  {isLocating ? (
-                    <FiLoader className="spin-animate" />
-                  ) : (
-                    <FiMapPin />
-                  )}
-                </button>
-              </div>
-
-              {/* Hidden inputs are an industry-standard mechanism to ensure standard form submissions catch values flawlessly */}
-              {extractedData && (
-                <>
-                  <input
-                    type="hidden"
-                    name="lat"
-                    value={latitude}
-                  />
-                  <input
-                    type="hidden"
-                    name="lon"
-                    value={longitude}
-                  />
-                  <input
-                    type="hidden"
-                    name="countryCode"
-                    value={countryCode}
-                  />
-                </>
-              )}
-              <datalist id="polish-cities">
-                {locationList.map((city, index) => (
-                  <option
-                    key={index}
-                    value={`${city.city}, ${city.country}`}
-                  />
-                ))}
-              </datalist>
-
-              {locationError && (
-                <div className="error location-error-message">
-                  {locationError}
-                </div>
-              )}
-
-              <div className="location-helper">
-                <FiMapPin size={14} />
-                <span>{t("RegisterPage.location_message")}</span>
               </div>
             </div>
 

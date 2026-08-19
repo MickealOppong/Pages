@@ -94,6 +94,13 @@
           "height": "Height(cm)"
         }
       },
+         "search":{
+          "title":"Find my location",
+          "GENERAL_ERROR":"Unrecognized city cleared. Leave blank to proceed.",
+          "FETCH_ERROR":"Failed to fetch address. Please fill it manually.",
+          "FIND_ERROR":"Could not determine your city name automatically.",
+          "placeholder":"Search your city"
+        },
       "about_me": {
         "title": "About me",
         "fields": {

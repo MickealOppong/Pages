@@ -179,7 +179,7 @@
 .lifestyles {
   display: grid !important;
   /* Forces a highly readable 2-column flow on mobile screens right away */
-  grid-template-columns: repeat(2, minmax(130px, 1fr)) !important;
+  grid-template-columns: repeat(1, minmax(130px, 1fr)) !important;
   gap: 12px;
   width: 100%;
   box-sizing: border-box;
@@ -188,11 +188,16 @@
 /* Form Input Layout Blocks */
 .input_group {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  width: 100%;
+  flex-direction: row;
+  /* Horizontal alignment lock for icons + inputs */
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #FFFFFF;
+  border: 1px solid #d1d3d6;
+  border-radius: 16px;
   min-width: 0;
-  /* Guard property for content sizing overflow safety inside grids */
+  box-sizing: border-box;
 }
 
 .input_group label {
@@ -443,11 +448,14 @@
     align-items: flex-start;
     text-align: left;
   }
-  .pic_container, .location {
+  .pic_container,
+  .location {
     justify-content: flex-start;
   }
   /* Expands column tracking automatically for full monitor monitors */
-  .basic_data, .preferences, .lifestyles {
+  .basic_data,
+  .preferences,
+  .lifestyles {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
     gap: 16px;
   }

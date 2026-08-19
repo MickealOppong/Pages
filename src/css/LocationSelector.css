@@ -1,0 +1,420 @@
+.location-selector-container {
+  position: relative;
+  width: 100%;
+  z-index: 20;
+}
+
+.input-action-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.input-action-row:has(.city-text-input.is-valid) {
+  border-color: #7c3aed;
+}
+
+.city-text-input {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  outline: none;
+  border: none !important;
+  color: #11142d;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.city-text-input::placeholder {
+  color: #11142d;
+  font-weight: 400;
+}
+
+.city-text-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.city-text-input.is-valid {
+  color: #11142d;
+}
+
+.geolocation-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 14px;
+  background: #FFFFFF;
+  color: #7c3aed;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.geolocation-btn span {
+  font-size: 10px;
+  color: rebeccapurple;
+}
+
+.geolocation-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+.geolocation-btn:hover:not(:disabled) {
+  background: #F8F6FC;
+  transform: translateY(-1px);
+}
+
+.geolocation-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.geolocation-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.geolocation-btn.is-loading {
+  background: #FFFFFF;
+  color: #7c3aed;
+}
+
+.spin-animate {
+  animation: location-spin 0.8s linear infinite;
+}
+
+@keyframes location-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.location-error-msg {
+  display: flex;
+  align-items: center;
+  margin: 8px 4px 0;
+  color: #dc3545;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.suggestions-dropdown-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: #FFFFFF;
+  border: 1px solid #d1d3d6;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(35, 25, 65, 0.14), 0 4px 12px rgba(35, 25, 65, 0.06);
+  overflow: hidden;
+  animation: location-dropdown-in 0.18s ease-out;
+  z-index: 100;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 11px 14px;
+  border-radius: 12px;
+  color: #11142d;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.suggestion-item strong {
+  color: #171b2d;
+  font-weight: 600;
+}
+
+.suggestion-item:hover {
+  background: #FFFFFF;
+  color: #7c3aed;
+}
+
+.suggestion-item:hover strong {
+  color: #7c3aed;
+}
+
+.suggestion-item:active .location-selector-container {
+  position: relative;
+  width: 100%;
+  z-index: 20;
+}
+
+.suggestion-item:active .input-action-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.suggestion-item:active .input-action-row:focus-within {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+  background: #ffffff;
+}
+
+.suggestion-item:active .input-action-row:has(.city-text-input.is-valid) {
+  border-color: #7c3aed;
+}
+
+.suggestion-item:active .city-text-input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 16px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #11142d;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.suggestion-item:active .city-text-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.suggestion-item:active .city-text-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.suggestion-item:active .geolocation-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  border: 0;
+  border-radius: 14px;
+  background: #FFFFFF;
+  color: #7c3aed;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.suggestion-item:active .geolocation-btn span {
+  font-size: 8px;
+  color: rebeccapurple;
+}
+
+.suggestion-item:active .geolocation-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+.suggestion-item:active .geolocation-btn:hover:not(:disabled) {
+  background: #F8F6FC;
+  transform: translateY(-1px);
+}
+
+.suggestion-item:active .geolocation-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.suggestion-item:active .geolocation-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.suggestion-item:active .geolocation-btn.is-loading {
+  background: #FFFFFF;
+  color: #7c3aed;
+}
+
+.suggestion-item:active .location-error-msg {
+  display: flex;
+  align-items: center;
+  margin: 8px 4px 0;
+  color: #dc3545;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.suggestion-item:active .suggestions-dropdown-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: #ffffff;
+  border: 1px solid #d1d3d6;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(35, 25, 65, 0.14), 0 4px 12px rgba(35, 25, 65, 0.06);
+  overflow-y: auto;
+  max-height: 240px;
+  z-index: 100;
+  animation: location-dropdown-in 0.18s ease-out;
+}
+
+.suggestion-item:active .suggestions-dropdown-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.suggestion-item:active .suggestions-dropdown-list::-webkit-scrollbar-thumb {
+  background: #d1d3d6;
+  border-radius: 10px;
+}
+
+.suggestion-item:active .suggestion-item {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 11px 14px;
+  border-radius: 12px;
+  color: #555d6d;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.suggestion-item:active .suggestion-item strong {
+  color: #171b2d;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.suggestion-item:active .suggestion-item:hover {
+  background: #FFFFFF;
+  color: #7c3aed;
+}
+
+.suggestion-item:active .suggestion-item:hover strong {
+  color: #7c3aed;
+}
+
+.suggestion-item:active .suggestion-item:active {
+  background: #f7f7f7;
+}
+
+@keyframes location-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes location-dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.suggestion-item:active .spin-animate {
+  animation: location-spin 0.8s linear infinite;
+}
+
+@media (max-width: 480px) {
+  .suggestion-item:active .input-action-row {
+    min-height: 58px;
+    border-radius: 16px;
+  }
+  .suggestion-item:active .city-text-input {
+    height: 56px;
+    padding-left: 15px;
+    font-size: 15px;
+  }
+  .suggestion-item:active .geolocation-btn {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    margin-right: 7px;
+    border-radius: 12px;
+  }
+  .suggestion-item:active .geolocation-btn svg {
+    width: 19px;
+    height: 19px;
+  }
+  .suggestion-item:active .suggestions-dropdown-list {
+    border-radius: 16px;
+  }
+  .suggestion-item:active .suggestion-item {
+    min-height: 48px;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+@keyframes location-dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .input-action-row {
+    min-height: 58px;
+    border-radius: 16px;
+  }
+  .city-text-input {
+    height: 56px;
+    padding-left: 15px;
+    font-size: 15px;
+  }
+  .geolocation-btn {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    margin-right: 7px;
+    border-radius: 12px;
+  }
+  .geolocation-btn svg {
+    width: 19px;
+    height: 19px;
+  }
+  .suggestions-dropdown-list {
+    border-radius: 16px;
+  }
+  .suggestion-item {
+    min-height: 48px;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}

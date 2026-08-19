@@ -92,6 +92,14 @@
           "height": "Wzrost (cm)"
         }
       },
+              "search":{
+          "title":"Znajdź moją lokalizację",
+          "GENERAL_ERROR":"Nierozpoznane miasto zostało wyczyszczone. Pozostaw puste, aby kontynuować.",
+          "FETCH_ERROR":"Nie udało się pobrać adresu. Wpisz go ręcznie.",
+          "FIND_ERROR":"Nie udało się automatycznie ustalić nazwy Twojego miasta.",
+          "placeholder":"Szukaj swojego miasta"
+        },
+
       "about_me": {
         "title": "O mnie",
         "fields": {

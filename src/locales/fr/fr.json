@@ -92,6 +92,14 @@
           "height": "Taille (cm)"
         }
       },
+              "search":{
+          "title":"Trouver ma position",
+          "GENERAL_ERROR":"Ville non reconnue effacée. Laissez vide pour continuer.",
+          "FETCH_ERROR":"Impossible de récupérer l'adresse. Veuillez la saisir manuellement.",
+          "FIND_ERROR":"Impossible de déterminer automatiquement le nom de votre ville.",
+          "placeholder":"Rechercher votre ville"
+        },
+
       "about_me": {
         "title": "À propos de moi",
         "fields": {

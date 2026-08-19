@@ -1,4 +1,4 @@
-import { useEffect, useState, type ChangeEvent } from "react";
+import { useState, type ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { FcPlanner } from "react-icons/fc";
 import { FiActivity, FiBriefcase, FiCamera, FiMapPin } from "react-icons/fi";
@@ -11,27 +11,27 @@ import { RiCameraAiFill } from "react-icons/ri";
 import { useDispatch } from "react-redux";
 import { useLoaderData } from "react-router-dom";
 import type { Store } from "redux";
+import LocationSelector from "../components/LocationSelector";
 import { Loading } from "../components/index";
-import { useLazyGetSearchedLocationQuery } from "../features/api/authApi";
 import { userApi, useUpdateUserDetailsMutation } from "../features/api/userApi";
 import { updateProfileImage } from "../features/slice/userSlice";
+import { useLocationSelector } from "../hooks/useLocationSelector";
 import { useAppSelector, type AppDispatch, type RootState } from "../store";
-import type { TLocationResponse } from "../types/TLocationResponse";
 import type { TUserDataDto } from "../types/TUserDataDto";
 import {
-    DRINKING_RESPONSES,
-    OPTIONS_CHRONO,
-    OPTIONS_EDUCATION,
-    OPTIONS_GENDER,
-    OPTIONS_LANGUAGE,
-    OPTIONS_LOOKINGFOR,
-    OPTIONS_PLANNING,
-    OPTIONS_PREFERENCE,
-    OPTIONS_SOCIAL,
-    professions,
-    QUESTION_RESPONSES,
-    sanitizeBackendKey,
-    sanitizeKey
+  DRINKING_RESPONSES,
+  OPTIONS_CHRONO,
+  OPTIONS_EDUCATION,
+  OPTIONS_GENDER,
+  OPTIONS_LANGUAGE,
+  OPTIONS_LOOKINGFOR,
+  OPTIONS_PLANNING,
+  OPTIONS_PREFERENCE,
+  OPTIONS_SOCIAL,
+  professions,
+  QUESTION_RESPONSES,
+  sanitizeBackendKey,
+  sanitizeKey,
 } from "../util/util";
 import defaultPic from "./../assets/default.jpeg";
 import "./../css/Profile.css";
@@ -78,19 +78,8 @@ const Profile = () => {
     chronoType,
   } = data.data;
 
-
-  //location search hook
-    const [getSearchLocation] = useLazyGetSearchedLocationQuery();
-
-  //global address data
-  const [longitude, setLongitude] = useState<number>(0.0);
-  const [latitude, setLatitude] = useState<number>(0.0);
-  const [countryCode, setCountryCode] = useState<string>("");
-
-  const [extractedData, setExtracted] = useState<boolean>(false);
-
-  const [location, setLocation] = useState<string>(``);
-  const [locationList, setLocationList] = useState<TLocationResponse[]>([]);
+  // 1. Initialize the custom location hook inside the parent file
+  const locationSelectorProps = useLocationSelector();
 
   //state variables
   const [genderU, setGenderU] = useState<string>(gender);
@@ -124,10 +113,6 @@ const Profile = () => {
   const [image, setImgae] = useState<string>(profileImage);
   const [isEditProfile, setIsEditProfile] = useState<boolean>(false);
   const [imageError, setImageError] = useState<string>("");
-
-
-    //locale for date trqnslation
-  const locale = localStorage.getItem("i18nextLng") as string;
 
   //translation hook
   const { t } = useTranslation();
@@ -210,19 +195,14 @@ const Profile = () => {
     const planningStyleInput = formElement.elements.namedItem(
       "planningStyle",
     ) as HTMLInputElement;
-     const latInput = formElement.elements.namedItem(
-      "lat",
-    ) as HTMLInputElement;
-     const lonInput = formElement.elements.namedItem(
-      "lon",
-    ) as HTMLInputElement;
-      const countryCodeInput = formElement.elements.namedItem(
+    const latInput = formElement.elements.namedItem("lat") as HTMLInputElement;
+    const lonInput = formElement.elements.namedItem("lon") as HTMLInputElement;
+    const countryCodeInput = formElement.elements.namedItem(
       "countryCode",
     ) as HTMLInputElement;
 
-      const city = location.trim().split(",")[0];
-    const country = location.split(",")[1];
-
+    const city = locationSelectorProps.location.trim().split(",")[0];
+    const country = locationSelectorProps.location.split(",")[1];
 
     // 3. Append text values straight to the container
     //dataToSend.append("firstName", firstNameInput?.value || "");
@@ -232,8 +212,8 @@ const Profile = () => {
     dataToSend.append("city", city || "");
     dataToSend.append("country", country || "");
     dataToSend.append("aboutMe", aboutInput?.value || "");
-    dataToSend.append("lat", latInput?.value || '0.0');
-    dataToSend.append("lon", lonInput?.value || '0.0');
+    dataToSend.append("lat", latInput?.value || "0.0");
+    dataToSend.append("lon", lonInput?.value || "0.0");
     dataToSend.append("countryCode", countryCodeInput?.value || "");
     dataToSend.append("aboutThem", aboutThemInput?.value || "");
     dataToSend.append("lookingFor", lookingForInput?.value || "");
@@ -259,24 +239,28 @@ const Profile = () => {
         );
         return;
       }
+
       dataToSend.append("media", imageInput.files[0]); // Gets the raw file blob
     }
 
-     //console.log(Object.fromEntries(dataToSend));
+    console.log(Object.fromEntries(dataToSend));
 
     try {
       const response = await updateUserDetails(dataToSend).unwrap();
 
       //console.log(response);
-      
 
-        const {httpStatus} = response as {data:boolean,httpStatus:string,message:string}
-      
-      if (httpStatus==='200 OK') {
+      const { httpStatus } = response as {
+        data: boolean;
+        httpStatus: string;
+        message: string;
+      };
+
+      if (httpStatus === "200 OK") {
         setGenderU(() => genderInput.value);
         setLanguageU(() => languageInput.value);
         setCityU(() => city);
-        setCountryU(()=>country);
+        setCountryU(() => country);
         setAboutMeU(() => aboutInput.value);
         setAboutThemU(() => aboutThemInput.value);
         setDrinkingU(() => drinkingInput.value);
@@ -311,41 +295,6 @@ const Profile = () => {
 
   const handleEditProfileButton = () => {
     setIsEditProfile(() => !isEditProfile);
-  };
-
-    async function findUserLocationManually() {
-     // setLocationError("");
-      const response = await getSearchLocation({
-        city: location,
-        locale,
-      }).unwrap();
-  
-      if (response.httpStatus === 200) {
-        const cityList = response.locationResponseList;
-        setLocationList(() => cityList);
-      }
-    }
-  
-    useEffect(() => {
-      findUserLocationManually();
-    }, [location]);
-
-  //capture location input
-  const handleLocationInputChange = (inputValue: string) => {
-    setLocation(inputValue);
-
-    const matchedCity = locationList.find(
-      (item) =>
-        `${item.city}, ${item.country}`.trim().toLowerCase() ===
-        inputValue.trim().toLowerCase(),
-    );
-    if (matchedCity) {
-      setExtracted(true);
-      const { lat, lon, countryCode } = matchedCity as TLocationResponse;
-      setLatitude(lat);
-      setLongitude(lon );
-      setCountryCode(countryCode);
-    }
   };
 
   if (data) {
@@ -391,9 +340,9 @@ const Profile = () => {
                 <div className="location">
                   <FiMapPin />
                   <p>
-                    {cityU}
+                    {cityU || city}
                     <LuDot />
-                    {countryU}
+                    {countryU || country}
                   </p>
                 </div>
               </div>
@@ -421,12 +370,12 @@ const Profile = () => {
               </div>
               <div className="basic_data">
                 <div className="input_group">
-                  <label htmlFor="firstName">
-                    {t(
-                      "ProfilePage.sections.basic_information.fields.first_name",
-                    )}
-                  </label>
-                  <div>
+                  <div className="input_container">
+                    <label htmlFor="firstName">
+                      {t(
+                        "ProfilePage.sections.basic_information.fields.first_name",
+                      )}
+                    </label>
                     {isEditProfile ? (
                       <input
                         type="text"
@@ -440,12 +389,12 @@ const Profile = () => {
                   </div>
                 </div>
                 <div className="input_group">
-                  <label htmlFor="lastName">
-                    {t(
-                      "ProfilePage.sections.basic_information.fields.last_name",
-                    )}
-                  </label>
-                  <div>
+                  <div className="input_container">
+                    <label htmlFor="lastName">
+                      {t(
+                        "ProfilePage.sections.basic_information.fields.last_name",
+                      )}
+                    </label>
                     {isEditProfile ? (
                       <input
                         type="text"
@@ -459,12 +408,12 @@ const Profile = () => {
                   </div>
                 </div>
                 <div className="input_group">
-                  <label htmlFor="date_of_birth">
-                    {t(
-                      "ProfilePage.sections.basic_information.fields.date_of_birth",
-                    )}
-                  </label>
-                  <div>
+                  <div className="input_container">
+                    <label htmlFor="date_of_birth">
+                      {t(
+                        "ProfilePage.sections.basic_information.fields.date_of_birth",
+                      )}
+                    </label>
                     {isEditProfile ? (
                       <p>{new Date(date_of_birth).toLocaleDateString()}</p>
                     ) : (
@@ -473,10 +422,10 @@ const Profile = () => {
                   </div>
                 </div>
                 <div className="input_group">
-                  <label htmlFor="username">
-                    {t("ProfilePage.sections.basic_information.fields.email")}
-                  </label>
-                  <div>
+                  <div className="input_container">
+                    <label htmlFor="username">
+                      {t("ProfilePage.sections.basic_information.fields.email")}
+                    </label>
                     {isEditProfile ? (
                       <input
                         defaultValue={username}
@@ -490,88 +439,57 @@ const Profile = () => {
                   </div>
                 </div>
                 <div className="input_group">
-                  <label htmlFor="gender">
-                    {t("ProfilePage.sections.basic_information.fields.gender")}
-                  </label>
-                  {isEditProfile ? (
-                    <select
-                      name="gender"
-                      defaultValue={t(
-                        `Options.Gender.${genderU.toUpperCase()}`,
+                  <div className="input_container">
+                    <label htmlFor="gender">
+                      {t(
+                        "ProfilePage.sections.basic_information.fields.gender",
                       )}
-                    >
-                      {OPTIONS_GENDER.map((item) => {
-                        return (
-                          <option
-                            key={item.label}
-                            value={item.value}
-                          >
-                            {t(
-                              `Options.Gender.${sanitizeBackendKey(item.label)}`,
-                            )}
-                          </option>
-                        );
-                      })}
-                    </select>
-                  ) : (
-                    <p>{t(`Options.Gender.${genderU.toUpperCase()}`)}</p>
-                  )}
+                    </label>
+                    {isEditProfile ? (
+                      <select
+                        name="gender"
+                        defaultValue={t(
+                          `Options.Gender.${genderU.toUpperCase()}`,
+                        )}
+                      >
+                        {OPTIONS_GENDER.map((item) => {
+                          return (
+                            <option
+                              key={item.label}
+                              value={item.value}
+                            >
+                              {t(
+                                `Options.Gender.${sanitizeBackendKey(item.label)}`,
+                              )}
+                            </option>
+                          );
+                        })}
+                      </select>
+                    ) : (
+                      <p>{t(`Options.Gender.${genderU.toUpperCase()}`)}</p>
+                    )}
+                  </div>
                 </div>
+
                 <div className="input_group">
-                  <label htmlFor="city">
+             <div className="input_container">
+                   <label htmlFor="city">
                     {t("ProfilePage.sections.basic_information.fields.city")}
                   </label>
                   {isEditProfile ? (
-                     <input
-                        type="text"
-                        name="location"
-                        value={location}
-                        onChange={(e) =>
-                          handleLocationInputChange(e.target.value)
-                        }
-                        placeholder=""
-                        autoComplete="address-level2"
-                        list="polish-cities"
-                      />
+                    <LocationSelector {...locationSelectorProps} />
                   ) : (
                     <p>{cityU}</p>
                   )}
+             </div>
                 </div>
 
-                  {/* Hidden inputs are an industry-standard mechanism to ensure standard form submissions catch values flawlessly */}
-              {extractedData && (
-                <>
-                  <input
-                    type="hidden"
-                    name="lat"
-                    value={latitude}
-                  />
-                  <input
-                    type="hidden"
-                    name="lon"
-                    value={longitude}
-                  />
-                  <input
-                    type="hidden"
-                    name="countryCode"
-                    value={countryCode}
-                  />
-                </>
-              )}
-              <datalist id="polish-cities">
-                {locationList.map((city, index) => (
-                  <option
-                    key={index}
-                    value={`${city.city}, ${city.country}`}
-                  />
-                ))}
-              </datalist>
-       
                 <div className="input_group">
-                  <label htmlFor="height">
+                
+                  <div className="input_container">
+                      <label htmlFor="height">
                     {t("ProfilePage.sections.basic_information.fields.height")}
                   </label>
-                  <div>
                     {isEditProfile ? (
                       <input
                         type="text"
@@ -637,7 +555,8 @@ const Profile = () => {
               </div>
               <div className="preferences">
                 <div className="input_group">
-                  <label htmlFor="lookingFor">
+                 <div className="input_container">
+                   <label htmlFor="lookingFor">
                     {t(
                       "ProfilePage.sections.looking_for_meta.fields.looking_for_label",
                     )}
@@ -667,9 +586,11 @@ const Profile = () => {
                       )}
                     </p>
                   )}
+                 </div>
                 </div>
                 <div className="input_group">
-                  <label htmlFor="preference">
+                <div className="input_container">
+                    <label htmlFor="preference">
                     {t(
                       "ProfilePage.sections.looking_for_meta.fields.interested_in_label",
                     )}
@@ -697,6 +618,7 @@ const Profile = () => {
                       )}
                     </p>
                   )}
+                </div>
                 </div>
               </div>
             </div>

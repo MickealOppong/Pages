@@ -93,6 +93,14 @@
           "height": "Wo Tshentshen (cm)"
         }
       },
+              "search":{
+          "title":"Hu bɛbi a mewɔ",
+          "GENERAL_ERROR":"Yɛantumi anhu kurow yi enti yɛayi afiri hɔ. Gyae hɔ saa na toaso.",
+          "FETCH_ERROR":"Yɛantumi annya beae pɔtee no. Twerɛ no wo nsa.",
+          "FIND_ERROR":"Yɛantumi anhu wo kurow din wɔ afiri no so.",
+          "placeholder":"Hwehwɛ wo kurow"
+        },
+
       "about_me": {
         "title": "Me ho nsɛm",
         "fields": {

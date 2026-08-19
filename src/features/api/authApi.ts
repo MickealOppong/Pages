@@ -71,7 +71,9 @@ export const authApi = createApi({
                 }
             }),
         }),
+        
     })
  
 })
-export const {useAddUserMutation,useLoginMutation,useLogoutMutation,useResetPasswordMutation,useGetLocationMutation,useLazyGetSearchedLocationQuery}=authApi
+export const {useAddUserMutation,useLoginMutation,useLogoutMutation,useResetPasswordMutation,useGetLocationMutation,useLazyGetSearchedLocationQuery
+}=authApi

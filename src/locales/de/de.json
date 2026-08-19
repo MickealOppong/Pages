@@ -92,6 +92,14 @@
           "height": "Größe (cm)"
         }
       },
+              "search":{
+          "title":"Meinen Standort finden",
+          "GENERAL_ERROR":"Nicht erkannte Stadt gelöscht. Leer lassen, um fortzufahren.",
+          "FETCH_ERROR":"Adresse konnte nicht abgerufen werden. Bitte manuell eingeben.",
+          "FIND_ERROR":"Ihr Stadtname konnte nicht automatisch ermittelt werden.",
+          "placeholder":"Suchen Sie Ihre Stadt"
+        },
+
       "about_me": {
         "title": "Über mich",
         "fields": {

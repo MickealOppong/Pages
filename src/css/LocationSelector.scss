@@ -1,0 +1,580 @@
+
+@import './variables.scss';
+
+
+.location-selector-container {
+    position: relative;
+    width: 100%;
+    z-index: 20;
+
+}
+
+
+// --------------------------------------------------
+// Input + location button
+// --------------------------------------------------
+
+.input-action-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+   
+  
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+ 
+
+    &:has(.city-text-input.is-valid) {
+        border-color: $primary;
+    }
+}
+
+
+
+// --------------------------------------------------
+// City input
+// --------------------------------------------------
+
+.city-text-input {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+  
+    outline: none;
+    border: none !important;
+
+    color: $text-main;
+
+  
+    font-weight: 500;
+
+    font-family: inherit;
+
+ 
+
+    &::placeholder {
+        color: $text-main;
+        font-weight: 400;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    &.is-valid {
+     color: $text-main;
+    }
+
+
+}
+
+
+
+
+// --------------------------------------------------
+// Geolocation button
+// --------------------------------------------------
+
+.geolocation-btn {
+    position: relative;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: right;
+   width: fit-content;
+
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 14px;
+   
+
+    background: $background;
+    color: $primary;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+
+        span{
+      
+            font-size:10px;
+            color: rebeccapurple;
+        }
+    svg {
+        width: 18px;
+        height: 18px;
+        stroke-width: 2;
+    }
+
+    &:hover:not(:disabled) {
+        background:$primary-light-1;
+
+        transform: translateY(-1px);
+    }
+
+    &:active:not(:disabled) {
+        transform: scale(0.95);
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+
+    &.is-loading {
+        background: $background;
+        color:$primary;
+    }
+}
+
+
+// --------------------------------------------------
+// Loading animation
+// --------------------------------------------------
+
+.spin-animate {
+    animation: location-spin 0.8s linear infinite;
+}
+
+@keyframes location-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+// --------------------------------------------------
+// Error message
+// --------------------------------------------------
+
+.location-error-msg {
+    display: flex;
+    align-items: center;
+
+    margin: 8px 4px 0;
+
+    color: #dc3545;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+
+// --------------------------------------------------
+// Suggestions dropdown
+// --------------------------------------------------
+
+.suggestions-dropdown-list {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 8px;
+
+    list-style: none;
+
+    background: $background;
+
+    border: 1px solid $border-tint;
+    border-radius: 18px;
+
+    box-shadow:
+        0 16px 40px rgba(35, 25, 65, 0.14),
+        0 4px 12px rgba(35, 25, 65, 0.06);
+
+    overflow: hidden;
+
+    animation: location-dropdown-in 0.18s ease-out;
+
+    z-index: 100;
+}
+
+
+// --------------------------------------------------
+// Suggestion item
+// --------------------------------------------------
+
+.suggestion-item {
+    display: flex;
+    align-items: center;
+
+    min-height: 52px;
+
+    padding: 11px 14px;
+
+    border-radius: 12px;
+
+    color: $text-main;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+
+    strong {
+        color: #171b2d;
+        font-weight: 600;
+    }
+
+    &:hover {
+        background: $background;
+
+      color: $primary;
+
+        strong {
+            color: $primary;
+        }
+    }
+
+    &:active {
+   @import './variables.scss';
+
+// --------------------------------------------------
+// Main Container
+// --------------------------------------------------
+.location-selector-container {
+    position: relative;
+    width: 100%;
+    z-index: 20;
+}
+
+// --------------------------------------------------
+// Input + Location Button Row Container
+// --------------------------------------------------
+.input-action-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: $background; // Gives the rounded capsule row a coherent base background fill
+    border: 1px solid transparent; // Establishes border structure layout path without harsh lines
+    border-radius: 18px;
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+
+    // Focus state visualization
+    &:focus-within {
+        border-color: $primary;
+        box-shadow: 0 0 0 3px rgba($primary, 0.15);
+        background: #ffffff;
+    }
+
+    // Success modifier anchor
+    &:has(.city-text-input.is-valid) {
+        border-color: $primary;
+    }
+}
+
+// --------------------------------------------------
+// City Input String Field
+// --------------------------------------------------
+.city-text-input {
+    flex: 1; // Replaced display: flex / width: 100% setup to balance the grid next to the action button
+    min-width: 0;
+    padding: 12px 16px;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: $text-main;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: inherit;
+
+    &::placeholder {
+        color: $text-muted; // Cleaned up target from main body text
+        font-weight: 400;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}
+
+// --------------------------------------------------
+// Geolocation Button Control
+// --------------------------------------------------
+.geolocation-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+    border: 0;
+    border-radius: 14px;
+    background: $background;
+    color: $primary;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+
+    span {
+        font-size: 8px;
+        color: rebeccapurple;
+    }
+
+    svg {
+        width: 18px;
+        height: 18px;
+        stroke-width: 2;
+    }
+
+    &:hover:not(:disabled) {
+        background: $primary-light-1;
+        transform: translateY(-1px);
+    }
+
+    &:active:not(:disabled) {
+        transform: scale(0.95);
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+
+    &.is-loading {
+        background: $background;
+        color: $primary;
+    }
+}
+
+// --------------------------------------------------
+// Feedback Message Box
+// --------------------------------------------------
+.location-error-msg {
+    display: flex;
+    align-items: center;
+    margin: 8px 4px 0;
+    color: #dc3545;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+// --------------------------------------------------
+// Suggestions Dropdown Panel Overlay
+// --------------------------------------------------
+.suggestions-dropdown-list {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 8px;
+    list-style: none;
+    background: #ffffff;
+    border: 1px solid $border-tint;
+    border-radius: 18px;
+    box-shadow: 
+        0 16px 40px rgba(35, 25, 65, 0.14),
+        0 4px 12px rgba(35, 25, 65, 0.06);
+    overflow-y: auto;
+    max-height: 240px; // Built-in safety max bounds overlay scroll protector
+    z-index: 100;
+    animation: location-dropdown-in 0.18s ease-out;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $border-tint;
+        border-radius: 10px;
+    }
+}
+
+// --------------------------------------------------
+// Interactive Dropdown Selection Item
+// --------------------------------------------------
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    padding: 11px 14px;
+    border-radius: 12px;
+    color: #555d6d;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+
+    strong {
+        color: #171b2d;
+        font-weight: 600;
+        transition: color 0.15s ease; // Aligned timing transition logic mapping paths
+    }
+
+    &:hover {
+        background: $background;
+        color: $primary;
+
+        strong {
+            color: $primary;
+        }
+    }
+
+    &:active {
+        background: darken($background, 3%);
+    }
+}
+
+// --------------------------------------------------
+// Animation Definitions
+// --------------------------------------------------
+@keyframes location-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes location-dropdown-in {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.spin-animate {
+    animation: location-spin 0.8s linear infinite;
+}
+
+// --------------------------------------------------
+// Mobile Responsive Views Framework
+// --------------------------------------------------
+@media (max-width: 480px) {
+    .input-action-row {
+        min-height: 58px;
+        border-radius: 16px;
+    }
+
+    .city-text-input {
+        height: 56px;
+        padding-left: 15px;
+        font-size: 15px;
+    }
+
+    .geolocation-btn {
+        width: 42px;
+        height: 42px;
+        flex-basis: 42px;
+        margin-right: 7px;
+        border-radius: 12px;
+
+        svg {
+            width: 19px;
+            height: 19px;
+        }
+    }
+
+    .suggestions-dropdown-list {
+        border-radius: 16px;
+    }
+
+    .suggestion-item {
+        min-height: 48px;
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+}
+
+    }
+}
+
+
+// --------------------------------------------------
+// Dropdown animation
+// --------------------------------------------------
+
+@keyframes location-dropdown-in {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+// --------------------------------------------------
+// Mobile
+// --------------------------------------------------
+
+@media (max-width: 480px) {
+
+    .input-action-row {
+        min-height: 58px;
+        border-radius: 16px;
+    }
+
+    .city-text-input {
+        height: 56px;
+
+        padding-left: 15px;
+
+        font-size: 15px;
+    }
+
+    .geolocation-btn {
+        width: 42px;
+        height: 42px;
+
+        flex-basis: 42px;
+
+        margin-right: 7px;
+
+        border-radius: 12px;
+
+        svg {
+            width: 19px;
+            height: 19px;
+        }
+    }
+
+    .suggestions-dropdown-list {
+        border-radius: 16px;
+    }
+
+    .suggestion-item {
+        min-height: 48px;
+
+        padding: 10px 12px;
+
+        font-size: 14px;
+    }
+}

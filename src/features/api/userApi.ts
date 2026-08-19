@@ -128,10 +128,16 @@ export const userApi = createApi({
             }),
             invalidatesTags:['user']
         }),
+          getCities:build.query<string[],void>({
+            query:()=>({
+                url:`/users/cities`,
+            }),
+        }),
       
     }),
  
 })
 export const {useGetUserQuery,useUpdateUserDetailsMutation,useLazyGetMessagesQuery,
     useLazyGetUserProfileQuery,useGetUserProfileQuery,useGetUserViewProfileQuery,useLazyGetUserViewProfileQuery,useChangePasswordMutation
-,useDeleteAccountMutation,useCreateMessageNotifMutation,useMarkNotifAsReadMutation,useUnreadNotifCountQuery,useAcceptRulesMutation}=userApi
+,useDeleteAccountMutation,useCreateMessageNotifMutation,useMarkNotifAsReadMutation,useUnreadNotifCountQuery,useAcceptRulesMutation
+,useLazyGetCitiesQuery}=userApi
