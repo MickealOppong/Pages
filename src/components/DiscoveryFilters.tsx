@@ -19,9 +19,7 @@ const DiscoveryFilters = () => {
   const { t } = useTranslation();
 
   //filter query state
-  const [cityFilter, setCityFilter] = useState<string>(
-    url.get("city") as string,
-  );
+
   const [activityFilter, setActivityFilter] = useState<string>(
     url.get("activity") as string,
   );
@@ -43,7 +41,6 @@ const DiscoveryFilters = () => {
     setSearchItem(inputValue); // Keep your text state in sync
   };
   const handleReset = () => {
-    setCityFilter("");
     setAgeFilter({ min: "18", max: "99" });
     setActivityFilter("");
     setGenderFilter("");
