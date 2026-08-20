@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import type { IconType } from "react-icons";
 import { FaRuler } from "react-icons/fa";
 import { FiBriefcase, FiEye, FiHeart, FiMapPin } from "react-icons/fi";
+import { IoLanguage } from "react-icons/io5";
 import { RiHeart2Fill } from "react-icons/ri";
 import { useUpdateReachMutation } from "../features/api/transApi";
 import type { TPostList } from "../types/TPostList";
@@ -42,7 +43,7 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
     handleInterestedFunc,
     handleViewProfileFunc,
     getDynamicColours}) => {
-       
+
 
     const badge = getDynamicColours(post.type as ActivityType);
 
@@ -146,6 +147,7 @@ const DiscoverCard: React.FC<DiscoverCardProps> = ({
                             {post.content}
 
                         </p>
+                        <button style={{display:'none'}} className="translate-btn"><IoLanguage/></button>
                       </div>
 
                         <footer className="discover-footer">
