@@ -63,7 +63,7 @@ const Login = () => {
     } catch (error: any) {
       // Handle Redux Network Level Errors (FETCH_ERROR)
       if (error.status === "FETCH_ERROR") {
-        setFetchError("Oops network down, please try again in few minutes.");
+        setFetchError("NETWORK_ERROR");
         setErrorPassword("");
         setErrorEmail("");
         return;
@@ -73,11 +73,13 @@ const Login = () => {
 
   return (
     <>
-      {fetchError && (
-        <div className="error">
-          <h2>{t(fetchError)}</h2>
-        </div>
-      )}
+  {fetchError && (
+  <div className="fetch_error">
+    {/* Optional: Add a clean react warning icon directly into the template wrapper if wanted */}
+    <h2>{t(`DiscoverFeed.${fetchError}`)}</h2>
+  </div>
+)}
+
       <div className="login-page">
         <div className="login-card">
           <div className="brand">

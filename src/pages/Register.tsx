@@ -95,7 +95,7 @@ const Register = () => {
 
         // Handle Redux Network Level Errors (FETCH_ERROR)
         if (error.status === "FETCH_ERROR") {
-          setFetchError("Oops network down, please try again in few minutes.");
+          setFetchError("NETWORK_ERROR");
           return;
         }
 
@@ -118,7 +118,7 @@ const Register = () => {
             message: string;
           };
           //const{error} = errorResponse;
-          console.log(errorResponse.error);
+         // console.log(errorResponse.error);
 
           setError(() => errorResponse.error);
         }
@@ -138,11 +138,13 @@ const Register = () => {
 
   return (
     <>
-      {fetchError && (
-        <div className="error">
-          <h2>{fetchError}</h2>
-        </div>
-      )}
+ {fetchError && (
+  <div className="fetch_error">
+    {/* Optional: Add a clean react warning icon directly into the template wrapper if wanted */}
+    <h2>{t(`DiscoverFeed.NETWORK_ERROR`)}</h2>
+  </div>
+)}
+
       <div className="register-page">
         <div className="register-card">
           {/* BRAND */}

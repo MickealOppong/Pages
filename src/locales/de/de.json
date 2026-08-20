@@ -2,6 +2,7 @@
   "DiscoverFeed": {
     "brand_name": "Spotkac",
     "tagline": "Finde dein perfektes Match",
+        "NETWORK_ERROR": "Hoppla, Netzwerk down. Bitte versuche es in wenigen Minuten erneut.",
     "real_moments": "Echte Momente.",
   "real_connections": "Echte Kontakte.",
     "card_actions": {

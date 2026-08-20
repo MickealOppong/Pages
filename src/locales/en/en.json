@@ -3,6 +3,7 @@
     "brand_name": "Spotkac",
     "tagline": "Find your perfect match",
     "real_moments": "Real moments.",
+    "NETWORK_ERROR":"Oops network down, please try again in few minutes.",
     "real_connections": "Real connections.",
     "card_actions": {
       "view_profile": "zobacz",

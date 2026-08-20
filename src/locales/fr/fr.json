@@ -2,6 +2,7 @@
   "DiscoverFeed": {
     "brand_name": "Spotkac",
     "tagline": "Trouvez votre partenaire idéal",
+        "NETWORK_ERROR": "Oups, réseau en panne. Veuillez réessayer dans quelques minutes.",
     "real_moments": "De vrais moments.",
   "real_connections": "De vraies connexions.",
     "card_actions": {

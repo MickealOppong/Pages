@@ -3,6 +3,7 @@
     "brand_name": "Spotkac",
     "tagline": "Znajdź swoją idealną parę",
      "real_moments": "Prawdziwe chwile.",
+     "NETWORK_ERROR": "Ups, brak połączenia z siecią. Spróbuj ponownie za kilka minut.",
   "real_connections": "Prawdziwe relacje.",
     "card_actions": {
       "view_profile": "Zobacz profil",
