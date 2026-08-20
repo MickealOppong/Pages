@@ -4,8 +4,8 @@ export type TFilter={
     fromAge?:number,
     toAge?:number,
     userId?:number,
-    lookingFor:string,
+    lookingFor?:string,
     page?:number,
-    gender:string
+    gender?:string
 
 }

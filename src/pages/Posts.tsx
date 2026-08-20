@@ -16,7 +16,7 @@ const userId = useAppSelector((state)=>state.userSlice.id);
 
 
 
-   const {data:getDta} = useGetAllPostQuery({userId,gender:'',})
+   const {data:getDta} = useGetAllPostQuery({userId})
 
    
     //user data
