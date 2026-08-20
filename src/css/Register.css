@@ -146,13 +146,15 @@
   padding: 0 !important;
   margin: 0 !important;
   font-weight: 600;
-  color: #111424;
+  color: #11142d;
   width: 100%;
   box-sizing: border-box;
+  font-size: small;
 }
 
 .input-group_div input::placeholder, .input-group_div select::placeholder {
   color: #94a3b8;
+  font-size: small;
 }
 
 .input-group_div input[type="date"] {

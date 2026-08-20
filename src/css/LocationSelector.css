@@ -60,14 +60,15 @@
 }
 
 .geolocation-btn span {
-  font-size: 10px;
-  color: rebeccapurple;
+  font-size: 8px;
+  color: #7c3aed;
 }
 
 .geolocation-btn svg {
   width: 18px;
   height: 18px;
   stroke-width: 2;
+  flex: 1;
 }
 
 .geolocation-btn:hover:not(:disabled) {

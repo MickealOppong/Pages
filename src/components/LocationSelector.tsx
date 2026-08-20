@@ -60,7 +60,7 @@ export default function LocationSelector({
           className={`geolocation-btn ${isLocating ? "is-loading" : ""}`}
           aria-label="Detect current location"
         >
-          {isLocating ? <FiLoader className="spin-animate" /> : <FiMapPin />}
+          {isLocating ? <FiLoader className="spin-animate" /> : <FiMapPin/>}
           <span>{t('ProfilePage.sections.search.title')}</span>
         </button>
       </div>

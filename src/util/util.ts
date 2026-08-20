@@ -710,7 +710,7 @@ export const QUESTION_RESPONSES=[
 ]
 
 export const DRINKING_RESPONSES=[
-  {label:"NO",value:'N0'},
+  {label:"NO",value:'NO'},
   {label:"YES",value:'Yes'},
   {label:"OCCASIONAL",value:'Occasional'},
 ]

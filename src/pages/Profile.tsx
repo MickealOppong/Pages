@@ -102,6 +102,8 @@ const Profile = () => {
 
   const dispatch = useDispatch();
 
+
+  
   //user id
   const userId = useAppSelector((state) => state.userSlice.id);
 
@@ -761,7 +763,7 @@ const Profile = () => {
                         {drinkingU === null
                           ? t(`Options.drinks.NO`)
                           : t(
-                              `Options.drinks.${sanitizeBackendKey(drinkingU)}`,
+                              `Options.drinks.${drinkingU}`,
                             )}
                       </p>
                     )}

@@ -113,13 +113,14 @@
 
         span{
       
-            font-size:10px;
-            color: rebeccapurple;
+            font-size:8px;
+            color: $primary;
         }
     svg {
         width: 18px;
         height: 18px;
-        stroke-width: 2;
+                stroke-width: 2;
+                flex: 1;
     }
 
     &:hover:not(:disabled) {

@@ -184,12 +184,14 @@ $color-error: #f43f5e;
     padding: 0 !important;
     margin: 0 !important;
     font-weight: 600;
-    color: $color-text-main;
+    color: $text-main;
     width: 100%;
     box-sizing: border-box;
+    font-size: small;
 
     &::placeholder {
       color: $text-muted;
+      font-size: small;
     }
   }
 
