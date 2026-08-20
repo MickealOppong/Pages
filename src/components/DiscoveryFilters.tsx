@@ -8,7 +8,7 @@ import {
   FiUmbrella,
   FiUser,
 } from "react-icons/fi";
-import { MOMENT_OPTIONS, sanitizeBackendKey } from "../util/util";
+import { MOMENT_OPTIONS, OPTIONS_LOOKINGFOR, sanitizeBackendKey } from "../util/util";
 import "./../css/DiscoverFilter.scss";
 
 const DiscoveryFilters = () => {
@@ -34,13 +34,15 @@ const DiscoveryFilters = () => {
     url.get("lookingFor") as string,
   );
 
-  const [searchItem, setSearchItem] = useState<string>("");
+  const [searchItem, setSearchItem] = useState<string>( url.get("city") as string,);
 
   const handleSearchInput = (e: ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
     setSearchItem(inputValue); // Keep your text state in sync
+
   };
   const handleReset = () => {
+    setSearchItem("");
     setAgeFilter({ min: "18", max: "99" });
     setActivityFilter("");
     setGenderFilter("");
@@ -150,16 +152,11 @@ const DiscoveryFilters = () => {
                     name="lookingFor"
                     onChange={(e) => setLookingForFilter(e.target.value)}
                   >
-                    <option value={""}>{t(`Options.Header.all`)}</option>
-                    <option value="Friendship">
-                      {t("Options.LookingFor.LONG_TERM_RELATIONSHIP")}
-                    </option>
-                    <option value="Not yet decided">
-                      {t("Options.LookingFor.SHORT_TERM_RELATIONSHIP")}
-                    </option>
-                    <option value="Short-term relation">
-                      {t("Options.LookingFor.NOT_DECIDED")}
-                    </option>
+                    {
+                      OPTIONS_LOOKINGFOR.map((item)=>{
+                        return   <option value={item.value}>{t(`Options.LookingFor.${item.label}`)}</option>
+                      })
+                    }
                   </select>
                 </div>
 

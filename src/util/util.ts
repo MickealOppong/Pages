@@ -750,8 +750,9 @@ export const OPTIONS_SOCIAL=[
 
 export const OPTIONS_LOOKINGFOR=[
    {label:"LONG_TERM_RELATIONSHIP",value:"Long-term Relationship"},
-  {label:"SHORT_TERM_RELATIONSHIP",value:"Short-term Relationship"},
-  {label:"NOT_DECIDED",value:'Not decided'},
+  {label:"SHORT_TERM_RELATIONSHIP",value:"Short-term,open to long"},
+  {label:"NOT_DECIDED",value:'Still figuring it out'},
+    {label:"FRIENDS",value:'Friends'},
 ]
 
 export const OPTIONS_PREFERENCE=[

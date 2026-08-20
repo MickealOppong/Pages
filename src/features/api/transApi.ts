@@ -59,7 +59,7 @@ export const transApi = createApi({
             providesTags:['posts','post']
         }),
         getAllPost:build.query<TResponseDto,TFilter>({
-            query:({userId,city,fromAge,toAge,page,activity,gender})=>({
+            query:({userId,city,fromAge,toAge,page,activity,gender,lookingFor})=>({
                 url:"/trans/broadcasts",
                 params:{
                     userId,
@@ -68,7 +68,8 @@ export const transApi = createApi({
                     toAge,
                     page,
                     activity,
-                    gender
+                    gender,
+                    lookingFor
                 }
                
             }),

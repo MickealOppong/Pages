@@ -29,6 +29,7 @@ export const loader =(store:Store<RootState>)=>async ({request}:{request:Request
         const page = Number(url.get('page'))
         const city = url.get('city')as string;
         const gender = url.get('gender')as string;
+        const lookingFor = url.get('lookingFor')as string;
         const activity = url.get('activity')as string;
         const fromAge = Number(url.get('min-age'))
         const toAge = Number(url.get('max-age'))
@@ -36,7 +37,7 @@ export const loader =(store:Store<RootState>)=>async ({request}:{request:Request
 
             const dispatch = store.dispatch as AppDispatch;
 
-            const promise= await dispatch(transApi.endpoints.getAllPost.initiate({userId,page,fromAge,toAge,city,activity,gender},{forceRefetch:true}));
+            const promise= await dispatch(transApi.endpoints.getAllPost.initiate({userId,page,fromAge,toAge,city,activity,gender,lookingFor},{forceRefetch:true}));
                 
             
             const data:TResponseDto  = promise.data as TResponseDto;
@@ -119,7 +120,7 @@ const Discover= () => {
            
             const errorResponse = response.error as FetchBaseQueryError
             const errorMessage = errorResponse.data as TErrorResponse
-            console.log(errorMessage.message);
+          //  console.log(errorMessage.message);
             setMessage(()=>errorMessage.message)
             setShowMessage(()=>!showMessage);           
             setMessageType('blocked')
