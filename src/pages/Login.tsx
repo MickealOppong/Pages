@@ -91,7 +91,7 @@ const Login = () => {
           </div>
 
           <h2>{t("LoginPage.title")}</h2>
-          <p>{t("LoginPage.subtitle")}</p>
+          <p>{t("DiscoverFeed.real_moments")}{" "}{t("DiscoverFeed.real_connections")}</p>
 
           <form onSubmit={handleLoginRequest}>
             {/* EMAIL */}
