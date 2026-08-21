@@ -1,147 +1,146 @@
 {
   "DiscoverFeed": {
     "brand_name": "Spotkac",
-    "tagline": "Hwehwɛ wo hokafoɔ pa",
-        "NETWORK_ERROR": "Adwumayɛbea ntanɛte no agu, yɛserɛ wo bɔ mmɔden bio simma kakra akyi.",
-    "real_moments": "Mmerɛ pa.",
-  "real_connections": "Nkitahodi pa.",
+    "tagline": "Hu wo a ɛyɛ wo dea pɛ",
+    "real_moments": "Nokware mmere.",
+    "NETWORK_ERROR": "Yɛpa wo kyɛw, network no ayɛ basaa. Yɛsrɛ wo san sɔ hwɛ bio wɔ simma kakraa bi mu.",
+    "real_connections": "Nokware nkitahodi.",
     "card_actions": {
-      "view_profile": "Hwɛ ne ho nsɛm",
-      "connect": "Spotka"
-   
+      "view_profile": "zobacz",
+      "connect": "Spotkaj"
     },
     "profile_meta": {
-      "header_message": "Hwehwɛ nkurɔfoɔ a mo ani gye nnoɔma korɔ ho.",
-      "sub_message": "Ɛfiri sɛ ayɔnkofa pa fi nnoɔma a mo bom yɛ mu."
+      "header_message": "Hwehwɛ nnipa a wɔpɛ nneɛma a wopɛ no bi.",
+      "sub_message": "Efisɛ abusuabɔ a ɛwɔ mfaso fi osuahu a yɛbom nya mu."
     }
   },
   "Messages": {
-    "title": "Nkratoɔ",
-    "search_placeholder": "Hwehwɛ...",
-    "search_result": "Annya nea woreserch no biara"
+    "title": "Nkrasɛm",
+    "search_placeholder": "hwehwɛ",
+    "search_result": "Yenhu biribi a ɛne wo hwehwɛde hyia"
   },
   "Matches": {
     "ConnectionsPage": {
-      "title": "Nkabom",
+      "title": "Nkitahodi",
       "tabs": {
-        "interests_received": "Deɛ afoforɔ gye tom",
-        "matches": "Nkabom pa"
+        "interests_received": "Anigyeɛ a woanya",
+        "matches": "Nkitahodi a ɛhyia"
       },
       "card1": {
-        "connected_via": "Yɛnam wo",
-        "moment_suffix": "berɛ so na ɛkaboom",
+        "connected_via": "Ɛnam wo",
+        "moment_suffix": "bere",
+        "time_now": "Seesei",
+        "time_yesterday": "Nnɛ a etwaam",
         "actions": {
-          "compatibility": "Hwɛ sɛnea mobɔ mu",
-          "pass": "Twa mu",
+          "compatibility": "Hwɛ sɛnea mo hyia",
+          "pass": "Fa to nkyɛn",
           "accept": "Gye tom"
         }
       },
-      "matches": "Nkabom pa",
+      "matches": "Nkitahodi a ɛhyia",
       "card2": {
-        "title": "Miá so na mofi nkɔmmɔbɔ ase"
+        "title": "mia so na bue nkɔmmɔ"
       }
     }
   },
- "My_moments": {
-    "welcomeMessage": "Me Mmerɛ Titiriw",
-    "sub_message": "Nkitahodi pa hyɛ aseɛ berɛ a wokyɛ w'anigyeɛ ne nneɛma a woafa mu wɔ asetena mu",
-    "btn": "Bi Ka Ho",
-    "delete_btn": "Popa Fi Hɔ",
+  "My_moments": {
+    "welcomeMessage": "Me Mmere",
+    "sub_message": "Nkitahodi a ɛwɔ mfaso fi bere a woka w’anigyeɛ ne wo asetena mu osuahu ho asɛm kyerɛ afoforo",
+    "btn": "Fa Bere bi ka ho",
+    "delete_btn": "Yi fi hɔ",
     "visibility": {
-      "visibility": "sɛnea ɛda adi",
-      "public": "OBIARA_REHU",
-      "match_only": "WƆNOM NKOAA",
-      "public_text": "Obiara nipa",
-      "match_only_text": "Yɛatoto mu ama nnipa a yɛapfata nkoaa"
+      "visibility": "nea nnipa betumi ahu",
+      "public": "ABƆ PƐ",
+      "match_only": "NNIPA A WƆHYIA NKYERƐ",
+      "public_text": "Obiara",
+      "match_only_text": "Wɔato mu ama wɔn a wɔahyia nko ara"
     },
     "Create_moment": {
-      "title": "Kyɛ Berɛ Bi",
-      "message": "Mfonini anaasɛ mfididwuma video (Kɛseɛ a ɛboro: 30MB)",
-      "media_title": "Fa Mfonini To So",
-      "media_message": "Twe fa gu so anaasɛ tiopɛ so hwehwɛ mfael mu",
+      "title": "Kyɛ Bere bi",
+      "message": "Mfonini anaa video (ɛnsen 30MB)",
+      "media_title": "Fa media gu so",
+      "media_message": "Twe na gyae fael no anaa mia so hwehwɛ fael",
       "fields": {
-        "moment": "Berɛ Titiriw",
-        "caption": "Asɛm a ɛka ho",
-        "caption_placeholder": "dɛn na saa berɛ yi ka fa wo ho.",
-        "cancel_btn": "Gyae",
+        "moment": "Bere",
+        "caption": "Nkyerɛmu",
+        "caption_placeholder": "Dɛn na saa bere yi ka fa wo ho?",
+        "cancel_btn": "Twa mu",
         "share_btn": "Kyɛ"
       }
     }
   },
   "ProfilePage": {
-    "title": "Me Ho Nsɛm",
-    "edit_btn": "Sesa Me Ho Nsɛm",
-    "view_profile": "{{name}} Ho Nsɛm",
-    "cancel_btn": "Twa nsesaeɛ mu",
-    "change_image_btn": "Sesa mfonini",
-    "update_btn": "Yɛ no foforɔ",
+    "title": "Me Profile",
+    "view_profile": "{{name}} Profile",
+    "edit_btn": "Sesa Profile",
+    "cancel_btn": "Twa nsakrae no mu",
+    "change_image_btn": "sesa mfonini",
+    "update_btn": "yɛ foforo",
     "sections": {
       "basic_information": {
         "title": "Nsɛm Titiriw",
         "fields": {
-          "first_name": "Din a Ɛdi Kan",
-          "last_name": "Abusua Din",
-          "date_of_birth": "Awoɔ Da",
-          "email": "Imeili",
-          "gender": "Bɔbeasu",
-          "age": "Mfeɛ",
-          "preference": "Nea Wopɛ",
-          "from": "Kuro a Wofi Mu",
-          "speaks": "Kasa a Woka",
+          "first_name": "Din a edi kan",
+          "last_name": "Abusua din",
+          "date_of_birth": "Awo da",
+          "email": "Email",
+          "gender": "Abarima anaa ɔbaa",
+          "age": "mfe",
+          "preference": "Nea wopɛ",
+          "from": "Fi",
+          "speaks": "Kasa",
           "profession": "Adwuma",
-          "city": "Kuropɔn",
+          "city": "Kurow",
           "country": "Ɔman",
-          "height": "Wo Tshentshen (cm)"
+          "height": "Tentene (cm)"
         }
       },
-              "search":{
-          "title":"Hu bɛbi a mewɔ",
-          "GENERAL_ERROR":"Yɛantumi anhu kurow yi enti yɛayi afiri hɔ. Gyae hɔ saa na toaso.",
-          "FETCH_ERROR":"Yɛantumi annya beae pɔtee no. Twerɛ no wo nsa.",
-          "FIND_ERROR":"Yɛantumi anhu wo kurow din wɔ afiri no so.",
-          "placeholder":"Hwehwɛ wo kurow"
-        },
-
+      "search": {
+        "title": "Hwehwɛ me beae",
+        "GENERAL_ERROR": "Yennim kurow no. Gyae no kwa na toa so.",
+        "FETCH_ERROR": "Yentumi nya address no. Kyerɛw no wo ankasa.",
+        "FIND_ERROR": "Yentumi nhu wo kurow din ankasa.",
+        "placeholder": "Hwehwɛ wo kurow"
+      },
       "about_me": {
         "title": "Me ho nsɛm",
         "fields": {
-          "bio_label": "Me ho nsɛm tiatia",
-          "education": "Nwomasua",
-          "basics": "Nnoɔma titiriw",
-          "relationship": "Ayɔnkofa",
-          "drinks": "Nsa Nonom",
-          "smokes": "Sigarɛte Nonom",
-          "pets": "Mmoa a Wɔwɔ Fie",
-          "exercise": "Apɔwmuden Agorɔ"
+          "bio_label": "Me ho nsɛm tiawa",
+          "education": "Nhomasua",
+          "basics": "Nneɛma titiriw",
+          "relationship": "Abusuabɔ",
+          "drinks": "Nsa",
+          "smokes": "Tawa",
+          "pets": "Mmoa",
+          "exercise": "Apɔwmuden dwumadi"
         }
       },
       "what_im_looking_for": {
-        "title": "Deɛ merehwehwɛ",
+        "title": "Nea merehwehwɛ",
         "fields": {
-          "ideal_preference": "Nea m'ani gye ho paa"
+          "ideal_preference": "Nea mɛpɛ paa"
         }
       },
       "looking_for_meta": {
-        "title": "Repɛ",
+        "title": "Merehwehwɛ",
         "fields": {
-          "looking_for_label": "Deɛ Merehwehwɛ",
-          "interested_in_label": "M'ani gye ho wɔ"
+          "looking_for_label": "Nea merehwehwɛ",
+          "interested_in_label": "Nea m’ani gye ho"
         }
       },
       "lifestyle": {
-        "title": "Asetena mu Nneyɛeɛ",
+        "title": "Asetena kwan",
         "fields": {
           "language": "KASA",
-          "education": "NWOMASUA",
+          "education": "NHOMASUA",
           "profession": "ADWUMA",
-          "drinks": "NSA NONOM",
-          "smoking": "SIGARƐTE NONOM",
-          "pets": "MMOA A WƆWƆ FIE",
-          "socialEnergy":"Ewiase mu nkitahodie ahoɔden",
-"planningStyle":"Nhyehyɛeɛ kwan",
-"chronoType":"Da ne nyan mmerɛ kwan",
-"communication":"Nkɔmmɔdi kwan"
-
+          "drinks": "NSA",
+          "smoking": "TAWA",
+          "pets": "MMOA",
+          "socialEnergy": "Nnipa mu ahoɔden",
+          "planningStyle": "Nhyehyɛe kwan",
+          "chronoType": "Da ne anadwo su",
+          "communication": "Nkitahodi kwan"
         }
       }
     }
@@ -149,325 +148,321 @@
   "SettingsPage": {
     "sections": {
       "login_credentials": {
-        "title": "Log In Nsɛm",
-        "email_label": "Imeili Adrɛse",
-        "password_label": "Akodeɛ (Password)",
-        "change_password_btn": "Sesa Akodeɛ",
-        "new_password_label": "Akodeɛ foforɔ",
-        "confirm_password_label": "Si akodeɛ foforɔ no pi",
-        "cancel_password_change": "Twa akodeɛ nsesaeɛ mu"
+        "title": "Login nsɛm",
+        "email_label": "Email address",
+        "password_label": "Password",
+        "change_password_btn": "Sesa password",
+        "New_password_lable": "Password foforo",
+        "Comfirm_password_lable": "Password foforo",
+        "cancel_password_change": "Twa password nsakrae mu"
       },
       "support_legal": {
-        "title": "Mmoa ne Mmara",
-        "help_center": "Mmoa Beaeɛ ne Nsɛmmisa",
-        "privacy_policy": "Kokoamsɛm Mmara",
-        "terms_of_service": "Ɔsom No Ho Mmara"
+        "title": "Mmoa ne mmara",
+        "help_center": "Mmoa Center & FAQ",
+        "privacy_policy": "Asɛm a ɛfa kokoam nsɛm ho",
+        "terms_of_service": "Nneyɛe ho mmara"
       },
       "danger_zone": {
-        "title": "Asiane Beaeɛ",
-        "warning_text": "Sɛ wopopa w'akawnt a, wo nkɔmmɔbɔ ne wo nkabom nyinaa bɛyera afebɔɔ.",
-        "delete_btn": "Popa M'akawnt"
+        "title": "Beae a asiane wɔ",
+        "warning_text": "Sɛ wopopa wo account a, wobɛhwere wo nkɔmmɔ ne matches nyinaa daa.",
+        "delete_btn": "Pepa me account"
       }
     },
     "actions": {
-      "save_changes_btn": "Kora Nsesaeɛ So",
-      "logout_btn": "Firi Mu"
+      "save_changes_btn": "Sie account nsakrae",
+      "logout_btn": "Fi mu"
     }
   },
   "LoginPage": {
     "brand_name": "spotkac",
-    "title": "Akwaaba bio",
-    "subtitle": "Hunu nkurɔfoɔ nam wɔn asetena mu osuahu so.",
+    "title": "Yɛma wo akwaaba bio",
+    "subtitle": "Hu nnipa denam wɔn osuahu so.",
     "email": {
-      "placeholder": "Imeili adrɛse",
-      "email_error": "Wɔnnya saa din yi bi wɔ ha."
+      "placeholder": "Email address",
+      "email_error": "Username no nni hɔ."
     },
     "password": {
-      "placeholder": "Akodeɛ (Password)",
-      "password_error": "Akodeɛ no nnyɛ pɛ."
+      "placeholder": "Password",
+      "password_error": "Password no nyɛ nokware."
     },
-    "submit_btn": "Wura Mu",
+    "submit_btn": "Kɔ mu",
     "divider_text": "anaa",
-    "forgot_password_link": "Sesa akodeɛ",
+    "forgot_password_link": "San yɛ password",
     "signup_prompt": {
-      "text": "Wonnni akawnt?",
-      "link": "Yɛ bi foforɔ"
+      "text": "Wunni account?",
+      "link": "Yɛ account"
     }
   },
   "RegisterPage": {
     "brand_name": "spotkac",
-    "title": "Yɛ Akawnt",
-        "location_message": "Baabi a wowɔ bɛboa yɛn ma yɛahu nnipa a wɔbɛn wo. Wubetumi de wo nsa akyerɛw afa anaa wobue wo mfiri no dɔn bɛn na wopia mfiri nkyerɛwee no so ma ɛkyerɛ wo baabi a wowɔ wɔ afiri mu.",
-    "subtitle": "Hwehwɛ obi a ɔne wo sɔ paa",
+    "title": "Yɛ Account",
+    "subtitle": "Hwehwɛ obi a n’ani gye nea w’ani gye ho",
+    "location_message": "Wo beae boa yɛn ma yɛnya nnipa a wɔbɛn wo. Wubetumi akyerɛw no wo ankasa anaa woama location ayɛ adwuma na woamia pinpoint no ma ɛnhu no ankasa.",
     "fields": {
       "firstName": {
-        "placeholder": "Din a Ɛdi Kan",
-        "firstname_error": "Din a ɛdi kan ntumi nna mpan"
+        "placeholder": "Din a edi kan",
+        "firstname_error": "Din a edi kan no rentumi nyɛ kwa"
       },
       "lastName": {
-        "placeholder": "Abusua Din",
-        "lastname_error": "Abusua din ntumi nna mpan"
+        "placeholder": "Abusua din",
+        "lastname_error": "Abusua din no rentumi nyɛ kwa"
       },
       "email": {
-        "placeholder": "Imeili Adrɛse",
-        "email_error": "Yɛsrɛ wo fa imeili adrɛse pa ma",
-        "error": "Mfomsoɔ",
-          "email_taken": "Wadei saa e-mail yi redi dwuma dedaw, paw e-mail foforo firi hɔ."
+        "placeholder": "Email address",
+        "email_error": "Kyerɛw email address a ɛyɛ nokware. Email no rentumi nyɛ kwa.",
+        "email_taken": "Wɔde email yi redi dwuma dada. Paw foforo.",
+        "error": "mfomso"
       },
-       "Other": {
-      "date_of_birth": "Awoda",
-      "gender": "Bɔbeasu",
-      "location": "Kuro anaa Akurase"
-    },
-      "dob_error": "Ɛsɛ sɛ wodi mfeɛ 18 ansa na woatumi awura ha.",
-      "gender": "Bɔbeasu",
-      "location": "Beaeɛ a Wɔwɔ",
-      "location_error": "Beaeɛ ntumi nna mpan",
-      "gender_error": "Bɔbeasu ntumi nna mpan",
+      "dob_error": "Awo da no ɛsɛ sɛ ɛyɛ da a atwam. Ɛsɛ sɛ wowɔ mfe 18 anaa nea ɛboro so na wode platform yi adi dwuma.",
+      "gender": "abarima anaa ɔbaa",
+      "location": "beae",
+      "location_error": "Beae no rentumi nyɛ kwa",
+      "gender_error": "Gender no rentumi nyɛ kwa",
       "password": {
-        "placeholder": "Akodeɛ (Password)",
-        "password_error": "Akodeɛ no bi bɛyɛ kɛseɛ, nea ɛyɛ ketewa, nɔmba, ne ahyɛnsodeɛ titiriw"
+        "placeholder": "password",
+        "password_error": "Password no ɛsɛ sɛ ɛyɛ nkyerɛwde 8 kosi 32, na ɛsɛ sɛ ɛwɔ capital letter baako, lowercase letter baako, nɔma baako ne special character baako."
+      },
+      "Other": {
+        "date_of_birth": "Awo da",
+        "gender": "Abarima anaa ɔbaa",
+        "location": "Kurow anaa kurow ketewa"
       },
       "terms_and_privacy": {
         "link": "Megye tom sɛ",
-        "terms": "Ɔsom No Ho Mmara",
+        "terms": "Nneyɛe ho mmara",
         "and": "ne",
-        "privacy_policy": "Kokoamsɛm Mmara",
-        "brand_name": "a ɛwɔ Spotkac yi"
+        "privacy_policy": "Asɛm a ɛfa kokoam nsɛm ho",
+        "brand_name": "a ɛyɛ Spotkac"
       },
-      "submit_btn": "Yɛ Akawnt",
+      "submit_btn": "Yɛ Account",
       "login_prompt": {
-        "text": "Wɔwɔ akawnt dedaw?",
-        "link": "Wura Mu"
+        "text": "Wowɔ account dada?",
+        "link": "Kɔ mu"
       }
     }
   },
   "Landing": {
     "Discover": "Hwehwɛ",
-    "Matches": "Nkabom",
-    "Messages": "Nkratoɔ",
-    "My moments": "Me mmerɛ",
-    "Settings": "Settings",
+    "Matches": "Nkitahodi a ɛhyia",
+    "Messages": "Nkrasɛm",
+    "My moments": "Me Mmere",
+    "Settings": "Nsiesiei",
     "Profile": {
-      "logged in": "Wɔwuraa mu"
+      "logged in": "woakɔ mu"
     },
-    "logout": "Firi Mu"
+    "logout": "Fi mu"
   },
   "match_Dialog": {
-    "title": "Wonnnya nkabom biara mprempren",
-    "Message": "Nhwɛ fam! Kɔ so hwehwɛ na hu nkurɔfoɔ afoforɔ",
+    "title": "Match biara nni hɔ sɛnea ɛte yi",
+    "Message": "Mma ɛnhaw wo! Kɔ so hwehwɛ na hu nnipa foforo",
     "btn": "Fi ase hwehwɛ"
   },
   "message_Dialog": {
-    "title": "Wonnnya nkratoɔ biara mprempren",
-    "Message": "Nhwɛ fam! Kɔ so hwehwɛ na hu nkurɔfoɔ afoforɔ",
+    "title": "Nkrasɛm biara nni hɔ",
+    "Message": "Mma ɛnhaw wo! Kɔ so hwehwɛ na hu nnipa foforo",
     "btn": "Fi ase hwehwɛ"
   },
   "filter_dialog": {
-    "title": "Due! Wonnnya nkurɔfoɔ biara bɛn wo ha mprempren",
-    "Message": "Nhwɛ fam! Trɛw wo mpasua mu na woahu afoforɔ."
+    "title": "Oups. Profile biara nni wo nkyɛn sɛnea ɛte yi",
+    "Message": "Mma ɛnhaw wo! Trɛw wo hwehwɛbea mu na hu nnipa pii."
   },
   "warning_dialog": {
-    "title": "Kyɛ amannyasoɔ mmerɛ baako",
-    "Message": "Ansa na wobɛtumi asoma nkabom biseɛ no, ɛsɛ sɛ wo profile nya Amannyasoɔ Mmerɛ baako pɛ. Amannyasoɔ Mmerɛ boa ma nkurɔfoɔ hu nea woyɛ. Nkabomfoɔ Mmerɛ nkoaa deɛ ɛda adi mmerɛ a moabom nkoaa, enti ɛnnue nkabom nneyɛeɛ.",
-    "btn": "Fa Mmerɛ Ka Ho"
+    "title": "Kyɛ public moment baako",
+    "Message": "Ansa na wubetumi asoma match request no, ɛsɛ sɛ wo profile wɔ Public Moment baako. Public Moments boa nnipa ma wɔhu wo. Match-only Moments yɛ nea wɔn a moahyia nko ara betumi ahu bere a moanya nkitahodi, enti ɛmma connection features nyɛ adwuma.",
+    "btn": "fa moment ka ho"
   },
   "Chatroom": {
     "status": {
-      "online": "Ɔwɔ Intanɛt So",
-      "offline": "Ɔnni Intanɛt So"
+      "online": "Online",
+      "offline": "Offline"
     },
     "header": {
-      "connected_via": "Yɛnam ha kaboom"
+      "connected_via": "Ɛnam nkitahodi so"
     },
     "menu": {
-      "unmatch": "Twa nkabom mu",
-      "view_profile": "Hwɛ ne ho nsɛm"
+      "unmatch": "Yi match no fi hɔ",
+      "view_profile": "Hwɛ profile"
     },
     "footer": {
-      "input_placeholder": "Kyerɛw nkratoɔ kɔma {{name}}"
+      "input_placeholder": "Soma nkrasɛm kɔ {{name}}"
     }
   },
   "Options": {
     "Gender": {
       "MALE": "Ɔbarima",
       "FEMALE": "Ɔbaa",
-      "NON_BINARY": "Bɔbeasu foforɔ",
+      "NON_BINARY": "Non-binary",
       "All": "Nyinaa"
     },
-    "chronoType":{
-  "EARLY_BIRD":"Anɔpa nipa",
-  "NIGHT_OWL":"Anadwo nipa",
-  "FLEXIBLE":"Nsakraeɛ"
-},
-"planningStyle":{
-  "STRUCTURED_PLANNER":"Nhyehyɛeɛ nipa",
-  "SPONTANEOUS":"Mpofirim nipa",
-  "IT_DEPENDS":"Egyina tebea no so"
-},
-"socialEnergy":{
-  "INTROVERT":"Kommyɔ nipa",
-  "EXTROVERT":"Gye dɔm nipa",
-  "IT_DEPENDS":"Egyina tebea no so"
-}
-,
+    "chronoType": {
+      "EARLY_BIRD": "Ɔsɔre anɔpa",
+      "NIGHT_OWL": "Ɔdɔ anadwo",
+      "FLEXIBLE": "Ɛyɛ mmerɛw"
+    },
+    "planningStyle": {
+      "STRUCTURED_PLANNER": "Ɔhyehyɛfo pa",
+      "SPONTANEOUS": "Nea ɔyɛ adeɛ mpofirim",
+      "IT_DEPENDS": "Ɛgyina so"
+    },
+    "socialEnergy": {
+      "INTROVERT": "Introvert",
+      "EXTROVERT": "Extrovert",
+      "IT_DEPENDS": "Ɛgyina so"
+    },
     "Preference": {
       "MEN": "Mmarima",
       "WOMEN": "Mmaa",
-      "NON_BINARY": "Bɔbeasu foforɔ",
+      "NON_BINARY": "Non-binary",
       "All": "Nyinaa"
     },
     "language": {
       "ENGLISH": "Borɔfo",
       "POLISH": "Polish",
-      "FRENCH": "Frɛnkye",
-      "OTHER": "Foforɔ"
+      "FRENCH": "French",
+      "OTHER": "Foforo"
     },
     "education": {
-      "BACHELORS_DEGREE": "Bachelors Degree",
-      "MASTERS_DEGREE": "Masters Degree",
-      "PHD": "PhD",
-      "VOCATIONAL": "Nsaano Dwuma Sukuu",
-      "HIGH_SCHOOL": "Ntoaso Sukuu",
-        "OTHER": "Foforɔ"
+      "BACHELORS_DEGREE": "Bachelor’s degree",
+      "MASTERS_DEGREE": "Master’s degree",
+      "PHD": "PHD",
+      "VOCATIONAL": "Adwumayɛ ho nhomasua",
+      "HIGH_SCHOOL": "Ntoaso sukuu",
+      "OTHER": "Foforo"
     },
-"Questions": {
-  "YES": "Aane",
-  "NO": "Dabi",
-  "INDIFFERENT": "Ɛmfa me ho dodo",
-  "LOVE_TO": "Mepɛ daakye"
-}
-,
+    "Questions": {
+      "YES": "Yiw, meyɛ",
+      "NO": "Daabi",
+      "INDIFFERENT": "Ɛyɛ me sɛnea ɛte",
+      "LOVE_TO": "Ɔpɛ da bi"
+    },
     "drinks": {
-      "DONT_DRINK": "Mnom nsa",
-      "YES": "Aane",
-      "NO": "Dabi",
-      "OCCASIONAL": "Tɔ mmerɛ bi a"
+      "DONT_DRINK": "Menom nsa",
+      "YES": "Yiw",
+      "NO": "Daabi",
+      "OCCASIONAL": "Ɛtɔ da"
     },
     "Header": {
-      "any_city": "Kuro biara",
+      "any_city": "Kurow biara",
       "all": "Nyinaa",
       "Looking_for": "Merehwehwɛ",
-      "Age_limit": "Mfeɛ hyeɛ",
-      "Target_location": "Beaeɛ Pɔtee",
-      "Shared_activity": "Nneyɛeɛ a yɛbom yɛ",
-      "Gender": "Bɔbeasu",
-      "filter_btn": "Sɔn nsɛm no",
-      "title": "Hwehwɛ nea wopɛ",
-      "Reset_all": "Sesa nyinaa gu",
-      "Min": "Ketewa",
-      "Max": "Kɛseɛ"
+      "Age_limit": "Age limit",
+      "Target_location": "Target Location",
+      "Shared_activity": "Shared Activity",
+      "Gender": "Abarima anaa ɔbaa",
+      "filter_btn": "Fa filters no di dwuma",
+      "title": "Hwehwɛ nneɛma a wopɛ",
+      "Reset_all": "San hyɛ nyinaa ase",
+      "Min": "Kakraa",
+      "Max": "Pii"
     },
-"LookingFor": {
-  "LONG_TERM_RELATIONSHIP": "Ayɔnkofa a ɛbɛkyɛ",
-  "SHORT_TERM_RELATIONSHIP": "Mmerɛ tiawa, nanso ebia ɛbɛkyɛ",
-  "NOT_DECIDED": "Mnsii me bo dodo",
-  "FRIENDS": "Nnamfofoɔ afoforɔ"
-}
-
+    "LookingFor": {
+      "LONG_TERM_RELATIONSHIP": "Abusuabɔ a ɛbɛtena hɔ akyɛ",
+      "SHORT_TERM_RELATIONSHIP": "Abusuabɔ tiawa, nanso ɛbɛtumi akɔ akyɛ",
+      "NOT_DECIDED": "Meda so resusuw ho",
+      "FRIENDS": "Nnamfo foforo"
+    }
   },
-"Professions": {
-  "SOFTWARE_ENGINEER": "Kofisisa Dwumadiefoɔ (Software Engineer)",
-  "WEB_DEVELOPER": "Wɛbsait Yɛfoɔ (Web Developer)",
-  "DATA_SCIENTIST": "Nkontabuo Nhwehwɛmufoɔ",
-  "IT_SUPPORT": "Afidie Dwumadie Boafoɔ (IT)",
-  "PRODUCT_MANAGER": "Nneɛma ne Ndwuma Soafoɔ",
-  "MARKETING_SPECIALIST": "Nneɛma Tɔn Ho Badwemma",
-  "CONTENT_CREATOR": "Intanɛt Sini ne Kasayɛfoɔ",
-  "GRAPHIC_DESIGNER": "Kɔmputa Mfoninyɛfoɔ",
-  "UX_UI_DESIGNER": "Intanɛt Layout Ndwomfoɔ",
-  "PHOTOGRAPHER": "Mfonintwafoɔ",
-  "WRITER_JOURNALIST": "Awerɛfoɔ / Nsamankwaseafoɔ",
-  "ARCHITECT": "Dan Layout Twerɛfoɔ",
-  "INTERIOR_DESIGNER": "Dan Mu Siesiefoɔ",
-  "REGISTERED_NURSE": "Ayaresabea Nɛɛsefoɔ",
-  "DOCTOR_PHYSICIAN": "Dɔkota Panyin",
-  "DENTIST": "Se-Mu-Dɔkota",
-  "PHARMACIST": "Aduanehyeɛ / Aduanemafoforɔ",
-  "THERAPIST_COUNSELOR": "Afututufoɔ Panyin",
-  "PHYSIOTHERAPIST": "Nipadua Siesiefoɔ (Physio)",
-  "FITNESS_TRAINER": "Apɔmuden Kyerɛkyerɛfoɔ",
-  "PRIMARY_TEACHER": "Mmofra Sukuu Tikya",
-  "HIGH_SCHOOL_TEACHER": "Ntoasoɔ Sukuu Tikya",
-  "UNIVERSITY_PROFESSOR": "Sukuupɔn Mu Ɔkyerɛkyerɛfoɔ",
-  "TUTOR_INSTRUCTOR": "Kyerɛkyerɛfoɔ Boafɔ",
-  "CHEF_COOK": "Aduaneenofoɔ Panyin (Chef)",
-  "BARTENDER": "Nsa-Wiem-Mafoɔ (Bartender)",
-  "BARISTA": "Kɔfe-Yɛfoɔ (Barista)",
-  "RESTAURANT_MANAGER": "Aduanewfie Kyerɛwfoɔ",
-  "FLIGHT_ATTENDANT": "Ewiemhyɛn Mu Boafoɔ",
-  "HOTEL_HOSPITALITY": "Ahɔhowfie Dwumayɛfoɔ",
-  "ELECTRICIAN": "Anyinam Kanderɛ Dwumayɛfoɔ",
-  "PLUMBER": "Su-Twa-Nsuo Dwumayɛfoɔ (Plumber)",
-  "CARPENTER_BUILDER": "Duadwumfoɔ / Ɔdanfoɔ",
-  "MECHANIC": "Kar Siesiefoɔ (Fita)",
-  "HAIRDRESSER_STYLIST": "Yisifoɔ / Enwinwomfoɔ",
-  "ACCOUNTANT": "Sika-Kyerɛwfoɔ (Accountant)",
-  "FINANCIAL_ANALYST": "Sika Nhwehwɛmufoɔ",
-  "BANKER": "Sikakorabea Panyin",
-  "HR_SPECIALIST": "Ndwumayɛfoɔ Fafoɔ (HR)",
-  "BUSINESS_CONSULTANT": "Kae-Dwuma Afututufoɔ",
-  "SALES_REPRESENTATIVE": "Ndwuma Ho Nnipadɔm",
-  "ENTREPRENEUR_OWNER": "Odwumawura / Batani",
-  "REAL_ESTATE_AGENT": "Danie ne Asase Tɔnfoɔ",
-  "LAWYER_ATTORNEY": "Lɔya / Mmaranimfoɔ",
-  "PARALEGAL": "Lɔya Boafoɔ",
-  "CIVIL_SERVANT": "Aban Dwumayɛfoɔ",
-  "FIREFIGHTER": "Ogyadumfoɔ",
-  "PARAMEDIC": "Agyenkwafoɔ Ayaresabea",
-  "POLICE_OFFICER": "Polisini",
-  "SOCIAL_WORKER": "Ɔman Boafoɔ Dwumayɛfoɔ",
-  "MILITARY_SERVICE": "Ɔsrani (Asrafoɔ)",
-  "BLACKSMITH": "Tomfoɔ (Blacksmith)",
-  "GOLDSMITH_JEWELER": "Sika-Dwumfoɔ (Goldsmith)",
-  "POTTER_CERAMICIST": "Kuku-Yɛfoɔ (Potter)",
-  "SHOE_MAKER_COBBLER": "Asopafoɔ (Cobbler)",
-  "TAILOR_SEAMSTRESS": "Pamfoɔ / Pamfoni (Tailor)",
-  "LEATHER_WORKER": "Nwithoma Dwumayɛfoɔ",
-  "STONEMASON": "Bo-Twafoɔ / Ɔdanfoɔ Panyin",
-  "WEAVER_TEXTILE": "Ntomanwomfoɔ (Kente Weaver)",
-  "GLASSBLOWER": "Ahwehwɛ-Yɛfoɔ",
-  "STUDENT_UNDERGRAD": "Sukuupɔn Suani Basic",
-  "STUDENT_POSTGRAD": "Sukuupɔn Suani Panyin",
-  "FREELANCER": "Meara M'adwuma (Freelance)",
-  "ARTIST_MUSICIAN": "Nnwomtofoɔ / Otonfoni",
-  "OTHER": "Adwuma Foforɔ"
-}
-,
+  "Professions": {
+    "SOFTWARE_ENGINEER": "Software Engineer",
+    "WEB_DEVELOPER": "Web Developer",
+    "DATA_SCIENTIST": "Data Scientist / Analyst",
+    "IT_SUPPORT": "IT Specialist / Support",
+    "PRODUCT_MANAGER": "Product / Project Manager",
+    "MARKETING_SPECIALIST": "Marketing Specialist",
+    "CONTENT_CREATOR": "Content Creator / Influencer",
+    "GRAPHIC_DESIGNER": "Graphic Designer",
+    "UX_UI_DESIGNER": "UX/UI Designer",
+    "PHOTOGRAPHER": "Photographer / Videographer",
+    "WRITER_JOURNALIST": "Writer / Journalist",
+    "ARCHITECT": "Architect",
+    "INTERIOR_DESIGNER": "Interior Designer",
+    "REGISTERED_NURSE": "Registered Nurse",
+    "DOCTOR_PHYSICIAN": "Doctor / Physician",
+    "DENTIST": "Dentist",
+    "PHARMACIST": "Pharmacist",
+    "THERAPIST_COUNSELOR": "Therapist / Counselor",
+    "PHYSIOTHERAPIST": "Physiotherapist",
+    "FITNESS_TRAINER": "Fitness Trainer / Coach",
+    "PRIMARY_TEACHER": "Primary School Teacher",
+    "HIGH_SCHOOL_TEACHER": "High School Teacher",
+    "UNIVERSITY_PROFESSOR": "University Professor",
+    "TUTOR_INSTRUCTOR": "Tutor / Instructor",
+    "CHEF_COOK": "Chef / Cook",
+    "BARTENDER": "Bartender",
+    "BARISTA": "Barista",
+    "RESTAURANT_MANAGER": "Restaurant Manager",
+    "FLIGHT_ATTENDANT": "Flight Attendant",
+    "HOTEL_HOSPITALITY": "Hotel Hospitality",
+    "ELECTRICIAN": "Electrician",
+    "PLUMBER": "Plumber",
+    "CARPENTER_BUILDER": "Carpenter / Builder",
+    "MECHANIC": "Automotive Mechanic",
+    "HAIRDRESSER_STYLIST": "Hairdresser / Barber",
+    "ACCOUNTANT": "Accountant",
+    "FINANCIAL_ANALYST": "Financial Analyst",
+    "BANKER": "Investment Banker",
+    "HR_SPECIALIST": "HR Specialist",
+    "BUSINESS_CONSULTANT": "Business Consultant",
+    "SALES_REPRESENTATIVE": "Sales Representative",
+    "ENTREPRENEUR_OWNER": "Entrepreneur / Business Owner",
+    "REAL_ESTATE_AGENT": "Real Estate Agent",
+    "LAWYER_ATTORNEY": "Lawyer / Attorney",
+    "PARALEGAL": "Paralegal",
+    "CIVIL_SERVANT": "Civil Servant / Government",
+    "FIREFIGHTER": "Firefighter",
+    "PARAMEDIC": "Paramedic",
+    "POLICE_OFFICER": "Police Officer",
+    "SOCIAL_WORKER": "Social Worker",
+    "MILITARY_SERVICE": "Military Personnel",
+    "BLACKSMITH": "Blacksmith / Metal Artisan",
+    "GOLDSMITH_JEWELER": "Goldsmith / Jeweler",
+    "POTTER_CERAMICIST": "Potter / Ceramicist",
+    "SHOE_MAKER_COBBLER": "Shoemaker / Cobbler",
+    "TAILOR_SEAMSTRESS": "Tailor / Seamstress",
+    "LEATHER_WORKER": "Leather Artisan",
+    "STONEMASON": "Stonemason / Sculptor",
+    "WEAVER_TEXTILE": "Weaver / Textile Artisan",
+    "GLASSBLOWER": "Glassblower",
+    "STUDENT_UNDERGRAD": "Undergraduate Student",
+    "STUDENT_POSTGRAD": "Postgraduate / PhD Student",
+    "FREELANCER": "Freelancer",
+    "ARTIST_MUSICIAN": "Artist / Musician",
+    "OTHER": "Other Profession"
+  },
   "Moments": {
-    "HAVING_COFFEE": "Renom kɔfe",
-    "WALKING_MY_DOG": "Nenam ne me kraman",
-    "WORKING_OUT_AT_THE_GYM": "Reyɛ apɔwmuden agorɔ",
-    "COOKING_DINNER": "Redidi anwummere aduane",
-    "BAKING": "Retoto paanoo",
-    "READING_A_BOOK": "Rekan nwoma",
-    "WATCHING_A_MOVIE": "Rehwɛ sini",
-    "PLAYING_VIDEO_GAMES": "Rebɔ video agorɔ",
-    "PLAYING_BOARD_GAMES": "Rebɔ ludo anaa dadi",
-    "OUT_WITH_FRIENDS": "Me ne nnamfoɔ wɔ adiwo",
-    "HAVING_BRUNCH": "Redi aduane",
-    "DINING_OUT": "Rekɔdi wɔ adiwo",
-    "HIKING": "Rofor mpepɛ so",
-    "GOING_FOR_A_RUN": "Retu mmirika",
-    "CYCLING": "Retwi sakre",
-    "AT_THE_BEACH": "Wɔ mpoano",
-    "WATCHING_THE_SUNSET": "Rehwɛ owia rɛtɔ",
-    "ON_VACATION": "Wɔ ahomegyeɛ mu",
-    "ROAD_TRIP": "Retu kwan",
-    "CAMPING": "Wɔ sare so ahomegyeɛ",
-    "TAKING_PHOTOS": "Retwa mfonini",
-    "MAKING_ART": "Reyɛ adwinni",
-    "PLAYING_MUSIC": "Rebɔ nnwom",
-    "DANCING": "Resa",
-    "SHOPPING": "Retɔ nnoɔma",
-    "VOLUNTEERING": "Reyɛ mmoa dwuma kwatia",
-    "STUDYING": "Resua adeɛ",
-    "WORKING": "Reyɛ adwuma",
-    "RELAXING_AT_HOME": "Regye m'ahome wɔ fie",
-    "TRYING_SOMETHING_NEW": "Resɔ biribi foforɔ ahwɛ"
+    "HAVING_COFFEE": "Having coffee",
+    "WALKING_MY_DOG": "Walking my dog",
+    "WORKING_OUT_AT_THE_GYM": "Working out at the gym",
+    "COOKING_DINNER": "Cooking dinner",
+    "BAKING": "Baking",
+    "READING_A_BOOK": "Reading a book",
+    "WATCHING_A_MOVIE": "Watching a movie",
+    "PLAYING_VIDEO_GAMES": "Playing video games",
+    "PLAYING_BOARD_GAMES": "Playing board games",
+    "OUT_WITH_FRIENDS": "Out with friends",
+    "HAVING_BRUNCH": "Having brunch",
+    "DINING_OUT": "Dining out",
+    "HIKING": "Hiking",
+    "GOING_FOR_A_RUN": "Going for a run",
+    "CYCLING": "Cycling",
+    "AT_THE_BEACH": "At the beach",
+    "WATCHING_THE_SUNSET": "Watching the sunset",
+    "ON_VACATION": "On vacation",
+    "ROAD_TRIP": "Road trip",
+    "CAMPING": "Camping",
+    "TAKING_PHOTOS": "Taking photos",
+    "MAKING_ART": "Making art",
+    "PLAYING_MUSIC": "Playing music",
+    "DANCING": "Dancing",
+    "SHOPPING": "Shopping",
+    "VOLUNTEERING": "Volunteering",
+    "STUDYING": "Studying",
+    "WORKING": "Working",
+    "RELAXING_AT_HOME": "Relaxing at home",
+    "TRYING_SOMETHING_NEW": "Trying something new"
   },
   "Cities": {
-    "any_city": "Kuro biara",
+    "any_city": "Kurow biara",
     "WARSZAWA": "Warsaw",
     "KRAKÓW": "Krakow",
     "ŁÓDŹ": "Lodz",
@@ -499,150 +494,145 @@
     "GORZÓW_WIELKOPOLSKI": "Gorzow Wielkopolski",
     "ELBLĄG": "Elblag"
   },
- "CTA": {
-   "View": "Bebree",
+  "CTA": {
+    "View": "Pii",
     "Spotkac": "spotkaj",
     "Message_brand": "Spotkać — ",
-    "Message": "wo hyehyɛfoɔ zaufany",
-    "Info": "Yɛnka yɛn ho"
+    "Message": "wo match-maker a wode wo ho to no so",
+    "Info": " Momma yɛnka yɛn ho"
   },
   "Menu": {
     "Discover": "Hwehwɛ",
-    "Matches": "Nkabom",
-    "Messages": "Nkratoɔ",
-    "Moments": "Me Mmerɛ Pa",
-    "Settings": "Settings",
-    "Profile": "Me Ho Nsɛm",
-    "Log_in": "Wɔwuraa mu",
-    "Log_out": "Firi Mu"
+    "Matches": "Nkitahodi a ɛhyia",
+    "Messages": "Nkrasɛm",
+    "Moments": "Me Mmere",
+    "Settings": "Nsiesiei",
+    "Profile": "Profile",
+    "Log_in": "Logged in",
+    "Log_out": "Fi mu"
   },
   "Recent_Activities": {
-    "title": "Nneyɛeɛ a Ɛtwam Nnansa Yi",
-    "Activities": "Mmerɛ Pa"
+    "title": "Nneɛma a aba nnansa yi",
+    "Activities": "Moments"
   },
   "Settings": {
-    "title": "Akawnt Settings",
-    "header": "Log In Nsɛm",
+    "title": "Account nsiesiei",
+    "header": "Login nsɛm",
     "fields": {
-      "email_label": "Imeili Adrɛse",
-      "password_label": "Akodeɛ (Password)",
-      "change_password_label": "Sesa Akodeɛ",
-      "current_password_label": "Akodeɛ a Wode Di Dwuma Seesei",
-      "new_password_label": "Akodeɛ Foforɔ",
-      "confirm_password_label": "Si Akodeɛ no Pi",
-      "cancel_password_change_label": "Twa Akodeɛ Nsesaeɛ mu"
+      "email_label": "Email address",
+      "password_label": "Password",
+      "change_password_label": "Sesa password",
+      "current_password_label": "Password a ɛwɔ hɔ seesei",
+      "new_password_label": "New Password",
+      "confirm_password_label": "Hyɛ password no mu den",
+      "cancel_password_change_label": "Twa password nsakrae mu"
     },
     "Support_&_Legal": {
-      "title": "Mmoa ne Mmara",
-      "help_center_link": "Mmoa Beaeɛ ne Nsɛmmisa",
-      "privacy_policy": "Kokoamsɛm Mmara",
-      "terms_of_service": "Ɔsom No Ho Mmara",
-      "btn": "Kora Nsesaeɛ So"
+      "title": "Mmoa ne mmara",
+      "help_center_link": "Mmoa Center & FAQ",
+      "privacy_policy": "Asɛm a ɛfa kokoam nsɛm ho",
+      "terms_of_service": "Nneyɛe ho mmara",
+      "btn": "Sie account nsakrae"
     },
     "Danger_zone": {
-      "title": "Asiane Beaeɛ",
-      "text": "Sɛ wopopa w'akawnt a, wo nkɔmmɔbɔ ne wo nkabom nyinaa bɛyera afebɔɔ.",
-      "btn": "Popa M'akawnt"
+      "title": "Beae a asiane wɔ",
+      "text": "Sɛ wopopa wo account a, wobɛhwere wo nkɔmmɔ ne matches nyinaa daa.",
+      "btn": "Pepa me account"
     },
     "Reset_password": {
-      "title": "Sesa Akodeɛ",
+      "title": "San yɛ Password",
       "fields": {
-        "email_label": "Imeili",
-        "email_placeholder": "Imeili adrɛse",
-        "date_of_birth_label": "Awoɔ Da",
-        "location": "Beaeɛ a Wɔwɔ",
-        "location_placeholder": "Kuro a wɔwɔ",
-        "new_password_label": "Akodeɛ Foforɔ",
-        "password_placeholder": "Nkyerɛwee nnanna nwɔtwe (8) pɛeɛ",
-        "confirm_password_label": "Si Akodeɛ no Pi",
-        "btn": "Sesa Akodeɛ"
+        "email_label": "Email",
+        "email_placeholder": "Email",
+        "date_of_birth_label": "Date of birth",
+        "location": "beae",
+        "location_placeholder": "Beae",
+        "new_password_label": "New Password",
+        "password_placeholder": "Nkyerɛwde 8 anyɛ yiye koraa",
+        "confirm_password_label": "Hyɛ password no mu den",
+        "btn": "Sesa password"
       }
     }
   },
   "discover_Dialog": {
-    "title": "Annya obiara a ɔne wo pɛ hyehyɛeɛ pɛ",
-    "Message": "Nhwɛ fam! Trɛw wo mpasua mu na woahu afoforɔ."
+    "title": "Profile biara ne wo hwehwɛde no nhyia",
+    "Message": "Mma ɛnhaw wo! Trɛw wo hwehwɛbea mu na hu nnipa pii."
   },
-   "Delete_dialog": {
-    "message": "Yɛdi yaw sɛ yɛrepa wo ho, wopɛ sɛ wuyi wo akawnty no fi hɔ?",
-    "yes_btn": "Aane",
-    "no_btn": "Dabi"
+  "Delete_dialog": {
+    "message": "Yɛyɛ awerɛhow sɛ worekɔ. Wopɛ sɛ wopopa account no?",
+    "yes_btn": "Yiw",
+    "no_btn": "Daabi"
   },
-  "Moment_captions":{
-  "HAVING_COFFEE": "Kɔfe brɛoo bi ne asomdwoe mmerɛ ne me kwan pa a mede hyɛ da ase.",
-  "WALKING_MY_DOG": "Me kraman ma me nnam, ɔma mifi krow mma m'ani gye kyɛn sɛnea ɛfata me.",
-  "WORKING_OUT_AT_THE_GYM": "Mepɛ sɛ meho yɛ nnam na menya mmerɛ a mede bɛma meho ayɛ den na mayɛ kanyan.",
-  "COOKING_DINNER": "M'anigye fie aduane nnoa ho, sɛ mesɔ nnuane foforo hwɛ, na meyɛ biribi firi mfiase.",
-  "BAKING": "Paanoo toɔ ne me mfatoho pa a mede twentwɛn me nan ase yɛ biribi a ɛyɛ dɛ.",
-  "READING_A_BOOK": "Ma me nwoma pa bi ne baabi a ɛhɔ yɛ dinn, na mɛtumi ayera mfhyehyɛ mmerɛ pii.",
-  "WATCHING_A_MOVIE": "Sini pa bi ne nnuane nketenkete, na anwummere a m'ahome te — eyi deɛ boro biribiara so.",
-  "PLAYING_VIDEO_GAMES": "M'anigye sɛ meyera wɔ agorɔ pa bi mu berɛ a mewɔ mmerɛ ma me ho nkoaa.",
-  "PLAYING_BOARD_GAMES": "Mepɛ nkontabuo nketenkete akansie, titiriw berɛ a nnamfo pa ka ho.",
-  "OUT_WITH_FRIENDS": "Me mmerɛ pa bi ne anwummere a me ne nnamfo pa sere bɔ mmo.",
-  "HAVING_BRUNCH": "Aduane pa, kɔfe pa, na baabiara nni hɔ a merepɛ ntɛm — ɛno ne me kwandabre weekend.",
-  "DINING_OUT": "M'anigye sɛ mehunu mbeae foforo, mesɔ nnuane foforo hwɛ, na mehunu nneɛma a ɛsie.",
-  "HIKING": "Me koraa ani gye wɔ abɔnten, sɛ merehwehwɛ akwan foforo mu na mafiri daa nneyɛe mu.",
-  "GOING_FOR_A_RUN": "Mirika mmirika ma me adwene mu tew, meho yɛ nnam, na m'ani gye abɔnten mmerɛ ho.",
-  "CYCLING": "Mepɛ sɛ mesian me taseɛnam so, mehunu mbeae foforo, na m'ani gye kwan no ho.",
-  "AT_THE_BEACH": "Ma me awia kɛseɛ bi, ɛpo no, ne mmerɛ kakra na m'ani gye.",
-  "WATCHING_THE_SUNSET": "Awia kɔtɔee fɛfɛɛfɛ bi deɛ, m'ani nnyɛ kyee sɛ mɛgyina ahwɛ, baabiara a mɛwɔ.",
-  "ON_VACATION": "Mepɛ sɛ mehunu mbeae foforo, mesɔ nneɛma foforo hwɛ, na manya nkaedi wɔ kwan no so.",
-  "ROAD_TRIP": "Nnwom pa, akwantempɔn, agyinae a ɛyɛ anigye, na nhyehyɛe biara nni hɔ — me ho nhyehyɛe.",
-  "CAMPING": "Sɛ mifi dede mu na mekɔtena abɔnten ne nneɛma a m'ani gye ho kɛse.",
-  "TAKING_PHOTOS": "M'anigye sɛ mehu mmerɛ nketenkete na mefa nneɛma a ɛfata nkaedi.",
-  "MAKING_ART": "Sɛ mede me nsa bɛyɛ biribi foforo ne kwan pa a mede gye m'ahome.",
-  "PLAYING_MUSIC": "Nnwom daa bɛka me bra ho, sɛ mɛtie oo anaasɛ mɛbɔ oo.",
-  "DANCING": "Mepɛ nnwom pa, ahoɔden pa, ne mfatoho biara a mede bɛsa.",
-  "SHOPPING": "M'anigye sɛ mehwehwɛ mbeae foforo mu, mehunu nneɛma foforo, na mmerɛ bi mu no metɔ biribi ma meho.",
-  "VOLUNTEERING": "Mepɛ sɛ mede me mmerɛ bi yɛ biribi a mfasoɔ wɔ so ma nkurɔfo foforo.",
-  "STUDYING": "Daa mereyɛ biribi foforo ho adwuma na m'ani gye suadeɛ ho wɔ kwan no so.",
-  "WORKING": "Mesi me mmanim adwuma so, nanso megye di sɛ asetena boro adwuma nkoaa so.",
-  "RELAXING_AT_HOME": "Mmerɛ bi anwummere pa ne sɛ mɛtena fie, madum biribiara, na m'ani gye asomdwoe mmerɛ ho.",
-  "TRYING_SOMETHING_NEW": "Mepɛ sɛ mema asetena yɛ anigye na maka 'aane' ama nneɛma a mnyɛɛ bi da."
-},
-"Rules": {
-  "title": "Ahyɛdeɛ ne Mpanyinsem",
-  "subtitle": "Yɛsrɛ wo, gye yɛn amanamfoɔ ahyɛdeɛ tom ansa na woafiri nnamfofoɔ hwehwɛ ase.",
-  "btn_agree": "Mate aseɛ na Megye tom",
-  "respect_title": "Yɛ Nipa Pa na Di Obu",
-  "respect_desc": "Didiatwɛm, nitan kasa, ahunahuna, anaa asɛm mmoni biara bɛma yɛatwa w'adwuma mu ntɛmara a yɛnnan yɛn akyi.",
-  "media_title": "Nokorɛyɛ Ne Yɛn Agorɔ Panyin",
-  "media_desc": "Moment biara a wobɛkyɛ no, ɛwɔ sɛ ɛde wo mfonini anaa wo video tiawa ankasa ba. Nokorɛyɛ mapa ne biribi panyin a ɛda saa platform yi adi.",
-  "moment_title": "Moments A Wakyɛ",
-  "moment_desc": "Wobɛtumi ayɛ Moments ama ɔmanfoɔ nyinaa (public) anaa nipa a wone bɔn fapem pɛ (matches). Nanso, ansa na wobɛtumi de match request akɔma obi no, gye sɛ wowɔ public moment baako pɛ mpo.",
-  "safety_title": "Bɔ Wo Ho Ban",
-  "safety_desc": "Mma nipa a woahyia no foforɔ biara wo password, wo sika ho nsem (banking info), anaa wo fie address da."
-},
-
+  "Moment_captions": {
+    "HAVING_COFFEE": "A slow coffee and a quiet moment are my favorite ways to start the day.",
+    "WALKING_MY_DOG": "My dog keeps me active, outdoors, and probably happier than I deserve.",
+    "WORKING_OUT_AT_THE_GYM": "I like staying active and making time to feel strong and healthy.",
+    "COOKING_DINNER": "I enjoy cooking at home, experimenting with new recipes, and making something from scratch.",
+    "BAKING": "Baking is my favorite excuse to slow down and make something delicious.",
+    "READING_A_BOOK": "Give me a good book, a quiet place, and I can disappear for hours.",
+    "WATCHING_A_VOLUME": "A good movie, some snacks, and a relaxed evening is hard to beat.",
+    "PLAYING_VIDEO_GAMES": "I enjoy getting lost in a good game when I have some time to myself.",
+    "PLAYING_BOARD_GAMES": "I love a little competition, especially when good friends are involved.",
+    "OUT_WITH_FRIENDS": "Some of my best moments are simple evenings spent laughing with good friends.",
+    "HAVING_BRUNCH": "Good food, good coffee, and nowhere to rush to — that's my kind of weekend.",
+    "DINING_OUT": "I enjoy discovering new places, trying different food, and finding hidden gems.",
+    "HIKING": "I feel happiest outdoors, exploring new trails and getting away from the usual routine.",
+    "GOING_FOR_A_RUN": "Running helps me clear my head, stay active, and enjoy some time outside.",
+    "CYCLING": "I love getting on my bike, exploring new places, and enjoying the ride.",
+    "AT_THE_BEACH": "Give me some sunshine, the sea, and a little free time and I'm happy.",
+    "WATCHING_THE_SUNSET": "I never get tired of stopping for a beautiful sunset, wherever I happen to be.",
+    "ON_VACATION": "I love discovering new places, trying new things, and making memories along the way.",
+    "ROAD_TRIP": "Good music, open roads, interesting stops, and no strict plans — my kind of adventure.",
+    "CAMPING": "Getting away from the noise and spending time outdoors is something I really enjoy.",
+    "TAKING_PHOTOS": "I enjoy noticing the little moments and capturing the ones worth remembering.",
+    "MAKING_ART": "Creating something with my own hands is one of my favorite ways to relax.",
+    "PLAYING_MUSIC": "Music has always been part of my life, whether I'm listening or playing.",
+    "DANCING": "I love good music, good energy, and having an excuse to dance.",
+    "SHOPPING": "I enjoy exploring new places, finding interesting things, and occasionally treating myself.",
+    "VOLUNTEERING": "I like spending some of my time doing something useful for other people.",
+    "STUDYING": "I'm always working toward something new and enjoy learning along the way.",
+    "WORKING": "I'm ambitious about what I do, but I also believe life should be more than work.",
+    "RELAXING_AT_HOME": "Sometimes my ideal evening is simply staying home, switching off, and enjoying some quiet time.",
+    "TRYING_SOMETHING_NEW": "I like keeping life interesting and saying yes to experiences I haven't tried before."
+  },
+  "Rules": {
+    "title": "Nneyɛe ho mmara",
+    "subtitle": "Yɛsrɛ wo gye yɛn community mmara tom ansa na woahwehwɛ matches.",
+    "btn_agree": "Mate ase na megye tom",
+    "respect_title": "Yɛ ayamye na di afoforo ni",
+    "respect_desc": "Harassment, hate speech, ahunahuna anaa suban bɔne bɛma wɔabara wo daa ntɛm ara.",
+    "media_title": "Nokwareyɛ yɛn agyiraehyɛde",
+    "media_desc": "Moment biara a wokyɛ ɛsɛ sɛ ɛwɔ wo ankasa mfonini anaa video tiawa. Nokwareyɛ ne nea ɛma platform yi da nsow.",
+    "moment_title": "Mmere a yɛbom kyɛ",
+    "moment_desc": "Wubetumi ayɛ public moments anaa match-only moments, nanso sɛ wopɛ sɛ wosoma match request a, ɛsɛ sɛ wowɔ public moment baako.",
+    "safety_title": "Hwɛ wo ho yie",
+    "safety_desc": "Nkyɛ wo password, bank nsɛm, anaa fie address ne nnipa a woahyia wɔn foforo no."
+  },
   "Compatibility": {
-    "owner": "WOPO",
-    "eyebrow": "Mo abɔmu",
-    "title": "Mowɔ nneɛma pii a ɛbɔ mu",
-    "description": "Nneɛma {{shared}} a mo bom kyɛ ma mo anya nnyinasoɔ pa.",
-    "compatible": "Mo bɔ mu pa",
-    "shared": "Bom kyɛ",
-    "complementary": "Kyɛfa nsonson",
-    "unique": "Koraa korɔ",
-    "unique_interests": "nneɛma pɔtee a wopɛ",
-    "details_shared": "Nea mo bom kyɛ",
-    "shared_description": "Nneɛma ne suban a mo mmienu nyinaa wɔ dedaw.",
-    "details_opposites_header": "Baabi a mo hyia mu pa",
-    "opposites_description": "Ɛnyɛ nneɛma nyinaa na ɛsɛ sɛ ɛyɛ pɛ. Nsonsonoeɛ bi ma kwan ma mo bɔ mu pa.",
-    "details_unique": "Nea wode reba abɔmu yi mu",
-    "unique_description": "Nneɛma pɔtee a ɛma obiara yɛ soronko.",
-    "footer": "Abɔmu pa firi nneɛma a mo mmienu nyinaa wɔ dedaw.",
-    "compatibility": "Hwɛ sɛnea mobɔ mu",
-    "loading": "Yɛrehwɛ nea ɛma mo bɔ mu pa...",
+    "owner": "WO",
+    "eyebrow": "Wo nkitahodi",
+    "title": "Wowɔ nneɛma pii a ɛyɛ mo baanu dea",
+    "description": "{{shared}} nneɛma a mo baanu ani gye ho ne osuahu a mo kyɛ ma mo nya mfiase pa.",
+    "compatible": "Mo hyia",
+    "shared": "Nea mo kyɛ",
+    "complementary": "Nea ɛboa mo ho",
+    "unique": "Nea ɛda mo mu biara nsow",
+    "unique_interests": "anigyeɛ soronko",
+    "details_shared": "Nea mo kyɛ",
+    "shared_description": "Eyi ne nneɛma a mo baanu ani gye ho ne gyinapɛn a mo kyɛ dada.",
+    "details_opposites_header": "Baabi a mo boa mo ho",
+    "opposites_description": "Ɛnyɛ biribiara na ɛsɛ sɛ ɛyɛ pɛ. Nsonsonoe bi betumi ama kari pɛ.",
+    "details_unique": "Nea wode ba nkitahodi no mu",
+    "unique_description": "Eyinom ne nneɛma a ɛma mo baanu mu biara da nsow.",
+    "footer": "Nkitahodi pa paa fi biribi a mo kyɛ dada mu.",
+    "compatibility": "Hwɛ sɛnea mo hyia",
+    "loading": "Yɛrehwehwɛ nea ɛma mo hyia…",
     "opposites": {
-      "SOCIAL_ENERGY": "Nnipa mu kyɛfa (Nea ɔpɛ gyinabea & Nea ɔpɛ dwoodwoo)",
-      "CHRONO_TYPE": "Anopa ne Anadwo (Anopa bayerɛ & Anadwo kɔkɔte)",
-      "PLANNING_STYLE": "Akwantenpon Mu (Nhyehyɛefoɔ & Ogyefoɔ)",
-      "COMMUNICATION_PROFILE": "Nkɔmmɔbɔ (Kasafoɔ & Osetiefoɔ)",
-      "FINANCIAL_MINDSET": "Sika Siesiee (Korafoɔ & Sika fɛrefoɔ)"
+      "SOCIAL_ENERGY": "Nnipa mu kari pɛ (Introvert & Extrovert)",
+      "CHRONO_TYPE": "Da ne anadwo kari pɛ (Ɔsɔre anɔpa & Ɔdɔ anadwo)",
+      "PLANNING_STYLE": "Asetena mu asomdwoe (Ɔhyehyɛfo & Free Spirit)",
+      "COMMUNICATION_PROFILE": "Nkɔmmɔ mu nkitahodi (Ɔkasafo & Ɔtiefo)",
+      "FINANCIAL_MINDSET": "Asetena mu pintinn (Ɔkora sika & Ɔsɛe sika)"
     }
-  
-}
-
-
-
+  }
 }

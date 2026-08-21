@@ -209,18 +209,18 @@
       },
       "email": {
         "placeholder": "Email Address",
-        "email_error": "Please provide a valid email address as your username",
+        "email_error": "Please provide a valid email address,Email cannot be empty",
         "email_taken": "Email already in use, choose a different email.",
         "error": "error"
       },
-      "dob_error": "You must be at least 18 years old to access this platform.",
+      "dob_error": "Birth date must be a past date,You must be at least 18 years old to access this platform.",
       "gender": "gender",
       "location": "location",
       "location_error": "Location cannot be empty",
       "gender_error": "Gender cannot be empty",
       "password": {
         "placeholder": "password",
-        "password_error": "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"
+        "password_error": "Password must be between 8 and 32 characters long,Password cannot be null,Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"
       },
       "Other":{
         "date_of_birth":"Date of Birth",

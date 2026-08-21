@@ -27,8 +27,13 @@ const Register = () => {
   //translation hook
   const { t } = useTranslation();
 
-  const [error, setError] = useState<string>("");
-  const [errorMessages, setErrorMessages] = useState<TvalidationErrors>();
+  //specific error messages
+  const [emailError, setEmailError] = useState<string>("");
+  const [emailExistError, setEmailExistError] = useState<string>("");
+  const [passwordError, setPasswordError] = useState<string>("");
+  const [dobError, setDobError] = useState<string>("");
+  const [firstNameError, setFirstNameError] = useState<string>("");
+  const [lastNameError, setLastNameError] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [fetchError, setFetchError] = useState<string>("");
   const [isTermsChecked, setIsTermsChecked] = useState<boolean>(false);
@@ -37,7 +42,32 @@ const Register = () => {
   const locationSelectorProps = useLocationSelector();
 
 
+  const handleFirstNameInputFocus =()=>{
+         setFirstNameError('')
 
+  }
+
+    const handleLastNameInputFocus =()=>{
+
+         setLastNameError('')
+
+  }
+
+     const handleDateOfBirthInputFocus =()=>{
+
+         setDobError('')
+  }
+
+
+     const handleEmailInputFocus =()=>{
+       setEmailError('')
+       setEmailExistError('')
+  }
+
+
+       const handlePasswordInputFocus =()=>{
+       setPasswordError('')
+  }
 
   const handleFormSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -83,58 +113,72 @@ const Register = () => {
         // 2. SUCCESS FLOW: Since we unwrapped, we know the backend returned a 2xx success code
         //console.log('Registration Successful:', payload);
 
-        // Clear old errors on successful registration
-        setError("");
+
 
         // Redirect the user right away
        navigate("/");
       } catch (error: any) {
-        // 3. ERROR FLOW: This catches all 4xx, 5xx, and network ERR_CONNECTION_REFUSED errors
-        //console.error('Registration Failed:', error);
-        setError(() => "Registration Failed:" + error);
 
+        const {status} = error as {status:number|string,message:string}
+
+          
         // Handle Redux Network Level Errors (FETCH_ERROR)
-        if (error.status === "FETCH_ERROR") {
+        if (status === "FETCH_ERROR") {
           setFetchError("NETWORK_ERROR");
           return;
         }
 
-        // Handle Server Errors (401, 500, etc.)
-        if (error.status === 500 || error.status === 401) {
+        if (status === 500 || status === 401) {
+
+          
           const errorResponse = error.data as {
             error: string;
             status: number;
             message: string;
           };
-
+          
           setFetchError(errorResponse.error);
+          
         }
 
-        // Handle Server Validation & Response Errors (401, 409, 500, etc.)
-        if (error.status === 409) {
+       
+        if (status === 409) {
           const errorResponse = error.data as {
             error: string;
             status: number;
             message: string;
           };
-          //const{error} = errorResponse;
-         // console.log(errorResponse.error);
 
-          setError(() => errorResponse.error);
+          setEmailExistError(() => errorResponse.error);
         }
 
+        
         // Handle Client-Side Field Validation Errors (403 Forbidden)
-        if (error.status === 403) {
+        if (status === 403) {
           // const errorResponse = error  as FetchBaseQueryError;
           const errorData = error as { status: number; data: TErrorResponse };
           const errors = errorData.data.error as TvalidationErrors;
-          setErrorMessages(() => errors);
+         const {firstName,lastName,password,dob,email} = errors;
+         setEmailError(()=>email)
+         setPasswordError(()=>password)
+         setFirstNameError(()=>firstName)
+         setLastNameError(()=>lastName)
+         setDobError(()=>dob)         
+          
         }
       }
     } else {
       setMessage("Please accept terms and condition to proceed");
     }
   };
+
+  /*
+    {error && (
+                <span className="error">
+                  {t("RegisterPage.fields.email.email_taken")}
+                </span>
+              )}
+  */
 
   return (
     <>
@@ -175,10 +219,12 @@ const Register = () => {
                       name="firstName"
                       placeholder=""
                       autoComplete="given-name"
+                      onFocus={()=>handleFirstNameInputFocus()}
+                      required
                     />
                   </div>
                 </div>
-                {errorMessages?.firstName && (
+                {firstNameError && (
                   <span className="error">
                     {t("RegisterPage.fields.firstName.firstname_error")}
                   </span>
@@ -197,16 +243,18 @@ const Register = () => {
                       name="lastName"
                       placeholder=""
                       autoComplete="family-name"
-                      required
+                            onFocus={()=>handleLastNameInputFocus()}
+                            required
                     />
                   </div>
                 </div>
-              </div>
-              {errorMessages?.lastName && (
+                    {lastNameError && (
                 <span className="error">
                   {t("RegisterPage.fields.lastName.lastname_error")}
                 </span>
               )}
+              </div>
+          
             </div>
 
             {/* DATE OF BIRTH */}
@@ -221,12 +269,14 @@ const Register = () => {
                     type="date"
                     name="dob"
                     id="dob"
-                    required
+                
                     defaultValue={new Date().toISOString().split("T")[0]}
+                          onFocus={()=>handleDateOfBirthInputFocus()}
+                          required
                   />
                 </div>
               </div>
-              {errorMessages?.dob && (
+              {dobError && (
                 <span className="error">
                   {t("RegisterPage.fields.dob_error")}
                 </span>
@@ -266,17 +316,18 @@ const Register = () => {
                     name="email"
                     placeholder=""
                     autoComplete="email"
-                    required
+                          onFocus={()=>handleEmailInputFocus()}
+                          required
                   />
                 </div>
               </div>
 
-              {errorMessages?.email && (
+              {emailError && (
                 <span className="error">
                   {t("RegisterPage.fields.email.email_error")}
                 </span>
               )}
-              {error && (
+              {emailExistError && (
                 <span className="error">
                   {t("RegisterPage.fields.email.email_taken")}
                 </span>
@@ -309,15 +360,17 @@ const Register = () => {
                     placeholder=""
                     name="password"
                     autoComplete="new-password"
-                    required
+                        onFocus={()=>handlePasswordInputFocus()}
+                        required
                   />
                 </div>
               </div>
-              {errorMessages?.password && (
+              {passwordError && (
                 <span className="error">
                   {t("RegisterPage.fields.password.password_error")}
                 </span>
               )}
+       
             </div>
 
             {/* TERMS */}
