@@ -34,7 +34,7 @@ const DiscoveryFilters = () => {
     url.get("lookingFor") as string,
   );
 
-  const [searchItem, setSearchItem] = useState<string>( url.get("city") as string,);
+  const [searchItem, setSearchItem] = useState<string>( url.get("city") as string||"");
 
   const handleSearchInput = (e: ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
@@ -154,7 +154,7 @@ const DiscoveryFilters = () => {
                   >
                     {
                       OPTIONS_LOOKINGFOR.map((item)=>{
-                        return   <option value={item.value}>{t(`Options.LookingFor.${item.label}`)}</option>
+                        return   <option value={item.value} key={item.label}>{t(`Options.LookingFor.${item.label}`)}</option>
                       })
                     }
                   </select>
